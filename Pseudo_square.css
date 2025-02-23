@@ -1,0 +1,724 @@
+.ps_001, .ps_002, .ps_003, .ps_004, .ps_005, .ps_006, .ps_007, .ps_008, .ps_009, .ps_010, .ps_011, .ps_012, .ps_013, .ps_014, .ps_015, .ps_016, .ps_017, .ps_018, .ps_019, .ps_020, .ps_021, .ps_022, .ps_023, .ps_024, .ps_025, .ps_026, .ps_027, .ps_028, .ps_029, .ps_030, .ps_031, .ps_032, .ps_033, .ps_034, .ps_035, .ps_036, .ps_037, .ps_038, .ps_039, .ps_040, .ps_041, .ps_042, .ps_043, .ps_044, .ps_045, .ps_046, .ps_047, .ps_048, .ps_049, .ps_050, .ps_051, .ps_052, .ps_053, .ps_054, .ps_055, .ps_056, .ps_057, .ps_058, .ps_059, .ps_060, .ps_061, .ps_062, .ps_063, .ps_064, .ps_065, .ps_066, .ps_067, .ps_068, .ps_069, .ps_070, .ps_071, .ps_072, .ps_073, .ps_074, .ps_075, .ps_076, .ps_077, .ps_078, .ps_079, .ps_080, .ps_081, .ps_082, .ps_083, .ps_084, .ps_085, .ps_086, .ps_087, .ps_088, .ps_089, .ps_090, .ps_091, .ps_092, .ps_093, .ps_094, .ps_095, .ps_096, .ps_097, .ps_098, .ps_099, .ps_100 {
+     width: 10%;
+     height: 10%;
+     position: absolute;
+     display: inline;
+     z-index: 1;
+}
+ .actual_square_001, .actual_square_002, .actual_square_003, .actual_square_004, .actual_square_005, .actual_square_006, .actual_square_007, .actual_square_008, .actual_square_009, .actual_square_010, .actual_square_011, .actual_square_012, .actual_square_013, .actual_square_014, .actual_square_015, .actual_square_016, .actual_square_017, .actual_square_018, .actual_square_019, .actual_square_020, .actual_square_021, .actual_square_022, .actual_square_023, .actual_square_024, .actual_square_025, .actual_square_026, .actual_square_027, .actual_square_028, .actual_square_029, .actual_square_030, .actual_square_031, .actual_square_032, .actual_square_033, .actual_square_034, .actual_square_035, .actual_square_036, .actual_square_037, .actual_square_038, .actual_square_039, .actual_square_040, .actual_square_041, .actual_square_042, .actual_square_043, .actual_square_044, .actual_square_045, .actual_square_046, .actual_square_047, .actual_square_048, .actual_square_049, .actual_square_050, .actual_square_051, .actual_square_052, .actual_square_053, .actual_square_054, .actual_square_055, .actual_square_056, .actual_square_057, .actual_square_058, .actual_square_059, .actual_square_060, .actual_square_061, .actual_square_062, .actual_square_063, .actual_square_064, .actual_square_065, .actual_square_066, .actual_square_067, .actual_square_068, .actual_square_069, .actual_square_070, .actual_square_071, .actual_square_072, .actual_square_073, .actual_square_074, .actual_square_075, .actual_square_076, .actual_square_077, .actual_square_078, .actual_square_079, .actual_square_080, .actual_square_081, .actual_square_082, .actual_square_083, .actual_square_084, .actual_square_085, .actual_square_086, .actual_square_087, .actual_square_088, .actual_square_089, .actual_square_090, .actual_square_091, .actual_square_092, .actual_square_093, .actual_square_094, .actual_square_095, .actual_square_096, .actual_square_097, .actual_square_098, .actual_square_099, .actual_square_100 {
+     width: 75%;
+     height: 75%;
+     position: absolute;
+     display: inline;
+     z-index: 2;
+     border-radius: 16.66667% 16.66667% 16.66667% 16.66667%;
+     background-color: rgb(94,94,94);
+     margin-left: 12.5%;
+     margin-top: 12.5%;
+     opacity: 0;
+}
+ .ps_001{
+     border-radius: 16.66667% 0% 0% 0%;
+}
+ .ps_002{
+     margin-left: 10%;
+     margin-top: 0%;
+}
+ .ps_003{
+     margin-left: 20%;
+     margin-top: 0%;
+}
+ .ps_004{
+     margin-left: 30%;
+     margin-top: 0%;
+}
+ .ps_005{
+     margin-left:40%;
+     margin-top: 0%;
+}
+ .ps_006{
+     margin-left:50%;
+     margin-top: 0%;
+}
+ .ps_007{
+     margin-left:60%;
+     margin-top: 0%;
+}
+ .ps_008{
+     margin-left:70%;
+     margin-top: 0%;
+}
+ .ps_009{
+     margin-left:80%;
+     margin-top: 0%;
+}
+ .ps_010{
+     border-radius: 0% 16.66667% 0% 0%;
+     margin-left:90%;
+     margin-top: 0%;
+}
+/* ------------------- 10 ------------------------ */
+ .ps_011{
+     margin-top: 10%;
+}
+ .ps_012{
+     margin-left:10%;
+     margin-top: 10%;
+}
+ .ps_013{
+     margin-left:20%;
+     margin-top: 10%;
+}
+ .ps_014{
+     margin-left:30%;
+     margin-top: 10%;
+}
+ .ps_015{
+     margin-left:40%;
+     margin-top: 10%;
+}
+ .ps_016{
+     margin-left:50%;
+     margin-top: 10%;
+}
+ .ps_017{
+     margin-left:60%;
+     margin-top: 10%;
+}
+ .ps_018{
+     margin-left:70%;
+     margin-top: 10%;
+}
+ .ps_019{
+     margin-left:80%;
+     margin-top: 10%;
+}
+ .ps_020{
+     margin-left:90%;
+     margin-top: 10%;
+}
+/* ------------------- 20 ------------------------ */
+ .ps_021{
+     margin-top: 20%;
+}
+ .ps_022{
+     margin-left:10%;
+     margin-top: 20%;
+}
+ .ps_023{
+     margin-left:20%;
+     margin-top: 20%;
+}
+ .ps_024{
+     margin-left:30%;
+     margin-top: 20%;
+}
+ .ps_025{
+     margin-left:40%;
+     margin-top: 20%;
+}
+ .ps_026{
+     margin-left:50%;
+     margin-top: 20%;
+}
+ .ps_027{
+     margin-left:60%;
+     margin-top: 20%;
+}
+ .ps_028{
+     margin-left:70%;
+     margin-top: 20%;
+}
+ .ps_029{
+     margin-left:80%;
+     margin-top: 20%;
+}
+ .ps_030{
+     margin-left:90%;
+     margin-top: 20%;
+}
+/* ------------------- 30 ------------------------ */
+ .ps_031{
+     margin-top: 30%;
+}
+ .ps_032{
+     margin-left:10%;
+     margin-top: 30%;
+}
+ .ps_033{
+     margin-left:20%;
+     margin-top: 30%;
+}
+ .ps_034{
+     margin-left:30%;
+     margin-top: 30%;
+}
+ .ps_035{
+     margin-left:40%;
+     margin-top: 30%;
+}
+ .ps_036{
+     margin-left:50%;
+     margin-top: 30%;
+}
+ .ps_037{
+     margin-left:60%;
+     margin-top: 30%;
+}
+ .ps_038{
+     margin-left:70%;
+     margin-top: 30%;
+}
+ .ps_039{
+     margin-left:80%;
+     margin-top: 30%;
+}
+ .ps_040{
+     margin-left:90%;
+     margin-top: 30%;
+}
+/* ------------------- 40 ------------------------ */
+ .ps_041{
+     margin-top: 40%;
+}
+ .ps_042{
+     margin-left:10%;
+     margin-top: 40%;
+}
+ .ps_043{
+     margin-left:20%;
+     margin-top: 40%;
+}
+ .ps_044{
+     margin-left:30%;
+     margin-top: 40%;
+}
+ .ps_045{
+     margin-left:40%;
+     margin-top: 40%;
+}
+ .ps_046{
+     margin-left:50%;
+     margin-top: 40%;
+}
+ .ps_047{
+     margin-left:60%;
+     margin-top: 40%;
+}
+ .ps_048{
+     margin-left:70%;
+     margin-top: 40%;
+}
+ .ps_049{
+     margin-left:80%;
+     margin-top: 40%;
+}
+ .ps_050{
+     margin-left:90%;
+     margin-top: 40%;
+}
+/* ------------------- 50 ------------------------ */
+ .ps_051{
+     margin-top: 50%;
+}
+ .ps_052{
+     margin-left: 10%;
+     margin-top: 50%;
+}
+ .ps_053{
+     margin-left: 20%;
+     margin-top: 50%;
+}
+ .ps_054{
+     margin-left: 30%;
+     margin-top: 50%;
+}
+ .ps_055{
+     margin-left:40%;
+     margin-top: 50%;
+}
+ .ps_056{
+     margin-left:50%;
+     margin-top: 50%;
+}
+ .ps_057{
+     margin-left:60%;
+     margin-top: 50%;
+}
+ .ps_058{
+     margin-left:70%;
+     margin-top: 50%;
+}
+ .ps_059{
+     margin-left:80%;
+     margin-top: 50%;
+}
+ .ps_060{
+     margin-left:90%;
+     margin-top: 50%;
+}
+/* ------------------- 60 ------------------------ */
+ .ps_061{
+     margin-top: 60%;
+}
+ .ps_062{
+     margin-left:10%;
+     margin-top: 60%;
+}
+ .ps_063{
+     margin-left:20%;
+     margin-top: 60%;
+}
+ .ps_064{
+     margin-left:30%;
+     margin-top: 60%;
+}
+ .ps_065{
+     margin-left:40%;
+     margin-top: 60%;
+}
+ .ps_066{
+     margin-left:50%;
+     margin-top: 60%;
+}
+ .ps_067{
+     margin-left:60%;
+     margin-top: 60%;
+}
+ .ps_068{
+     margin-left:70%;
+     margin-top: 60%;
+}
+ .ps_069{
+     margin-left:80%;
+     margin-top: 60%;
+}
+ .ps_070{
+     margin-left:90%;
+     margin-top: 60%;
+}
+/* ------------------- 70 ------------------------ */
+ .ps_071{
+     margin-top: 70%;
+}
+ .ps_072{
+     margin-left:10%;
+     margin-top: 70%;
+}
+ .ps_073{
+     margin-left:20%;
+     margin-top: 70%;
+}
+ .ps_074{
+     margin-left:30%;
+     margin-top: 70%;
+}
+ .ps_075{
+     margin-left:40%;
+     margin-top: 70%;
+}
+ .ps_076{
+     margin-left:50%;
+     margin-top: 70%;
+}
+ .ps_077{
+     margin-left:60%;
+     margin-top: 70%;
+}
+ .ps_078{
+     margin-left:70%;
+     margin-top: 70%;
+}
+ .ps_079{
+     margin-left:80%;
+     margin-top: 70%;
+}
+ .ps_080{
+     margin-left:90%;
+     margin-top: 70%;
+}
+/* ------------------- 80 ------------------------ */
+ .ps_081{
+     margin-top: 80%;
+}
+ .ps_082{
+     margin-left:10%;
+     margin-top: 80%;
+}
+ .ps_083{
+     margin-left:20%;
+     margin-top: 80%;
+}
+ .ps_084{
+     margin-left:30%;
+     margin-top: 80%;
+}
+ .ps_085{
+     margin-left:40%;
+     margin-top: 80%;
+}
+ .ps_086{
+     margin-left:50%;
+     margin-top: 80%;
+}
+ .ps_087{
+     margin-left:60%;
+     margin-top: 80%;
+}
+ .ps_088{
+     margin-left:70%;
+     margin-top: 80%;
+}
+ .ps_089{
+     margin-left:80%;
+     margin-top: 80%;
+}
+ .ps_090{
+     margin-left:90%;
+     margin-top: 80%;
+}
+/* ------------------- 90 ------------------------ */
+ .ps_091{
+     border-radius: 0% 0% 0% 16.66667%;
+     margin-top: 90%;
+}
+ .ps_092{
+     margin-left:10%;
+     margin-top: 90%;
+}
+ .ps_093{
+     margin-left:20%;
+     margin-top: 90%;
+}
+ .ps_094{
+     margin-left:30%;
+     margin-top: 90%;
+}
+ .ps_095{
+     margin-left:40%;
+     margin-top: 90%;
+}
+ .ps_096{
+     margin-left:50%;
+     margin-top: 90%;
+}
+ .ps_097{
+     margin-left:60%;
+     margin-top: 90%;
+}
+ .ps_098{
+     margin-left:70%;
+     margin-top: 90%;
+}
+ .ps_099{
+     margin-left:80%;
+     margin-top: 90%;
+}
+ .ps_100{
+     border-radius: 0% 0% 16.66667% 0%;
+     margin-left:90%;
+     margin-top: 90%;
+}
+/* ------------------- 100 ------------------------ */
+/* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH HOVERING HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+ .ps_001:hover .actual_square_001{
+    opacity:1;
+}
+ .ps_002:hover .actual_square_002{
+    opacity:1;
+}
+ .ps_003:hover .actual_square_003{
+    opacity:1;
+}
+ .ps_004:hover .actual_square_004 {
+     opacity: 1;
+}
+ .ps_005:hover .actual_square_005 {
+     opacity: 1;
+}
+ .ps_006:hover .actual_square_006 {
+     opacity: 1;
+}
+ .ps_007:hover .actual_square_007 {
+     opacity: 1;
+}
+ .ps_008:hover .actual_square_008 {
+     opacity: 1;
+}
+ .ps_009:hover .actual_square_009 {
+     opacity: 1;
+}
+ .ps_010:hover .actual_square_010 {
+     opacity: 1;
+}
+ .ps_011:hover .actual_square_011 {
+     opacity: 1;
+}
+ .ps_012:hover .actual_square_012 {
+     opacity: 1;
+}
+ .ps_013:hover .actual_square_013 {
+     opacity: 1;
+}
+ .ps_014:hover .actual_square_014 {
+     opacity: 1;
+}
+ .ps_015:hover .actual_square_015 {
+     opacity: 1;
+}
+ .ps_016:hover .actual_square_016 {
+     opacity: 1;
+}
+ .ps_017:hover .actual_square_017 {
+     opacity: 1;
+}
+ .ps_018:hover .actual_square_018 {
+     opacity: 1;
+}
+ .ps_019:hover .actual_square_019 {
+     opacity: 1;
+}
+ .ps_020:hover .actual_square_020 {
+     opacity: 1;
+}
+ .ps_021:hover .actual_square_021 {
+     opacity: 1;
+}
+ .ps_022:hover .actual_square_022 {
+     opacity: 1;
+}
+ .ps_023:hover .actual_square_023 {
+     opacity: 1;
+}
+ .ps_024:hover .actual_square_024 {
+     opacity: 1;
+}
+ .ps_025:hover .actual_square_025 {
+     opacity: 1;
+}
+ .ps_026:hover .actual_square_026 {
+     opacity: 1;
+}
+ .ps_027:hover .actual_square_027 {
+     opacity: 1;
+}
+ .ps_028:hover .actual_square_028 {
+     opacity: 1;
+}
+ .ps_029:hover .actual_square_029 {
+     opacity: 1;
+}
+ .ps_030:hover .actual_square_030 {
+     opacity: 1;
+}
+ .ps_031:hover .actual_square_031 {
+     opacity: 1;
+}
+ .ps_032:hover .actual_square_032 {
+     opacity: 1;
+}
+ .ps_033:hover .actual_square_033 {
+     opacity: 1;
+}
+ .ps_034:hover .actual_square_034 {
+     opacity: 1;
+}
+ .ps_035:hover .actual_square_035 {
+     opacity: 1;
+}
+ .ps_036:hover .actual_square_036 {
+     opacity: 1;
+}
+ .ps_037:hover .actual_square_037 {
+     opacity: 1;
+}
+ .ps_038:hover .actual_square_038 {
+     opacity: 1;
+}
+ .ps_039:hover .actual_square_039 {
+     opacity: 1;
+}
+ .ps_040:hover .actual_square_040 {
+     opacity: 1;
+}
+ .ps_041:hover .actual_square_041 {
+     opacity: 1;
+}
+ .ps_042:hover .actual_square_042 {
+     opacity: 1;
+}
+ .ps_043:hover .actual_square_043 {
+     opacity: 1;
+}
+ .ps_044:hover .actual_square_044 {
+     opacity: 1;
+}
+ .ps_045:hover .actual_square_045 {
+     opacity: 1;
+}
+ .ps_046:hover .actual_square_046 {
+     opacity: 1;
+}
+ .ps_047:hover .actual_square_047 {
+     opacity: 1;
+}
+ .ps_048:hover .actual_square_048 {
+     opacity: 1;
+}
+ .ps_049:hover .actual_square_049 {
+     opacity: 1;
+}
+ .ps_050:hover .actual_square_050 {
+     opacity: 1;
+}
+ .ps_051:hover .actual_square_051 {
+     opacity: 1;
+}
+ .ps_052:hover .actual_square_052 {
+     opacity: 1;
+}
+ .ps_053:hover .actual_square_053 {
+     opacity: 1;
+}
+ .ps_054:hover .actual_square_054 {
+     opacity: 1;
+}
+ .ps_055:hover .actual_square_055 {
+     opacity: 1;
+}
+ .ps_056:hover .actual_square_056 {
+     opacity: 1;
+}
+ .ps_057:hover .actual_square_057 {
+     opacity: 1;
+}
+ .ps_058:hover .actual_square_058 {
+     opacity: 1;
+}
+ .ps_059:hover .actual_square_059 {
+     opacity: 1;
+}
+ .ps_060:hover .actual_square_060 {
+     opacity: 1;
+}
+ .ps_061:hover .actual_square_061 {
+     opacity: 1;
+}
+ .ps_062:hover .actual_square_062 {
+     opacity: 1;
+}
+ .ps_063:hover .actual_square_063 {
+     opacity: 1;
+}
+ .ps_064:hover .actual_square_064 {
+     opacity: 1;
+}
+ .ps_065:hover .actual_square_065 {
+     opacity: 1;
+}
+ .ps_066:hover .actual_square_066 {
+     opacity: 1;
+}
+ .ps_067:hover .actual_square_067 {
+     opacity: 1;
+}
+ .ps_068:hover .actual_square_068 {
+     opacity: 1;
+}
+ .ps_069:hover .actual_square_069 {
+     opacity: 1;
+}
+ .ps_070:hover .actual_square_070 {
+     opacity: 1;
+}
+ .ps_071:hover .actual_square_071 {
+     opacity: 1;
+}
+ .ps_072:hover .actual_square_072 {
+     opacity: 1;
+}
+ .ps_073:hover .actual_square_073 {
+     opacity: 1;
+}
+ .ps_074:hover .actual_square_074 {
+     opacity: 1;
+}
+ .ps_075:hover .actual_square_075 {
+     opacity: 1;
+}
+ .ps_076:hover .actual_square_076 {
+     opacity: 1;
+}
+ .ps_077:hover .actual_square_077 {
+     opacity: 1;
+}
+ .ps_078:hover .actual_square_078 {
+     opacity: 1;
+}
+ .ps_079:hover .actual_square_079 {
+     opacity: 1;
+}
+ .ps_080:hover .actual_square_080 {
+     opacity: 1;
+}
+ .ps_081:hover .actual_square_081 {
+     opacity: 1;
+}
+ .ps_082:hover .actual_square_082 {
+     opacity: 1;
+}
+ .ps_083:hover .actual_square_083 {
+     opacity: 1;
+}
+ .ps_084:hover .actual_square_084 {
+     opacity: 1;
+}
+ .ps_085:hover .actual_square_085 {
+     opacity: 1;
+}
+ .ps_086:hover .actual_square_086 {
+     opacity: 1;
+}
+ .ps_087:hover .actual_square_087 {
+     opacity: 1;
+}
+ .ps_088:hover .actual_square_088 {
+     opacity: 1;
+}
+ .ps_089:hover .actual_square_089 {
+     opacity: 1;
+}
+ .ps_090:hover .actual_square_090 {
+     opacity: 1;
+}
+ .ps_091:hover .actual_square_091 {
+     opacity: 1;
+}
+ .ps_092:hover .actual_square_092 {
+     opacity: 1;
+}
+ .ps_093:hover .actual_square_093 {
+     opacity: 1;
+}
+ .ps_094:hover .actual_square_094 {
+     opacity: 1;
+}
+ .ps_095:hover .actual_square_095 {
+     opacity: 1;
+}
+ .ps_096:hover .actual_square_096 {
+     opacity: 1;
+}
+ .ps_097:hover .actual_square_097 {
+     opacity: 1;
+}
+ .ps_098:hover .actual_square_098 {
+     opacity: 1;
+}
+ .ps_099:hover .actual_square_099 {
+     opacity: 1;
+}
+ .ps_100:hover .actual_square_100 {
+     opacity: 1;
+}
+ 
