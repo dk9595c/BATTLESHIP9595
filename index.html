@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <title>BattleShip</title>
+        <style>
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                font-size: 0px;
+            }
+            .master_flexbox {
+                display: flex;
+                flex-flow: column;
+                height: 100%;
+                width: 100%;
+                margin: 0px 0px 0px 0px;
+            }
+
+            .master_flexbox .content {
+                flex: 1 1 auto;
+                font-size: 0px;
+            }
+
+            .flex-container {
+                display: flex;
+                justify-content: space-between;
+                background-color: rgb(32, 33, 36);
+                margin: 0px 0px 0px 0px;
+            }
+            .flex-container > div {
+                padding: 10px 0px 20px 0px;
+                vertical-align: top;
+                min-height: 40px;
+                max-width: 143px;
+                max-height: 40px;
+                min-width: 130px;
+            }
+            .vertical_line1,
+            .vertical_line2,
+            .vertical_line3,
+            .vertical_line4,
+            .vertical_line5,
+            .vertical_line6,
+            .vertical_line7,
+            .vertical_line8,
+            .vertical_line9 {
+                width: 0px;
+                height: 0px;
+                padding-bottom: 96.66%;
+                padding-right: 0.3333333%;
+                margin-top: 1.666667%;
+                border-radius: 1px;
+                position: absolute;
+                background-color: rgb(123, 128, 131);
+            }
+
+            .vertical_line1 {
+                margin-left: 9.70094215%;
+            }
+            .vertical_line2 {
+                margin-left: 19.7341708%;
+            }
+            .vertical_line3 {
+                margin-left: 29.7673994%;
+            }
+            .vertical_line4 {
+                margin-left: 39.8006281%;
+            }
+            .vertical_line5 {
+                margin-left: 49.8338567%;
+            }
+            .vertical_line6 {
+                margin-left: 59.8670854%;
+            }
+            .vertical_line7 {
+                margin-left: 69.900314%;
+            }
+            .vertical_line8 {
+                margin-left: 79.9335427%;
+            }
+            .vertical_line9 {
+                margin-left: 89.9667713%;
+            }
+
+            .horizontal_line1,
+            .horizontal_line2,
+            .horizontal_line3,
+            .horizontal_line4,
+            .horizontal_line5,
+            .horizontal_line6,
+            .horizontal_line7,
+            .horizontal_line8,
+            .horizontal_line9 {
+                width: 0px;
+                height: 0px;
+                padding-right: 96.66%;
+                padding-bottom: 0.3333333%;
+                margin-left: 1.666667%;
+                border-radius: 1px;
+                position: absolute;
+                background-color: rgb(123, 128, 131);
+            }
+
+            .horizontal_line1 {
+                margin-top: 9.70094215%;
+            }
+            .horizontal_line2 {
+                margin-top: 19.7341708%;
+            }
+            .horizontal_line3 {
+                margin-top: 29.7673994%;
+            }
+            .horizontal_line4 {
+                margin-top: 39.8006281%;
+            }
+            .horizontal_line5 {
+                margin-top: 49.8338567%;
+            }
+            .horizontal_line6 {
+                margin-top: 59.8670854%;
+            }
+            .horizontal_line7 {
+                margin-top: 69.900314%;
+            }
+            .horizontal_line8 {
+                margin-top: 79.9335427%;
+            }
+            .horizontal_line9 {
+                margin-top: 89.9667713%;
+            }
+            .greybox_left {
+                width: 6px;
+                height: 6px;
+                padding-bottom: 83.3%;
+                padding-right: 83.3%;
+                margin-left: 7.77%;
+                margin-top: 6.25%;
+                border-radius: 1.66666667%;
+                position: relative;
+                background-color: rgb(49, 49, 52);
+                font-size: 0px;
+            }
+
+            .greybox_right {
+                width: 6px;
+                height: 6px;
+                padding-bottom: 83.3%;
+                padding-right: 83.3%;
+                margin-left: 8.88%;
+                margin-top: 6.25%;
+                border-radius: 1.66666667%;
+                position: relative;
+                background-color: rgb(49, 49, 52);
+                font-size: 0px;
+            }
+
+            .version_name {
+                font-family: Helvetica, Arial;
+                display: none;
+                color: rgb(124, 128, 131);
+                vertical-align: top;
+                margin-left: 55px;
+                margin-top: calc((40px - 1vw) / 2);
+                position: absolute;
+                font-size: 1vw;
+                padding: 0px 0px 0px 0px;
+                z-index: 2;
+            }
+
+            .pseudo_span {
+                font-family: Helvetica, Arial;
+                display: inline;
+                color: rgb(32, 33, 36);
+                vertical-align: top;
+                padding: 0px 0px 0px 0px;
+            }
+            .pseudo_span2 {
+                font-family: Helvetica, Arial;
+                display: inline;
+                color: rgb(32, 33, 36);
+                vertical-align: top;
+                padding: 0px 0px 0px 0px;
+                display: none;
+            }
+
+            @media screen and (max-width: 1000px) {
+                .version_name {
+                    display: none;
+                    font-size: 10px;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .version_name {
+                    display: none;
+                    font-size: 20px;
+                }
+                .pseudo_span {
+                    display: none;
+                    font-size: 20px;
+                }
+                .pseudo_span2 {
+                    display: inline-block;
+                    font-size: 16px;
+                }
+                .flex-container > div {
+                    min-width: 0px;
+                }
+            }
+
+            .LogoFirstHalf {
+                font-family: Impact, Arial;
+                display: inline;
+                color: rgb(91, 136, 238);
+                vertical-align: top;
+                font-weight: bold;
+                font-size: 30px;
+                padding: 0px;
+            }
+
+            .LogoSecondHalf {
+                font-family: Impact, Arial;
+                display: inline;
+                color: rgb(124, 128, 131);
+                vertical-align: top;
+                text-align: left;
+                font-weight: bold;
+                font-size: 30px;
+                padding: 0px;
+            }
+
+            .red_dot {
+                display: inline;
+                z-index: 1;
+            }
+
+            .left_side {
+                background-color: rgb(32, 33, 36);
+                height: 100%;
+                width: 50%;
+                display: inline-block;
+            }
+
+            .right_side {
+                background-color: rgb(32, 33, 36);
+                height: 100%;
+                width: 50%;
+                display: inline-block;
+            }
+
+            @media only screen and (max-width: 600px) {
+                .right_side {
+                    width: 100%;
+                    height: 50%;
+                    display: block;
+                }
+                .left_side {
+                    width: 100%;
+                    height: 50%;
+                    display: block;
+                }
+                .greybox_left {
+                    margin-top: 0.6%;
+                    padding-bottom: 87.33333%;
+                    padding-right: 87.33333%;
+                    margin-left: 6.35%;
+                    display: inline-block;
+                }
+
+                .greybox_right {
+                    margin-top: 0.1%;
+                    padding-bottom: 87.33333%;
+                    padding-right: 87.33333%;
+                    margin-left: 6.35%;
+                    display: inline-block;
+                }
+            }
+            @media only screen and (max-width: 300px) {
+                .greybox_left {
+                    padding-bottom: 87.33333%;
+                    padding-right: 87.33333%;
+                    margin-left: 6.35%;
+                    display: inline-block;
+                    position: absolute;
+                    bottom: 48.1%;
+                }
+
+                .greybox_right {
+                    margin-top: 2%;
+                    padding-bottom: 87.33333%;
+                    padding-right: 87.33333%;
+                    margin-left: 6.35%;
+                    display: inline-block;
+                }
+            }
+            .questionmark {
+            }
+        </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,1&icon_names=menu" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=help" />
+        <link rel="stylesheet" href="Pseudo_square.css" />
+    </head>
+    <body style="background-color: rgb(32, 33, 36);">
+        <div class="version_name">L1400-K</div>
+        <div class="master_flexbox">
+            <div class="flex-container">
+                <div style="padding: 8px 0px 0px 20px;" text-align:center;>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg>
+                </div>
+
+                <!--<div>
+            <span class="LogoFirstHalf">BATTLE</span><span class="LogoSecondHalf">SHIP</span><div class= "red_dot"><svg height="35" width="10"><circle r="5" cx="5" cy="30" fill="red" /></svg></div>
+          </div>  -->
+
+                <div style="font-size: 2px; padding-top: 8px; min-width: 130px;">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84px" height="25px" viewBox="0 0 83 25" version="1.1">
+                        <g id="surface1">
+                            <path
+                                style="stroke: none; fill-rule: nonzero; fill: rgb(90, 137, 237); fill-opacity: 1;"
+                                d="M 0 0.164062 L 6.386719 0.164062 C 8.40625 0.164062 9.9375 0.320312 10.976562 0.636719 C 12.019531 0.953125 12.859375 1.589844 13.5 2.546875 C 14.132812 3.507812 14.453125 5.058594 14.453125 7.191406 C 14.453125 8.632812 14.226562 9.636719 13.78125 10.207031 C 13.328125 10.777344 12.433594 11.214844 11.105469 11.515625 C 12.589844 11.855469 13.59375 12.410156 14.121094 13.183594 C 14.648438 13.960938 14.914062 15.152344 14.914062 16.761719 L 14.914062 19.042969 C 14.914062 20.710938 14.722656 21.945312 14.339844 22.746094 C 13.957031 23.546875 13.351562 24.097656 12.519531 24.394531 C 11.691406 24.6875 9.984375 24.835938 7.410156 24.835938 L 0 24.835938 L 0 0.164062 M 6.40625 4.390625 L 6.40625 9.871094 C 6.679688 9.859375 6.894531 9.855469 7.042969 9.855469 C 7.675781 9.855469 8.074219 9.703125 8.246094 9.394531 C 8.417969 9.082031 8.507812 8.195312 8.507812 6.734375 C 8.507812 5.960938 8.4375 5.421875 8.296875 5.113281 C 8.148438 4.800781 7.960938 4.605469 7.734375 4.527344 C 7.507812 4.441406 7.066406 4.398438 6.40625 4.390625 M 6.40625 13.714844 L 6.40625 20.617188 C 7.308594 20.582031 7.882812 20.441406 8.132812 20.1875 C 8.382812 19.933594 8.507812 19.308594 8.507812 18.3125 L 8.507812 16.011719 C 8.507812 14.953125 8.394531 14.316406 8.171875 14.09375 C 7.945312 13.871094 7.359375 13.742188 6.40625 13.714844 Z M 28.269531 0.164062 L 31.941406 24.835938 L 25.378906 24.835938 L 25.058594 20.398438 L 22.761719 20.398438 L 22.378906 24.835938 L 15.75 24.835938 L 19 0.164062 L 28.269531 0.164062 M 24.878906 16.03125 C 24.554688 13.234375 24.230469 9.785156 23.898438 5.679688 C 23.253906 10.394531 22.847656 13.84375 22.683594 16.03125 Z M 44.21875 0.164062 L 44.21875 5.101562 L 40.410156 5.101562 L 40.410156 24.835938 L 34.007812 24.835938 L 34.007812 5.101562 L 30.21875 5.101562 L 30.21875 0.164062 Z M 58.574219 0.164062 L 58.574219 5.101562 L 54.773438 5.101562 L 54.773438 24.835938 L 48.367188 24.835938 L 48.367188 5.101562 L 44.578125 5.101562 L 44.578125 0.164062 Z M 66.449219 0.164062 L 66.449219 19.898438 L 70.34375 19.898438 L 70.34375 24.835938 L 60.039062 24.835938 L 60.039062 0.164062 Z M 71.894531 0.164062 L 82.578125 0.164062 L 82.578125 5.101562 L 78.292969 5.101562 L 78.292969 9.78125 L 82.300781 9.78125 L 82.300781 14.476562 L 78.292969 14.476562 L 78.292969 19.898438 L 83 19.898438 L 83 24.835938 L 71.894531 24.835938 Z M 71.894531 0.164062 "
+                            />
+                        </g>
+                    </svg>
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58px" height="25px" viewBox="0 0 58 25" version="1.1">
+                        <g id="surface1">
+                            <path
+                                style="stroke: none; fill-rule: nonzero; fill: rgb(124, 128, 132); fill-opacity: 1;"
+                                d="M 13.734375 7.769531 L 7.996094 7.769531 L 7.996094 5.992188 C 7.996094 5.160156 7.921875 4.632812 7.773438 4.398438 C 7.625 4.171875 7.378906 4.058594 7.039062 4.058594 C 6.667969 4.058594 6.386719 4.214844 6.195312 4.523438 C 6.003906 4.828125 5.910156 5.292969 5.910156 5.910156 C 5.910156 6.710938 6.015625 7.316406 6.234375 7.71875 C 6.4375 8.125 7.019531 8.613281 7.976562 9.1875 C 10.730469 10.839844 12.460938 12.195312 13.175781 13.25 C 13.894531 14.304688 14.253906 16.007812 14.253906 18.359375 C 14.253906 20.070312 14.054688 21.332031 13.65625 22.140625 C 13.261719 22.949219 12.492188 23.628906 11.359375 24.175781 C 10.21875 24.726562 8.894531 25 7.386719 25 C 5.734375 25 4.324219 24.683594 3.152344 24.054688 C 1.980469 23.417969 1.214844 22.613281 0.855469 21.636719 C 0.492188 20.660156 0.3125 19.269531 0.3125 17.472656 L 0.3125 15.902344 L 6.050781 15.902344 L 6.050781 18.820312 C 6.050781 19.71875 6.136719 20.296875 6.300781 20.558594 C 6.460938 20.8125 6.746094 20.941406 7.152344 20.941406 C 7.566406 20.941406 7.875 20.777344 8.074219 20.449219 C 8.273438 20.125 8.375 19.640625 8.375 18.996094 C 8.375 17.585938 8.183594 16.664062 7.804688 16.230469 C 7.410156 15.792969 6.445312 15.066406 4.910156 14.050781 C 3.375 13.023438 2.355469 12.277344 1.851562 11.8125 C 1.355469 11.347656 0.941406 10.703125 0.613281 9.886719 C 0.285156 9.066406 0.121094 8.019531 0.121094 6.742188 C 0.121094 4.90625 0.351562 3.5625 0.820312 2.714844 C 1.285156 1.863281 2.035156 1.199219 3.074219 0.722656 C 4.113281 0.242188 5.367188 0 6.835938 0 C 8.4375 0 9.808594 0.261719 10.9375 0.789062 C 12.070312 1.3125 12.820312 1.96875 13.1875 2.769531 C 13.550781 3.5625 13.734375 4.910156 13.734375 6.816406 Z M 30.40625 0.503906 L 30.40625 24.496094 L 24.222656 24.496094 L 24.222656 14.421875 L 22.375 14.421875 L 22.375 24.496094 L 16.191406 24.496094 L 16.191406 0.503906 L 22.375 0.503906 L 22.375 9.085938 L 24.222656 9.085938 L 24.222656 0.503906 Z M 39.074219 0.503906 L 39.074219 24.496094 L 32.890625 24.496094 L 32.890625 0.503906 Z M 41.554688 0.503906 L 47.78125 0.503906 C 49.464844 0.503906 50.761719 0.636719 51.667969 0.90625 C 52.574219 1.171875 53.253906 1.558594 53.707031 2.0625 C 54.164062 2.566406 54.472656 3.175781 54.632812 3.890625 C 54.796875 4.605469 54.878906 5.714844 54.878906 7.214844 L 54.878906 9.308594 C 54.878906 10.839844 54.722656 11.953125 54.402344 12.65625 C 54.089844 13.359375 53.515625 13.898438 52.683594 14.269531 C 51.84375 14.644531 50.75 14.832031 49.398438 14.832031 L 47.738281 14.832031 L 47.738281 24.496094 L 41.554688 24.496094 L 41.554688 0.503906 M 47.738281 4.613281 L 47.738281 10.710938 C 47.914062 10.726562 48.066406 10.730469 48.195312 10.730469 C 48.761719 10.730469 49.152344 10.589844 49.375 10.304688 C 49.59375 10.027344 49.707031 9.441406 49.707031 8.550781 L 49.707031 6.578125 C 49.707031 5.761719 49.578125 5.230469 49.328125 4.984375 C 49.070312 4.734375 48.539062 4.613281 47.738281 4.613281 Z M 47.738281 4.613281 "
+                            />
+                        </g>
+                        <circle r="3.5" cx="54" cy="21" fill="rgb(219,55,55)" />
+                    </svg>
+                </div>
+
+                <div>
+                    <span class="pseudo_span">qwertyuiopas</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -860 960 860" width="24px" fill="#e8eaed">
+                        <path
+                            d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                        />
+                    </svg>
+                    <span class="pseudo_span2">qw</span>
+                </div>
+            </div>
+            <!-- end of flex-container -->
+
+            <div class="content">
+                <div class="left_side">
+                    <div class="greybox_left">
+                        <div class="ps_001">
+                            <div class="actual_square_001"></div>
+                        </div>
+                        <div class="ps_002">
+                            <div class="actual_square_002"></div>
+                        </div>
+                        <div class="ps_003">
+                            <div class="actual_square_003"></div>
+                        </div>
+                        <div class="ps_004">
+                            <div class="actual_square_004"></div>
+                        </div>
+                        <div class="ps_005">
+                            <div class="actual_square_005"></div>
+                        </div>
+                        <div class="ps_006">
+                            <div class="actual_square_006"></div>
+                        </div>
+                        <div class="ps_007">
+                            <div class="actual_square_007"></div>
+                        </div>
+                        <div class="ps_008">
+                            <div class="actual_square_008"></div>
+                        </div>
+                        <div class="ps_009">
+                            <div class="actual_square_009"></div>
+                        </div>
+                        <div class="ps_010">
+                            <div class="actual_square_010"></div>
+                        </div>
+                        <div class="ps_011">
+                            <div class="actual_square_011"></div>
+                        </div>
+                        <div class="ps_012">
+                            <div class="actual_square_012"></div>
+                        </div>
+                        <div class="ps_013">
+                            <div class="actual_square_013"></div>
+                        </div>
+                        <div class="ps_014">
+                            <div class="actual_square_014"></div>
+                        </div>
+                        <div class="ps_015">
+                            <div class="actual_square_015"></div>
+                        </div>
+                        <div class="ps_016">
+                            <div class="actual_square_016"></div>
+                        </div>
+                        <div class="ps_017">
+                            <div class="actual_square_017"></div>
+                        </div>
+                        <div class="ps_018">
+                            <div class="actual_square_018"></div>
+                        </div>
+                        <div class="ps_019">
+                            <div class="actual_square_019"></div>
+                        </div>
+                        <div class="ps_020">
+                            <div class="actual_square_020"></div>
+                        </div>
+                        <div class="ps_021">
+                            <div class="actual_square_021"></div>
+                        </div>
+                        <div class="ps_022">
+                            <div class="actual_square_022"></div>
+                        </div>
+                        <div class="ps_023">
+                            <div class="actual_square_023"></div>
+                        </div>
+                        <div class="ps_024">
+                            <div class="actual_square_024"></div>
+                        </div>
+                        <div class="ps_025">
+                            <div class="actual_square_025"></div>
+                        </div>
+                        <div class="ps_026">
+                            <div class="actual_square_026"></div>
+                        </div>
+                        <div class="ps_027">
+                            <div class="actual_square_027"></div>
+                        </div>
+                        <div class="ps_028">
+                            <div class="actual_square_028"></div>
+                        </div>
+                        <div class="ps_029">
+                            <div class="actual_square_029"></div>
+                        </div>
+                        <div class="ps_030">
+                            <div class="actual_square_030"></div>
+                        </div>
+                        <div class="ps_031">
+                            <div class="actual_square_031"></div>
+                        </div>
+                        <div class="ps_032">
+                            <div class="actual_square_032"></div>
+                        </div>
+                        <div class="ps_033">
+                            <div class="actual_square_033"></div>
+                        </div>
+                        <div class="ps_034">
+                            <div class="actual_square_034"></div>
+                        </div>
+                        <div class="ps_035">
+                            <div class="actual_square_035"></div>
+                        </div>
+                        <div class="ps_036">
+                            <div class="actual_square_036"></div>
+                        </div>
+                        <div class="ps_037">
+                            <div class="actual_square_037"></div>
+                        </div>
+                        <div class="ps_038">
+                            <div class="actual_square_038"></div>
+                        </div>
+                        <div class="ps_039">
+                            <div class="actual_square_039"></div>
+                        </div>
+                        <div class="ps_040">
+                            <div class="actual_square_040"></div>
+                        </div>
+                        <div class="ps_041">
+                            <div class="actual_square_041"></div>
+                        </div>
+                        <div class="ps_042">
+                            <div class="actual_square_042"></div>
+                        </div>
+                        <div class="ps_043">
+                            <div class="actual_square_043"></div>
+                        </div>
+                        <div class="ps_044">
+                            <div class="actual_square_044"></div>
+                        </div>
+                        <div class="ps_045">
+                            <div class="actual_square_045"></div>
+                        </div>
+                        <div class="ps_046">
+                            <div class="actual_square_046"></div>
+                        </div>
+                        <div class="ps_047">
+                            <div class="actual_square_047"></div>
+                        </div>
+                        <div class="ps_048">
+                            <div class="actual_square_048"></div>
+                        </div>
+                        <div class="ps_049">
+                            <div class="actual_square_049"></div>
+                        </div>
+                        <div class="ps_050">
+                            <div class="actual_square_050"></div>
+                        </div>
+                        <div class="ps_051">
+                            <div class="actual_square_051"></div>
+                        </div>
+                        <div class="ps_052">
+                            <div class="actual_square_052"></div>
+                        </div>
+                        <div class="ps_053">
+                            <div class="actual_square_053"></div>
+                        </div>
+                        <div class="ps_054">
+                            <div class="actual_square_054"></div>
+                        </div>
+                        <div class="ps_055">
+                            <div class="actual_square_055"></div>
+                        </div>
+                        <div class="ps_056">
+                            <div class="actual_square_056"></div>
+                        </div>
+                        <div class="ps_057">
+                            <div class="actual_square_057"></div>
+                        </div>
+                        <div class="ps_058">
+                            <div class="actual_square_058"></div>
+                        </div>
+                        <div class="ps_059">
+                            <div class="actual_square_059"></div>
+                        </div>
+                        <div class="ps_060">
+                            <div class="actual_square_060"></div>
+                        </div>
+                        <div class="ps_061">
+                            <div class="actual_square_061"></div>
+                        </div>
+                        <div class="ps_062">
+                            <div class="actual_square_062"></div>
+                        </div>
+                        <div class="ps_063">
+                            <div class="actual_square_063"></div>
+                        </div>
+                        <div class="ps_064">
+                            <div class="actual_square_064"></div>
+                        </div>
+                        <div class="ps_065">
+                            <div class="actual_square_065"></div>
+                        </div>
+                        <div class="ps_066">
+                            <div class="actual_square_066"></div>
+                        </div>
+                        <div class="ps_067">
+                            <div class="actual_square_067"></div>
+                        </div>
+                        <div class="ps_068">
+                            <div class="actual_square_068"></div>
+                        </div>
+                        <div class="ps_069">
+                            <div class="actual_square_069"></div>
+                        </div>
+                        <div class="ps_070">
+                            <div class="actual_square_070"></div>
+                        </div>
+                        <div class="ps_071">
+                            <div class="actual_square_071"></div>
+                        </div>
+                        <div class="ps_072">
+                            <div class="actual_square_072"></div>
+                        </div>
+                        <div class="ps_073">
+                            <div class="actual_square_073"></div>
+                        </div>
+                        <div class="ps_074">
+                            <div class="actual_square_074"></div>
+                        </div>
+                        <div class="ps_075">
+                            <div class="actual_square_075"></div>
+                        </div>
+                        <div class="ps_076">
+                            <div class="actual_square_076"></div>
+                        </div>
+                        <div class="ps_077">
+                            <div class="actual_square_077"></div>
+                        </div>
+                        <div class="ps_078">
+                            <div class="actual_square_078"></div>
+                        </div>
+                        <div class="ps_079">
+                            <div class="actual_square_079"></div>
+                        </div>
+                        <div class="ps_080">
+                            <div class="actual_square_080"></div>
+                        </div>
+                        <div class="ps_081">
+                            <div class="actual_square_081"></div>
+                        </div>
+                        <div class="ps_082">
+                            <div class="actual_square_082"></div>
+                        </div>
+                        <div class="ps_083">
+                            <div class="actual_square_083"></div>
+                        </div>
+                        <div class="ps_084">
+                            <div class="actual_square_084"></div>
+                        </div>
+                        <div class="ps_085">
+                            <div class="actual_square_085"></div>
+                        </div>
+                        <div class="ps_086">
+                            <div class="actual_square_086"></div>
+                        </div>
+                        <div class="ps_087">
+                            <div class="actual_square_087"></div>
+                        </div>
+                        <div class="ps_088">
+                            <div class="actual_square_088"></div>
+                        </div>
+                        <div class="ps_089">
+                            <div class="actual_square_089"></div>
+                        </div>
+                        <div class="ps_090">
+                            <div class="actual_square_090"></div>
+                        </div>
+                        <div class="ps_091">
+                            <div class="actual_square_091"></div>
+                        </div>
+                        <div class="ps_092">
+                            <div class="actual_square_092"></div>
+                        </div>
+                        <div class="ps_093">
+                            <div class="actual_square_093"></div>
+                        </div>
+                        <div class="ps_094">
+                            <div class="actual_square_094"></div>
+                        </div>
+                        <div class="ps_095">
+                            <div class="actual_square_095"></div>
+                        </div>
+                        <div class="ps_096">
+                            <div class="actual_square_096"></div>
+                        </div>
+                        <div class="ps_097">
+                            <div class="actual_square_097"></div>
+                        </div>
+                        <div class="ps_098">
+                            <div class="actual_square_098"></div>
+                        </div>
+                        <div class="ps_099">
+                            <div class="actual_square_099"></div>
+                        </div>
+                        <div class="ps_100">
+                            <div class="actual_square_100"></div>
+                        </div>
+                        <div class="vertical_line1"></div>
+                        <div class="vertical_line2"></div>
+                        <div class="vertical_line3"></div>
+                        <div class="vertical_line4"></div>
+                        <div class="vertical_line5"></div>
+                        <div class="vertical_line6"></div>
+                        <div class="vertical_line7"></div>
+                        <div class="vertical_line8"></div>
+                        <div class="vertical_line9"></div>
+                        <div class="horizontal_line1"></div>
+                        <div class="horizontal_line2"></div>
+                        <div class="horizontal_line3"></div>
+                        <div class="horizontal_line4"></div>
+                        <div class="horizontal_line5"></div>
+                        <div class="horizontal_line6"></div>
+                        <div class="horizontal_line7"></div>
+                        <div class="horizontal_line8"></div>
+                        <div class="horizontal_line9"></div>
+                    </div>
+                    <!-- end of greybox_left -->
+                </div>
+                <div class="right_side">
+                    <div class="greybox_right">
+                        <div class="vertical_line1"></div>
+                        <div class="vertical_line2"></div>
+                        <div class="vertical_line3"></div>
+                        <div class="vertical_line4"></div>
+                        <div class="vertical_line5"></div>
+                        <div class="vertical_line6"></div>
+                        <div class="vertical_line7"></div>
+                        <div class="vertical_line8"></div>
+                        <div class="vertical_line9"></div>
+                        <div class="horizontal_line1"></div>
+                        <div class="horizontal_line2"></div>
+                        <div class="horizontal_line3"></div>
+                        <div class="horizontal_line4"></div>
+                        <div class="horizontal_line5"></div>
+                        <div class="horizontal_line6"></div>
+                        <div class="horizontal_line7"></div>
+                        <div class="horizontal_line8"></div>
+                        <div class="horizontal_line9"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of content -->
+        </div>
+        <!-- end of master_flexbox -->
+        <script>
+            function toggleZoomScreen() {
+                document.body.style.zoom = "80%";
+            }
+        </script>
+    </body>
+</html>
