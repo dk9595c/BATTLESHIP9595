@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-        <meta name="theme-color" content="#202124">
         <title>BattleShip</title>
         <style>
             html,
@@ -38,6 +37,22 @@
                 max-height: 40px;
                 min-width: 130px;
             }
+            
+            .test_screen_resolution{
+                position: absolute;
+                border-radius : 10px;
+                background-color: rgb(94,94,94);
+                z-index:1;
+                width: 50%;
+                height: 30%;
+                margin-top: 35%;
+                margin-left: 25%;
+                color: white;
+                font-size:2vw;
+                text-align:center;
+                padding-top:10%;
+            }
+            
             .vertical_line1,
             .vertical_line2,
             .vertical_line3,
@@ -264,18 +279,21 @@
                 }
                 .greybox_left {
                     margin-top: 0.6%;
-                    padding-bottom: 87.33333%;
-                    padding-right: 87.33333%;
-                    margin-left: 6.35%;
+                    padding-bottom: 80.33333%;
+                    padding-right: 80.33333%;
+                    margin-left: 9.83333335%;
                     display: inline-block;
                 }
 
                 .greybox_right {
-                    margin-top: 0.1%;
-                    padding-bottom: 87.33333%;
-                    padding-right: 87.33333%;
-                    margin-left: 6.35%;
+                    margin-top: 1.5%;
+                    padding-bottom: 80.33333%;
+                    padding-right: 80.33333%;
+                    margin-left: 9.83333335%;
                     display: inline-block;
+                }
+                .test_screen_resolution{
+                    font-size:5vw;
                 }
             }
             @media only screen and (max-width: 300px) {
@@ -347,10 +365,7 @@
                     </svg>
                     <span class="pseudo_span2">qw</span>
                 </div>
-            </div>
-            <!-- end of flex-container -->
-
-            <div class="content">
+            </div><div class="content">
                 <div class="left_side">
                     <div class="greybox_left">
                         <div class="ps_001">
@@ -676,6 +691,7 @@
                 </div>
                 <div class="right_side">
                     <div class="greybox_right">
+                        <p id="demo" class="test_screen_resolution"></p>
                         <div class="vertical_line1"></div>
                         <div class="vertical_line2"></div>
                         <div class="vertical_line3"></div>
@@ -700,11 +716,17 @@
             <!-- end of content -->
         </div>
         <!-- end of master_flexbox -->
-        <script>
-            function toggleZoomScreen() {
-                document.body.style.zoom = "80%";
-            }
-        </script>
     </body>
-</html>
+    <script>
+        function toggleZoomScreen() {
+            document.body.style.zoom = "100%";
+        }
+        
+        var w = window.innerWidth;
+        var h = window.innerHeight;
 
+        var x = document.getElementById("demo");
+        x.innerHTML = w + " x " + h;
+        
+    </script>
+</html>
