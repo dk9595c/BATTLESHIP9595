@@ -10,6 +10,7 @@
          height: 100%;
          margin: 0;
          font-size: 0px;
+         overscroll-behaviour : none;
          }
          :root {
          --widthD: min((100vh - 60px)/2, 100vw);
@@ -375,7 +376,7 @@
          <div class="content">
             <div class="left_side">
                <div class="greybox_left" id="left_greybox">
-                  <div class="ps_001" id="pseudo_square_001" onpointerdown="button_in_handler(this, event)">
+                  <div class="ps_001" id="pseudo_square_001" ontouchstart="button_in_handler(this, event)">
                      <div class="actual_square_001" id="actual_sq_001"></div>
                   </div>
                   <div class="ps_002" id="pseudo_square_002" onpointerdown="button_in_handler(this, event)">
