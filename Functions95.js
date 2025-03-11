@@ -30,7 +30,9 @@ function button_in_handler(a, event) {
     default_width = document.getElementById(actual_id).offsetWidth;
     //console.log(default_width);
     document.addEventListener('pointermove', mouseMove);
+    document.addEventListener('touchstart', mouseMove);
     document.addEventListener('pointerup', mouseUp);
+    document.addEventListener('touchstop', mouseUp);
     parent_width = document.getElementById("left_greybox").offsetWidth;
     parent_height = document.getElementById("left_greybox").offsetHeight;
 
@@ -88,6 +90,8 @@ function button_in_handler(a, event) {
         hide[parseInt(actual_id.slice(10,))] = 1;
         document.removeEventListener('pointermove', mouseMove);
         document.removeEventListener('pointerup', mouseUp);
+        document.removeEventListener('touchstart', mouseMove);
+        document.removeEventListener('touchstop', mouseUp);
         show_squares();
         
         
