@@ -3,7 +3,7 @@
      height: 10%;
      position: absolute;
      display: inline;
-     z-index: 0;
+     z-index: 2;
      opacity : 1;
 }
  .actual_square_001, .actual_square_002, .actual_square_003, .actual_square_004, .actual_square_005, .actual_square_006, .actual_square_007, .actual_square_008, .actual_square_009, .actual_square_010, .actual_square_011, .actual_square_012, .actual_square_013, .actual_square_014, .actual_square_015, .actual_square_016, .actual_square_017, .actual_square_018, .actual_square_019, .actual_square_020, .actual_square_021, .actual_square_022, .actual_square_023, .actual_square_024, .actual_square_025, .actual_square_026, .actual_square_027, .actual_square_028, .actual_square_029, .actual_square_030, .actual_square_031, .actual_square_032, .actual_square_033, .actual_square_034, .actual_square_035, .actual_square_036, .actual_square_037, .actual_square_038, .actual_square_039, .actual_square_040, .actual_square_041, .actual_square_042, .actual_square_043, .actual_square_044, .actual_square_045, .actual_square_046, .actual_square_047, .actual_square_048, .actual_square_049, .actual_square_050, .actual_square_051, .actual_square_052, .actual_square_053, .actual_square_054, .actual_square_055, .actual_square_056, .actual_square_057, .actual_square_058, .actual_square_059, .actual_square_060, .actual_square_061, .actual_square_062, .actual_square_063, .actual_square_064, .actual_square_065, .actual_square_066, .actual_square_067, .actual_square_068, .actual_square_069, .actual_square_070, .actual_square_071, .actual_square_072, .actual_square_073, .actual_square_074, .actual_square_075, .actual_square_076, .actual_square_077, .actual_square_078, .actual_square_079, .actual_square_080, .actual_square_081, .actual_square_082, .actual_square_083, .actual_square_084, .actual_square_085, .actual_square_086, .actual_square_087, .actual_square_088, .actual_square_089, .actual_square_090, .actual_square_091, .actual_square_092, .actual_square_093, .actual_square_094, .actual_square_095, .actual_square_096, .actual_square_097, .actual_square_098, .actual_square_099, .actual_square_100 {
@@ -17,6 +17,7 @@
      margin-left: 12.5%;
      margin-top: 12.5%;
      opacity: 0;
+     transition: width 1s, height 0.1s, margin-left 0.1s, margin-top 0.1s;
 }
  .ps_001{
      border-radius: 16.66667% 0% 0% 0%;
@@ -423,13 +424,13 @@
 /* ------------------- 100 ------------------------ */
 /* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH HOVERING HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
  .ps_001:hover .actual_square_001{
-    opacity:1;
+     opacity:1;
 }
  .ps_002:hover .actual_square_002{
-    opacity:1;
+     opacity:1;
 }
  .ps_003:hover .actual_square_003{
-    opacity:1;
+     opacity:1;
 }
  .ps_004:hover .actual_square_004 {
      opacity: 1;
@@ -721,5 +722,606 @@
 }
  .ps_100:hover .actual_square_100 {
      opacity: 1;
+}
+/* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH CLICK HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+ .ps_001:active .actual_square_001{
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_002:active .actual_square_002{
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_003:active .actual_square_003{
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_004:active .actual_square_004 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_005:active .actual_square_005 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_006:active .actual_square_006 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_007:active .actual_square_007 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_008:active .actual_square_008 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_009:active .actual_square_009 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_010:active .actual_square_010 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_011:active .actual_square_011 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_012:active .actual_square_012 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_013:active .actual_square_013 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_014:active .actual_square_014 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_015:active .actual_square_015 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_016:active .actual_square_016 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_017:active .actual_square_017 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_018:active .actual_square_018 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_019:active .actual_square_019 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_020:active .actual_square_020 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_021:active .actual_square_021 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_022:active .actual_square_022 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_023:active .actual_square_023 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_024:active .actual_square_024 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_025:active .actual_square_025 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_026:active .actual_square_026 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_027:active .actual_square_027 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_028:active .actual_square_028 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_029:active .actual_square_029 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_030:active .actual_square_030 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_031:active .actual_square_031 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_032:active .actual_square_032 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_033:active .actual_square_033 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_034:active .actual_square_034 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_035:active .actual_square_035 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_036:active .actual_square_036 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_037:active .actual_square_037 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_038:active .actual_square_038 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_039:active .actual_square_039 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_040:active .actual_square_040 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_041:active .actual_square_041 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_042:active .actual_square_042 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_043:active .actual_square_043 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_044:active .actual_square_044 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_045:active .actual_square_045 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_046:active .actual_square_046 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_047:active .actual_square_047 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_048:active .actual_square_048 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_049:active .actual_square_049 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_050:active .actual_square_050 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_051:active .actual_square_051 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_052:active .actual_square_052 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_053:active .actual_square_053 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_054:active .actual_square_054 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_055:active .actual_square_055 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_056:active .actual_square_056 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_057:active .actual_square_057 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_058:active .actual_square_058 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_059:active .actual_square_059 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_060:active .actual_square_060 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_061:active .actual_square_061 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_062:active .actual_square_062 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_063:active .actual_square_063 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_064:active .actual_square_064 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_065:active .actual_square_065 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_066:active .actual_square_066 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_067:active .actual_square_067 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_068:active .actual_square_068 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_069:active .actual_square_069 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_070:active .actual_square_070 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_071:active .actual_square_071 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_072:active .actual_square_072 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_073:active .actual_square_073 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_074:active .actual_square_074 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_075:active .actual_square_075 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_076:active .actual_square_076 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_077:active .actual_square_077 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_078:active .actual_square_078 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_079:active .actual_square_079 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_080:active .actual_square_080 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_081:active .actual_square_081 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_082:active .actual_square_082 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_083:active .actual_square_083 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_084:active .actual_square_084 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_085:active .actual_square_085 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_086:active .actual_square_086 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_087:active .actual_square_087 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_088:active .actual_square_088 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_089:active .actual_square_089 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_090:active .actual_square_090 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_091:active .actual_square_091 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_092:active .actual_square_092 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_093:active .actual_square_093 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_094:active .actual_square_094 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_095:active .actual_square_095 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_096:active .actual_square_096 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_097:active .actual_square_097 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_098:active .actual_square_098 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_099:active .actual_square_099 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
+}
+ .ps_100:active .actual_square_100 {
+     width:50%;
+     height:50%;
+     margin-left:25%;
+     margin-top:25%;
 }
  
