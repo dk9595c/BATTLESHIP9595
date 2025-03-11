@@ -83,7 +83,7 @@ function button_in_handler(a, event) {
             let bordRad = document.getElementById(actual_id).offsetWidth * 0.1666667;
             document.getElementById(actual_id).style.borderRadius = bordRad+"px"+" "+bordRad+"px"+" "+bordRad+"px"+" "+bordRad+"px";
         }
-        let bordRad = document.getElementById(actual_id).style.width * 0.1666667;
+        
       
         hide[parseInt(actual_id.slice(10,))] = 1;
         document.removeEventListener('mousemove', mouseMove);
