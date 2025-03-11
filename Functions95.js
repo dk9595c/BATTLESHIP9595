@@ -72,14 +72,15 @@ function button_in_handler(a, event) {
             compensated_height = 75;
             document.getElementById(actual_id).style.height = "" + compensated_height + "%";
             //document.getElementById(actual_id).style.height = "100vh";
-            let bordRad = document.getElementById(actual_id).style.width * 0.1666667;
+            let bordRad = document.getElementById(actual_id).offsetHeight * 0.16666667;
             document.getElementById(actual_id).style.borderRadius = bordRad+"px"+" "+bordRad+"px"+" "+bordRad+"px"+" "+bordRad+"px";
+            console.log(document.getElementById(actual_id).offsetHeight);
         }
 
         if (flagX == 0 && flagY == 1) {
             compensated_width = 75;
             document.getElementById(actual_id).style.width = "" + compensated_width + "%";
-            let bordRad = document.getElementById(actual_id).style.height * 0.1666667;
+            let bordRad = document.getElementById(actual_id).offsetWidth * 0.1666667;
             document.getElementById(actual_id).style.borderRadius = bordRad+"px"+" "+bordRad+"px"+" "+bordRad+"px"+" "+bordRad+"px";
         }
         let bordRad = document.getElementById(actual_id).style.width * 0.1666667;
