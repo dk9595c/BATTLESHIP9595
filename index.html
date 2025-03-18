@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="#202124">
       <title>BattleShip</title>
-      <script src="Functions95.js"></script>
+      <script src="ShipPlace.js"></script>
       <style>
          html,
          body {
@@ -13,12 +13,11 @@
          font-size: 0px;
          overscroll-behaviour : none;
          }
-         :root {
-         --widthD: min((100vh - 60px)/2, 100vw);
-         --heightD: min((100vh - 60px)/2, 100vw);
-         --widthX: 2px;
-         --heightX: 2px;
-         }
+         
+          img {
+              max-width: 100%;
+              max-height: 100%;
+          }
          .master_flexbox {
          display: flex;
          flex-flow: column;
@@ -44,21 +43,68 @@
          max-height: 40px;
          min-width: 130px;
          }
+          .questionmark {
+              bottom : 0;
+              
+          }
          .test_screen_resolution{
+         font-family:poppins, Arial;
          position: absolute;
          border-radius : 10px;
-         background-color: rgb(94,94,94);
-         z-index:1;
-         width: 50%;
-         height: 30%;
-         margin-top: 35%;
-         margin-left: 25%;
+        /* background-color: rgb(94,94,94);*/
+         z-index:2;
+         width: 55.2155772%;
+         height: 10.4311544%;
+         margin-top: 3%;
+         margin-left: 22.3922114%;
          color: white;
-         font-size: min(2vw, 3vh);
+         font-size: min(2.5vw, 3vh);
+         margin-bottom:0px;
          text-align:center;
-         padding-top:10%;
+         top:0;
+         padding-bottom:1;
          display : inline;
          }
+          
+         .rotate_option{
+          display:inline;
+          position:absolute;
+          margin-left:73.1571627%;
+          margin-top:25.0347705%;
+          width:14.6036161%;
+          height:14.6036161%;
+          z-index:2;
+         }
+          
+         .rotate_text{
+             display:inline;
+             position:absolute;
+             margin-left:74.8261474%;
+             margin-top:42.2809458%;
+             width:11.2656467%;
+             height:5.42420028%;
+             z-index:2;
+         }
+         
+          .rotate_options_wrapper{
+             position:absolute;
+             display:inline;
+             font-size:0px;
+             border-radius: 8.05369128% / 6.6666667%;
+             margin-left:70.0973574%;
+             margin-top:22.5312935%;
+             width:20.7232267%;
+             height:25.0347705%;
+             background-color: rgb(66,66,66);
+             z-index:2;
+             opacity:0;
+          }
+          
+          .place_ship_heading{
+             
+              
+          }
+          
          .small_logo{
          display: none;
          }
@@ -167,6 +213,7 @@
          border-radius: 1.66666667%;
          background-color: rgb(49, 49, 52);
          font-size: 0px;
+         overflow:hidden;
          }
          .greybox_right {
          padding-bottom: min((100vh - 130px), 41.65vw);
@@ -294,10 +341,7 @@
          margin-bottom : calc(50vh - var(--widthD));
          top: 1%;
          }
-         .test_screen_resolution{
-         font-size: 2vw;
-         display:none;
-         }
+        
          }
          @media only screen and (max-width: 320px) {
          .small_logo{
@@ -312,13 +356,16 @@
          .version_name {
          display:none;
          }
-         .questionmark {
-         }
+         
+       
       </style>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,1&icon_names=menu" />
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=help" />
       <link rel="stylesheet" href="Pseudo_square.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
       <link rel="icon" href="favicon.ico" type="image/x-icon">
    </head>
    <body style="background-color: rgb(32, 33, 36);">
@@ -341,7 +388,7 @@
                         d="M 0 0.164062 L 6.386719 0.164062 C 8.40625 0.164062 9.9375 0.320312 10.976562 0.636719 C 12.019531 0.953125 12.859375 1.589844 13.5 2.546875 C 14.132812 3.507812 14.453125 5.058594 14.453125 7.191406 C 14.453125 8.632812 14.226562 9.636719 13.78125 10.207031 C 13.328125 10.777344 12.433594 11.214844 11.105469 11.515625 C 12.589844 11.855469 13.59375 12.410156 14.121094 13.183594 C 14.648438 13.960938 14.914062 15.152344 14.914062 16.761719 L 14.914062 19.042969 C 14.914062 20.710938 14.722656 21.945312 14.339844 22.746094 C 13.957031 23.546875 13.351562 24.097656 12.519531 24.394531 C 11.691406 24.6875 9.984375 24.835938 7.410156 24.835938 L 0 24.835938 L 0 0.164062 M 6.40625 4.390625 L 6.40625 9.871094 C 6.679688 9.859375 6.894531 9.855469 7.042969 9.855469 C 7.675781 9.855469 8.074219 9.703125 8.246094 9.394531 C 8.417969 9.082031 8.507812 8.195312 8.507812 6.734375 C 8.507812 5.960938 8.4375 5.421875 8.296875 5.113281 C 8.148438 4.800781 7.960938 4.605469 7.734375 4.527344 C 7.507812 4.441406 7.066406 4.398438 6.40625 4.390625 M 6.40625 13.714844 L 6.40625 20.617188 C 7.308594 20.582031 7.882812 20.441406 8.132812 20.1875 C 8.382812 19.933594 8.507812 19.308594 8.507812 18.3125 L 8.507812 16.011719 C 8.507812 14.953125 8.394531 14.316406 8.171875 14.09375 C 7.945312 13.871094 7.359375 13.742188 6.40625 13.714844"
                         />
                   </g>
-                  <circle r="3.5" cx="20" cy="21" fill="rgb(219,55,55)" />
+                  <circle r="3.5" cx="20" cy="21" fill="rgb(204,7,30)" />
                </svg>
             </div>
             <div class="big_logo">
@@ -362,10 +409,10 @@
                         d="M 13.734375 7.769531 L 7.996094 7.769531 L 7.996094 5.992188 C 7.996094 5.160156 7.921875 4.632812 7.773438 4.398438 C 7.625 4.171875 7.378906 4.058594 7.039062 4.058594 C 6.667969 4.058594 6.386719 4.214844 6.195312 4.523438 C 6.003906 4.828125 5.910156 5.292969 5.910156 5.910156 C 5.910156 6.710938 6.015625 7.316406 6.234375 7.71875 C 6.4375 8.125 7.019531 8.613281 7.976562 9.1875 C 10.730469 10.839844 12.460938 12.195312 13.175781 13.25 C 13.894531 14.304688 14.253906 16.007812 14.253906 18.359375 C 14.253906 20.070312 14.054688 21.332031 13.65625 22.140625 C 13.261719 22.949219 12.492188 23.628906 11.359375 24.175781 C 10.21875 24.726562 8.894531 25 7.386719 25 C 5.734375 25 4.324219 24.683594 3.152344 24.054688 C 1.980469 23.417969 1.214844 22.613281 0.855469 21.636719 C 0.492188 20.660156 0.3125 19.269531 0.3125 17.472656 L 0.3125 15.902344 L 6.050781 15.902344 L 6.050781 18.820312 C 6.050781 19.71875 6.136719 20.296875 6.300781 20.558594 C 6.460938 20.8125 6.746094 20.941406 7.152344 20.941406 C 7.566406 20.941406 7.875 20.777344 8.074219 20.449219 C 8.273438 20.125 8.375 19.640625 8.375 18.996094 C 8.375 17.585938 8.183594 16.664062 7.804688 16.230469 C 7.410156 15.792969 6.445312 15.066406 4.910156 14.050781 C 3.375 13.023438 2.355469 12.277344 1.851562 11.8125 C 1.355469 11.347656 0.941406 10.703125 0.613281 9.886719 C 0.285156 9.066406 0.121094 8.019531 0.121094 6.742188 C 0.121094 4.90625 0.351562 3.5625 0.820312 2.714844 C 1.285156 1.863281 2.035156 1.199219 3.074219 0.722656 C 4.113281 0.242188 5.367188 0 6.835938 0 C 8.4375 0 9.808594 0.261719 10.9375 0.789062 C 12.070312 1.3125 12.820312 1.96875 13.1875 2.769531 C 13.550781 3.5625 13.734375 4.910156 13.734375 6.816406 Z M 30.40625 0.503906 L 30.40625 24.496094 L 24.222656 24.496094 L 24.222656 14.421875 L 22.375 14.421875 L 22.375 24.496094 L 16.191406 24.496094 L 16.191406 0.503906 L 22.375 0.503906 L 22.375 9.085938 L 24.222656 9.085938 L 24.222656 0.503906 Z M 39.074219 0.503906 L 39.074219 24.496094 L 32.890625 24.496094 L 32.890625 0.503906 Z M 41.554688 0.503906 L 47.78125 0.503906 C 49.464844 0.503906 50.761719 0.636719 51.667969 0.90625 C 52.574219 1.171875 53.253906 1.558594 53.707031 2.0625 C 54.164062 2.566406 54.472656 3.175781 54.632812 3.890625 C 54.796875 4.605469 54.878906 5.714844 54.878906 7.214844 L 54.878906 9.308594 C 54.878906 10.839844 54.722656 11.953125 54.402344 12.65625 C 54.089844 13.359375 53.515625 13.898438 52.683594 14.269531 C 51.84375 14.644531 50.75 14.832031 49.398438 14.832031 L 47.738281 14.832031 L 47.738281 24.496094 L 41.554688 24.496094 L 41.554688 0.503906 M 47.738281 4.613281 L 47.738281 10.710938 C 47.914062 10.726562 48.066406 10.730469 48.195312 10.730469 C 48.761719 10.730469 49.152344 10.589844 49.375 10.304688 C 49.59375 10.027344 49.707031 9.441406 49.707031 8.550781 L 49.707031 6.578125 C 49.707031 5.761719 49.578125 5.230469 49.328125 4.984375 C 49.070312 4.734375 48.539062 4.613281 47.738281 4.613281 Z M 47.738281 4.613281 "
                         />
                   </g>
-                  <circle r="3.5" cx="54" cy="21" fill="rgb(219,55,55)" />
+                  <circle r="3.5" cx="54" cy="21" fill="rgb(204,7,30)" />
                </svg>
             </div>
-            <div>
+            <div class = "questionmark">
                <span class="pseudo_span">qwertyuiopas</span>
                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -860 960 860" width="24px" fill="#e8eaed">
                   <path
@@ -378,304 +425,304 @@
          <div class="content">
             <div class="left_side">
                <div class="greybox_left" id="left_greybox">
-                  <div class="ps_001" id="pseudo_square_001" ontouchstart="button_in_handler(this, event)">
-                     <div class="actual_square_001" id="actual_sq_001"></div>
+                  <div class="ps_001" id="pseudo_square_1" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_001" id="actual_sq_1"></div>
                   </div>
-                  <div class="ps_002" id="pseudo_square_002" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_002" id="actual_sq_002"></div>
+                  <div class="ps_002" id="pseudo_square_2" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_002" id="actual_sq_2"></div>
                   </div>
-                  <div class="ps_003" id="pseudo_square_003" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_003" id="actual_sq_003"></div>
+                  <div class="ps_003" id="pseudo_square_3" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_003" id="actual_sq_3"></div>
                   </div>
-                  <div class="ps_004" id="pseudo_square_004" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_004" id="actual_sq_004"></div>
+                  <div class="ps_004" id="pseudo_square_4" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_004" id="actual_sq_4"></div>
                   </div>
-                  <div class="ps_005" id="pseudo_square_005" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_005" id="actual_sq_005"></div>
+                  <div class="ps_005" id="pseudo_square_5" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_005" id="actual_sq_5"></div>
                   </div>
-                  <div class="ps_006" id="pseudo_square_006" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_006" id="actual_sq_006"></div>
+                  <div class="ps_006" id="pseudo_square_6" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_006" id="actual_sq_6"></div>
                   </div>
-                  <div class="ps_007" id="pseudo_square_007" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_007" id="actual_sq_007"></div>
+                  <div class="ps_007" id="pseudo_square_7" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_007" id="actual_sq_7"></div>
                   </div>
-                  <div class="ps_008" id="pseudo_square_008" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_008" id="actual_sq_008"></div>
+                  <div class="ps_008" id="pseudo_square_8" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_008" id="actual_sq_8"></div>
                   </div>
-                  <div class="ps_009" id="pseudo_square_009" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_009" id="actual_sq_009"></div>
+                  <div class="ps_009" id="pseudo_square_9" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_009" id="actual_sq_9"></div>
                   </div>
-                  <div class="ps_010" id="pseudo_square_010" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_010" id="actual_sq_010"></div>
+                  <div class="ps_010" id="pseudo_square_10" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_010" id="actual_sq_10"></div>
                   </div>
-                  <div class="ps_011" id="pseudo_square_011" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_011" id="actual_sq_011"></div>
+                  <div class="ps_011" id="pseudo_square_11" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_011" id="actual_sq_11"></div>
                   </div>
-                  <div class="ps_012" id="pseudo_square_012" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_012" id="actual_sq_012"></div>
+                  <div class="ps_012" id="pseudo_square_12" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_012" id="actual_sq_12"></div>
                   </div>
-                  <div class="ps_013" id="pseudo_square_013" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_013" id="actual_sq_013"></div>
+                  <div class="ps_013" id="pseudo_square_13" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_013" id="actual_sq_13"></div>
                   </div>
-                  <div class="ps_014" id="pseudo_square_014" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_014" id="actual_sq_014"></div>
+                  <div class="ps_014" id="pseudo_square_14" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_014" id="actual_sq_14"></div>
                   </div>
-                  <div class="ps_015" id="pseudo_square_015" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_015" id="actual_sq_015"></div>
+                  <div class="ps_015" id="pseudo_square_15" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_015" id="actual_sq_15"></div>
                   </div>
-                  <div class="ps_016" id="pseudo_square_016" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_016" id="actual_sq_016"></div>
+                  <div class="ps_016" id="pseudo_square_16" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_016" id="actual_sq_16"></div>
                   </div>
-                  <div class="ps_017" id="pseudo_square_017" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_017" id="actual_sq_017"></div>
+                  <div class="ps_017" id="pseudo_square_17" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_017" id="actual_sq_17"></div>
                   </div>
-                  <div class="ps_018" id="pseudo_square_018" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_018" id="actual_sq_018"></div>
+                  <div class="ps_018" id="pseudo_square_18" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_018" id="actual_sq_18"></div>
                   </div>
-                  <div class="ps_019" id="pseudo_square_019" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_019" id="actual_sq_019"></div>
+                  <div class="ps_019" id="pseudo_square_19" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_019" id="actual_sq_19"></div>
                   </div>
-                  <div class="ps_020" id="pseudo_square_020" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_020" id="actual_sq_020"></div>
+                  <div class="ps_020" id="pseudo_square_20" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_020" id="actual_sq_20"></div>
                   </div>
-                  <div class="ps_021" id="pseudo_square_021" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_021" id="actual_sq_021"></div>
+                  <div class="ps_021" id="pseudo_square_21" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_021" id="actual_sq_21"></div>
                   </div>
-                  <div class="ps_022" id="pseudo_square_022" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_022" id="actual_sq_022"></div>
+                  <div class="ps_022" id="pseudo_square_22" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_022" id="actual_sq_22"></div>
                   </div>
-                  <div class="ps_023" id="pseudo_square_023" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_023" id="actual_sq_023"></div>
+                  <div class="ps_023" id="pseudo_square_23" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_023" id="actual_sq_23"></div>
                   </div>
-                  <div class="ps_024" id="pseudo_square_024" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_024" id="actual_sq_024"></div>
+                  <div class="ps_024" id="pseudo_square_24" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_024" id="actual_sq_24"></div>
                   </div>
-                  <div class="ps_025" id="pseudo_square_025" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_025" id="actual_sq_025"></div>
+                  <div class="ps_025" id="pseudo_square_25" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_025" id="actual_sq_25"></div>
                   </div>
-                  <div class="ps_026" id="pseudo_square_026" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_026" id="actual_sq_026"></div>
+                  <div class="ps_026" id="pseudo_square_26" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_026" id="actual_sq_26"></div>
                   </div>
-                  <div class="ps_027" id="pseudo_square_027" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_027" id="actual_sq_027"></div>
+                  <div class="ps_027" id="pseudo_square_27" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_027" id="actual_sq_27"></div>
                   </div>
-                  <div class="ps_028" id="pseudo_square_028" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_028" id="actual_sq_028"></div>
+                  <div class="ps_028" id="pseudo_square_28" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_028" id="actual_sq_28"></div>
                   </div>
-                  <div class="ps_029" id="pseudo_square_029" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_029" id="actual_sq_029"></div>
+                  <div class="ps_029" id="pseudo_square_29" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_029" id="actual_sq_29"></div>
                   </div>
-                  <div class="ps_030" id="pseudo_square_030" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_030" id="actual_sq_030"></div>
+                  <div class="ps_030" id="pseudo_square_30" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_030" id="actual_sq_30"></div>
                   </div>
-                  <div class="ps_031" id="pseudo_square_031" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_031" id="actual_sq_031"></div>
+                  <div class="ps_031" id="pseudo_square_31" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_031" id="actual_sq_31"></div>
                   </div>
-                  <div class="ps_032" id="pseudo_square_032" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_032" id="actual_sq_032"></div>
+                  <div class="ps_032" id="pseudo_square_32" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_032" id="actual_sq_32"></div>
                   </div>
-                  <div class="ps_033" id="pseudo_square_033" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_033" id="actual_sq_033"></div>
+                  <div class="ps_033" id="pseudo_square_33" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_033" id="actual_sq_33"></div>
                   </div>
-                  <div class="ps_034" id="pseudo_square_034" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_034" id="actual_sq_034"></div>
+                  <div class="ps_034" id="pseudo_square_34" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_034" id="actual_sq_34"></div>
                   </div>
-                  <div class="ps_035" id="pseudo_square_035" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_035" id="actual_sq_035"></div>
+                  <div class="ps_035" id="pseudo_square_35" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_035" id="actual_sq_35"></div>
                   </div>
-                  <div class="ps_036" id="pseudo_square_036" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_036" id="actual_sq_036"></div>
+                  <div class="ps_036" id="pseudo_square_36" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_036" id="actual_sq_36"></div>
                   </div>
-                  <div class="ps_037" id="pseudo_square_037" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_037" id="actual_sq_037"></div>
+                  <div class="ps_037" id="pseudo_square_37" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_037" id="actual_sq_37"></div>
                   </div>
-                  <div class="ps_038" id="pseudo_square_038" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_038" id="actual_sq_038"></div>
+                  <div class="ps_038" id="pseudo_square_38" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_038" id="actual_sq_38"></div>
                   </div>
-                  <div class="ps_039" id="pseudo_square_039" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_039" id="actual_sq_039"></div>
+                  <div class="ps_039" id="pseudo_square_39" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_039" id="actual_sq_39"></div>
                   </div>
-                  <div class="ps_040" id="pseudo_square_040" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_040" id="actual_sq_040"></div>
+                  <div class="ps_040" id="pseudo_square_40" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_040" id="actual_sq_40"></div>
                   </div>
-                  <div class="ps_041" id="pseudo_square_041" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_041" id="actual_sq_041"></div>
+                  <div class="ps_041" id="pseudo_square_41" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_041" id="actual_sq_41"></div>
                   </div>
-                  <div class="ps_042" id="pseudo_square_042" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_042" id="actual_sq_042"></div>
+                  <div class="ps_042" id="pseudo_square_42" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_042" id="actual_sq_42"></div>
                   </div>
-                  <div class="ps_043" id="pseudo_square_043" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_043" id="actual_sq_043"></div>
+                  <div class="ps_043" id="pseudo_square_43" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_043" id="actual_sq_43"></div>
                   </div>
-                  <div class="ps_044" id="pseudo_square_044" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_044" id="actual_sq_044"></div>
+                  <div class="ps_044" id="pseudo_square_44" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_044" id="actual_sq_44"></div>
                   </div>
-                  <div class="ps_045" id="pseudo_square_045" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_045" id="actual_sq_045"></div>
+                  <div class="ps_045" id="pseudo_square_45" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_045" id="actual_sq_45"></div>
                   </div>
-                  <div class="ps_046" id="pseudo_square_046" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_046" id="actual_sq_046"></div>
+                  <div class="ps_046" id="pseudo_square_46" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_046" id="actual_sq_46"></div>
                   </div>
-                  <div class="ps_047" id="pseudo_square_047" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_047" id="actual_sq_047"></div>
+                  <div class="ps_047" id="pseudo_square_47" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_047" id="actual_sq_47"></div>
                   </div>
-                  <div class="ps_048" id="pseudo_square_048" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_048" id="actual_sq_048"></div>
+                  <div class="ps_048" id="pseudo_square_48" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_048" id="actual_sq_48"></div>
                   </div>
-                  <div class="ps_049" id="pseudo_square_049" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_049" id="actual_sq_049"></div>
+                  <div class="ps_049" id="pseudo_square_49" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_049" id="actual_sq_49"></div>
                   </div>
-                  <div class="ps_050" id="pseudo_square_050" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_050" id="actual_sq_050"></div>
+                  <div class="ps_050" id="pseudo_square_50" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_050" id="actual_sq_50"></div>
                   </div>
-                  <div class="ps_051" id="pseudo_square_051" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_051" id="actual_sq_051"></div>
+                  <div class="ps_051" id="pseudo_square_51" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_051" id="actual_sq_51"></div>
                   </div>
-                  <div class="ps_052" id="pseudo_square_052" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_052" id="actual_sq_052"></div>
+                  <div class="ps_052" id="pseudo_square_52" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_052" id="actual_sq_52"></div>
                   </div>
-                  <div class="ps_053" id="pseudo_square_053" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_053" id="actual_sq_053"></div>
+                  <div class="ps_053" id="pseudo_square_53" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_053" id="actual_sq_53"></div>
                   </div>
-                  <div class="ps_054" id="pseudo_square_054" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_054" id="actual_sq_054"></div>
+                  <div class="ps_054" id="pseudo_square_54" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_054" id="actual_sq_54"></div>
                   </div>
-                  <div class="ps_055" id="pseudo_square_055" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_055" id="actual_sq_055"></div>
+                  <div class="ps_055" id="pseudo_square_55" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_055" id="actual_sq_55"></div>
                   </div>
-                  <div class="ps_056" id="pseudo_square_056" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_056" id="actual_sq_056"></div>
+                  <div class="ps_056" id="pseudo_square_56" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_056" id="actual_sq_56"></div>
                   </div>
-                  <div class="ps_057" id="pseudo_square_057" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_057" id="actual_sq_057"></div>
+                  <div class="ps_057" id="pseudo_square_57" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_057" id="actual_sq_57"></div>
                   </div>
-                  <div class="ps_058" id="pseudo_square_058" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_058" id="actual_sq_058"></div>
+                  <div class="ps_058" id="pseudo_square_58" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_058" id="actual_sq_58"></div>
                   </div>
-                  <div class="ps_059" id="pseudo_square_059" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_059" id="actual_sq_059"></div>
+                  <div class="ps_059" id="pseudo_square_59" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_059" id="actual_sq_59"></div>
                   </div>
-                  <div class="ps_060" id="pseudo_square_060" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_060" id="actual_sq_060"></div>
+                  <div class="ps_060" id="pseudo_square_60" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_060" id="actual_sq_60"></div>
                   </div>
-                  <div class="ps_061" id="pseudo_square_061" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_061" id="actual_sq_061"></div>
+                  <div class="ps_061" id="pseudo_square_61" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_061" id="actual_sq_61"></div>
                   </div>
-                  <div class="ps_062" id="pseudo_square_062" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_062" id="actual_sq_062"></div>
+                  <div class="ps_062" id="pseudo_square_62" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_062" id="actual_sq_62"></div>
                   </div>
-                  <div class="ps_063" id="pseudo_square_063" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_063" id="actual_sq_063"></div>
+                  <div class="ps_063" id="pseudo_square_63" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_063" id="actual_sq_63"></div>
                   </div>
-                  <div class="ps_064" id="pseudo_square_064" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_064" id="actual_sq_064"></div>
+                  <div class="ps_064" id="pseudo_square_64" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_064" id="actual_sq_64"></div>
                   </div>
-                  <div class="ps_065" id="pseudo_square_065" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_065" id="actual_sq_065"></div>
+                  <div class="ps_065" id="pseudo_square_65" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_065" id="actual_sq_65"></div>
                   </div>
-                  <div class="ps_066" id="pseudo_square_066" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_066" id="actual_sq_066"></div>
+                  <div class="ps_066" id="pseudo_square_66" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_066" id="actual_sq_66"></div>
                   </div>
-                  <div class="ps_067" id="pseudo_square_067" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_067" id="actual_sq_067"></div>
+                  <div class="ps_067" id="pseudo_square_67" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_067" id="actual_sq_67"></div>
                   </div>
-                  <div class="ps_068" id="pseudo_square_068" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_068" id="actual_sq_068"></div>
+                  <div class="ps_068" id="pseudo_square_68" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_068" id="actual_sq_68"></div>
                   </div>
-                  <div class="ps_069" id="pseudo_square_069" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_069" id="actual_sq_069"></div>
+                  <div class="ps_069" id="pseudo_square_69" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_069" id="actual_sq_69"></div>
                   </div>
-                  <div class="ps_070" id="pseudo_square_070" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_070" id="actual_sq_070"></div>
+                  <div class="ps_070" id="pseudo_square_70" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_070" id="actual_sq_70"></div>
                   </div>
-                  <div class="ps_071" id="pseudo_square_071" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_071" id="actual_sq_071"></div>
+                  <div class="ps_071" id="pseudo_square_71" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_071" id="actual_sq_71"></div>
                   </div>
-                  <div class="ps_072" id="pseudo_square_072" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_072" id="actual_sq_072"></div>
+                  <div class="ps_072" id="pseudo_square_72" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_072" id="actual_sq_72"></div>
                   </div>
-                  <div class="ps_073" id="pseudo_square_073" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_073" id="actual_sq_073"></div>
+                  <div class="ps_073" id="pseudo_square_73" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_073" id="actual_sq_73"></div>
                   </div>
-                  <div class="ps_074" id="pseudo_square_074" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_074" id="actual_sq_074"></div>
+                  <div class="ps_074" id="pseudo_square_74" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_074" id="actual_sq_74"></div>
                   </div>
-                  <div class="ps_075" id="pseudo_square_075" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_075" id="actual_sq_075"></div>
+                  <div class="ps_075" id="pseudo_square_75" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_075" id="actual_sq_75"></div>
                   </div>
-                  <div class="ps_076" id="pseudo_square_076" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_076" id="actual_sq_076"></div>
+                  <div class="ps_076" id="pseudo_square_76" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_076" id="actual_sq_76"></div>
                   </div>
-                  <div class="ps_077" id="pseudo_square_077" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_077" id="actual_sq_077"></div>
+                  <div class="ps_077" id="pseudo_square_77" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_077" id="actual_sq_77"></div>
                   </div>
-                  <div class="ps_078" id="pseudo_square_078" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_078" id="actual_sq_078"></div>
+                  <div class="ps_078" id="pseudo_square_78" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_078" id="actual_sq_78"></div>
                   </div>
-                  <div class="ps_079" id="pseudo_square_079" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_079" id="actual_sq_079"></div>
+                  <div class="ps_079" id="pseudo_square_79" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_079" id="actual_sq_79"></div>
                   </div>
-                  <div class="ps_080" id="pseudo_square_080" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_080" id="actual_sq_080"></div>
+                  <div class="ps_080" id="pseudo_square_80" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_080" id="actual_sq_80"></div>
                   </div>
-                  <div class="ps_081" id="pseudo_square_081" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_081" id="actual_sq_081"></div>
+                  <div class="ps_081" id="pseudo_square_81" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_081" id="actual_sq_81"></div>
                   </div>
-                  <div class="ps_082" id="pseudo_square_082" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_082" id="actual_sq_082"></div>
+                  <div class="ps_082" id="pseudo_square_82" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_082" id="actual_sq_82"></div>
                   </div>
-                  <div class="ps_083" id="pseudo_square_083" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_083" id="actual_sq_083"></div>
+                  <div class="ps_083" id="pseudo_square_83" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_083" id="actual_sq_83"></div>
                   </div>
-                  <div class="ps_084" id="pseudo_square_084" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_084" id="actual_sq_084"></div>
+                  <div class="ps_084" id="pseudo_square_84" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_084" id="actual_sq_84"></div>
                   </div>
-                  <div class="ps_085" id="pseudo_square_085" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_085" id="actual_sq_085"></div>
+                  <div class="ps_085" id="pseudo_square_85" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_085" id="actual_sq_85"></div>
                   </div>
-                  <div class="ps_086" id="pseudo_square_086" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_086" id="actual_sq_086"></div>
+                  <div class="ps_086" id="pseudo_square_86" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_086" id="actual_sq_86"></div>
                   </div>
-                  <div class="ps_087" id="pseudo_square_087" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_087" id="actual_sq_087"></div>
+                  <div class="ps_087" id="pseudo_square_87" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_087" id="actual_sq_87"></div>
                   </div>
-                  <div class="ps_088" id="pseudo_square_088" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_088" id="actual_sq_088"></div>
+                  <div class="ps_088" id="pseudo_square_88" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_088" id="actual_sq_88"></div>
                   </div>
-                  <div class="ps_089" id="pseudo_square_089" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_089" id="actual_sq_089"></div>
+                  <div class="ps_089" id="pseudo_square_89" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_089" id="actual_sq_89"></div>
                   </div>
-                  <div class="ps_090" id="pseudo_square_090" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_090" id="actual_sq_090"></div>
+                  <div class="ps_090" id="pseudo_square_90" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_090" id="actual_sq_90"></div>
                   </div>
-                  <div class="ps_091" id="pseudo_square_091" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_091" id="actual_sq_091"></div>
+                  <div class="ps_091" id="pseudo_square_91" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_091" id="actual_sq_91"></div>
                   </div>
-                  <div class="ps_092" id="pseudo_square_092" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_092" id="actual_sq_092"></div>
+                  <div class="ps_092" id="pseudo_square_92" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_092" id="actual_sq_92"></div>
                   </div>
-                  <div class="ps_093" id="pseudo_square_093" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_093" id="actual_sq_093"></div>
+                  <div class="ps_093" id="pseudo_square_93" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_093" id="actual_sq_93"></div>
                   </div>
-                  <div class="ps_094" id="pseudo_square_094" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_094" id="actual_sq_094"></div>
+                  <div class="ps_094" id="pseudo_square_94" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_094" id="actual_sq_94"></div>
                   </div>
-                  <div class="ps_095" id="pseudo_square_095" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_095" id="actual_sq_095"></div>
+                  <div class="ps_095" id="pseudo_square_95" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_095" id="actual_sq_95"></div>
                   </div>
-                  <div class="ps_096" id="pseudo_square_096" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_096" id="actual_sq_096"></div>
+                  <div class="ps_096" id="pseudo_square_96" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_096" id="actual_sq_96"></div>
                   </div>
-                  <div class="ps_097" id="pseudo_square_097" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_097" id="actual_sq_097"></div>
+                  <div class="ps_097" id="pseudo_square_97" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_097" id="actual_sq_97"></div>
                   </div>
-                  <div class="ps_098" id="pseudo_square_098" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_098" id="actual_sq_098"></div>
+                  <div class="ps_098" id="pseudo_square_98" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_098" id="actual_sq_98"></div>
                   </div>
-                  <div class="ps_099" id="pseudo_square_099" onpointerdown="button_in_handler(this, event)">
-                     <div class="actual_square_099" id="actual_sq_099"></div>
+                  <div class="ps_099" id="pseudo_square_99" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_099" id="actual_sq_99"></div>
                   </div>
-                  <div class="ps_100" id="pseudo_square_100" onpointerdown="button_in_handler(this, event)">
+                  <div class="ps_100" id="pseudo_square_100" onmousedown="button_in_handler(this, event)">
                      <div class="actual_square_100" id="actual_sq_100"></div>
                   </div>
                   <div class="vertical_line1"></div>
@@ -701,25 +748,29 @@
             </div>
             <div class="right_side">
                <div class="greybox_right" id="right_greybox">
-                  <p id="demo" class="test_screen_resolution"></p>
-                  <div class="vertical_line1"></div>
-                  <div class="vertical_line2"></div>
-                  <div class="vertical_line3"></div>
-                  <div class="vertical_line4"></div>
-                  <div class="vertical_line5"></div>
-                  <div class="vertical_line6"></div>
-                  <div class="vertical_line7"></div>
-                  <div class="vertical_line8"></div>
-                  <div class="vertical_line9"></div>
-                  <div class="horizontal_line1"></div>
-                  <div class="horizontal_line2"></div>
-                  <div class="horizontal_line3"></div>
-                  <div class="horizontal_line4"></div>
-                  <div class="horizontal_line5"></div>
-                  <div class="horizontal_line6"></div>
-                  <div class="horizontal_line7"></div>
-                  <div class="horizontal_line8"></div>
-                  <div class="horizontal_line9"></div>
+                  
+                  <p id="demo" class="test_screen_resolution"><img src="place_your_ships.svg"></p>
+                  <div class="rotate_options_wrapper" id="rotate_opt_wra" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onclick="rotate_ship()"></div>
+                  <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onclick="rotate_ship()"></div>
+                  <div class="rotate_text" id="rotate_txt"><img src="rotate_text.svg" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onclick="rotate_ship()"></div>
+                  <div class="vertical_line1"   id="right_vert_line_1"></div>
+                  <div class="vertical_line2"   id="right_vert_line_2"></div>
+                  <div class="vertical_line3"   id="right_vert_line_3"></div>
+                  <div class="vertical_line4"   id="right_vert_line_4"></div>
+                  <div class="vertical_line5"   id="right_vert_line_5"></div>
+                  <div class="vertical_line6"   id="right_vert_line_6"></div>
+                  <div class="vertical_line7"   id="right_vert_line_7"></div>
+                  <div class="vertical_line8"   id="right_vert_line_8"></div>
+                  <div class="vertical_line9"   id="right_vert_line_9"></div>
+                  <div class="horizontal_line1" id="right_horiz_line_1"></div>
+                  <div class="horizontal_line2" id="right_horiz_line_2"></div>
+                  <div class="horizontal_line3" id="right_horiz_line_3"></div>
+                  <div class="horizontal_line4" id="right_horiz_line_4"></div>
+                  <div class="horizontal_line5" id="right_horiz_line_5"></div>
+                  <div class="horizontal_line6" id="right_horiz_line_6"></div>
+                  <div class="horizontal_line7" id="right_horiz_line_7"></div>
+                  <div class="horizontal_line8" id="right_horiz_line_8"></div>
+                  <div class="horizontal_line9" id="right_horiz_line_9"></div>
                   <div style="display:none" id="temp_div_x"></div>
                   <div style="display:none" id="temp_div_y"></div>
                   <div style="display:none" id="t_x"></div>
@@ -732,7 +783,23 @@
       <!-- end of master_flexbox -->
    </body>
    <script>
-      function toggleZoomScreen() {
+       
+       for (let i = 61; i <= 100; i++) {
+           let str1 = "actual_sq_"+i+"";
+           document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
+       }
+       
+       for (let i = 1; i <= 9; i++) {
+           let str1 = "right_vert_line_"+i+"";
+           let str2 = "right_horiz_line_"+i+"";
+           
+           document.getElementById(str1).style.display = "none";
+           document.getElementById(str2).style.display = "none";
+         
+       }
+       
+
+     /* function toggleZoomScreen() {
           document.body.style.zoom = "100%";
       }
       
@@ -741,6 +808,6 @@
       
       var x = document.getElementById("demo");
       x.innerHTML = w + " x " + h;
-      
+     */
    </script>
 </html>
