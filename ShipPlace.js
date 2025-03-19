@@ -257,7 +257,7 @@ function compute_horizontal_disabled_squares()
             ship_size = ship_size * (-1);
             for(let j = 0; j<ship_size; j++)
             {
-             for (let i = 0; i<act_ship-1 ; i++)
+             for (let i = 0; i<act_ship ; i++)
              {
                 if((shipPos + (10*j) - i)%10 == 1)
                 {disabled_squares_horizontal[shipPos + (10*j) - i] = 1;
@@ -266,9 +266,8 @@ function compute_horizontal_disabled_squares()
                 else
                 {
                     disabled_squares_horizontal[shipPos + (10*j) - i] = 1;
-                    if((shipPos + (10*j) - i) == 25) {console.log(i);}
                 }
-               } //end of loop
+              } //end of loop
             } //end of j loop
         } //end of if(ship_size > 0)
         
