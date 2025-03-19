@@ -52,10 +52,10 @@ function button_in_handler(a, event){
     
   if(blocked_squares[square_number] == 0 && placed_ships[4]== 0 && all_good == 1) //checking the actual square number of the board, not array index
    {   all_good = 0;
-       document.addEventListener('pointerup', mouseUp);
-       document.addEventListener('touchcancel', mouseUp);
-       
-       function mouseUp(event) {
+//       document.addEventListener('pointerup', mouseUp);
+//       document.addEventListener('onclick', mouseUp);
+//
+//       function mouseUp(event) {
            
            document.getElementById(actual_id).style.backgroundColor = "rgb(91, 137,238)"; //Setting the ship color to Blue
            document.getElementById(actual_id).style.opacity = "1";
@@ -130,10 +130,10 @@ function button_in_handler(a, event){
            }
        
            boundary_overflow();
-           document.removeEventListener('pointerup', mouseUp);
-           document.removeEventListener('touchcancel', mouseUp);
+           //document.removeEventListener('pointerup', mouseUp);
+           //document.removeEventListener('touchcancel', mouseUp);
         
-       }//end of mouseUp(event)
+      // }//end of mouseUp(event)
    }//end of if(blocked_squares[square_number] == 0)
 }//end of function
 
@@ -242,6 +242,10 @@ function compute_horizontal_disabled_squares()
     let act_ship = shipSet[ship_counter];
     if(active_ship < 0) {act_ship = act_ship * (-1);}
     
+    for (let i = 0; i < 101; i++) {    // resetting the disabled squares
+        disabled_squares_horizontal[i] = 0;
+    }
+    
     //console.log("active_ship"+active_ship);
     for (let i = 0; i <= ship_counter; i++)
     {
@@ -253,7 +257,7 @@ function compute_horizontal_disabled_squares()
             ship_size = ship_size * (-1);
             for(let j = 0; j<ship_size; j++)
             {
-             for (let i = 0; i<act_ship ; i++)
+             for (let i = 0; i<act_ship-1 ; i++)
              {
                 if((shipPos + (10*j) - i)%10 == 1)
                 {disabled_squares_horizontal[shipPos + (10*j) - i] = 1;
@@ -262,6 +266,7 @@ function compute_horizontal_disabled_squares()
                 else
                 {
                     disabled_squares_horizontal[shipPos + (10*j) - i] = 1;
+                    if((shipPos + (10*j) - i) == 25) {console.log(i);}
                 }
                } //end of loop
             } //end of j loop
@@ -294,6 +299,10 @@ function compute_vertical_disabled_squares()
     let act_ship = active_ship;
     if(active_ship < 0) {act_ship = act_ship * (-1);}
     
+    for (let i = 0; i < 101; i++) {   // resetting the disabled squares
+        disabled_squares_vertical[i]   = 0;
+    }
+    
     for (let i = 0; i <= ship_counter; i++)
      {
          let ship_size = placed_ships[i];
@@ -314,10 +323,10 @@ function compute_vertical_disabled_squares()
              for(let j = 0; j<ship_size; j++)
              {
               for (let i = 0; i<act_ship ; i++)
-                {
+              {if(i==3) {console.log("here!");}
                  if((shipPos - (10*i) + j) <= 0) break;
                  disabled_squares_vertical[shipPos - (10*i) + j] = 1;
-                    //if((shipPos - (10*i) + j)==25) {console.log("Here!!");}
+                    
                 } //end of loop
              } //end of j loop
              
