@@ -1,4 +1,4 @@
-:root { 
+:root {
 --widthD: min((100vh - 60px)/2, 100vw);
 --heightD: min((100vh - 60px)/2, 100vw);
 --widthX: 2px;
@@ -1042,7 +1042,7 @@
      margin-left: 12.5%;
      margin-top: 12.5%;
      opacity: 0;
-     transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s;
+     transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.5s;
 }
 
 .actual_square_001 {
