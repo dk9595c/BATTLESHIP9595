@@ -73,7 +73,7 @@ function button_in_handler(a, event){
            
            document.getElementById(actual_id).style.backgroundColor = "rgb(91, 137,238)"; //Setting the ship color to Blue
           // document.getElementById(actual_id).style.zIndex  = "2";
-          // document.getElementById(actual_id).style.opacity = "1";
+           document.getElementById(actual_id).style.opacity = "1";
            placed_ships[ship_counter]  = active_ship;
            ship_position[ship_counter] = parseInt(a.id.slice(14, )); //Storing the ship location
            
