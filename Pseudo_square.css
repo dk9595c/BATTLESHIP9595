@@ -1037,12 +1037,12 @@
      
      position: absolute;
      display: inline;
-     z-index: 2;
+     z-index: 1;
      background-color: rgb(94,94,94);
      margin-left: 12.5%;
      margin-top: 12.5%;
      opacity: 0;
-     transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.1s;
+     transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s;
 }
 
 .actual_square_001 {
