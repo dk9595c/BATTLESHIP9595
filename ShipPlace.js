@@ -10,6 +10,7 @@ var disabled_squares_vertical   = [];
 var disabled_squares_horizontal = [];
 var all_good = 0;
 var rotate_flag = 0;
+var tempRot = 0;
 
 
 for (let i = 0; i < 101; i++) {
@@ -77,6 +78,9 @@ function button_in_handler(a, event){
            placed_ships[ship_counter]  = active_ship;
            ship_position[ship_counter] = parseInt(a.id.slice(14, )); //Storing the ship location
            
+       if(tempRot%180 == 90)
+       {document.getElementById("sml_shp").style.rotate="180deg";  tempRot=180;}
+       
            
            
           /*
@@ -95,16 +99,16 @@ function button_in_handler(a, event){
                    occupied_squares[parseInt(a.id.slice(14, )) + i*10] = 1;
                }
            }*/
-           //for (let i = 1; i <= 100; i++){console.log(occupied_squares[i]);}
+           
            occupied_squares[parseInt(a.id.slice(14, ))] = 1;
            ship_counter++;
            active_ship = shipSet[ship_counter];
-           //console.log("active ship = "+active_ship);
+           
            
              compute_vertical_disabled_squares();
              compute_horizontal_disabled_squares();
-       for (let i = 0; i < 101; i++)
-       {console.log("i="+i+" dis="+disabled_squares_vertical[i]); }
+       //for (let i = 0; i < 101; i++)
+       //{console.log("i="+i+" dis="+disabled_squares_vertical[i]); }
            
            if(active_ship > 0)
            {   let full_width  = active_ship * 100 - 25;
@@ -155,7 +159,8 @@ function button_in_handler(a, event){
 
 function rotate_ship(){
     active_ship = active_ship * -1;
-    
+    tempRot+= 90;
+    document.getElementById("sml_shp").style.rotate=tempRot+"deg";
     if(active_ship > 0) // HORIZONTAL
     {   let full_width  = active_ship * 100 - 25;
         let reduced_width = active_ship * 100 - 50;
@@ -261,7 +266,7 @@ function compute_horizontal_disabled_squares()
         disabled_squares_horizontal[i] = 0;
     }
     
-    //console.log("active_ship"+active_ship);
+    
     for (let i = 0; i <= ship_counter; i++)
     {
         let ship_size = placed_ships[i];
@@ -328,7 +333,7 @@ function compute_vertical_disabled_squares()
              for(let k = 0; k<=ship_size-1; k++)
                  {
                      disabled_squares_vertical[shipPos + 10*k] = 1;  //squares within the ship
-                     //if((k)==25) {console.log("Here!!");}
+                     
                  }
              for (let i = 0; i<act_ship ; i++)
                {
