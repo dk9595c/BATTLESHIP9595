@@ -789,6 +789,11 @@
            document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
        }
        
+       for (let i = 1; i <= 100; i++) {  // adding the touch event
+           let str1 = "pseudo_square_"+i+"";
+           document.getElementById(str1).ontouchstart = "button_in_handler(this, event)";
+       }
+       
        for (let i = 1; i <= 9; i++) {
            let str1 = "right_vert_line_"+i+"";
            let str2 = "right_horiz_line_"+i+"";
