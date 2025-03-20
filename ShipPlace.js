@@ -72,14 +72,13 @@ function button_in_handler(a, event){
 //       function mouseUp(event) {
            
            document.getElementById(actual_id).style.backgroundColor = "rgb(91, 137,238)"; //Setting the ship color to Blue
-           document.getElementById(actual_id).style.zIndex  = "2";
-           document.getElementById(actual_id).style.opacity = "1";
+          // document.getElementById(actual_id).style.zIndex  = "2";
+          // document.getElementById(actual_id).style.opacity = "1";
            placed_ships[ship_counter]  = active_ship;
            ship_position[ship_counter] = parseInt(a.id.slice(14, )); //Storing the ship location
            
            
-           //for (let i = 0; i < 101; i++)
-           //{console.log("i="+i+" dis="+disabled_squares_vertical[i]); }
+           
           /*
            if(active_ship > 0)
            {
@@ -104,7 +103,8 @@ function button_in_handler(a, event){
            
              compute_vertical_disabled_squares();
              compute_horizontal_disabled_squares();
-           
+       for (let i = 0; i < 101; i++)
+       {console.log("i="+i+" dis="+disabled_squares_vertical[i]); }
            
            if(active_ship > 0)
            {   let full_width  = active_ship * 100 - 25;
