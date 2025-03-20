@@ -333,7 +333,7 @@ function compute_vertical_disabled_squares()
              for (let i = 0; i<act_ship ; i++)
                {
                 if((shipPos-i) <= 0) break;
-                disabled_squares_vertical[shipPos - i] = 1;
+                disabled_squares_vertical[shipPos - 10*i] = 1;
                } //end of loop
              
          } //end of if(ship_size < 0 )
