@@ -79,8 +79,9 @@ function button_in_handler(a, event){
            ship_position[ship_counter] = parseInt(a.id.slice(14, )); //Storing the ship location
            
        if(tempRot%180 == 90)
-       {document.getElementById("sml_shp").style.rotate="180deg";  tempRot=180;}
-       
+          {tempRot+= 90;
+           document.getElementById("sml_shp").style.rotate=tempRot+"deg";
+          }
            
            
           /*
