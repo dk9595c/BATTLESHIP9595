@@ -791,7 +791,7 @@
        
        for (let i = 1; i <= 100; i++) {  // adding the touch event
            let str1 = "pseudo_square_"+i+"";
-           document.getElementById(str1).ontouchstart = "button_in_handler(this, event)";
+           document.getElementById(str1).ontouchcancel = "button_in_handler(this, event)";
        }
        
        for (let i = 1; i <= 9; i++) {
