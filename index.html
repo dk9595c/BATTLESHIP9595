@@ -100,10 +100,74 @@
              opacity:0;
           }
           
-          .place_ship_heading{
-             
-              
+          .ship_sample{
+             position:absolute;
+             display:inline;
+             font-size:0px;
+             border-radius: 11.275167792% / 9.33333338%;
+             margin-left:9.1794159%;
+             margin-top:22.5312935%;
+             width:43.1154381%;
+             height:51.8776078%;
+             background-color: rgb(49, 49, 52);
+             z-index:2;
+             opacity:1;
+             border: 1.4px solid rgb(123, 128, 131);
           }
+          
+          .small_ship{
+             position:absolute;
+             display:inline;
+             font-size:0px;
+             border-radius: 16.6666667% / 2.6315794737%;
+             margin-left : 45.322580645%;
+             margin-top  : 16.7741935%;
+             width  : 9.35483871%;
+             height : 54.9597855%;
+             background-color: rgb(91, 137,238);
+             z-index:2;
+             opacity:1;
+             rotate: 0deg;
+             transition: rotate 0.35s;
+             
+          }
+          
+          
+          .small_horizontal_line1, .small_horizontal_line2, .small_horizontal_line3, .small_horizontal_line4, .small_horizontal_line5, .small_horizontal_line6{
+              width: 0px;
+              height: 0px;
+              padding-right: 90.3225806%;
+              padding-bottom: 0.3333333%;
+              margin-left: 4.83870968%;
+              border-radius: 5px;
+              position: absolute;
+              background-color: rgb(123, 128, 131);
+          }
+          
+          .small_vertical_line1, .small_vertical_line2, .small_vertical_line3, .small_vertical_line4, .small_vertical_line5, .small_vertical_line6{
+              width: 0px;
+              height: 0px;
+              padding-bottom: 90.3225806%;
+              padding-right: 0.3333333%;
+              margin-top: 4.83870968%;
+              border-radius: 5px;
+              position: absolute;
+              background-color: rgb(123, 128, 131);
+          }
+          
+          .small_horizontal_line1{margin-top: 14.0000000285714%;}
+          .small_horizontal_line2{margin-top: 28.3333333571%;}
+          .small_horizontal_line3{margin-top: 42.6666666857%;}
+          .small_horizontal_line4{margin-top: 57.0000000142714%;}
+          .small_horizontal_line5{margin-top: 71.3333333428%;}
+          .small_horizontal_line6{margin-top: 85.6666666714%;}
+          
+          .small_vertical_line1{margin-left: 14.0000000285714%;}
+          .small_vertical_line2{margin-left: 28.3333333571%;}
+          .small_vertical_line3{margin-left: 42.6666666857%;}
+          .small_vertical_line4{margin-left: 57.0000000142714%;}
+          .small_vertical_line5{margin-left: 71.3333333428%;}
+          .small_vertical_line6{margin-left: 85.6666666714%;}
           
          .small_logo{
          display: none;
@@ -750,6 +814,23 @@
                <div class="greybox_right" id="right_greybox">
                   
                   <p id="demo" class="test_screen_resolution"><img src="place_your_ships.svg"></p>
+                  <div class="ship_sample" id="ship_samp">
+                    <div class="small_ship" id="sml_shp"></div>
+                    <div class="small_horizontal_line1" id="small_horiz_line_1"></div>
+                    <div class="small_horizontal_line2" id="small_horiz_line_1"></div>
+                    <div class="small_horizontal_line3" id="small_horiz_line_1"></div>
+                    <div class="small_horizontal_line4" id="small_horiz_line_1"></div>
+                    <div class="small_horizontal_line5" id="small_horiz_line_1"></div>
+                    <div class="small_horizontal_line6" id="small_horiz_line_1"></div>
+                    <div class="small_vertical_line1" id="small_vert_line_1"></div>
+                    <div class="small_vertical_line2" id="small_vert_line_1"></div>
+                    <div class="small_vertical_line3" id="small_vert_line_1"></div>
+                    <div class="small_vertical_line4" id="small_vert_line_1"></div>
+                    <div class="small_vertical_line5" id="small_vert_line_1"></div>
+                    <div class="small_vertical_line6" id="small_vert_line_1"></div>
+                  </div> <!-- end of ship_sample  -->
+            
+                  
                   <div class="rotate_options_wrapper" id="rotate_opt_wra" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()"></div>
                   <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()"></div>
                   <div class="rotate_text" id="rotate_txt"><img src="rotate_text.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()"></div>
