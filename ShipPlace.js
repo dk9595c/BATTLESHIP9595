@@ -330,6 +330,12 @@ function compute_vertical_disabled_squares()
                      disabled_squares_vertical[shipPos + 10*k] = 1;  //squares within the ship
                      //if((k)==25) {console.log("Here!!");}
                  }
+             for (let i = 0; i<act_ship ; i++)
+               {
+                if((shipPos-i) <= 0) break;
+                disabled_squares_vertical[shipPos - i] = 1;
+               } //end of loop
+             
          } //end of if(ship_size < 0 )
          
          else if(ship_size > 0 ) //horizontal
@@ -337,7 +343,7 @@ function compute_vertical_disabled_squares()
              for(let j = 0; j<ship_size; j++)
              {
               for (let i = 0; i<act_ship ; i++)
-              {if(i==3) {console.log("here!");}
+              {
                  if((shipPos - (10*i) + j) <= 0) break;
                  disabled_squares_vertical[shipPos - (10*i) + j] = 1;
                     
