@@ -37,6 +37,7 @@ function rotate_opacity_0(){
 
 
 function button_in_handler(a, event){
+    document.getElementById("demo").style.display = "none";
     actual_id = "actual_sq_" + parseInt(a.id.slice(14, ));
     square_number = parseInt(a.id.slice(14, ));
     all_good = 0;
