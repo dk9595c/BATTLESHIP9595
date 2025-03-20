@@ -9,7 +9,7 @@ var blocked_squares = []; //These take care of boundary_overflow  red highlight
 var disabled_squares_vertical   = [];
 var disabled_squares_horizontal = [];
 var all_good = 0;
-
+var rotate_flag = 0;
 
 
 for (let i = 0; i < 101; i++) {
@@ -26,12 +26,26 @@ for (let i = 61; i <=100; i++) {
 }
 
 function rotate_opacity_1(){
+    
+    if(rotate_flag == 0)
+    {document.getElementById("rotate_opt_wra").style.opacity = "1";}
+}
+
+function rotate_opacity_bytouch_1(){
+    
+    rotate_flag = 1;
     document.getElementById("rotate_opt_wra").style.opacity = "1";
-    
-    
 }
 
 function rotate_opacity_0(){
+    
+    if(rotate_flag == 0)
+    {document.getElementById("rotate_opt_wra").style.opacity = "0";}
+}
+
+function rotate_opacity_bytouch_0(){
+    
+    rotate_flag = 1;
     document.getElementById("rotate_opt_wra").style.opacity = "0";
 }
 
