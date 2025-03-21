@@ -66,6 +66,97 @@
          display : inline;
          }
           
+         .aircraft_carrier{
+             z-index:2;
+             width: 58.1537089%;
+             height: 10.3225806452%;
+             margin-top: 103.548387%;
+             margin-left: 20.9231456%;
+             color: white;
+             font-size: 0px;
+             margin-bottom:0px;
+             text-align:center;
+             top:0;
+             padding-bottom:1;
+             display : inline;
+             position: absolute;
+             
+         }
+          .battleship{
+              z-index:2;
+              width: 38.7096774194%;
+              height: 10.3225806452%;
+              margin-top: 103.548387%;
+              margin-left: 30.6451613%;
+              color: white;
+              font-size: 0px;
+              margin-bottom:0px;
+              text-align:center;
+              top:0;
+              padding-bottom:1;
+              display : none;
+              position: absolute;
+          }
+          
+          .destroyer{
+              z-index:2;
+              width: 38.888063%;
+              height: 10.3225806452%;
+              margin-top: 103.548387%;
+              margin-left: 30.5559685%;
+              color: white;
+              font-size: 0px;
+              margin-bottom:0px;
+              text-align:center;
+              top:0;
+              padding-bottom:1;
+              display : none;
+              position: absolute;
+          }
+          .submarine{
+              z-index:2;
+              width: 42.6341608%;
+              height: 10.3225806452%;
+              margin-top: 103.548387%;
+              margin-left: 28.6829196%;
+              color: white;
+              font-size: 0px;
+              margin-bottom:0px;
+              text-align:center;
+              top:0;
+              padding-bottom:1;
+              display : none;
+              position: absolute;
+          }
+          .patrol_boat{
+              z-index:2;
+              width: 43.8828601%;
+              height: 10.3225806452%;
+              margin-top: 103.548387%;
+              margin-left: 28.05857%;
+              color: white;
+              font-size: 0px;
+              margin-bottom:0px;
+              text-align:center;
+              top:0;
+              padding-bottom:1;
+              display : none;
+              position: absolute;
+          }
+          
+          .check_mark{
+              z-index:4;
+              width:  65.4040404%;
+              height: 65.4040404%;
+              margin-top: 24.4949495%;
+              margin-left: 17.2979798%;
+              font-size: 0px;
+              margin-bottom:0px;
+              display : none;
+              position: absolute;
+          }
+          
+          
          .rotate_option{
           display:inline;
           position:absolute;
@@ -115,21 +206,58 @@
              border: 1.4px solid rgb(123, 128, 131);
           }
           
+          .all_ships_placed{
+              z-index:4;
+              width: 61.5430355%;
+              height: 10.3225806452%;
+              margin-top: 103.548387%;
+              margin-left: 19.2284823%;
+              color: white;
+              font-size: 0px;
+              margin-bottom:0px;
+              text-align:center;
+              top:0;
+              padding-bottom:1;
+              display : none;
+              position: absolute;
+          }
+          
           .small_ship{
              position:absolute;
              display:inline;
              font-size:0px;
              border-radius: 16.6666667% / 2.6315794737%;
-             margin-left : 45.322580645%;
-             margin-top  : 16.7741935%;
-             width  : 9.35483871%;
-             height : 54.9597855%;
+             margin-left : 44.7499999893%;
+             margin-top  : 16.08333333217%;
+             width  : 10.5000000214%;
+             height : 56.3762287541%;
              background-color: rgb(91, 137,238);
              z-index:2;
              opacity:1;
              rotate: 0deg;
-             transition: rotate 0.35s;
+             translate: 0% 0%;
+             transition: rotate 0.35s, translate 0.35s;
+            /* 1.7500000036
              
+             7.1666666643%
+             
+             height of 4 - size ship : 53.5000000071
+             a= 9.8130841308
+             b= 0.3115264486
+             c= 3.2710280437
+             
+             calculated = 13.3956386231 (correct!!)
+             
+             overflow= 5.0833333607
+             span= 43.3333332857
+             calculated= 7.1666666643
+             final calculated= 68.2539680923
+             
+             translate: 68.2539680923% 13.3956386231%;
+             
+             
+             height of 2- size ship : 24.1666667499
+             */
           }
           
           
@@ -814,20 +942,31 @@
                <div class="greybox_right" id="right_greybox">
                   
                   <p id="demo" class="test_screen_resolution"><img src="place_your_ships.svg"></p>
+                  <div class="ship_sample_cover" id="ship_samp_cov"></div>
                   <div class="ship_sample" id="ship_samp">
                     <div class="small_ship" id="sml_shp"></div>
                     <div class="small_horizontal_line1" id="small_horiz_line_1"></div>
-                    <div class="small_horizontal_line2" id="small_horiz_line_1"></div>
-                    <div class="small_horizontal_line3" id="small_horiz_line_1"></div>
-                    <div class="small_horizontal_line4" id="small_horiz_line_1"></div>
-                    <div class="small_horizontal_line5" id="small_horiz_line_1"></div>
-                    <div class="small_horizontal_line6" id="small_horiz_line_1"></div>
+                    <div class="small_horizontal_line2" id="small_horiz_line_2"></div>
+                    <div class="small_horizontal_line3" id="small_horiz_line_3"></div>
+                    <div class="small_horizontal_line4" id="small_horiz_line_4"></div>
+                    <div class="small_horizontal_line5" id="small_horiz_line_5"></div>
+                    <div class="small_horizontal_line6" id="small_horiz_line_6"></div>
                     <div class="small_vertical_line1" id="small_vert_line_1"></div>
-                    <div class="small_vertical_line2" id="small_vert_line_1"></div>
-                    <div class="small_vertical_line3" id="small_vert_line_1"></div>
-                    <div class="small_vertical_line4" id="small_vert_line_1"></div>
-                    <div class="small_vertical_line5" id="small_vert_line_1"></div>
-                    <div class="small_vertical_line6" id="small_vert_line_1"></div>
+                    <div class="small_vertical_line2" id="small_vert_line_2"></div>
+                    <div class="small_vertical_line3" id="small_vert_line_3"></div>
+                    <div class="small_vertical_line4" id="small_vert_line_4"></div>
+                    <div class="small_vertical_line5" id="small_vert_line_5"></div>
+                    <div class="small_vertical_line6" id="small_vert_line_6"></div>
+                    
+                    <div class="aircraft_carrier" id="air_carr"><img src="aircraft_carrier_name.svg"></div>
+                    <div class="battleship" id="battl"><img src="battleship_name.svg"></div>
+                    <div class="destroyer" id="destr"><img src="destroyer_name.svg"></div>
+                    <div class="submarine" id="submar"><img src="submarine_name.svg"></div>
+                    <div class="patrol_boat" id="pat_bo"><img src="patrol_boat_name.svg"></div>
+                    <div class="all_ships_placed" id="all_shp_pla"><img src="all_ships_placed_name.svg"></div>
+                    
+                    <div class="check_mark" id="chk_mar"><img src="checkmark.svg"></div>
+                
                   </div> <!-- end of ship_sample  -->
             
                   
