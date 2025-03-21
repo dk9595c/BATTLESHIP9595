@@ -11,6 +11,7 @@ var disabled_squares_horizontal = [];
 var all_good = 0;
 var rotate_flag = 0;
 var tempRot = 0;
+var rotate_var = 0;
 
 
 for (let i = 0; i < 101; i++) {
@@ -34,6 +35,7 @@ function rotate_opacity_1(){
 
 function rotate_opacity_bytouch_1(){
     
+    rotate_caller_touch();
     rotate_flag = 1;
     document.getElementById("rotate_opt_wra").style.opacity = "1";
 }
@@ -206,10 +208,31 @@ function button_in_handler(a, event){
 }//end of function
 
 
+function rotate_caller_touch()
+{
+    if(rotate_var == 0)
+    {
+        rotate_var = 1;
+        rotate_ship();
+    }
+    
+}
+
+function rotate_caller_click()
+{
+    if(rotate_var == 0)
+    {
+        rotate_var = 1;
+        rotate_ship();
+    }
+    
+}
+
 function rotate_ship(){
     active_ship = active_ship * -1;
     tempRot+= 90;
     document.getElementById("sml_shp").style.rotate=tempRot+"deg";
+    rotate_var = 0;
     
     let sml_shp_size = shipSet[ship_counter];
     if(shipSet[ship_counter] < 0) {sml_shp_size = sml_shp_size * (-1);}
