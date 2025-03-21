@@ -35,7 +35,7 @@ function rotate_opacity_1(){
 
 function rotate_opacity_bytouch_1(){
     
-    rotate_caller_touch();
+   // rotate_caller_touch();
     rotate_flag = 1;
     document.getElementById("rotate_opt_wra").style.opacity = "1";
 }
@@ -207,7 +207,7 @@ function button_in_handler(a, event){
    }//end of if(blocked_squares[square_number] == 0)
 }//end of function
 
-
+/*
 function rotate_caller_touch()
 {
     if(rotate_var == 0)
@@ -226,13 +226,13 @@ function rotate_caller_click()
         rotate_ship();
     }
     
-}
+}*/
 
 function rotate_ship(){
     active_ship = active_ship * -1;
     tempRot+= 90;
     document.getElementById("sml_shp").style.rotate=tempRot+"deg";
-    rotate_var = 0;
+    //rotate_var = 0;
     
     let sml_shp_size = shipSet[ship_counter];
     if(shipSet[ship_counter] < 0) {sml_shp_size = sml_shp_size * (-1);}
