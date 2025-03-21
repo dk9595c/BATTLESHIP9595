@@ -83,7 +83,55 @@ function button_in_handler(a, event){
            document.getElementById("sml_shp").style.rotate=tempRot+"deg";
           }
            
-           
+       let sml_shp_size = shipSet[ship_counter+1];
+       if(shipSet[ship_counter+1] < 0) {sml_shp_size = sml_shp_size * (-1);}
+       let small_ship_height    = sml_shp_size * 11.97524575 - 3.5000000072;
+       let small_ship_bordRad   = (56.3762287541 * 2.6315794737) / small_ship_height;
+       document.getElementById("sml_shp").style.height = small_ship_height+"%";
+       document.getElementById("sml_shp").style.borderRadius = "16.6666667% / "+small_ship_bordRad+"%";
+       if(sml_shp_size == 3) {document.getElementById("sml_shp").style.translate = "0% 0%";}
+       
+       
+       //Changing the ship names in ship sample
+       if(ship_counter == 0)
+        {
+            document.getElementById("air_carr").style.display = "none";
+            document.getElementById("battl").style.display = "inline";
+        }
+       else if(ship_counter == 1)
+        {
+            document.getElementById("battl").style.display = "none";
+            document.getElementById("destr").style.display = "inline";
+        }
+       else if(ship_counter == 2)
+        {
+            document.getElementById("destr").style.display = "none";
+            document.getElementById("submar").style.display = "inline";
+        }
+       else if(ship_counter == 3)
+        {
+            document.getElementById("submar").style.display = "none";
+            document.getElementById("pat_bo").style.display = "inline";
+        }
+       else if(ship_counter == 4)
+        {
+            document.getElementById("pat_bo").style.display = "none";
+            document.getElementById("sml_shp").style.display = "none";
+            document.getElementById("all_shp_pla").style.display = "inline";
+            
+            for (let i = 1; i <= 6; i++)
+            {
+                document.getElementById("small_horiz_line_"+i).style.backgroundColor = "rgb(66,66,66)";
+                document.getElementById("small_vert_line_"+i).style.backgroundColor = "rgb(66,66,66)";
+                
+            }
+            document.getElementById("chk_mar").style.display = "inline";
+        }
+       
+       
+       
+       
+       
           /*
            if(active_ship > 0)
            {
@@ -162,6 +210,19 @@ function rotate_ship(){
     active_ship = active_ship * -1;
     tempRot+= 90;
     document.getElementById("sml_shp").style.rotate=tempRot+"deg";
+    
+    let sml_shp_size = shipSet[ship_counter];
+    if(shipSet[ship_counter] < 0) {sml_shp_size = sml_shp_size * (-1);}
+    let small_ship_height    = sml_shp_size * 11.97524575 - 3.5000000072;
+    let small_ship_bordRad   = (56.3762287541 * 2.6315794737) / small_ship_height;
+    document.getElementById("sml_shp").style.height = small_ship_height+"%";
+    document.getElementById("sml_shp").style.borderRadius = "16.6666667% / "+small_ship_bordRad+"%";
+    if(sml_shp_size == 4 && tempRot%180 == 90) {document.getElementById("sml_shp").style.translate = "68.2539680923% 13.3956386231%";}
+    if((sml_shp_size == 4 || sml_shp_size == 2) && tempRot%180 == 0) {document.getElementById("sml_shp").style.translate = "0% 0%";}
+    
+    if(sml_shp_size == 2 && tempRot%180 == 90) {
+        document.getElementById("sml_shp").style.translate = "68.2539680923% 29.6551723019%";}
+    
     if(active_ship > 0) // HORIZONTAL
     {   let full_width  = active_ship * 100 - 25;
         let reduced_width = active_ship * 100 - 50;
