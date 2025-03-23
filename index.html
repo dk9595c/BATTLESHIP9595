@@ -1,512 +1,1034 @@
-//document.getElementById("actual_sq_061").style.backgroundColor = "white";
-const shipSet = [-5, -4, -3, -3, -2];
-var ship_counter = 0;
-var active_ship = shipSet[ship_counter];
-var placed_ships = [0, 0, 0, 0, 0];
-var ship_position = [0, 0, 0, 0, 0];
-var occupied_squares = []; //Squares where a 'ship head' is present
-var blocked_squares = []; //These take care of boundary_overflow  red highlight
-var disabled_squares_vertical = [];
-var disabled_squares_horizontal = [];
-var all_good = 0;
-var rotate_flag = 0;
-var tempRot = 0;
-var rotate_var = 0;
-
-
-for (let i = 0; i < 101; i++) {
-    blocked_squares[i] = 0;
-    occupied_squares[i] = 0;
-    disabled_squares_vertical[i] = 0;
-    disabled_squares_horizontal[i] = 0;
-}
-
-for (let i = 61; i <= 100; i++) {
-    blocked_squares[i] = 1;
-    document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
-    document.documentElement.style.setProperty('--ht_reduced_global_' + i, "475%");
-}
-
-function rotate_opacity_1() {
-
-    if (rotate_flag == 0) {
-        document.getElementById("rotate_opt_wra").style.opacity = "1";
-    }
-}
-
-function rotate_opacity_bytouch_1() {
-
-    // rotate_caller_touch();
-    rotate_flag = 1;
-    document.getElementById("rotate_opt_wra").style.opacity = "1";
-}
-
-function rotate_opacity_0() {
-
-    if (rotate_flag == 0) {
-        document.getElementById("rotate_opt_wra").style.opacity = "0";
-    }
-}
-
-function rotate_opacity_bytouch_0() {
-
-    rotate_flag = 1;
-    document.getElementById("rotate_opt_wra").style.opacity = "0";
-}
-
-function erase_active_bytouch_1(){
-    erase_ships();
-    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
-    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
-}
-
-function erase_active_bytouch_0(){
-    document.getElementById("era_all_img").src = "Erase_all_text.svg";
-    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
-}
-
-function erase_active_1(){
-    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
-    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
-}
-
-function erase_active_0(){
-    document.getElementById("era_all_img").src = "Erase_all_text.svg";
-    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
-}
-
-function erase_ships_1()
-{location.reload();}
-
-function erase_ships(){
-    
-    for (let i = 1; i <= 100; i++) {
-        if(occupied_squares[i])
-        {document.getElementById("actual_sq_"+i).style.opacity = "0.4";}
-        }
-    
-    ship_counter = 0;
-    active_ship = shipSet[ship_counter];
-    for(let i=0; i<5; i++){placed_ships[i]=0; ship_position[i]=0;}
-    for (let i = 0; i < 101; i++) {
-        blocked_squares[i] = 0;
-        occupied_squares[i] = 0;
-        disabled_squares_vertical[i] = 0;
-        disabled_squares_horizontal[i] = 0;
-    }
-    for (let i = 61; i <= 100; i++) {
-        blocked_squares[i] = 1;
-        document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
-        document.documentElement.style.setProperty('--ht_reduced_global_' + i, "475%");
-    }
-    all_good = 0;
-    rotate_flag = 0;
-    tempRot = 0;
-    rotate_var = 0;
-    
-    document.getElementById("all_shp_pla").style.display = "none";
-    document.getElementById("air_carr").style.display = "inline";
-    for (let i = 1; i <= 6; i++) {
-        document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
-        document.getElementById("small_vert_line_" + i).style.backgroundColor  = "rgb(123, 128, 131)";
-    }
-    document.getElementById("chk_mar").style.display = "none";
-    
-    let sml_shp_size = shipSet[ship_counter];
-    if (shipSet[ship_counter + 1] < 0) {
-        sml_shp_size = sml_shp_size * (-1);
-    }
-    let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
-    let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
-    document.getElementById("sml_shp").style.height = small_ship_height + "%";
-    document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
-    document.getElementById("sml_shp").style.translate = "0% 0%";
-    document.getElementById("sml_shp").style.display = "inline";
-} //end of erase ships
-
-
-
-
-
-
-function button_in_handler(a, event) {
-    actual_id = "actual_sq_" + parseInt(a.id.slice(14, ));
-    square_number = parseInt(a.id.slice(14, ));
-    all_good = 0;
-
-    //    if(ship_counter > 0)
-    //    { compute_vertical_disabled_squares();
-    //      compute_horizontal_disabled_squares();
-    //    }
-
-
-
-    if ((active_ship > 0 && disabled_squares_horizontal[parseInt(a.id.slice(14, ))] == 0) || (active_ship < 0 && disabled_squares_vertical[parseInt(a.id.slice(14, ))] == 0)) {
-        all_good = 1;
-    }
-
-    if (blocked_squares[square_number] == 0 && placed_ships[4] == 0 && all_good == 1) //checking the actual square number of the board, not array index
-    {
-        all_good = 0;
-        //       document.addEventListener('pointerup', mouseUp);
-        //       document.addEventListener('onclick', mouseUp);
-        //
-        //       function mouseUp(event) {
-
-        document.getElementById(actual_id).style.backgroundColor = "rgb(91, 137,238)"; //Setting the ship color to Blue
-        // document.getElementById(actual_id).style.zIndex  = "2";
-        document.getElementById(actual_id).style.opacity = "1";
-        placed_ships[ship_counter] = active_ship;
-        ship_position[ship_counter] = parseInt(a.id.slice(14, )); //Storing the ship location
-
-        if (tempRot % 180 == 90) {
-            tempRot += 90;
-            document.getElementById("sml_shp").style.rotate = tempRot + "deg";
-        }
-
-        let sml_shp_size = shipSet[ship_counter + 1];
-        if (shipSet[ship_counter + 1] < 0) {
-            sml_shp_size = sml_shp_size * (-1);
-        }
-        let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
-        let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
-        document.getElementById("sml_shp").style.height = small_ship_height + "%";
-        document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
-        if (sml_shp_size == 3) {
-            document.getElementById("sml_shp").style.translate = "0% 0%";
-        }
-
-
-        //Changing the ship names in ship sample
-        if (ship_counter == 0) {
-            document.getElementById("air_carr").style.display = "none";
-            document.getElementById("battl").style.display = "inline";
-        } else if (ship_counter == 1) {
-            document.getElementById("battl").style.display = "none";
-            document.getElementById("destr").style.display = "inline";
-        } else if (ship_counter == 2) {
-            document.getElementById("destr").style.display = "none";
-            document.getElementById("submar").style.display = "inline";
-        } else if (ship_counter == 3) {
-            document.getElementById("submar").style.display = "none";
-            document.getElementById("pat_bo").style.display = "inline";
-        } else if (ship_counter == 4) {
-            document.getElementById("pat_bo").style.display = "none";
-            document.getElementById("sml_shp").style.display = "none";
-            document.getElementById("all_shp_pla").style.display = "inline";
-
-            for (let i = 1; i <= 6; i++) {
-                document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(66,66,66)";
-                document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(66,66,66)";
-
-            }
-            document.getElementById("chk_mar").style.display = "inline";
-        }
-
-
-
-
-        /*
-         if(active_ship > 0)
-         {
-             for (let i = 0; i < active_ship; i++)
-             {
-                 occupied_squares[parseInt(a.id.slice(14, )) + i] = 1;
-             }
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+      <meta name="theme-color" content="#202124">
+      <title>BattleShip</title>
+      <script src="ShipPlace.js"></script>
+      <style>
+         html,
+         body {
+         height: 100%;
+         margin: 0;
+         font-size: 0px;
+         overscroll-behaviour : none;
          }
-         
-         else if(active_ship < 0)
-         {   let actS = active_ship * (-1);
-             for (let i = 0; i < actS; i++) // i is set to 0 as the loop is only for counting purpose
-             {
-                 occupied_squares[parseInt(a.id.slice(14, )) + i*10] = 1;
-             }
-         }*/
-
-        occupied_squares[parseInt(a.id.slice(14, ))] = 1;
-        ship_counter++;
-        active_ship = shipSet[ship_counter];
-
-
-        compute_vertical_disabled_squares();
-        compute_horizontal_disabled_squares();
-        //for (let i = 0; i < 101; i++)
-        //{console.log("i="+i+" dis="+disabled_squares_vertical[i]); }
-
-        if (active_ship > 0) {
-            let full_width = active_ship * 100 - 25;
-            let reduced_width = active_ship * 100 - 50;
-            let full_border_radius = 1250.00000025 / full_width;
-            let reduced_border_radius = 833.3333335 / reduced_width;
-
-            for (let i = 1; i <= 100; i++) {
-                if (occupied_squares[i] == 0) {
-                    document.documentElement.style.setProperty('--wd_global_' + i, full_width + "%");
-                    document.documentElement.style.setProperty('--ht_global_' + i, '75%');
-                    document.documentElement.style.setProperty('--wd_reduced_global_' + i, reduced_width + "%");
-                    document.documentElement.style.setProperty('--ht_reduced_global_' + i, '50%');
-                    document.documentElement.style.setProperty('--borderRadius_G_X_' + i, full_border_radius + "%");
-                    document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, '16.6666667%');
-                    document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, reduced_border_radius + "%");
-                    document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, '16.6666667%');
-                }
-            }
-        } else if (active_ship < 0) {
-            let full_height = active_ship * (-1) * 100 - 25;
-            let reduced_height = active_ship * (-1) * 100 - 50;
-            let full_border_radius = 1250.00000025 / full_height;
-            let reduced_border_radius = 833.3333335 / reduced_height;
-
-            for (let i = 1; i <= 100; i++) {
-                if (occupied_squares[i] == 0) {
-                    document.documentElement.style.setProperty('--wd_global_' + i, "75%");
-                    document.documentElement.style.setProperty('--ht_global_' + i, full_height + "%");
-                    document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
-                    document.documentElement.style.setProperty('--ht_reduced_global_' + i, reduced_height + "%");
-                    document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
-                    document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, full_border_radius + "%");
-                    document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
-                    document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, reduced_border_radius + "%");
-                }
-            }
-        }
-
-        boundary_overflow();
-        //document.removeEventListener('pointerup', mouseUp);
-        //document.removeEventListener('touchcancel', mouseUp);
-
-        // }//end of mouseUp(event)
-    } //end of if(blocked_squares[square_number] == 0)
-} //end of function
-
-/*
-function rotate_caller_touch()
-{
-    if(rotate_var == 0)
-    {
-        rotate_var = 1;
-        rotate_ship();
-    }
-    
-}
-
-function rotate_caller_click()
-{
-    if(rotate_var == 0)
-    {
-        rotate_var = 1;
-        rotate_ship();
-    }
-    
-}*/
-
-function rotate_ship() {
-    active_ship = active_ship * -1;
-    tempRot += 90;
-    document.getElementById("sml_shp").style.rotate = tempRot + "deg";
-    //rotate_var = 0;
-
-    let sml_shp_size = shipSet[ship_counter];
-    if (shipSet[ship_counter] < 0) {
-        sml_shp_size = sml_shp_size * (-1);
-    }
-    let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
-    let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
-    document.getElementById("sml_shp").style.height = small_ship_height + "%";
-    document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
-    if (sml_shp_size == 4 && tempRot % 180 == 90) {
-        document.getElementById("sml_shp").style.translate = "68.2539680923% 13.3956386231%";
-    }
-    if ((sml_shp_size == 4 || sml_shp_size == 2) && tempRot % 180 == 0) {
-        document.getElementById("sml_shp").style.translate = "0% 0%";
-    }
-
-    if (sml_shp_size == 2 && tempRot % 180 == 90) {
-        document.getElementById("sml_shp").style.translate = "68.2539680923% 29.6551723019%";
-    }
-
-    if (active_ship > 0) // HORIZONTAL
-    {
-        let full_width = active_ship * 100 - 25;
-        let reduced_width = active_ship * 100 - 50;
-        let full_border_radius = 1250.00000025 / full_width;
-        let reduced_border_radius = 833.3333335 / reduced_width;
-
-        for (let i = 1; i <= 100; i++) {
-            if (occupied_squares[i] == 0) {
-                document.documentElement.style.setProperty('--wd_global_' + i, full_width + "%");
-                document.documentElement.style.setProperty('--ht_global_' + i, '75%');
-                document.documentElement.style.setProperty('--wd_reduced_global_' + i, reduced_width + "%");
-                document.documentElement.style.setProperty('--ht_reduced_global_' + i, '50%');
-                document.documentElement.style.setProperty('--borderRadius_G_X_' + i, full_border_radius + "%");
-                document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, '16.6666667%');
-                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, reduced_border_radius + "%");
-                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, '16.6666667%');
-            }
-        }
-    } else if (active_ship < 0) // VERTICAL
-    {
-        let full_height = active_ship * (-1) * 100 - 25;
-        let reduced_height = active_ship * (-1) * 100 - 50;
-        let full_border_radius = 1250.00000025 / full_height;
-        let reduced_border_radius = 833.3333335 / reduced_height;
-
-        for (let i = 1; i <= 100; i++) {
-            if (occupied_squares[i] == 0) {
-                document.documentElement.style.setProperty('--wd_global_' + i, "75%");
-                document.documentElement.style.setProperty('--ht_global_' + i, full_height + "%");
-                document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
-                document.documentElement.style.setProperty('--ht_reduced_global_' + i, reduced_height + "%");
-                document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
-                document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, full_border_radius + "%");
-                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
-                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, reduced_border_radius + "%");
-            }
-        }
-    }
-    boundary_overflow();
-} //end of rotate()
-
-
-
-
-//--------------------------------------------------------   boundary_overflow()    ----------------------------------------------------------------
-function boundary_overflow() {
-
-    for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
-        if (occupied_squares[i] == 0) {
-            blocked_squares[i] = 0;
-            let str1 = "actual_sq_" + i + "";
-            document.getElementById(str1).style.backgroundColor = "rgb(94,94,94)";
-            document.documentElement.style.setProperty('--mar_' + i, "25%");
-        }
-    } //end of loop
-
-
-    if (active_ship > 0) //HORIZONTAL
-    {
-        for (let i = 1; i <= 100; i++) {
-            if (((active_ship - (10 - i % 10)) >= 2 || (i % 10 == 0)) && occupied_squares[i] == 0) {
-                let str1 = "actual_sq_" + i + "";
-                let full_width = active_ship * 100 - 25;
-                document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
-                blocked_squares[i] = 1;
-                document.documentElement.style.setProperty('--wd_reduced_global_' + i, full_width + "%");
-                document.documentElement.style.setProperty('--ht_reduced_global_' + i, "75%");
-                document.documentElement.style.setProperty('--mar_' + i, "12.5%");
-            } //end of if
-
-        } //end of loop
-    } //end of if
-    else if (active_ship < 0) //VERTICAL
-    {
-        for (let i = 1; i <= 100; i++) {
-            if ((i > (100 - ((active_ship * (-1)) * 10 - 10))) && occupied_squares[i] == 0) {
-                let full_height = active_ship * (-1) * 100 - 25;
-                let str1 = "actual_sq_" + i + "";
-                document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
-                blocked_squares[i] = 1;
-                document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
-                document.documentElement.style.setProperty('--ht_reduced_global_' + i, full_height + "%");
-                document.documentElement.style.setProperty('--mar_' + i, "12.5%");
-            } //end of if
-        }
-    }
-
-} // end of boundary_overflow
-
-
-
-//--------------------------------------------------   compute_horizontal_disabled_squares()    ----------------------------------------------------
-function compute_horizontal_disabled_squares() {
-    let act_ship = shipSet[ship_counter];
-    if (active_ship < 0) {
-        act_ship = act_ship * (-1);
-    }
-
-    for (let i = 0; i < 101; i++) { // resetting the disabled squares
-        disabled_squares_horizontal[i] = 0;
-    }
-
-
-    for (let i = 0; i <= ship_counter; i++) {
-        let ship_size = placed_ships[i];
-        let shipPos = ship_position[i];
-
-        if (ship_size < 0) //vertical
-        {
-            ship_size = ship_size * (-1);
-            for (let j = 0; j < ship_size; j++) {
-                for (let i = 0; i < act_ship; i++) {
-                    if ((shipPos + (10 * j) - i) % 10 == 1) {
-                        disabled_squares_horizontal[shipPos + (10 * j) - i] = 1;
-                        break;
-                    } else {
-                        disabled_squares_horizontal[shipPos + (10 * j) - i] = 1;
-                    }
-                } //end of loop
-            } //end of j loop
-        } //end of if(ship_size > 0)
-        else if (ship_size > 0) //horizontal
-        {
-            for (let k = shipPos; k <= ship_size + shipPos - 1; k++) //squares within the ship
-            {
-                disabled_squares_horizontal[k] = 1;
-
-            }
-
-            for (let i = 0; i < act_ship; i++) {
-                if ((shipPos - i) % 10 <= 0) break;
-                disabled_squares_horizontal[shipPos - i] = 1;
-            } //end of loop
-
-
-        } // end of else if
-
-    } //end of for loop
-} // end of compute_horizontal_disabled_squares
-
-
-
-//--------------------------------------------------   compute_vertical_disabled_squares()    ----------------------------------------------------
-function compute_vertical_disabled_squares() {
-    let act_ship = active_ship;
-    if (active_ship < 0) {
-        act_ship = act_ship * (-1);
-    }
-
-    for (let i = 0; i < 101; i++) { // resetting the disabled squares
-        disabled_squares_vertical[i] = 0;
-    }
-
-    for (let i = 0; i <= ship_counter; i++) {
-        let ship_size = placed_ships[i];
-        let shipPos = ship_position[i];
-
-        if (ship_size < 0) //vertical
-        {
-            ship_size = ship_size * (-1);
-            for (let k = 0; k <= ship_size - 1; k++) {
-                disabled_squares_vertical[shipPos + 10 * k] = 1; //squares within the ship
-
-            }
-            for (let i = 0; i < act_ship; i++) {
-                if ((shipPos - 10 * i) <= 0) break;
-                disabled_squares_vertical[shipPos - 10 * i] = 1;
-            } //end of loop
-
-        } //end of if(ship_size < 0 )
-        else if (ship_size > 0) //horizontal
-        {
-            for (let j = 0; j < ship_size; j++) {
-                for (let i = 0; i < act_ship; i++) {
-                    if ((shipPos - (10 * i) + j) <= 0) break;
-                    disabled_squares_vertical[shipPos - (10 * i) + j] = 1;
-
-                } //end of loop
-            } //end of j loop
-
-
-        } //end of else if
-    } //end of master for-loop
-} //end of compute_vertical_disabled_squares
+         img {
+         max-width: 100%;
+         max-height: 100%;
+         }
+         .master_flexbox {
+         display: flex;
+         flex-flow: column;
+         height: 100%;
+         width: 100%;
+         margin: 0px 0px 0px 0px;
+         }
+         .master_flexbox .content {
+         flex: 1 1 auto;
+         font-size: 0px;
+         }
+         .flex-container {
+         display: flex;
+         justify-content: space-between;
+         background-color: rgb(32, 33, 36);
+         margin: 0px 0px 0px 0px;
+         }
+         .flex-container > div {
+         padding: 7.5px 0px 20px 0px;
+         vertical-align: top;
+         min-height: 40px;
+         max-width: 143px;
+         max-height: 40px;
+         min-width: 130px;
+         }
+         .questionmark {
+         bottom : 0;
+         }
+         .test_screen_resolution{
+         font-family:poppins, Arial;
+         position: absolute;
+         border-radius : 10px;
+         /* background-color: rgb(94,94,94);*/
+         z-index:2;
+         width: 55.2155772%;
+         height: 10.4311544%;
+         margin-top: 3%;
+         margin-left: 22.3922114%;
+         color: white;
+         font-size: min(2.5vw, 3vh);
+         margin-bottom:0px;
+         text-align:center;
+         top:0;
+         padding-bottom:1;
+         display : inline;
+         }
+         .aircraft_carrier{
+         z-index:2;
+         width: 58.1537089%;
+         height: 10.3225806452%;
+         margin-top: 103.548387%;
+         margin-left: 20.9231456%;
+         color: white;
+         font-size: 0px;
+         margin-bottom:0px;
+         text-align:center;
+         top:0;
+         padding-bottom:1;
+         display : inline;
+         position: absolute;
+         }
+         .battleship{
+         z-index:2;
+         width: 38.7096774194%;
+         height: 10.3225806452%;
+         margin-top: 103.548387%;
+         margin-left: 30.6451613%;
+         color: white;
+         font-size: 0px;
+         margin-bottom:0px;
+         text-align:center;
+         top:0;
+         padding-bottom:1;
+         display : none;
+         position: absolute;
+         }
+         .destroyer{
+         z-index:2;
+         width: 38.888063%;
+         height: 10.3225806452%;
+         margin-top: 103.548387%;
+         margin-left: 30.5559685%;
+         color: white;
+         font-size: 0px;
+         margin-bottom:0px;
+         text-align:center;
+         top:0;
+         padding-bottom:1;
+         display : none;
+         position: absolute;
+         }
+         .submarine{
+         z-index:2;
+         width: 42.6341608%;
+         height: 10.3225806452%;
+         margin-top: 103.548387%;
+         margin-left: 28.6829196%;
+         color: white;
+         font-size: 0px;
+         margin-bottom:0px;
+         text-align:center;
+         top:0;
+         padding-bottom:1;
+         display : none;
+         position: absolute;
+         }
+         .patrol_boat{
+         z-index:2;
+         width: 43.8828601%;
+         height: 10.3225806452%;
+         margin-top: 103.548387%;
+         margin-left: 28.05857%;
+         color: white;
+         font-size: 0px;
+         margin-bottom:0px;
+         text-align:center;
+         top:0;
+         padding-bottom:1;
+         display : none;
+         position: absolute;
+         }
+         .check_mark{
+         z-index:4;
+         width:  65.4040404%;
+         height: 65.4040404%;
+         margin-top: 24.4949495%;
+         margin-left: 17.2979798%;
+         font-size: 0px;
+         margin-bottom:0px;
+         display : none;
+         position: absolute;
+         }
+         .rotate_option{
+         display:inline;
+         position:absolute;
+         margin-left:73.1571627%;
+         margin-top:19.8887344%;
+         width:14.6036161%;
+         height:14.6036161%;
+         z-index:2;
+         }
+         .rotate_text{
+         display:inline;
+         position:absolute;
+         margin-left:74.8261474%;
+         margin-top:36.9958275%;
+         width:11.2656467%;
+         height:5.42420028%;
+         z-index:2;
+         }
+         .rotate_options_wrapper{
+         position:absolute;
+         display:inline;
+         font-size:0px;
+         border-radius: 8.05369128% / 6.6666667%;
+         margin-left:70.0973574%;
+         margin-top:17.3852573%;
+         width:20.7232267%;
+         height:25.0347705%;
+         background-color: rgb(66,66,66);
+         z-index:2;
+         opacity:0;
+         }
+         .ship_sample{
+         position:absolute;
+         display:inline;
+         font-size:0px;
+         border-radius: 11.275167792% / 9.33333338%;
+         margin-left:9.1794159%;
+         margin-top:17.3852573%;
+         width:43.1154381%;
+         height:51.8776078%;
+         background-color: rgb(49, 49, 52);
+         z-index:2;
+         opacity:1;
+         border: 1px solid rgb(123, 128, 131);
+         }
+          
+         .erase_all{
+         position:absolute;
+         display:inline;
+         font-size:0px;
+         border-radius: 8.05369128% / 16.544583%;
+         margin-left: 70.0973574%;
+         margin-top: 47.2878999%;
+         width:  20.7232267%;
+         height: 9.73574409%;
+         background-color: rgb(49, 49, 52);
+         z-index:2;
+         opacity:1;
+         border: 1px solid rgb(204,7,30);
+         }
+          
+         .erase_all_txt{
+         display:inline;
+         position:absolute;
+         margin-left:73.2931639%;
+         margin-top:49.4436718%;
+         width:14.3316139%;
+         height:5.42420028%;
+         z-index:2;
+         }
+          
+         .all_ships_placed{
+         z-index:4;
+         width: 61.5430355%;
+         height: 10.3225806452%;
+         margin-top: 103.548387%;
+         margin-left: 19.2284823%;
+         color: white;
+         font-size: 0px;
+         margin-bottom:0px;
+         text-align:center;
+         top:0;
+         padding-bottom:1;
+         display : none;
+         position: absolute;
+         }
+         .small_ship{
+         position:absolute;
+         display:inline;
+         font-size:0px;
+         border-radius: 16.6666667% / 2.6315794737%;
+         margin-left : 44.7499999893%;
+         margin-top  : 16.08333333217%;
+         width  : 10.5000000214%;
+         height : 56.3762287541%;
+         background-color: rgb(91, 137,238);
+         z-index:2;
+         opacity:1;
+         rotate: 0deg;
+         translate: 0% 0%;
+         transition: rotate 0.35s, translate 0.35s;
+         /* 1.7500000036
+         7.1666666643%
+         height of 4 - size ship : 53.5000000071
+         a= 9.8130841308
+         b= 0.3115264486
+         c= 3.2710280437
+         calculated = 13.3956386231 (correct!!)
+         overflow= 5.0833333607
+         span= 43.3333332857
+         calculated= 7.1666666643
+         final calculated= 68.2539680923
+         translate: 68.2539680923% 13.3956386231%;
+         height of 2- size ship : 24.1666667499
+         */
+         }
+         .small_horizontal_line1, .small_horizontal_line2, .small_horizontal_line3, .small_horizontal_line4, .small_horizontal_line5, .small_horizontal_line6{
+         width: 0px;
+         height: 0px;
+         padding-right: 90.3225806%;
+         padding-bottom: 0.3333333%;
+         margin-left: 4.83870968%;
+         border-radius: 5px;
+         position: absolute;
+         background-color: rgb(123, 128, 131);
+         }
+         .small_vertical_line1, .small_vertical_line2, .small_vertical_line3, .small_vertical_line4, .small_vertical_line5, .small_vertical_line6{
+         width: 0px;
+         height: 0px;
+         padding-bottom: 90.3225806%;
+         padding-right: 0.3333333%;
+         margin-top: 4.83870968%;
+         border-radius: 5px;
+         position: absolute;
+         background-color: rgb(123, 128, 131);
+         }
+         .small_horizontal_line1{margin-top: 14.0000000285714%;}
+         .small_horizontal_line2{margin-top: 28.3333333571%;}
+         .small_horizontal_line3{margin-top: 42.6666666857%;}
+         .small_horizontal_line4{margin-top: 57.0000000142714%;}
+         .small_horizontal_line5{margin-top: 71.3333333428%;}
+         .small_horizontal_line6{margin-top: 85.6666666714%;}
+         .small_vertical_line1{margin-left: 14.0000000285714%;}
+         .small_vertical_line2{margin-left: 28.3333333571%;}
+         .small_vertical_line3{margin-left: 42.6666666857%;}
+         .small_vertical_line4{margin-left: 57.0000000142714%;}
+         .small_vertical_line5{margin-left: 71.3333333428%;}
+         .small_vertical_line6{margin-left: 85.6666666714%;}
+         .small_logo{
+         display: none;
+         }
+         .big_logo{
+         font-size: 2px;
+         padding-top: 2px;
+         min-width: 130px;
+         display:inline;
+         }
+         .vertical_line1,
+         .vertical_line2,
+         .vertical_line3,
+         .vertical_line4,
+         .vertical_line5,
+         .vertical_line6,
+         .vertical_line7,
+         .vertical_line8,
+         .vertical_line9 {
+         width: 0.33%;
+         padding-bottom: 96.66%;
+         margin-top: 1.67%;
+         border-radius: 1px;
+         position: absolute;
+         background-color: rgb(123, 128, 131);
+         }
+         .vertical_line1 {
+         margin-left: 9.835%;
+         }
+         .vertical_line2 {
+         margin-left: 19.835%;
+         }
+         .vertical_line3 {
+         margin-left: 29.835%;
+         }
+         .vertical_line4 {
+         margin-left: 39.835%;
+         }
+         .vertical_line5 {
+         margin-left: 49.835%;
+         }
+         .vertical_line6 {
+         margin-left: 59.835%;
+         }
+         .vertical_line7 {
+         margin-left: 69.835%;
+         }
+         .vertical_line8 {
+         margin-left: 79.835%;
+         }
+         .vertical_line9 {
+         margin-left: 89.835%;
+         }
+         .horizontal_line1,
+         .horizontal_line2,
+         .horizontal_line3,
+         .horizontal_line4,
+         .horizontal_line5,
+         .horizontal_line6,
+         .horizontal_line7,
+         .horizontal_line8,
+         .horizontal_line9 {
+         width: 0px;
+         height: 0px;
+         padding-right: 96.66%;
+         padding-bottom: 0.3333333%;
+         margin-left: 1.666667%;
+         border-radius: 1px;
+         position: absolute;
+         background-color: rgb(123, 128, 131);
+         }
+         .horizontal_line1 {
+         margin-top: 9.835%;
+         }
+         .horizontal_line2 {
+         margin-top: 19.835%;
+         }
+         .horizontal_line3 {
+         margin-top: 29.835%;
+         }
+         .horizontal_line4 {
+         margin-top: 39.835%;
+         }
+         .horizontal_line5 {
+         margin-top: 49.835%;
+         }
+         .horizontal_line6 {
+         margin-top: 59.835%;
+         }
+         .horizontal_line7 {
+         margin-top: 69.835%;
+         }
+         .horizontal_line8 {
+         margin-top: 79.835%;
+         }
+         .horizontal_line9 {
+         margin-top: 89.835%;
+         }
+         .greybox_left {
+         padding-bottom: min((100vh - 130px), 41.65vw);
+         padding-right: min((100vh - 130px), 41.65vw);
+         --widthX : min((100vh - 130px), 41.65vw);
+         display: inline-block;
+         position: absolute;
+         margin-left: calc(50vw - var(--widthX) - 4.44vw);
+         margin-top: 3.25%;
+         border-radius: 1.66666667%;
+         background-color: rgb(49, 49, 52);
+         font-size: 0px;
+         overflow:hidden;
+         }
+          
+          
+         .greybox_right {
+         padding-bottom: min((100vh - 130px), 41.65vw);
+         padding-right: min((100vh - 130px), 41.65vw);
+         --widthX : min((100vh - 130px), 41.65vw);
+         display: inline-block;
+         position: absolute;
+         margin-left: 4.44vw;
+         margin-top: 3.25%;
+         border-radius: 1.66666667%;
+         background-color: rgb(49, 49, 52);
+         font-size: 0px;
+         }
+         .version_name {
+         font-family: Helvetica, Arial;
+         display: inline;
+         color: rgb(124, 128, 131);
+         margin-left: 55px;
+         margin-top : calc((40px - 1.5vw)/2);
+         position: absolute;
+         font-size: 1vw;
+         padding: 0px 0px 0px 0px;
+         z-index: 2;
+         }
+         .pseudo_span {
+         font-family: Helvetica, Arial;
+         display: inline;
+         color: rgb(32, 33, 36);
+         vertical-align: top;
+         padding: 0px 0px 0px 0px;
+         }
+         .pseudo_span2 {
+         font-family: Helvetica, Arial;
+         display: inline;
+         color: rgb(32, 33, 36);
+         vertical-align: top;
+         padding: 0px 0px 0px 0px;
+         display: none;
+         }
+         @media screen and (max-width: 600px) {
+         .version_name {
+         font-size : 6px;
+         margin-top : 15.5px;
+         }
+         .pseudo_span {
+         display: none;
+         font-size: 20px;
+         }
+         .pseudo_span2 {
+         display: inline-block;
+         font-size: 16px;
+         }
+         .flex-container > div {
+         min-width: 0px;
+         }
+         }
+         .LogoFirstHalf {
+         font-family: Impact, Arial;
+         display: inline;
+         color: rgb(91, 136, 238);
+         vertical-align: top;
+         font-weight: bold;
+         font-size: 30px;
+         padding: 0px;
+         }
+         .LogoSecondHalf {
+         font-family: Impact, Arial;
+         display: inline;
+         color: rgb(124, 128, 131);
+         vertical-align: top;
+         text-align: left;
+         font-weight: bold;
+         font-size: 30px;
+         padding: 0px;
+         }
+         .red_dot {
+         display: inline;
+         z-index: 1;
+         }
+         .left_side {
+         background-color: rgb(32, 33, 36);
+         height: 100%;
+         width: 50%;
+         display: inline-block;
+         }
+         .right_side {
+         background-color: rgb(32, 33, 36);
+         height: 100%;
+         width: 50%;
+         display: inline-block;
+         }
+         @media only screen and (max-width: 600px) {
+         .right_side {
+         width: 100%;
+         height: 50%;
+         display: block;
+         background-color: rgb(32, 33, 36);
+         position: relative;
+         }
+         .left_side {
+         width: 100%;
+         height: 50%;
+         display: block;
+         background-color: rgb(32, 33, 36);
+         position: relative;
+         }
+         .greybox_left {
+         margin-top: 0px;
+         padding-bottom: min((100vh - 130px)/2, 94vw);
+         padding-right: min((100vh - 130px)/2, 94vw);
+         --widthD : min((100vh - 130px)/2, 94vw);
+         display: inline-block;
+         position: absolute;
+         margin-left: max(3%, calc((100% - var(--widthD))/2));
+         bottom : 1%;
+         }
+         .greybox_right {
+         margin-top: 0px;
+         padding-bottom: min((100vh - 130px)/2, 94vw);
+         padding-right: min((100vh - 130px)/2, 94vw);
+         --widthD : min((100vh - 130px)/2, 94vw);
+         display: inline-block;
+         position: absolute;
+         margin-left: max(3%, calc((100% - var(--widthD))/2));
+         margin-bottom : calc(50vh - var(--widthD));
+         top: 1%;
+         }
+         }
+         @media only screen and (max-width: 320px) {
+         .small_logo{
+         display: inline;
+         }
+         .big_logo{
+         font-size: 2px;
+         padding-top: 2px;
+         min-width: 130px;
+         display:none;
+         }
+         .version_name {
+         display:none;
+         }
+      </style>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,1&icon_names=menu" />
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=help" />
+      <link rel="stylesheet" href="Pseudo_square.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+      <link rel="icon" href="favicon_6.png" type="image/x-icon">
+   </head>
+   <body style="background-color: rgb(32, 33, 36);">
+      <div class="version_name">L1400-K</div>
+      <div class="master_flexbox">
+         <div class="flex-container">
+            <div style="padding: 8px 0px 0px 20px;" text-align:center;>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+               </svg>
+            </div>
+            <!--<div>
+               <span class="LogoFirstHalf">BATTLE</span><span class="LogoSecondHalf">SHIP</span><div class= "red_dot"><svg height="35" width="10"><circle r="5" cx="5" cy="30" fill="red" /></svg></div>
+               </div>  -->
+            <div class="small_logo">
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="25px" viewBox="0 0 23 25" version="1.1">
+                  <g id="surface1">
+                     <path
+                        style="stroke: none; fill-rule: nonzero; fill: rgb(90, 137, 237); fill-opacity: 1;"
+                        d="M 0 0.164062 L 6.386719 0.164062 C 8.40625 0.164062 9.9375 0.320312 10.976562 0.636719 C 12.019531 0.953125 12.859375 1.589844 13.5 2.546875 C 14.132812 3.507812 14.453125 5.058594 14.453125 7.191406 C 14.453125 8.632812 14.226562 9.636719 13.78125 10.207031 C 13.328125 10.777344 12.433594 11.214844 11.105469 11.515625 C 12.589844 11.855469 13.59375 12.410156 14.121094 13.183594 C 14.648438 13.960938 14.914062 15.152344 14.914062 16.761719 L 14.914062 19.042969 C 14.914062 20.710938 14.722656 21.945312 14.339844 22.746094 C 13.957031 23.546875 13.351562 24.097656 12.519531 24.394531 C 11.691406 24.6875 9.984375 24.835938 7.410156 24.835938 L 0 24.835938 L 0 0.164062 M 6.40625 4.390625 L 6.40625 9.871094 C 6.679688 9.859375 6.894531 9.855469 7.042969 9.855469 C 7.675781 9.855469 8.074219 9.703125 8.246094 9.394531 C 8.417969 9.082031 8.507812 8.195312 8.507812 6.734375 C 8.507812 5.960938 8.4375 5.421875 8.296875 5.113281 C 8.148438 4.800781 7.960938 4.605469 7.734375 4.527344 C 7.507812 4.441406 7.066406 4.398438 6.40625 4.390625 M 6.40625 13.714844 L 6.40625 20.617188 C 7.308594 20.582031 7.882812 20.441406 8.132812 20.1875 C 8.382812 19.933594 8.507812 19.308594 8.507812 18.3125 L 8.507812 16.011719 C 8.507812 14.953125 8.394531 14.316406 8.171875 14.09375 C 7.945312 13.871094 7.359375 13.742188 6.40625 13.714844"
+                        />
+                  </g>
+                  <circle r="3.5" cx="20" cy="21" fill="rgb(204,7,30)" />
+               </svg>
+            </div>
+            <div class="big_logo">
+               <?xml version="1.0" encoding="UTF-8"?>
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84px" height="25px" viewBox="0 0 83 25" version="1.1">
+                  <g id="surface1">
+                     <path
+                        style="stroke: none; fill-rule: nonzero; fill: rgb(90, 137, 237); fill-opacity: 1;"
+                        d="M 0 0.164062 L 6.386719 0.164062 C 8.40625 0.164062 9.9375 0.320312 10.976562 0.636719 C 12.019531 0.953125 12.859375 1.589844 13.5 2.546875 C 14.132812 3.507812 14.453125 5.058594 14.453125 7.191406 C 14.453125 8.632812 14.226562 9.636719 13.78125 10.207031 C 13.328125 10.777344 12.433594 11.214844 11.105469 11.515625 C 12.589844 11.855469 13.59375 12.410156 14.121094 13.183594 C 14.648438 13.960938 14.914062 15.152344 14.914062 16.761719 L 14.914062 19.042969 C 14.914062 20.710938 14.722656 21.945312 14.339844 22.746094 C 13.957031 23.546875 13.351562 24.097656 12.519531 24.394531 C 11.691406 24.6875 9.984375 24.835938 7.410156 24.835938 L 0 24.835938 L 0 0.164062 M 6.40625 4.390625 L 6.40625 9.871094 C 6.679688 9.859375 6.894531 9.855469 7.042969 9.855469 C 7.675781 9.855469 8.074219 9.703125 8.246094 9.394531 C 8.417969 9.082031 8.507812 8.195312 8.507812 6.734375 C 8.507812 5.960938 8.4375 5.421875 8.296875 5.113281 C 8.148438 4.800781 7.960938 4.605469 7.734375 4.527344 C 7.507812 4.441406 7.066406 4.398438 6.40625 4.390625 M 6.40625 13.714844 L 6.40625 20.617188 C 7.308594 20.582031 7.882812 20.441406 8.132812 20.1875 C 8.382812 19.933594 8.507812 19.308594 8.507812 18.3125 L 8.507812 16.011719 C 8.507812 14.953125 8.394531 14.316406 8.171875 14.09375 C 7.945312 13.871094 7.359375 13.742188 6.40625 13.714844 Z M 28.269531 0.164062 L 31.941406 24.835938 L 25.378906 24.835938 L 25.058594 20.398438 L 22.761719 20.398438 L 22.378906 24.835938 L 15.75 24.835938 L 19 0.164062 L 28.269531 0.164062 M 24.878906 16.03125 C 24.554688 13.234375 24.230469 9.785156 23.898438 5.679688 C 23.253906 10.394531 22.847656 13.84375 22.683594 16.03125 Z M 44.21875 0.164062 L 44.21875 5.101562 L 40.410156 5.101562 L 40.410156 24.835938 L 34.007812 24.835938 L 34.007812 5.101562 L 30.21875 5.101562 L 30.21875 0.164062 Z M 58.574219 0.164062 L 58.574219 5.101562 L 54.773438 5.101562 L 54.773438 24.835938 L 48.367188 24.835938 L 48.367188 5.101562 L 44.578125 5.101562 L 44.578125 0.164062 Z M 66.449219 0.164062 L 66.449219 19.898438 L 70.34375 19.898438 L 70.34375 24.835938 L 60.039062 24.835938 L 60.039062 0.164062 Z M 71.894531 0.164062 L 82.578125 0.164062 L 82.578125 5.101562 L 78.292969 5.101562 L 78.292969 9.78125 L 82.300781 9.78125 L 82.300781 14.476562 L 78.292969 14.476562 L 78.292969 19.898438 L 83 19.898438 L 83 24.835938 L 71.894531 24.835938 Z M 71.894531 0.164062 "
+                        />
+                  </g>
+               </svg>
+               <?xml version="1.0" encoding="UTF-8"?>
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58px" height="25px" viewBox="0 0 58 25" version="1.1">
+                  <g id="surface1">
+                     <path
+                        style="stroke: none; fill-rule: nonzero; fill: rgb(124, 128, 132); fill-opacity: 1;"
+                        d="M 13.734375 7.769531 L 7.996094 7.769531 L 7.996094 5.992188 C 7.996094 5.160156 7.921875 4.632812 7.773438 4.398438 C 7.625 4.171875 7.378906 4.058594 7.039062 4.058594 C 6.667969 4.058594 6.386719 4.214844 6.195312 4.523438 C 6.003906 4.828125 5.910156 5.292969 5.910156 5.910156 C 5.910156 6.710938 6.015625 7.316406 6.234375 7.71875 C 6.4375 8.125 7.019531 8.613281 7.976562 9.1875 C 10.730469 10.839844 12.460938 12.195312 13.175781 13.25 C 13.894531 14.304688 14.253906 16.007812 14.253906 18.359375 C 14.253906 20.070312 14.054688 21.332031 13.65625 22.140625 C 13.261719 22.949219 12.492188 23.628906 11.359375 24.175781 C 10.21875 24.726562 8.894531 25 7.386719 25 C 5.734375 25 4.324219 24.683594 3.152344 24.054688 C 1.980469 23.417969 1.214844 22.613281 0.855469 21.636719 C 0.492188 20.660156 0.3125 19.269531 0.3125 17.472656 L 0.3125 15.902344 L 6.050781 15.902344 L 6.050781 18.820312 C 6.050781 19.71875 6.136719 20.296875 6.300781 20.558594 C 6.460938 20.8125 6.746094 20.941406 7.152344 20.941406 C 7.566406 20.941406 7.875 20.777344 8.074219 20.449219 C 8.273438 20.125 8.375 19.640625 8.375 18.996094 C 8.375 17.585938 8.183594 16.664062 7.804688 16.230469 C 7.410156 15.792969 6.445312 15.066406 4.910156 14.050781 C 3.375 13.023438 2.355469 12.277344 1.851562 11.8125 C 1.355469 11.347656 0.941406 10.703125 0.613281 9.886719 C 0.285156 9.066406 0.121094 8.019531 0.121094 6.742188 C 0.121094 4.90625 0.351562 3.5625 0.820312 2.714844 C 1.285156 1.863281 2.035156 1.199219 3.074219 0.722656 C 4.113281 0.242188 5.367188 0 6.835938 0 C 8.4375 0 9.808594 0.261719 10.9375 0.789062 C 12.070312 1.3125 12.820312 1.96875 13.1875 2.769531 C 13.550781 3.5625 13.734375 4.910156 13.734375 6.816406 Z M 30.40625 0.503906 L 30.40625 24.496094 L 24.222656 24.496094 L 24.222656 14.421875 L 22.375 14.421875 L 22.375 24.496094 L 16.191406 24.496094 L 16.191406 0.503906 L 22.375 0.503906 L 22.375 9.085938 L 24.222656 9.085938 L 24.222656 0.503906 Z M 39.074219 0.503906 L 39.074219 24.496094 L 32.890625 24.496094 L 32.890625 0.503906 Z M 41.554688 0.503906 L 47.78125 0.503906 C 49.464844 0.503906 50.761719 0.636719 51.667969 0.90625 C 52.574219 1.171875 53.253906 1.558594 53.707031 2.0625 C 54.164062 2.566406 54.472656 3.175781 54.632812 3.890625 C 54.796875 4.605469 54.878906 5.714844 54.878906 7.214844 L 54.878906 9.308594 C 54.878906 10.839844 54.722656 11.953125 54.402344 12.65625 C 54.089844 13.359375 53.515625 13.898438 52.683594 14.269531 C 51.84375 14.644531 50.75 14.832031 49.398438 14.832031 L 47.738281 14.832031 L 47.738281 24.496094 L 41.554688 24.496094 L 41.554688 0.503906 M 47.738281 4.613281 L 47.738281 10.710938 C 47.914062 10.726562 48.066406 10.730469 48.195312 10.730469 C 48.761719 10.730469 49.152344 10.589844 49.375 10.304688 C 49.59375 10.027344 49.707031 9.441406 49.707031 8.550781 L 49.707031 6.578125 C 49.707031 5.761719 49.578125 5.230469 49.328125 4.984375 C 49.070312 4.734375 48.539062 4.613281 47.738281 4.613281 Z M 47.738281 4.613281 "
+                        />
+                  </g>
+                  <circle r="3.5" cx="54" cy="21" fill="rgb(204,7,30)" />
+               </svg>
+            </div>
+            <div class = "questionmark">
+               <span class="pseudo_span">qwertyuiopas</span>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -860 960 860" width="24px" fill="#e8eaed">
+                  <path
+                     d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+                     />
+               </svg>
+               <span class="pseudo_span2">qw</span>
+            </div>
+         </div>
+         <div class="content">
+            <div class="left_side">
+               <div class="greybox_left" id="left_greybox">
+                  <div class="ps_001" id="pseudo_square_1" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_001" id="actual_sq_1"></div>
+                  </div>
+                  <div class="ps_002" id="pseudo_square_2" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_002" id="actual_sq_2"></div>
+                  </div>
+                  <div class="ps_003" id="pseudo_square_3" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_003" id="actual_sq_3"></div>
+                  </div>
+                  <div class="ps_004" id="pseudo_square_4" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_004" id="actual_sq_4"></div>
+                  </div>
+                  <div class="ps_005" id="pseudo_square_5" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_005" id="actual_sq_5"></div>
+                  </div>
+                  <div class="ps_006" id="pseudo_square_6" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_006" id="actual_sq_6"></div>
+                  </div>
+                  <div class="ps_007" id="pseudo_square_7" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_007" id="actual_sq_7"></div>
+                  </div>
+                  <div class="ps_008" id="pseudo_square_8" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_008" id="actual_sq_8"></div>
+                  </div>
+                  <div class="ps_009" id="pseudo_square_9" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_009" id="actual_sq_9"></div>
+                  </div>
+                  <div class="ps_010" id="pseudo_square_10" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_010" id="actual_sq_10"></div>
+                  </div>
+                  <div class="ps_011" id="pseudo_square_11" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_011" id="actual_sq_11"></div>
+                  </div>
+                  <div class="ps_012" id="pseudo_square_12" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_012" id="actual_sq_12"></div>
+                  </div>
+                  <div class="ps_013" id="pseudo_square_13" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_013" id="actual_sq_13"></div>
+                  </div>
+                  <div class="ps_014" id="pseudo_square_14" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_014" id="actual_sq_14"></div>
+                  </div>
+                  <div class="ps_015" id="pseudo_square_15" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_015" id="actual_sq_15"></div>
+                  </div>
+                  <div class="ps_016" id="pseudo_square_16" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_016" id="actual_sq_16"></div>
+                  </div>
+                  <div class="ps_017" id="pseudo_square_17" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_017" id="actual_sq_17"></div>
+                  </div>
+                  <div class="ps_018" id="pseudo_square_18" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_018" id="actual_sq_18"></div>
+                  </div>
+                  <div class="ps_019" id="pseudo_square_19" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_019" id="actual_sq_19"></div>
+                  </div>
+                  <div class="ps_020" id="pseudo_square_20" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_020" id="actual_sq_20"></div>
+                  </div>
+                  <div class="ps_021" id="pseudo_square_21" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_021" id="actual_sq_21"></div>
+                  </div>
+                  <div class="ps_022" id="pseudo_square_22" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_022" id="actual_sq_22"></div>
+                  </div>
+                  <div class="ps_023" id="pseudo_square_23" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_023" id="actual_sq_23"></div>
+                  </div>
+                  <div class="ps_024" id="pseudo_square_24" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_024" id="actual_sq_24"></div>
+                  </div>
+                  <div class="ps_025" id="pseudo_square_25" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_025" id="actual_sq_25"></div>
+                  </div>
+                  <div class="ps_026" id="pseudo_square_26" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_026" id="actual_sq_26"></div>
+                  </div>
+                  <div class="ps_027" id="pseudo_square_27" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_027" id="actual_sq_27"></div>
+                  </div>
+                  <div class="ps_028" id="pseudo_square_28" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_028" id="actual_sq_28"></div>
+                  </div>
+                  <div class="ps_029" id="pseudo_square_29" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_029" id="actual_sq_29"></div>
+                  </div>
+                  <div class="ps_030" id="pseudo_square_30" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_030" id="actual_sq_30"></div>
+                  </div>
+                  <div class="ps_031" id="pseudo_square_31" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_031" id="actual_sq_31"></div>
+                  </div>
+                  <div class="ps_032" id="pseudo_square_32" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_032" id="actual_sq_32"></div>
+                  </div>
+                  <div class="ps_033" id="pseudo_square_33" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_033" id="actual_sq_33"></div>
+                  </div>
+                  <div class="ps_034" id="pseudo_square_34" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_034" id="actual_sq_34"></div>
+                  </div>
+                  <div class="ps_035" id="pseudo_square_35" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_035" id="actual_sq_35"></div>
+                  </div>
+                  <div class="ps_036" id="pseudo_square_36" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_036" id="actual_sq_36"></div>
+                  </div>
+                  <div class="ps_037" id="pseudo_square_37" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_037" id="actual_sq_37"></div>
+                  </div>
+                  <div class="ps_038" id="pseudo_square_38" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_038" id="actual_sq_38"></div>
+                  </div>
+                  <div class="ps_039" id="pseudo_square_39" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_039" id="actual_sq_39"></div>
+                  </div>
+                  <div class="ps_040" id="pseudo_square_40" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_040" id="actual_sq_40"></div>
+                  </div>
+                  <div class="ps_041" id="pseudo_square_41" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_041" id="actual_sq_41"></div>
+                  </div>
+                  <div class="ps_042" id="pseudo_square_42" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_042" id="actual_sq_42"></div>
+                  </div>
+                  <div class="ps_043" id="pseudo_square_43" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_043" id="actual_sq_43"></div>
+                  </div>
+                  <div class="ps_044" id="pseudo_square_44" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_044" id="actual_sq_44"></div>
+                  </div>
+                  <div class="ps_045" id="pseudo_square_45" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_045" id="actual_sq_45"></div>
+                  </div>
+                  <div class="ps_046" id="pseudo_square_46" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_046" id="actual_sq_46"></div>
+                  </div>
+                  <div class="ps_047" id="pseudo_square_47" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_047" id="actual_sq_47"></div>
+                  </div>
+                  <div class="ps_048" id="pseudo_square_48" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_048" id="actual_sq_48"></div>
+                  </div>
+                  <div class="ps_049" id="pseudo_square_49" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_049" id="actual_sq_49"></div>
+                  </div>
+                  <div class="ps_050" id="pseudo_square_50" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_050" id="actual_sq_50"></div>
+                  </div>
+                  <div class="ps_051" id="pseudo_square_51" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_051" id="actual_sq_51"></div>
+                  </div>
+                  <div class="ps_052" id="pseudo_square_52" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_052" id="actual_sq_52"></div>
+                  </div>
+                  <div class="ps_053" id="pseudo_square_53" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_053" id="actual_sq_53"></div>
+                  </div>
+                  <div class="ps_054" id="pseudo_square_54" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_054" id="actual_sq_54"></div>
+                  </div>
+                  <div class="ps_055" id="pseudo_square_55" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_055" id="actual_sq_55"></div>
+                  </div>
+                  <div class="ps_056" id="pseudo_square_56" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_056" id="actual_sq_56"></div>
+                  </div>
+                  <div class="ps_057" id="pseudo_square_57" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_057" id="actual_sq_57"></div>
+                  </div>
+                  <div class="ps_058" id="pseudo_square_58" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_058" id="actual_sq_58"></div>
+                  </div>
+                  <div class="ps_059" id="pseudo_square_59" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_059" id="actual_sq_59"></div>
+                  </div>
+                  <div class="ps_060" id="pseudo_square_60" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_060" id="actual_sq_60"></div>
+                  </div>
+                  <div class="ps_061" id="pseudo_square_61" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_061" id="actual_sq_61"></div>
+                  </div>
+                  <div class="ps_062" id="pseudo_square_62" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_062" id="actual_sq_62"></div>
+                  </div>
+                  <div class="ps_063" id="pseudo_square_63" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_063" id="actual_sq_63"></div>
+                  </div>
+                  <div class="ps_064" id="pseudo_square_64" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_064" id="actual_sq_64"></div>
+                  </div>
+                  <div class="ps_065" id="pseudo_square_65" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_065" id="actual_sq_65"></div>
+                  </div>
+                  <div class="ps_066" id="pseudo_square_66" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_066" id="actual_sq_66"></div>
+                  </div>
+                  <div class="ps_067" id="pseudo_square_67" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_067" id="actual_sq_67"></div>
+                  </div>
+                  <div class="ps_068" id="pseudo_square_68" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_068" id="actual_sq_68"></div>
+                  </div>
+                  <div class="ps_069" id="pseudo_square_69" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_069" id="actual_sq_69"></div>
+                  </div>
+                  <div class="ps_070" id="pseudo_square_70" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_070" id="actual_sq_70"></div>
+                  </div>
+                  <div class="ps_071" id="pseudo_square_71" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_071" id="actual_sq_71"></div>
+                  </div>
+                  <div class="ps_072" id="pseudo_square_72" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_072" id="actual_sq_72"></div>
+                  </div>
+                  <div class="ps_073" id="pseudo_square_73" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_073" id="actual_sq_73"></div>
+                  </div>
+                  <div class="ps_074" id="pseudo_square_74" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_074" id="actual_sq_74"></div>
+                  </div>
+                  <div class="ps_075" id="pseudo_square_75" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_075" id="actual_sq_75"></div>
+                  </div>
+                  <div class="ps_076" id="pseudo_square_76" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_076" id="actual_sq_76"></div>
+                  </div>
+                  <div class="ps_077" id="pseudo_square_77" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_077" id="actual_sq_77"></div>
+                  </div>
+                  <div class="ps_078" id="pseudo_square_78" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_078" id="actual_sq_78"></div>
+                  </div>
+                  <div class="ps_079" id="pseudo_square_79" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_079" id="actual_sq_79"></div>
+                  </div>
+                  <div class="ps_080" id="pseudo_square_80" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_080" id="actual_sq_80"></div>
+                  </div>
+                  <div class="ps_081" id="pseudo_square_81" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_081" id="actual_sq_81"></div>
+                  </div>
+                  <div class="ps_082" id="pseudo_square_82" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_082" id="actual_sq_82"></div>
+                  </div>
+                  <div class="ps_083" id="pseudo_square_83" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_083" id="actual_sq_83"></div>
+                  </div>
+                  <div class="ps_084" id="pseudo_square_84" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_084" id="actual_sq_84"></div>
+                  </div>
+                  <div class="ps_085" id="pseudo_square_85" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_085" id="actual_sq_85"></div>
+                  </div>
+                  <div class="ps_086" id="pseudo_square_86" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_086" id="actual_sq_86"></div>
+                  </div>
+                  <div class="ps_087" id="pseudo_square_87" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_087" id="actual_sq_87"></div>
+                  </div>
+                  <div class="ps_088" id="pseudo_square_88" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_088" id="actual_sq_88"></div>
+                  </div>
+                  <div class="ps_089" id="pseudo_square_89" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_089" id="actual_sq_89"></div>
+                  </div>
+                  <div class="ps_090" id="pseudo_square_90" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_090" id="actual_sq_90"></div>
+                  </div>
+                  <div class="ps_091" id="pseudo_square_91" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_091" id="actual_sq_91"></div>
+                  </div>
+                  <div class="ps_092" id="pseudo_square_92" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_092" id="actual_sq_92"></div>
+                  </div>
+                  <div class="ps_093" id="pseudo_square_93" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_093" id="actual_sq_93"></div>
+                  </div>
+                  <div class="ps_094" id="pseudo_square_94" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_094" id="actual_sq_94"></div>
+                  </div>
+                  <div class="ps_095" id="pseudo_square_95" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_095" id="actual_sq_95"></div>
+                  </div>
+                  <div class="ps_096" id="pseudo_square_96" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_096" id="actual_sq_96"></div>
+                  </div>
+                  <div class="ps_097" id="pseudo_square_97" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_097" id="actual_sq_97"></div>
+                  </div>
+                  <div class="ps_098" id="pseudo_square_98" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_098" id="actual_sq_98"></div>
+                  </div>
+                  <div class="ps_099" id="pseudo_square_99" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_099" id="actual_sq_99"></div>
+                  </div>
+                  <div class="ps_100" id="pseudo_square_100" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
+                     <div class="actual_square_100" id="actual_sq_100"></div>
+                  </div>
+                  <div class="vertical_line1"></div>
+                  <div class="vertical_line2"></div>
+                  <div class="vertical_line3"></div>
+                  <div class="vertical_line4"></div>
+                  <div class="vertical_line5"></div>
+                  <div class="vertical_line6"></div>
+                  <div class="vertical_line7"></div>
+                  <div class="vertical_line8"></div>
+                  <div class="vertical_line9"></div>
+                  <div class="horizontal_line1"></div>
+                  <div class="horizontal_line2"></div>
+                  <div class="horizontal_line3"></div>
+                  <div class="horizontal_line4"></div>
+                  <div class="horizontal_line5"></div>
+                  <div class="horizontal_line6"></div>
+                  <div class="horizontal_line7"></div>
+                  <div class="horizontal_line8"></div>
+                  <div class="horizontal_line9"></div>
+               </div>
+               <!-- end of greybox_left -->
+            </div>
+            <div class="right_side">
+               <div class="greybox_right" id="right_greybox">
+                  <p id="demo" class="test_screen_resolution"><img src="place_your_ships.svg" oncontextmenu="return false;"></p>
+                  <div class="ship_sample_cover" id="ship_samp_cov" oncontextmenu="return false;"></div>
+                  <div class="ship_sample" id="ship_samp" oncontextmenu="return false;">
+                     <div class="small_ship" id="sml_shp" oncontextmenu="return false;"></div>
+                     <div class="small_horizontal_line1" id="small_horiz_line_1"></div>
+                     <div class="small_horizontal_line2" id="small_horiz_line_2"></div>
+                     <div class="small_horizontal_line3" id="small_horiz_line_3"></div>
+                     <div class="small_horizontal_line4" id="small_horiz_line_4"></div>
+                     <div class="small_horizontal_line5" id="small_horiz_line_5"></div>
+                     <div class="small_horizontal_line6" id="small_horiz_line_6"></div>
+                     <div class="small_vertical_line1" id="small_vert_line_1"></div>
+                     <div class="small_vertical_line2" id="small_vert_line_2"></div>
+                     <div class="small_vertical_line3" id="small_vert_line_3"></div>
+                     <div class="small_vertical_line4" id="small_vert_line_4"></div>
+                     <div class="small_vertical_line5" id="small_vert_line_5"></div>
+                     <div class="small_vertical_line6" id="small_vert_line_6"></div>
+                     <div class="aircraft_carrier" id="air_carr"><img src="aircraft_carrier_name.svg" oncontextmenu="return false;"></div>
+                     <div class="battleship" id="battl"><img src="battleship_name.svg" oncontextmenu="return false;"></div>
+                     <div class="destroyer" id="destr"><img src="destroyer_name.svg" oncontextmenu="return false;"></div>
+                     <div class="submarine" id="submar"><img src="submarine_name.svg" oncontextmenu="return false;"></div>
+                     <div class="patrol_boat" id="pat_bo"><img src="patrol_boat_name.svg" oncontextmenu="return false;"></div>
+                     <div class="all_ships_placed" id="all_shp_pla"><img src="all_ships_placed_name.svg" oncontextmenu="return false;"></div>
+                     <div class="check_mark" id="chk_mar"><img src="checkmark.svg" oncontextmenu="return false;"></div>
+                  </div><!-- end of ship_sample  -->
+                  
+                  <div class="erase_all" id="era_all" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onclick="erase_ships()" oncontextmenu="return false;"></div>
+                  <img class="erase_all_txt" id="era_all_img" src="Erase_all_text.svg" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onclick="erase_ships()" oncontextmenu="return false;">
+                      
+                  <div class="rotate_options_wrapper" id="rotate_opt_wra" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
+                  <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
+                  <div class="rotate_text" id="rotate_txt"><img src="rotate_text.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
+                  <div class="vertical_line1"   id="right_vert_line_1"></div>
+                  <div class="vertical_line2"   id="right_vert_line_2"></div>
+                  <div class="vertical_line3"   id="right_vert_line_3"></div>
+                  <div class="vertical_line4"   id="right_vert_line_4"></div>
+                  <div class="vertical_line5"   id="right_vert_line_5"></div>
+                  <div class="vertical_line6"   id="right_vert_line_6"></div>
+                  <div class="vertical_line7"   id="right_vert_line_7"></div>
+                  <div class="vertical_line8"   id="right_vert_line_8"></div>
+                  <div class="vertical_line9"   id="right_vert_line_9"></div>
+                  <div class="horizontal_line1" id="right_horiz_line_1"></div>
+                  <div class="horizontal_line2" id="right_horiz_line_2"></div>
+                  <div class="horizontal_line3" id="right_horiz_line_3"></div>
+                  <div class="horizontal_line4" id="right_horiz_line_4"></div>
+                  <div class="horizontal_line5" id="right_horiz_line_5"></div>
+                  <div class="horizontal_line6" id="right_horiz_line_6"></div>
+                  <div class="horizontal_line7" id="right_horiz_line_7"></div>
+                  <div class="horizontal_line8" id="right_horiz_line_8"></div>
+                  <div class="horizontal_line9" id="right_horiz_line_9"></div>
+                  <div style="display:none" id="temp_div_x"></div>
+                  <div style="display:none" id="temp_div_y"></div>
+                  <div style="display:none" id="t_x"></div>
+                  <div style="display:none" id="t_y"></div>
+               </div>
+            </div>
+         </div>
+         <!-- end of content -->
+      </div>
+      <!-- end of master_flexbox -->
+   </body>
+   <script>
+      for (let i = 61; i <= 100; i++) {
+          let str1 = "actual_sq_"+i+"";
+          document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
+      }
+      
+      for (let i = 1; i <= 100; i++) {  // adding the touch event
+          let str1 = "pseudo_square_"+i+"";
+          document.getElementById(str1).ontouchcancel = "button_in_handler(this, event)";
+      }
+      
+      for (let i = 1; i <= 9; i++) {
+          let str1 = "right_vert_line_"+i+"";
+          let str2 = "right_horiz_line_"+i+"";
+          
+          document.getElementById(str1).style.display = "none";
+          document.getElementById(str2).style.display = "none";
+        
+      }
+      
+      
+      /* function toggleZoomScreen() {
+         document.body.style.zoom = "100%";
+      }
+      
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      
+      var x = document.getElementById("demo");
+      x.innerHTML = w + " x " + h;
+      */
+   </script>
+</html>
