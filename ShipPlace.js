@@ -12,6 +12,7 @@ var all_good = 0;
 var rotate_flag = 0;
 var tempRot = 0;
 var rotate_var = 0;
+var f_screen = 0;
 
 
 for (let i = 0; i < 101; i++) {
@@ -55,6 +56,7 @@ function rotate_opacity_bytouch_0() {
 }
 
 function erase_active_bytouch_1(){
+    erase_ships();
     document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
     document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
 }
@@ -74,15 +76,17 @@ function erase_active_0(){
     document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
 }
 
-function erase_ships()
+function erase_ships_1()
 {location.reload();}
 
-function erase_ships_1(){
+function erase_ships(){
     
     for (let i = 1; i <= 100; i++) {
         if(occupied_squares[i])
-        {document.getElementById("actual_sq_"+i).style.opacity = "0";}
+        {
+            document.getElementById("actual_sq_"+i).style.opacity = "0.4";
         }
+     }
     
     ship_counter = 0;
     active_ship = shipSet[ship_counter];
@@ -147,14 +151,11 @@ function button_in_handler(a, event) {
     if (blocked_squares[square_number] == 0 && placed_ships[4] == 0 && all_good == 1) //checking the actual square number of the board, not array index
     {
         all_good = 0;
-        //       document.addEventListener('pointerup', mouseUp);
-        //       document.addEventListener('onclick', mouseUp);
-        //
-        //       function mouseUp(event) {
-
+        
         document.getElementById(actual_id).style.backgroundColor = "rgb(91, 137,238)"; //Setting the ship color to Blue
-        // document.getElementById(actual_id).style.zIndex  = "2";
-        document.getElementById(actual_id).style.opacity = "1";
+        
+        document.getElementById(actual_id).style.opacity = 1;
+        //console.log(document.documentElement.style.getPropertyValue("--Opac_1"));
         placed_ships[ship_counter] = active_ship;
         ship_position[ship_counter] = parseInt(a.id.slice(14, )); //Storing the ship location
 
@@ -298,8 +299,34 @@ function rotate_caller_click()
     }
     
 }*/
+function full_sc()
+{  if(f_screen == 0)
+   {f_screen=1;
+    var elem = document.documentElement;
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+  }
+else
+    {f_screen=0;
+       if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+    }
+   }
+}
+
 
 function rotate_ship() {
+    
+    
     active_ship = active_ship * -1;
     tempRot += 90;
     document.getElementById("sml_shp").style.rotate = tempRot + "deg";
