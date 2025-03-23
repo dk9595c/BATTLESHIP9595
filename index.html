@@ -6,7 +6,7 @@
       <title>BattleShip</title>
       <script src="ShipPlace.js"></script>
       <style>
-         html,
+         .html,
          body {
          height: 100%;
          margin: 0;
@@ -153,7 +153,7 @@
          display:inline;
          position:absolute;
          margin-left:73.1571627%;
-         margin-top:25.0347705%;
+         margin-top:19.8887344%;
          width:14.6036161%;
          height:14.6036161%;
          z-index:2;
@@ -162,7 +162,7 @@
          display:inline;
          position:absolute;
          margin-left:74.8261474%;
-         margin-top:42.2809458%;
+         margin-top:36.9958275%;
          width:11.2656467%;
          height:5.42420028%;
          z-index:2;
@@ -173,7 +173,7 @@
          font-size:0px;
          border-radius: 8.05369128% / 6.6666667%;
          margin-left:70.0973574%;
-         margin-top:22.5312935%;
+         margin-top:17.3852573%;
          width:20.7232267%;
          height:25.0347705%;
          background-color: rgb(66,66,66);
@@ -186,14 +186,40 @@
          font-size:0px;
          border-radius: 11.275167792% / 9.33333338%;
          margin-left:9.1794159%;
-         margin-top:22.5312935%;
+         margin-top:17.3852573%;
          width:43.1154381%;
          height:51.8776078%;
          background-color: rgb(49, 49, 52);
          z-index:2;
          opacity:1;
-         border: 1.4px solid rgb(123, 128, 131);
+         border: 1px solid rgb(123, 128, 131);
          }
+          
+         .erase_all{
+         position:absolute;
+         display:inline;
+         font-size:0px;
+         border-radius: 8.05369128% / 16.544583%;
+         margin-left: 70.0973574%;
+         margin-top: 47.2878999%;
+         width:  20.7232267%;
+         height: 9.73574409%;
+         background-color: rgb(49, 49, 52);
+         z-index:2;
+         opacity:1;
+         border: 1px solid rgb(204,7,30);
+         }
+          
+         .erase_all_txt{
+         display:inline;
+         position:absolute;
+         margin-left:73.2931639%;
+         margin-top:49.4436718%;
+         width:14.3316139%;
+         height:5.42420028%;
+         z-index:2;
+         }
+          
          .all_ships_placed{
          z-index:4;
          width: 61.5430355%;
@@ -381,6 +407,8 @@
          font-size: 0px;
          overflow:hidden;
          }
+          
+          
          .greybox_right {
          padding-bottom: min((100vh - 130px), 41.65vw);
          padding-right: min((100vh - 130px), 41.65vw);
@@ -460,13 +488,13 @@
          z-index: 1;
          }
          .left_side {
-         background-color: darkblue;
+         background-color: rgb(32, 33, 36);
          height: 100%;
          width: 50%;
          display: inline-block;
          }
          .right_side {
-         background-color: red;
+         background-color: rgb(32, 33, 36);
          height: 100%;
          width: 50%;
          display: inline-block;
@@ -912,9 +940,9 @@
             <div class="right_side">
                <div class="greybox_right" id="right_greybox">
                   <p id="demo" class="test_screen_resolution"><img src="place_your_ships.svg" oncontextmenu="return false;"></p>
-                  <div class="ship_sample_cover" id="ship_samp_cov"></div>
-                  <div class="ship_sample" id="ship_samp">
-                     <div class="small_ship" id="sml_shp"></div>
+                  <div class="ship_sample_cover" id="ship_samp_cov" oncontextmenu="return false;"></div>
+                  <div class="ship_sample" id="ship_samp" oncontextmenu="return false;">
+                     <div class="small_ship" id="sml_shp" oncontextmenu="return false;"></div>
                      <div class="small_horizontal_line1" id="small_horiz_line_1"></div>
                      <div class="small_horizontal_line2" id="small_horiz_line_2"></div>
                      <div class="small_horizontal_line3" id="small_horiz_line_3"></div>
@@ -927,15 +955,18 @@
                      <div class="small_vertical_line4" id="small_vert_line_4"></div>
                      <div class="small_vertical_line5" id="small_vert_line_5"></div>
                      <div class="small_vertical_line6" id="small_vert_line_6"></div>
-                     <div class="aircraft_carrier" id="air_carr"><img src="aircraft_carrier_name.svg"></div>
-                     <div class="battleship" id="battl"><img src="battleship_name.svg"></div>
-                     <div class="destroyer" id="destr"><img src="destroyer_name.svg"></div>
-                     <div class="submarine" id="submar"><img src="submarine_name.svg"></div>
-                     <div class="patrol_boat" id="pat_bo"><img src="patrol_boat_name.svg"></div>
-                     <div class="all_ships_placed" id="all_shp_pla"><img src="all_ships_placed_name.svg"></div>
-                     <div class="check_mark" id="chk_mar"><img src="checkmark.svg"></div>
-                  </div>
-                  <!-- end of ship_sample  -->
+                     <div class="aircraft_carrier" id="air_carr"><img src="aircraft_carrier_name.svg" oncontextmenu="return false;"></div>
+                     <div class="battleship" id="battl"><img src="battleship_name.svg" oncontextmenu="return false;"></div>
+                     <div class="destroyer" id="destr"><img src="destroyer_name.svg" oncontextmenu="return false;"></div>
+                     <div class="submarine" id="submar"><img src="submarine_name.svg" oncontextmenu="return false;"></div>
+                     <div class="patrol_boat" id="pat_bo"><img src="patrol_boat_name.svg" oncontextmenu="return false;"></div>
+                     <div class="all_ships_placed" id="all_shp_pla"><img src="all_ships_placed_name.svg" oncontextmenu="return false;"></div>
+                     <div class="check_mark" id="chk_mar"><img src="checkmark.svg" oncontextmenu="return false;"></div>
+                  </div><!-- end of ship_sample  -->
+                  
+                  <div class="erase_all" id="era_all" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onmousedown="erase_ships()" oncontextmenu="return false;"></div>
+                  <img class="erase_all_txt" id="era_all_img" src="erase_all_text.svg" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onmousedown="erase_ships()" oncontextmenu="return false;">
+                      
                   <div class="rotate_options_wrapper" id="rotate_opt_wra" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
                   <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
                   <div class="rotate_text" id="rotate_txt"><img src="rotate_text.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
