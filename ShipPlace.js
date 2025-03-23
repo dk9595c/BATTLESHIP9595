@@ -76,10 +76,10 @@ function erase_active_0(){
     document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
 }
 
-function erase_ships_1()
+function erase_ships()
 {location.reload();}
 
-function erase_ships(){
+function erase_ships_1(){
     
     for (let i = 1; i <= 100; i++) {
         if(occupied_squares[i])
