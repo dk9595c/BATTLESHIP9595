@@ -523,9 +523,9 @@
          }
          .greybox_left {
          margin-top: 0px;
-         padding-bottom: min((100vh - 100px)/2, 94vw);
-         padding-right: min((100vh - 100px)/2, 94vw);
-         --widthD : min((100vh - 100px)/2, 94vw);
+         padding-bottom: min((100vh - 90px)/2, 94vw);
+         padding-right: min((100vh - 90px)/2, 94vw);
+         --widthD : min((100vh - 90px)/2, 94vw);
          display: inline-block;
          position: absolute;
          margin-left: max(3%, calc((100% - var(--widthD))/2));
@@ -533,9 +533,9 @@
          }
          .greybox_right {
          margin-top: 0px;
-         padding-bottom: min((100vh - 100px)/2, 94vw);
-         padding-right: min((100vh - 100px)/2, 94vw);
-         --widthD : min((100vh - 100px)/2, 94vw);
+         padding-bottom: min((100vh - 90px)/2, 94vw);
+         padding-right: min((100vh - 90px)/2, 94vw);
+         --widthD : min((100vh - 90px)/2, 94vw);
          display: inline-block;
          position: absolute;
          margin-left: max(3%, calc((100% - var(--widthD))/2));
@@ -1016,9 +1016,12 @@
           document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
       }
       
-      for (let i = 1; i <= 100; i++) {  // adding the touch event
+      for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
           let str1 = "pseudo_square_"+i+"";
           document.getElementById(str1).ontouchcancel = "button_in_handler(this, event)";
+          document.getElementById(str1).addEventListener("mouseover", hover_square_opacity_1);
+          document.getElementById(str1).addEventListener("mouseout", hover_square_opacity_0);
+        
       }
       
       for (let i = 1; i <= 9; i++) {
