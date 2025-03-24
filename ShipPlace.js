@@ -13,6 +13,7 @@ var rotate_flag = 0;
 var tempRot = 0;
 var rotate_var = 0;
 var f_screen = 0;
+var erase_flag = 0;
 
 
 for (let i = 0; i < 101; i++) {
@@ -55,25 +56,34 @@ function rotate_opacity_bytouch_0() {
     document.getElementById("rotate_opt_wra").style.opacity = "0";
 }
 
+
+
 function erase_active_bytouch_1() {
-    erase_ships();
+    erase_flag = 1;
     document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
     document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
 }
 
 function erase_active_bytouch_0() {
+    erase_flag = 1;
     document.getElementById("era_all_img").src = "Erase_all_text.svg";
     document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
 }
 
 function erase_active_1() {
-    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
-    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+    if (erase_flag == 0)
+    {   
+        document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+    }
 }
 
 function erase_active_0() {
-    document.getElementById("era_all_img").src = "Erase_all_text.svg";
-    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    if (erase_flag == 0)
+    {
+        document.getElementById("era_all_img").src = "Erase_all_text.svg";
+        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    }
 }
 
 function hover_square_opacity_1(a) {
@@ -147,7 +157,7 @@ function erase_ships() {
     }
     all_good = 0;
     rotate_flag = 0;
-    tempRot = 0;
+    
     rotate_var = 0;
 
     document.getElementById("all_shp_pla").style.display = "none";
@@ -156,6 +166,12 @@ function erase_ships() {
     document.getElementById("destr").style.display = "none";
     document.getElementById("submar").style.display = "none";
     document.getElementById("pat_bo").style.display = "none";
+    
+    if (tempRot % 180 == 90) {
+        tempRot += 90;
+        document.getElementById("sml_shp").style.rotate = tempRot + "deg";
+    }
+    document.getElementById("sml_shp").style.translate = "0% 0%";
     
     for (let i = 1; i <= 6; i++) {
         document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
