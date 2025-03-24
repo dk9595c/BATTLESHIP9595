@@ -86,6 +86,39 @@ function erase_active_0() {
     }
 }
 
+
+
+function submit_active_bytouch_1() {
+//    erase_flag = 1;
+//    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+//    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+}
+
+function submit_active_bytouch_0() {
+//    erase_flag = 1;
+//    document.getElementById("era_all_img").src = "Erase_all_text.svg";
+//    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+}
+
+function submit_active_1() {
+//    if (erase_flag == 0)
+//    {
+//        document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+//        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+//    }
+}
+
+function submit_active_0() {
+//    if (erase_flag == 0)
+//    {
+//        document.getElementById("era_all_img").src = "Erase_all_text.svg";
+//        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+//    }
+}
+
+function submit_ships(){}
+
+
 function hover_square_opacity_1(a) {
     let str = a.toElement.id;
     let sq_no = 200;
@@ -124,7 +157,7 @@ function erase_ships() {
 
     for (let i = 1; i <= 100; i++)
     {
-
+        document.getElementById("actual_sq_" + i).style.display = "inline";
         document.getElementById("actual_sq_" + i).style.opacity = "0";
         document.getElementById("actual_sq_" + i).style.backgroundColor = "rgb(94,94,94)";
         document.documentElement.style.setProperty('--wd_global_' + i, "75%");
@@ -189,6 +222,9 @@ function erase_ships() {
     document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
     document.getElementById("sml_shp").style.translate = "0% 0%";
     document.getElementById("sml_shp").style.display = "inline";
+    
+    document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
+    document.getElementById("submt_img").src="Submit_dark_text.svg";
 
     boundary_overflow();
 } //end of erase ships
@@ -265,6 +301,11 @@ function button_in_handler(a, event) {
 
             }
             document.getElementById("chk_mar").style.display = "inline";
+            document.getElementById("submt").style.border = "1px solid rgb(123, 128, 131)";
+            document.getElementById("submt_img").src="Submit_text.svg";
+            
+            
+            
         }
 
 
@@ -272,7 +313,16 @@ function button_in_handler(a, event) {
         ship_counter++;
         active_ship = shipSet[ship_counter];
 
-
+        if (ship_counter == 5)
+        {
+            for (let i = 1; i <= 100; i++) //diabling the highlighting as all the ships have been placed
+            {
+                if(occupied_squares[i] == 0)
+                {
+                    document.getElementById("actual_sq_"+i).style.display = "none";
+                }
+            }
+        }
         compute_vertical_disabled_squares();
         compute_horizontal_disabled_squares();
         //for (let i = 0; i < 101; i++)
