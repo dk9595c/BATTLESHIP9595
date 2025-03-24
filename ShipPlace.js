@@ -152,6 +152,11 @@ function erase_ships() {
 
     document.getElementById("all_shp_pla").style.display = "none";
     document.getElementById("air_carr").style.display = "inline";
+    document.getElementById("battl").style.display = "none";
+    document.getElementById("destr").style.display = "none";
+    document.getElementById("submar").style.display = "none";
+    document.getElementById("pat_bo").style.display = "none";
+    
     for (let i = 1; i <= 6; i++) {
         document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
         document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
