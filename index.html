@@ -227,6 +227,32 @@
          z-index:2;
          }
           
+         .submit{
+          position:absolute;
+          display:inline;
+          font-size:0px;
+          border-radius: 8.05369128% / 16.544583%;
+          margin-left: 70.0973574%;
+          margin-top: 59.527121%;
+          width:  20.7232267%;
+          height: 9.73574409%;
+          background-color: rgb(49, 49, 52);
+          z-index:2;
+          opacity:1;
+          border: 1px solid rgb(66, 66, 66);
+          /*border: 1px solid rgb(123, 128, 131);*/
+          }
+           
+          .submit_txt{
+          display:inline;
+          position:absolute;
+          margin-left:74.365743%;
+          margin-top:61.6828929%;
+          width:12.1864557%;
+          height:5.42420028%;
+          z-index:2;
+          }
+          
          .all_ships_placed{
          z-index:4;
          width: 61.5430355%;
@@ -1064,6 +1090,9 @@
                   
                   <div class="erase_all" id="era_all" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onmousedown="erase_ships()" oncontextmenu="return false;"></div>
                   <img class="erase_all_txt" id="era_all_img" src="Erase_all_text.svg" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onmousedown="erase_ships()" oncontextmenu="return false;">
+                      
+                  <div class="submit" id="submt" ontouchstart="submit_active_bytouch_1()" ontouchend="submit_active_bytouch_0()" onmouseover="submit_active_1()" onmouseout="submit_active_0()" onmousedown="submit_ships()" oncontextmenu="return false;"></div>
+                  <img class="submit_txt" id="submt_img" src="Submit_dark_text.svg" ontouchstart="submit_active_bytouch_1()" ontouchend="submit_active_bytouch_0()" onmouseover="submit_active_1()" onmouseout="submit_active_0()" onmousedown="submit_ships()" oncontextmenu="return false;">
                       
                   <div class="rotate_options_wrapper" id="rotate_opt_wra" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
                   <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
