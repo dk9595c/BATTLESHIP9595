@@ -494,8 +494,17 @@ function full_sc() {
 }
 
 function full_var_set()
-{
+{  f_screen = 0;
     document.documentElement.style.setProperty('--fullScreenVar', "160px");
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+        /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        /* IE11 */
+        document.msExitFullscreen();
+    }
 }
 
 function rotate_ship() {
