@@ -62,21 +62,24 @@ function rotate_opacity_bytouch_0() {
 
 function erase_active_bytouch_1() {
     erase_flag = 1;
-    erase_ships();
-    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+    document.getElementById("era_all_img").style.display = "none";
+    document.getElementById("era_all_grey_img").style.display = "inline";
     document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+    erase_ships();
 }
 
 function erase_active_bytouch_0() {
     erase_flag = 1;
-    document.getElementById("era_all_img").src = "Erase_all_text.svg";
+    document.getElementById("era_all_img").style.display = "inline";
+    document.getElementById("era_all_grey_img").style.display = "none";
     document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
 }
 
 function erase_active_1() {
     if (erase_flag == 0)
     {
-        document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+        document.getElementById("era_all_img").style.display = "none";
+        document.getElementById("era_all_grey_img").style.display = "inline";
         document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
     }
 }
@@ -84,7 +87,8 @@ function erase_active_1() {
 function erase_active_0() {
     if (erase_flag == 0)
     {
-        document.getElementById("era_all_img").src = "Erase_all_text.svg";
+        document.getElementById("era_all_img").style.display = "inline";
+        document.getElementById("era_all_grey_img").style.display = "none";
         document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
     }
 }
