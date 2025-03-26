@@ -165,6 +165,7 @@
          height:14.6036161%;
          z-index:2;
          }
+          
          .rotate_text{
          display:inline;
          position:absolute;
@@ -174,6 +175,7 @@
          height:5.42420028%;
          z-index:2;
          }
+          
          .rotate_options_wrapper{
          position:absolute;
          display:inline;
@@ -531,6 +533,32 @@
          overflow:hidden;
          }
           
+        .greybox_left_cover{
+          width:110%;
+          height:110%;
+          position: absolute;
+          margin-left: 0%;
+          margin-top: 0%;
+          background-color: rgb(49, 49, 52);
+          opacity: 0.7;
+          font-size: 0px;
+          z-index:2;
+          display:none;
+          transition: opacity 0.5s;
+        }
+         .place_here_text{
+          width: 65.9248957%;
+          height: 18.2197497%;
+          margin-left: 17.1070932%;
+          margin-top: 40.8901252%;
+          font-size: 0px;
+          opacity: 1;
+          z-index:2;
+          display:none;
+          position: absolute;
+          transition: opacity 0.5s;
+         }
+          
           
          .greybox_right {
          padding-bottom: min((100vh - 130px), 41.65vw);
@@ -682,7 +710,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
       <link rel="icon" href="favicon_6.png" type="image/x-icon">
    </head>
-   <body style="background-color: rgb(32, 33, 36);">
+   <body style="background-color: rgb(32, 33, 36);" onmouseup="place_here_text_hide()">
       <div class="version_name">L1400-K</div>
       <div class="master_flexbox">
          <div class="flex-container">
@@ -740,6 +768,9 @@
          <div class="content">
             <div class="left_side">
                <div class="greybox_left" id="left_greybox">
+                  <div class="greybox_left_cover" id="greybo_lef_cov"></div>
+                  <img class="place_here_text" src="Place_here_text.svg" id="plac_here_txt">
+                  
                   <div class="ps_001" id="pseudo_square_1" ontouchstart="button_in_handler(this, event)" onmousedown="button_in_handler(this, event)">
                      <div class="actual_square_001" id="actual_sq_1"></div>
                   </div>
@@ -1065,7 +1096,7 @@
                <div class="greybox_right" id="right_greybox">
                   <p id="demo" class="test_screen_resolution"><img src="place_your_ships.svg" oncontextmenu="return false;"></p>
                   <div class="ship_sample_cover" id="ship_samp_cov" oncontextmenu="return false;"></div>
-                  <div class="ship_sample" id="ship_samp" oncontextmenu="return false;">
+                  <div class="ship_sample" id="ship_samp" ontouchstart="place_here_text_show_touch()" ontouchend="place_here_text_hide_touch()" onmousedown="place_here_text_show()"  onmouseup="place_here_text_hide()" oncontextmenu="return false;">
                      <div class="small_ship" id="sml_shp" oncontextmenu="return false;"></div>
                      <div class="small_horizontal_line1" id="small_horiz_line_1"></div>
                      <div class="small_horizontal_line2" id="small_horiz_line_2"></div>
