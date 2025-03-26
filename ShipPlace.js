@@ -136,11 +136,36 @@ function submit_ships(){
         {
             targ_sq = targ_sq * (-1);
         }
-        document.getElementById("actual_sq_"+targ_sq).style.backgroundColor = "rgba(94,94,94,0.2)";
+        document.getElementById("actual_sq_"+targ_sq).style.backgroundColor = "rgba(94,94,94,0)";
         document.getElementById("actual_sq_"+targ_sq).style.border = "1px solid rgb(221, 223, 225)";
     }
 }
 
+function key_down_handler(event)
+{
+    if(event.key == " ")
+    {rotate_opacity_1();
+     rotate_ship();
+    }
+    
+    else if(event.key == "x" || event.key == "X")
+    {erase_active_1();
+     erase_ships();
+    }
+    
+}
+
+function key_up_handler(event)
+{
+    if(event.key == " ")
+    {rotate_opacity_0();
+    }
+    
+    else if(event.key == "x" || event.key == "X")
+    {erase_active_0();
+    }
+    
+}
 
 function hover_square_opacity_1(a) {
     let str = a.toElement.id;
@@ -526,9 +551,9 @@ function full_var_set()
 }
 
 function rotate_ship() {
-    if (!window.screenTop && !window.screenY) {
-        console.log('Browser is in fullscreen');
-    }
+//    if (!window.screenTop && !window.screenY) {
+//        console.log('Browser is in fullscreen');
+//    }
 
     active_ship = active_ship * -1;
     tempRot += 90;
