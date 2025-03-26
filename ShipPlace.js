@@ -464,8 +464,10 @@ function rotate_caller_click()
     
 }*/
 function full_sc() {
+    
     if (f_screen == 0) {
         f_screen = 1;
+        document.documentElement.style.setProperty('--fullScreenVar', "80px");
         var elem = document.documentElement;
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
@@ -478,6 +480,7 @@ function full_sc() {
         }
     } else {
         f_screen = 0;
+        document.documentElement.style.setProperty('--fullScreenVar', "160px");
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.webkitExitFullscreen) {
@@ -492,7 +495,9 @@ function full_sc() {
 
 
 function rotate_ship() {
-
+    if (!window.screenTop && !window.screenY) {
+        console.log('Browser is in fullscreen');
+    }
 
     active_ship = active_ship * -1;
     tempRot += 90;
