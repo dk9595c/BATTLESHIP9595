@@ -14,6 +14,7 @@ var tempRot = 0;
 var rotate_var = 0;
 var f_screen = 0;
 var erase_flag = 0;
+var place_text_flag = 0;
 
 
 for (let i = 0; i < 101; i++) {
@@ -72,7 +73,7 @@ function erase_active_bytouch_0() {
 
 function erase_active_1() {
     if (erase_flag == 0)
-    {   
+    {
         document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
         document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
     }
@@ -153,13 +154,55 @@ function erase_ships_1() {
     location.reload();
 }
 
+function place_here_text_show_touch(){
+    //document.getElementById("greybo_lef_cov").style.display = "inline";
+    place_text_flag = 1;
+    document.getElementById("greybo_lef_cov").style.display = "inline";
+    document.getElementById("plac_here_txt").style.display  = "inline";
+   
+    document.getElementById("greybo_lef_cov").style.zIndex = "3";
+    document.getElementById("plac_here_txt").style.zIndex  = "4";
+}
+
+function place_here_text_hide_touch()
+{
+    place_text_flag = 1;
+    document.getElementById("greybo_lef_cov").style.opacity = "0";
+    document.getElementById("plac_here_txt").style.opacity  = "0";
+    
+    document.getElementById("greybo_lef_cov").style.display = "none";
+    document.getElementById("plac_here_txt").style.display  = "none";
+   
+    document.getElementById("greybo_lef_cov").style.zIndex = "2";
+    document.getElementById("plac_here_txt").style.zIndex  = "2";
+    //document.getElementById("greybo_lef_cov").style.opacity = "0";
+    
+}
+
 function place_here_text_show(){
     //document.getElementById("greybo_lef_cov").style.display = "inline";
-    document.getElementById("greybo_lef_cov").style.opacity = "0.7";
+  if(place_text_flag == 0)
+  {   
+      document.getElementById("greybo_lef_cov").style.display = "inline";
+      document.getElementById("plac_here_txt").style.display  = "inline";
+      
+      document.getElementById("greybo_lef_cov").style.zIndex = "3";
+      document.getElementById("plac_here_txt").style.zIndex  = "3";
+  }
+}
+
+function place_here_text_hide()
+{
+    if(place_text_flag == 0)
+    {
+        
+        document.getElementById("greybo_lef_cov").style.display = "none";
+        document.getElementById("plac_here_txt").style.display  = "none";
+       
+        document.getElementById("greybo_lef_cov").style.zIndex = "2";
+        document.getElementById("plac_here_txt").style.zIndex  = "2";
+    }
     //document.getElementById("greybo_lef_cov").style.opacity = "0";
-   
-    
-    console.log("executed!");
 }
 
 function erase_ships() {
