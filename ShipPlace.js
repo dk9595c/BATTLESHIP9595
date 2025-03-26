@@ -497,7 +497,7 @@ function full_var_set()
 {
   if (!(!window.screenTop && !window.screenY))
   {
-      document.documentElement.style.setProperty('--fullScreenVar', "160px");
+      
   }
 }
 
