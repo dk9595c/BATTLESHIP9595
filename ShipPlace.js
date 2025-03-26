@@ -15,6 +15,7 @@ var rotate_var = 0;
 var f_screen = 0;
 var erase_flag = 0;
 var place_text_flag = 0;
+var all_ships_placed_var = 0;
 
 
 for (let i = 0; i < 101; i++) {
@@ -156,12 +157,15 @@ function erase_ships_1() {
 
 function place_here_text_show_touch(){
     //document.getElementById("greybo_lef_cov").style.display = "inline";
-    place_text_flag = 1;
-    document.getElementById("greybo_lef_cov").style.display = "inline";
-    document.getElementById("plac_here_txt").style.display  = "inline";
-   
-    document.getElementById("greybo_lef_cov").style.zIndex = "3";
-    document.getElementById("plac_here_txt").style.zIndex  = "4";
+    if(all_ships_placed_var == 0)
+    {
+        place_text_flag = 1;
+        document.getElementById("greybo_lef_cov").style.display = "inline";
+        document.getElementById("plac_here_txt").style.display  = "inline";
+        
+        document.getElementById("greybo_lef_cov").style.zIndex = "3";
+        document.getElementById("plac_here_txt").style.zIndex  = "4";
+    }
 }
 
 function place_here_text_hide_touch()
@@ -179,44 +183,35 @@ function place_here_text_hide_touch()
 
 function place_here_text_show(){
     //document.getElementById("greybo_lef_cov").style.display = "inline";
-  if(place_text_flag == 0)
-  {   
+ if(all_ships_placed_var == 0)
+ { if(place_text_flag == 0)
+   {
       document.getElementById("greybo_lef_cov").style.display = "inline";
       document.getElementById("plac_here_txt").style.display  = "inline";
-      
+     
       document.getElementById("greybo_lef_cov").style.zIndex = "3";
       document.getElementById("plac_here_txt").style.zIndex  = "3";
-  }
+   }
+ }
 }
 
 function place_here_text_hide()
-{  console.log('in here');
+{  //console.log('in here');
     if(place_text_flag == 0)
-    {
-        let  i = 0;
-        let k = window.setInterval(function() {
-            if (i >= 100) {
-              clearInterval(k);
-              document.getElementById("greybo_lef_cov").style.display = "none";
-              document.getElementById("plac_here_txt").style.display  = "none";
-            } else {
-                document.getElementById("greybo_lef_cov").style.opacity = 1 - i/100 ;
-                document.getElementById("plac_here_txt").style.opacity = 1 - i/100 ;
-              i++;
-            }
-          }, 1);
-        
-       // document.getElementById("greybo_lef_cov").style.display = "none";
-       // document.getElementById("plac_here_txt").style.display  = "none";
-       
-        document.getElementById("greybo_lef_cov").style.zIndex = "2";
-        document.getElementById("plac_here_txt").style.zIndex  = "2";
-    }
+        {
+            
+            document.getElementById("greybo_lef_cov").style.display = "none";
+            document.getElementById("plac_here_txt").style.display  = "none";
+           
+            document.getElementById("greybo_lef_cov").style.zIndex = "2";
+            document.getElementById("plac_here_txt").style.zIndex  = "2";
+        }
     //document.getElementById("greybo_lef_cov").style.opacity = "0";
 }
 
 function erase_ships() {
-
+    all_ships_placed_var = 0;
+    
     for (let i = 1; i <= 100; i++)
     {
         document.getElementById("actual_sq_" + i).style.display = "inline";
@@ -362,11 +357,13 @@ function button_in_handler(a, event) {
         } else if (ship_counter == 3) {
             document.getElementById("submar").style.display = "none";
             document.getElementById("pat_bo").style.display = "inline";
-        } else if (ship_counter == 4) {
+        } else if (ship_counter == 4)
+         {
+            all_ships_placed_var = 1;
+            
             document.getElementById("pat_bo").style.display = "none";
             document.getElementById("sml_shp").style.display = "none";
             document.getElementById("all_shp_pla").style.display = "inline";
-
             for (let i = 1; i <= 6; i++) {
                 document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(66,66,66)";
                 document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(66,66,66)";
@@ -378,7 +375,7 @@ function button_in_handler(a, event) {
             
             
             
-        }
+         }
 
 
         occupied_squares[parseInt(a.id.slice(14, ))] = 1;
