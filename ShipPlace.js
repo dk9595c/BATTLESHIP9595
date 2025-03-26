@@ -153,6 +153,15 @@ function erase_ships_1() {
     location.reload();
 }
 
+function place_here_text_show(){
+    //document.getElementById("greybo_lef_cov").style.display = "inline";
+    document.getElementById("greybo_lef_cov").style.opacity = "0.7";
+    //document.getElementById("greybo_lef_cov").style.opacity = "0";
+   
+    
+    console.log("executed!");
+}
+
 function erase_ships() {
 
     for (let i = 1; i <= 100; i++)
@@ -251,7 +260,16 @@ function button_in_handler(a, event) {
     if (blocked_squares[square_number] == 0 && placed_ships[4] == 0 && all_good == 1) //checking the actual square number of the board, not array index
     {
         all_good = 0;
-
+        
+        for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
+            if (occupied_squares[i] == 0) {
+                blocked_squares[i] = 0;
+                let str1 = "actual_sq_" + i + "";
+                document.getElementById(str1).style.backgroundColor = "rgb(94,94,94)";
+                document.documentElement.style.setProperty('--mar_' + i, "25%");
+            }
+        } //end of loop
+        
         document.getElementById(actual_id).style.backgroundColor = "rgb(91, 137,238)"; //Setting the ship color to Blue
 
         document.getElementById(actual_id).style.opacity = 1;
@@ -323,8 +341,9 @@ function button_in_handler(a, event) {
                 }
             }
         }
-        compute_vertical_disabled_squares();
         compute_horizontal_disabled_squares();
+        compute_vertical_disabled_squares();
+        
         //for (let i = 0; i < 101; i++)
         //{console.log("i="+i+" dis="+disabled_squares_vertical[i]); }
 
