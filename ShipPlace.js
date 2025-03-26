@@ -16,6 +16,7 @@ var f_screen = 0;
 var erase_flag = 0;
 var place_text_flag = 0;
 var all_ships_placed_var = 0;
+var submit_flag = 0;
 
 
 for (let i = 0; i < 101; i++) {
@@ -61,22 +62,26 @@ function rotate_opacity_bytouch_0() {
 
 
 function erase_active_bytouch_1() {
-    erase_flag = 1;
-    document.getElementById("era_all_img").style.display = "none";
-    document.getElementById("era_all_grey_img").style.display = "inline";
-    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
-    erase_ships();
+   if(submit_flag == 0)
+   {   erase_flag = 1;
+       document.getElementById("era_all_img").style.display = "none";
+       document.getElementById("era_all_grey_img").style.display = "inline";
+       document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+       erase_ships();
+   }
 }
 
 function erase_active_bytouch_0() {
-    erase_flag = 1;
-    document.getElementById("era_all_img").style.display = "inline";
-    document.getElementById("era_all_grey_img").style.display = "none";
-    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    if(submit_flag == 0)
+    {   erase_flag = 1;
+        document.getElementById("era_all_img").style.display = "inline";
+        document.getElementById("era_all_grey_img").style.display = "none";
+        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    }
 }
 
 function erase_active_1() {
-    if (erase_flag == 0)
+    if (erase_flag == 0 && submit_flag == 0)
     {
         document.getElementById("era_all_img").style.display = "none";
         document.getElementById("era_all_grey_img").style.display = "inline";
@@ -85,7 +90,7 @@ function erase_active_1() {
 }
 
 function erase_active_0() {
-    if (erase_flag == 0)
+    if (erase_flag == 0 && submit_flag == 0)
     {
         document.getElementById("era_all_img").style.display = "inline";
         document.getElementById("era_all_grey_img").style.display = "none";
@@ -123,7 +128,18 @@ function submit_active_0() {
 //    }
 }
 
-function submit_ships(){}
+function submit_ships(){
+   submit_flag = 1;
+   for (let i = 0; i <5; i++) // submitting the ships
+    {let targ_sq = ship_position[i];
+        if(ship_position[i] < 0)
+        {
+            targ_sq = targ_sq * (-1);
+        }
+        document.getElementById("actual_sq_"+targ_sq).style.backgroundColor = "rgba(94,94,94,0.2)";
+        document.getElementById("actual_sq_"+targ_sq).style.border = "1px solid rgb(221, 223, 225)";
+    }
+}
 
 
 function hover_square_opacity_1(a) {
@@ -215,80 +231,82 @@ function place_here_text_hide()
 }
 
 function erase_ships() {
-    all_ships_placed_var = 0;
-    
-    for (let i = 1; i <= 100; i++)
-    {
-        document.getElementById("actual_sq_" + i).style.display = "inline";
-        document.getElementById("actual_sq_" + i).style.opacity = "0";
-        document.getElementById("actual_sq_" + i).style.backgroundColor = "rgb(94,94,94)";
-        document.documentElement.style.setProperty('--wd_global_' + i, "75%");
-        document.documentElement.style.setProperty('--ht_global_' + i, "475%");
-        document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
-        document.documentElement.style.setProperty('--ht_reduced_global_' + i, "450%");
-        document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
-        document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, "2.6315789479%");
-        document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
-        document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, "1.8518518522%");
-
-    }
-
-    ship_counter = 0;
-    active_ship = shipSet[ship_counter];
-    for (let i = 0; i < 5; i++) {
-        placed_ships[i] = 0;
-        ship_position[i] = 0;
-    }
-    for (let i = 0; i < 101; i++) {
-        blocked_squares[i] = 0;
-        occupied_squares[i] = 0;
-        disabled_squares_vertical[i] = 0;
-        disabled_squares_horizontal[i] = 0;
-    }
-    for (let i = 61; i <= 100; i++) {
-        blocked_squares[i] = 1;
-        document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
-        document.documentElement.style.setProperty('--ht_reduced_global_' + i, "475%");
-    }
-    all_good = 0;
-    rotate_flag = 0;
-    
-    rotate_var = 0;
-
-    document.getElementById("all_shp_pla").style.display = "none";
-    document.getElementById("air_carr").style.display = "inline";
-    document.getElementById("battl").style.display = "none";
-    document.getElementById("destr").style.display = "none";
-    document.getElementById("submar").style.display = "none";
-    document.getElementById("pat_bo").style.display = "none";
-    
-    if (tempRot % 180 == 90) {
-        tempRot += 90;
-        document.getElementById("sml_shp").style.rotate = tempRot + "deg";
-    }
-    document.getElementById("sml_shp").style.translate = "0% 0%";
-    
-    for (let i = 1; i <= 6; i++) {
-        document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
-        document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
-    }
-    document.getElementById("chk_mar").style.display = "none";
-
-    let sml_shp_size = shipSet[ship_counter];
-    if (shipSet[ship_counter + 1] < 0) {
-        sml_shp_size = sml_shp_size * (-1);
-    }
-    let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
-    let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
-    document.getElementById("sml_shp").style.height = small_ship_height + "%";
-    document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
-    document.getElementById("sml_shp").style.translate = "0% 0%";
-    document.getElementById("sml_shp").style.display = "inline";
-    
-    document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
-    document.getElementById("submt_img").src="Submit_dark_text.svg";
-
-    boundary_overflow();
+ if(submit_flag == 0)
+ {   all_ships_placed_var = 0;
+     
+     for (let i = 1; i <= 100; i++)
+     {
+         document.getElementById("actual_sq_" + i).style.display = "inline";
+         document.getElementById("actual_sq_" + i).style.opacity = "0";
+         document.getElementById("actual_sq_" + i).style.backgroundColor = "rgb(94,94,94)";
+         document.documentElement.style.setProperty('--wd_global_' + i, "75%");
+         document.documentElement.style.setProperty('--ht_global_' + i, "475%");
+         document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
+         document.documentElement.style.setProperty('--ht_reduced_global_' + i, "450%");
+         document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
+         document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, "2.6315789479%");
+         document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
+         document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, "1.8518518522%");
+         
+     }
+     
+     ship_counter = 0;
+     active_ship = shipSet[ship_counter];
+     for (let i = 0; i < 5; i++) {
+         placed_ships[i] = 0;
+         ship_position[i] = 0;
+     }
+     for (let i = 0; i < 101; i++) {
+         blocked_squares[i] = 0;
+         occupied_squares[i] = 0;
+         disabled_squares_vertical[i] = 0;
+         disabled_squares_horizontal[i] = 0;
+     }
+     for (let i = 61; i <= 100; i++) {
+         blocked_squares[i] = 1;
+         document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
+         document.documentElement.style.setProperty('--ht_reduced_global_' + i, "475%");
+     }
+     all_good = 0;
+     rotate_flag = 0;
+     
+     rotate_var = 0;
+     
+     document.getElementById("all_shp_pla").style.display = "none";
+     document.getElementById("air_carr").style.display = "inline";
+     document.getElementById("battl").style.display = "none";
+     document.getElementById("destr").style.display = "none";
+     document.getElementById("submar").style.display = "none";
+     document.getElementById("pat_bo").style.display = "none";
+     
+     if (tempRot % 180 == 90) {
+         tempRot += 90;
+         document.getElementById("sml_shp").style.rotate = tempRot + "deg";
+     }
+     document.getElementById("sml_shp").style.translate = "0% 0%";
+     
+     for (let i = 1; i <= 6; i++) {
+         document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
+         document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
+     }
+     document.getElementById("chk_mar").style.display = "none";
+     
+     let sml_shp_size = shipSet[ship_counter];
+     if (shipSet[ship_counter + 1] < 0) {
+         sml_shp_size = sml_shp_size * (-1);
+     }
+     let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
+     let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
+     document.getElementById("sml_shp").style.height = small_ship_height + "%";
+     document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
+     document.getElementById("sml_shp").style.translate = "0% 0%";
+     document.getElementById("sml_shp").style.display = "inline";
+     
+     document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
+     document.getElementById("submt_img").src="Submit_dark_text.svg";
+     
+     boundary_overflow();
+ } //end of if(submit_flag == 0)
 } //end of erase ships
 
 
@@ -303,8 +321,6 @@ function button_in_handler(a, event) {
     //    { compute_vertical_disabled_squares();
     //      compute_horizontal_disabled_squares();
     //    }
-
-
 
     if ((active_ship > 0 && disabled_squares_horizontal[parseInt(a.id.slice(14, ))] == 0) || (active_ship < 0 && disabled_squares_vertical[parseInt(a.id.slice(14, ))] == 0)) {
         all_good = 1;
@@ -378,6 +394,7 @@ function button_in_handler(a, event) {
             document.getElementById("submt").style.border = "1px solid rgb(123, 128, 131)";
             document.getElementById("submt_img").src="Submit_text.svg";
             
+             
             
             
          }
@@ -467,6 +484,9 @@ function rotate_caller_click()
     }
     
 }*/
+
+
+
 function full_sc() {
     
     if (f_screen == 0) {
