@@ -493,6 +493,10 @@ function full_sc() {
     }
 }
 
+function full_var_set()
+{
+    document.documentElement.style.setProperty('--fullScreenVar', "160px");
+}
 
 function rotate_ship() {
     if (!window.screenTop && !window.screenY) {
