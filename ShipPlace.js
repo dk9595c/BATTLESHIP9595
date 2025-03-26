@@ -190,12 +190,24 @@ function place_here_text_show(){
 }
 
 function place_here_text_hide()
-{
+{  console.log('in here');
     if(place_text_flag == 0)
     {
+        let  i = 0;
+        let k = window.setInterval(function() {
+            if (i >= 100) {
+              clearInterval(k);
+              document.getElementById("greybo_lef_cov").style.display = "none";
+              document.getElementById("plac_here_txt").style.display  = "none";
+            } else {
+                document.getElementById("greybo_lef_cov").style.opacity = 1 - i/100 ;
+                document.getElementById("plac_here_txt").style.opacity = 1 - i/100 ;
+              i++;
+            }
+          }, 1);
         
-        document.getElementById("greybo_lef_cov").style.display = "none";
-        document.getElementById("plac_here_txt").style.display  = "none";
+       // document.getElementById("greybo_lef_cov").style.display = "none";
+       // document.getElementById("plac_here_txt").style.display  = "none";
        
         document.getElementById("greybo_lef_cov").style.zIndex = "2";
         document.getElementById("plac_here_txt").style.zIndex  = "2";
@@ -306,6 +318,7 @@ function button_in_handler(a, event) {
             if (occupied_squares[i] == 0) {
                 blocked_squares[i] = 0;
                 let str1 = "actual_sq_" + i + "";
+                document.getElementById(str1).style.opacity = "0";
                 document.getElementById(str1).style.backgroundColor = "rgb(94,94,94)";
                 document.documentElement.style.setProperty('--mar_' + i, "25%");
             }
