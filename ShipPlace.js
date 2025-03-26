@@ -167,8 +167,6 @@ function place_here_text_show_touch(){
 function place_here_text_hide_touch()
 {
     place_text_flag = 1;
-    document.getElementById("greybo_lef_cov").style.opacity = "0";
-    document.getElementById("plac_here_txt").style.opacity  = "0";
     
     document.getElementById("greybo_lef_cov").style.display = "none";
     document.getElementById("plac_here_txt").style.display  = "none";
