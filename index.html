@@ -1244,6 +1244,25 @@
       }
        
        document.addEventListener("visibilitychange", () => {
+           if (rotate_flag == 0 && submit_flag == 0 && all_ships_placed_var == 0) {
+               document.getElementById("rotate_opt_wra").style.opacity = "0";
+           }
+           if (erase_flag == 0 && submit_flag == 0)
+           {
+               document.getElementById("era_all_img").style.display = "inline";
+               document.getElementById("era_all_grey_img").style.display = "none";
+               document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+           }
+           if(place_text_flag == 0)
+               {
+                   
+                   document.getElementById("greybo_lef_cov").style.display = "none";
+                   document.getElementById("plac_here_txt").style.display  = "none";
+                  
+                   document.getElementById("greybo_lef_cov").style.zIndex = "2";
+                   document.getElementById("plac_here_txt").style.zIndex  = "2";
+               }
+               
           if (document.hidden && (!window.screenTop && !window.screenY)) {
               f_screen = 0;
               document.documentElement.style.setProperty('--fullScreenVar', "160px");
