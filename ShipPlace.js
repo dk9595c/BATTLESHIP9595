@@ -16,7 +16,7 @@ var f_screen = 0;
 var erase_flag = 0;
 var place_text_flag = 0;
 var all_ships_placed_var = 0;
-var submit_flag = 0;
+var submit_flag = 0; // Becomes 1 when all ships are submitted, otherwise stays 0
 
 
 for (let i = 0; i < 101; i++) {
@@ -34,29 +34,33 @@ for (let i = 61; i <= 100; i++) {
 
 function rotate_opacity_1() {
 
-    if (rotate_flag == 0) {
+    if (rotate_flag == 0 && submit_flag == 0 && all_ships_placed_var == 0) {
         document.getElementById("rotate_opt_wra").style.opacity = "1";
     }
 }
 
 function rotate_opacity_bytouch_1() {
-
-    // rotate_caller_touch();
-    rotate_flag = 1;
-    document.getElementById("rotate_opt_wra").style.opacity = "1";
+    if(submit_flag == 0 && all_ships_placed_var == 0)
+    {
+        // rotate_caller_touch();
+        rotate_flag = 1;
+        document.getElementById("rotate_opt_wra").style.opacity = "1";
+    }
 }
 
 function rotate_opacity_0() {
 
-    if (rotate_flag == 0) {
+    if (rotate_flag == 0 && submit_flag == 0 && all_ships_placed_var == 0) {
         document.getElementById("rotate_opt_wra").style.opacity = "0";
     }
 }
 
 function rotate_opacity_bytouch_0() {
-
-    rotate_flag = 1;
-    document.getElementById("rotate_opt_wra").style.opacity = "0";
+   if(submit_flag == 0 && all_ships_placed_var == 0)
+   {
+       rotate_flag = 1;
+       document.getElementById("rotate_opt_wra").style.opacity = "0";
+   }
 }
 
 
@@ -129,17 +133,19 @@ function submit_active_0() {
 }
 
 function submit_ships(){
-   submit_flag = 1;
-   for (let i = 0; i <5; i++) // submitting the ships
-    {let targ_sq = ship_position[i];
-        if(ship_position[i] < 0)
-        {
-            targ_sq = targ_sq * (-1);
-        }
-        document.getElementById("actual_sq_"+targ_sq).style.backgroundColor = "rgba(94,94,94,0)";
-        document.getElementById("actual_sq_"+targ_sq).style.border = "1px solid rgb(221, 223, 225)";
-    }
-}
+ if(all_ships_placed_var == 1)
+ { submit_flag = 1;
+     for (let i = 0; i <5; i++) // submitting the ships
+     {let targ_sq = ship_position[i];
+         if(ship_position[i] < 0)
+         {
+             targ_sq = targ_sq * (-1);
+         }
+         document.getElementById("actual_sq_"+targ_sq).style.backgroundColor = "rgba(94,94,94,0)";
+         document.getElementById("actual_sq_"+targ_sq).style.border = "1px solid rgb(221, 223, 225)";
+     }
+ } //end of if
+} // end of submit_ships()
 
 function key_down_handler(event)
 {
