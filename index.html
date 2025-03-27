@@ -1185,7 +1185,7 @@
       }
        
        document.addEventListener("visibilitychange", () => {
-          if (document.hidden) {
+          if (document.hidden && (!window.screenTop && !window.screenY)) {
               f_screen = 0;
               document.documentElement.style.setProperty('--fullScreenVar', "160px");
               if (document.exitFullscreen) {
