@@ -1097,7 +1097,7 @@
                <div class="greybox_right" id="right_greybox">
                   <p id="demo" class="test_screen_resolution"><img src="place_your_ships.svg" oncontextmenu="return false;"></p>
                   <div class="ship_sample_cover" id="ship_samp_cov" oncontextmenu="return false;"></div>
-                  <div class="ship_sample" id="ship_samp" ontouchstart="place_here_text_show_touch()" ontouchend="place_here_text_hide_touch()" onmousedown="place_here_text_show()"  onmouseup="place_here_text_hide()" oncontextmenu="return false;">
+                  <div class="ship_sample" id="ship_samp"  oncontextmenu="return false;">
                      <div class="small_ship" id="sml_shp" oncontextmenu="return false;"></div>
                      <div class="small_horizontal_line1" id="small_horiz_line_1"></div>
                      <div class="small_horizontal_line2" id="small_horiz_line_2"></div>
@@ -1120,16 +1120,16 @@
                      <div class="check_mark" id="chk_mar"><img src="checkmark.svg" oncontextmenu="return false;"></div>
                   </div><!-- end of ship_sample  -->
                   
-                  <div class="erase_all" id="era_all" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onmousedown="erase_ships()" oncontextmenu="return false;"></div>
-                  <img class="erase_all_txt" id="era_all_img" src="Erase_all_text.svg" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onmousedown="erase_ships()" oncontextmenu="return false;">
-                  <img class="erase_all_txt" id="era_all_grey_img" src="Erase_all_text_grey.svg" ontouchstart="erase_active_bytouch_1()" ontouchend="erase_active_bytouch_0()" onmouseover="erase_active_1()" onmouseout="erase_active_0()" onmousedown="erase_ships()" oncontextmenu="return false;" style="display:none;">
+                  <div class="erase_all" id="era_all" oncontextmenu="return false;"></div>
+                  <img class="erase_all_txt" id="era_all_img" src="Erase_all_text.svg" oncontextmenu="return false;">
+                  <img class="erase_all_txt" id="era_all_grey_img" src="Erase_all_text_grey.svg"  oncontextmenu="return false;" style="display:none;">
                       
-                  <div class="submit" id="submt" ontouchstart="submit_active_bytouch_1()" ontouchend="submit_active_bytouch_0()" onmouseover="submit_active_1()" onmouseout="submit_active_0()" onmousedown="submit_ships()" oncontextmenu="return false;"></div>
-                  <img class="submit_txt" id="submt_img" src="Submit_dark_text.svg" ontouchstart="submit_active_bytouch_1()" ontouchend="submit_active_bytouch_0()" onmouseover="submit_active_1()" onmouseout="submit_active_0()" onmousedown="submit_ships()" oncontextmenu="return false;">
+                  <div class="submit" id="submt" oncontextmenu="return false;"></div>
+                  <img class="submit_txt" id="submt_img" src="Submit_dark_text.svg" oncontextmenu="return false;">
                       
-                  <div class="rotate_options_wrapper" id="rotate_opt_wra" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
-                  <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
-                  <div class="rotate_text" id="rotate_txt"><img src="rotate_text.svg" ontouchstart="rotate_opacity_bytouch_1()" ontouchend="rotate_opacity_bytouch_0()" onmouseover="rotate_opacity_1()" onmouseout="rotate_opacity_0()" onmousedown="rotate_ship()" oncontextmenu="return false;"></div>
+                  <div class="rotate_options_wrapper" id="rotate_opt_wra" oncontextmenu="return false;"></div>
+                  <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" oncontextmenu="return false;"></div>
+                  <div class="rotate_text" id="rotate_txt"><img src="rotate_text.svg" oncontextmenu="return false;"></div>
                   <div class="vertical_line1_r"   id="right_vert_line_1"></div>
                   <div class="vertical_line2_r"   id="right_vert_line_2"></div>
                   <div class="vertical_line3_r"   id="right_vert_line_3"></div>
@@ -1160,17 +1160,65 @@
       <!-- end of master_flexbox -->
    </body>
    <script>
-      /*
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       */
+      
+      
+       document.getElementById("ship_samp").addEventListener("touchstart", place_here_text_show_touch, {passive: true});
+       document.getElementById("ship_samp").addEventListener("touchend", place_here_text_hide_touch, {passive: true});
+       document.getElementById("ship_samp").addEventListener("mousedown", place_here_text_show, {passive: true});
+       document.getElementById("ship_samp").addEventListener("mouseup", place_here_text_hide, {passive: true});
+       
+       
+       document.getElementById("era_all").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
+       document.getElementById("era_all").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
+       document.getElementById("era_all").addEventListener("mouseover", erase_active_1, {passive: true});
+       document.getElementById("era_all").addEventListener("mouseout", erase_active_0, {passive: true});
+       document.getElementById("era_all").addEventListener("mousedown", erase_ships, {passive: true});
+       
+       
+       document.getElementById("era_all_img").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
+       document.getElementById("era_all_img").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
+       document.getElementById("era_all_img").addEventListener("mouseover", erase_active_1, {passive: true});
+       document.getElementById("era_all_img").addEventListener("mouseout", erase_active_0, {passive: true});
+       document.getElementById("era_all_img").addEventListener("mousedown", erase_ships, {passive: true});
+       
+       document.getElementById("era_all_grey_img").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
+       document.getElementById("era_all_grey_img").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
+       document.getElementById("era_all_grey_img").addEventListener("mouseover", erase_active_1, {passive: true});
+       document.getElementById("era_all_grey_img").addEventListener("mouseout", erase_active_0, {passive: true});
+       document.getElementById("era_all_grey_img").addEventListener("mousedown", erase_ships, {passive: true});
+       
+       document.getElementById("submt").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
+       document.getElementById("submt").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
+       document.getElementById("submt").addEventListener("mouseover", submit_active_1, {passive: true});
+       document.getElementById("submt").addEventListener("mouseout", submit_active_0, {passive: true});
+       document.getElementById("submt").addEventListener("mousedown", submit_ships, {passive: true});
+       
+       document.getElementById("submt_img").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
+       document.getElementById("submt_img").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
+       document.getElementById("submt_img").addEventListener("mouseover", submit_active_1, {passive: true});
+       document.getElementById("submt_img").addEventListener("mouseout", submit_active_0, {passive: true});
+       document.getElementById("submt_img").addEventListener("mousedown", submit_ships, {passive: true});
+       
+      
+      
+      
+      document.getElementById("rotate_opt_wra").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
+      document.getElementById("rotate_opt_wra").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
+      document.getElementById("rotate_opt_wra").addEventListener("mouseover", rotate_opacity_1, {passive: true});
+      document.getElementById("rotate_opt_wra").addEventListener("mouseout", rotate_opacity_0, {passive: true});
+      document.getElementById("rotate_opt_wra").addEventListener("mousedown", rotate_ship, {passive: true});
+      
+      document.getElementById("rotate_opt").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
+      document.getElementById("rotate_opt").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
+      document.getElementById("rotate_opt").addEventListener("mouseover", rotate_opacity_1, {passive: true});
+      document.getElementById("rotate_opt").addEventListener("mouseout", rotate_opacity_0, {passive: true});
+      document.getElementById("rotate_opt").addEventListener("mousedown", rotate_ship, {passive: true});
+      
+      document.getElementById("rotate_txt").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
+      document.getElementById("rotate_txt").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
+      document.getElementById("rotate_txt").addEventListener("mouseover", rotate_opacity_1, {passive: true});
+      document.getElementById("rotate_txt").addEventListener("mouseout", rotate_opacity_0, {passive: true});
+      document.getElementById("rotate_txt").addEventListener("mousedown", rotate_ship, {passive: true});
        
       for (let i = 61; i <= 100; i++) {
           let str1 = "actual_sq_"+i+"";
