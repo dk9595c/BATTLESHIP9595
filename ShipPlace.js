@@ -263,7 +263,12 @@ function place_here_text_hide()
 
 function erase_ships() {
  if(submit_flag == 0)
- {   all_ships_placed_var = 0;
+ {   for(i=0; i<5; i++)
+     {
+       document.getElementById("actual_sq_"+Math.abs(ship_position[i])).style.transition="width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s";
+     }
+     all_ships_placed_var = 0;
+     
      
      for (let i = 1; i <= 100; i++)
      {
@@ -337,6 +342,7 @@ function erase_ships() {
      document.getElementById("submt_img").src="Submit_dark_text.svg";
      
      boundary_overflow();
+     
  } //end of if(submit_flag == 0)
 } //end of erase ships
 
@@ -412,7 +418,10 @@ function button_in_handler(a, event) {
         } else if (ship_counter == 4)
          {
             all_ships_placed_var = 1;
-            
+             for(i=0; i<5; i++)
+             {
+                 document.getElementById("actual_sq_"+Math.abs(ship_position[i])).style.transition="width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0s";
+             }
             document.getElementById("pat_bo").style.display = "none";
             document.getElementById("sml_shp").style.display = "none";
             document.getElementById("all_shp_pla").style.display = "inline";
@@ -522,6 +531,8 @@ function full_sc() {
     
     if (f_screen == 0) {
         f_screen = 1;
+        document.getElementById("full_scr").style.display = "none";
+        document.getElementById("exit_full_scr").style.display = "inline";
         document.documentElement.style.setProperty('--fullScreenVar', "80px");
         var elem = document.documentElement;
         if (elem.requestFullscreen) {
@@ -535,6 +546,8 @@ function full_sc() {
         }
     } else {
         f_screen = 0;
+        document.getElementById("exit_full_scr").style.display = "none";
+        
         document.documentElement.style.setProperty('--fullScreenVar', "160px");
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -545,6 +558,7 @@ function full_sc() {
             /* IE11 */
             document.msExitFullscreen();
         }
+        document.getElementById("full_scr").style.display = "inline";
     }
 }
 
