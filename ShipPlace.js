@@ -324,8 +324,8 @@ function erase_ships() {
         document.getElementById("sml_shp").style.display = "inline";
 
         document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
-        document.getElementById("submt_img").style.display = "none";
-        document.getElementById("light_submt_img").style.display = "inline";
+        document.getElementById("submt_img").style.display = "inline";
+        document.getElementById("light_submt_img").style.display = "none";
 
         boundary_overflow();
 
