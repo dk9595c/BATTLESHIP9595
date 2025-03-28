@@ -251,7 +251,6 @@ function erase_ships() {
         
         for (let i = 0; i < 5; i++) {
             if(ship_position[i] == 0) {break;}
-            console.log("actual_sq_" + Math.abs(ship_position[i]));
             document.getElementById("actual_sq_" + Math.abs(ship_position[i])).style.transition = "width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s";
         }
         all_ships_placed_var = 0;
@@ -325,7 +324,8 @@ function erase_ships() {
         document.getElementById("sml_shp").style.display = "inline";
 
         document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
-        document.getElementById("submt_img").src = "Submit_dark_text.svg";
+        document.getElementById("submt_img").style.display = "none";
+        document.getElementById("light_submt_img").style.display = "inline";
 
         boundary_overflow();
 
@@ -417,7 +417,8 @@ function button_in_handler(a, event) {
             }
             document.getElementById("chk_mar").style.display = "inline";
             document.getElementById("submt").style.border = "1px solid rgb(123, 128, 131)";
-            document.getElementById("submt_img").src = "Submit_text.svg";
+            document.getElementById("submt_img").style.display = "none";
+            document.getElementById("light_submt_img").style.display = "inline";
 
 
 
