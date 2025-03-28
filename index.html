@@ -1,1346 +1,766 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0" />
-      <meta name="theme-color" content="#202124">
-      <meta charset="UTF-8">
-      <meta name="description" content="Play Battleship online with AI-powered strategy! BattleshipArena offers an immersive gaming experience with advanced algorithms, multiplayer mode, and smart tactics. Sink enemy ships and dominate the battlefield!">
-      <meta name="keywords" content="Battleship, online Battleship, Battleship game, AI Battleship, multiplayer Battleship, strategy game, naval battle, sink ships, board game, war game, BattleshipArena, play Battleship online, classic Battleship, smart AI, real-time multiplayer">
-      <meta http-equiv="Cache-Control" content="max-age=36000, must-revalidate">
-      <meta http-equiv="Expires" content="Wed, 01 Jan 2030 12:00:00 GMT">
-      <title>BattleShip</title>
-      <script src="ShipPlace.js"></script>
-      <style>
-         html,
-         body {
-         height: 100%;
-         margin: 0;
-         font-size: 0px;
-         overscroll-behaviour : none;
-         }
-         img {
-         max-width: 100%;
-         max-height: 100%;
-         }
-         .master_flexbox {
-         display: flex;
-         flex-flow: column;
-         height: 100%;
-         width: 100%;
-         margin: 0px 0px 0px 0px;
-         }
-         .master_flexbox .content {
-         flex: 1 1 auto;
-         font-size: 0px;
-         }
-         .flex-container {
-         display: inline;
-         width: 100vw;
-         height: 50px;
-         background-color: rgb(32, 33, 36);
-         margin: 0px 0px 0px 0px;
-         }
-         .menu_icon{
-         display: inline;
-         width : 32px;
-         height: 32px;
-         margin-top : 9px;
-         margin-left :9px;
-         position: absolute;
-         }
-         .version_name{
-         display: inline;
-         width : auto;
-         height: 12px;
-         margin-top : 19px;
-         margin-left : 59px;
-         position: absolute;
-         }
-         .battleship_logo{
-         display: inline;
-         width : auto;
-         height: 32px;
-         margin-top : 9px;
-         margin-left :calc(50vw - 141.36px);
-         position: absolute;
-         }
-         .question_mark {
-         display: inline;
-         width : 32px;
-         height: 32px;
-         margin-top : 9px;
-         margin-left : calc(100vw - 141px);
-         position: absolute;
-         }
-         .full_screen {
-         display: inline;
-         width : 32px;
-         height: 32px;
-         margin-top : 9px;
-         margin-left : calc(100vw - 91px);
-         position: absolute;
-         }
-         .exit_full_screen {
-         display: none;
-         width : 32px;
-         height: 32px;
-         margin-top : 9px;
-         margin-left : calc(100vw - 91px);
-         position: absolute;
-         }
-         .account_circle {
-         display: inline;
-         width : 32px;
-         height: 32px;
-         margin-top : 9px;
-         margin-left : calc(100vw - 41px);
-         position: absolute;
-         }
-         .flex-container > div {
-         padding: 7.5px 0px 20px 0px;
-         vertical-align: top;
-         min-height: 40px;
-         max-width: 143px;
-         max-height: 40px;
-         min-width: 130px;
-         }
-         .fullscreen_image{
-         display:inline;
-         width:18%;
-         height:18%;
-         }
-         .test_screen_resolution{
-         font-family:poppins, Arial;
-         position: absolute;
-         border-radius : 10px;
-         /* background-color: rgb(94,94,94);*/
-         z-index:2;
-         width: 55.2155772%;
-         height: 10.4311544%;
-         margin-top: 3%;
-         margin-left: 22.3922114%;
-         color: white;
-         font-size: min(2.5vw, 3vh);
-         margin-bottom:0px;
-         text-align:center;
-         top:0;
-         padding-bottom:1;
-         display : inline;
-         }
-         .aircraft_carrier{
-         z-index:2;
-         width: 58.1537089%;
-         height: 10.3225806452%;
-         margin-top: 103.548387%;
-         margin-left: 20.9231456%;
-         color: white;
-         font-size: 0px;
-         margin-bottom:0px;
-         text-align:center;
-         top:0;
-         padding-bottom:1;
-         display : inline;
-         position: absolute;
-         }
-         .battleship{
-         z-index:2;
-         width: 38.7096774194%;
-         height: 10.3225806452%;
-         margin-top: 103.548387%;
-         margin-left: 30.6451613%;
-         color: white;
-         font-size: 0px;
-         margin-bottom:0px;
-         text-align:center;
-         top:0;
-         padding-bottom:1;
-         display : none;
-         position: absolute;
-         }
-         .destroyer{
-         z-index:2;
-         width: 38.888063%;
-         height: 10.3225806452%;
-         margin-top: 103.548387%;
-         margin-left: 30.5559685%;
-         color: white;
-         font-size: 0px;
-         margin-bottom:0px;
-         text-align:center;
-         top:0;
-         padding-bottom:1;
-         display : none;
-         position: absolute;
-         }
-         .submarine{
-         z-index:2;
-         width: 42.6341608%;
-         height: 10.3225806452%;
-         margin-top: 103.548387%;
-         margin-left: 28.6829196%;
-         color: white;
-         font-size: 0px;
-         margin-bottom:0px;
-         text-align:center;
-         top:0;
-         padding-bottom:1;
-         display : none;
-         position: absolute;
-         }
-         .patrol_boat{
-         z-index:2;
-         width: 43.8828601%;
-         height: 10.3225806452%;
-         margin-top: 103.548387%;
-         margin-left: 28.05857%;
-         color: white;
-         font-size: 0px;
-         margin-bottom:0px;
-         text-align:center;
-         top:0;
-         padding-bottom:1;
-         display : none;
-         position: absolute;
-         }
-         .check_mark{
-         z-index:4;
-         width:  65.4040404%;
-         height: 65.4040404%;
-         margin-top: 24.4949495%;
-         margin-left: 17.2979798%;
-         font-size: 0px;
-         margin-bottom:0px;
-         display : none;
-         position: absolute;
-         }
-         .rotate_option{
-         display:inline;
-         position:absolute;
-         margin-left:73.1571627%;
-         margin-top:19.8887344%;
-         width:14.6036161%;
-         height:14.6036161%;
-         z-index:2;
-         }
-         .rotate_text{
-         display:inline;
-         position:absolute;
-         margin-left:74.8261474%;
-         margin-top:36.9958275%;
-         width:11.2656467%;
-         height:5.42420028%;
-         z-index:2;
-         }
-         .rotate_options_wrapper{
-         position:absolute;
-         display:inline;
-         font-size:0px;
-         border-radius: 8.05369128% / 6.6666667%;
-         margin-left:70.0973574%;
-         margin-top:17.3852573%;
-         width:20.7232267%;
-         height:25.0347705%;
-         background-color: rgb(66,66,66);
-         z-index:2;
-         opacity:0;
-         }
-         .ship_sample{
-         position:absolute;
-         display:inline;
-         font-size:0px;
-         border-radius: 11.275167792% / 9.33333338%;
-         margin-left:9.1794159%;
-         margin-top:17.3852573%;
-         width:43.1154381%;
-         height:51.8776078%;
-         background-color: rgb(49, 49, 52);
-         z-index:2;
-         opacity:1;
-         border: 1px solid rgb(123, 128, 131);
-         }
-         .erase_all{
-         position:absolute;
-         display:inline;
-         font-size:0px;
-         border-radius: 8.05369128% / 16.544583%;
-         margin-left: 70.0973574%;
-         margin-top: 47.2878999%;
-         width:  20.7232267%;
-         height: 9.73574409%;
-         background-color: rgb(49, 49, 52);
-         z-index:2;
-         opacity:1;
-         border: 1px solid rgb(204,7,30);
-         }
-         .erase_all_txt{
-         display:inline;
-         position:absolute;
-         margin-left:73.2931639%;
-         margin-top:49.4436718%;
-         width:14.3316139%;
-         height:5.42420028%;
-         z-index:2;
-         }
-         .submit{
-         position:absolute;
-         display:inline;
-         font-size:0px;
-         border-radius: 8.05369128% / 16.544583%;
-         margin-left: 70.0973574%;
-         margin-top: 59.527121%;
-         width:  20.7232267%;
-         height: 9.73574409%;
-         background-color: rgb(49, 49, 52);
-         z-index:2;
-         opacity:1;
-         border: 1px solid rgb(66, 66, 66);
-         /*border: 1px solid rgb(123, 128, 131);*/
-         }
-         .submit_txt{
-         display:inline;
-         position:absolute;
-         margin-left:74.365743%;
-         margin-top:61.6828929%;
-         width:12.1864557%;
-         height:5.42420028%;
-         z-index:2;
-         }
-         .all_ships_placed{
-         z-index:4;
-         width: 61.5430355%;
-         height: 10.3225806452%;
-         margin-top: 103.548387%;
-         margin-left: 19.2284823%;
-         color: white;
-         font-size: 0px;
-         margin-bottom:0px;
-         text-align:center;
-         top:0;
-         padding-bottom:1;
-         display : none;
-         position: absolute;
-         }
-         .small_ship{
-         position:absolute;
-         display:inline;
-         font-size:0px;
-         border-radius: 16.6666667% / 2.6315794737%;
-         margin-left : 44.7499999893%;
-         margin-top  : 16.08333333217%;
-         width  : 10.5000000214%;
-         height : 56.3762287541%;
-         background-color: rgb(91, 137,238);
-         z-index:2;
-         opacity:1;
-         rotate: 0deg;
-         translate: 0% 0%;
-         transition: rotate 0.35s, translate 0.35s;
-         /* 1.7500000036
-         7.1666666643%
-         height of 4 - size ship : 53.5000000071
-         a= 9.8130841308
-         b= 0.3115264486
-         c= 3.2710280437
-         calculated = 13.3956386231 (correct!!)
-         overflow= 5.0833333607
-         span= 43.3333332857
-         calculated= 7.1666666643
-         final calculated= 68.2539680923
-         translate: 68.2539680923% 13.3956386231%;
-         height of 2- size ship : 24.1666667499
-         */
-         }
-         .small_horizontal_line1, .small_horizontal_line2, .small_horizontal_line3, .small_horizontal_line4, .small_horizontal_line5, .small_horizontal_line6{
-         width: 0px;
-         height: 0px;
-         padding-right: 90.3225806%;
-         padding-bottom: 0.3333333%;
-         margin-left: 4.83870968%;
-         border-radius: 5px;
-         position: absolute;
-         background-color: rgb(123, 128, 131);
-         }
-         .small_vertical_line1, .small_vertical_line2, .small_vertical_line3, .small_vertical_line4, .small_vertical_line5, .small_vertical_line6{
-         width: 0px;
-         height: 0px;
-         padding-bottom: 90.3225806%;
-         padding-right: 0.3333333%;
-         margin-top: 4.83870968%;
-         border-radius: 5px;
-         position: absolute;
-         background-color: rgb(123, 128, 131);
-         }
-         .small_horizontal_line1{margin-top: 14.0000000285714%;}
-         .small_horizontal_line2{margin-top: 28.3333333571%;}
-         .small_horizontal_line3{margin-top: 42.6666666857%;}
-         .small_horizontal_line4{margin-top: 57.0000000142714%;}
-         .small_horizontal_line5{margin-top: 71.3333333428%;}
-         .small_horizontal_line6{margin-top: 85.6666666714%;}
-         .small_vertical_line1{margin-left: 14.0000000285714%;}
-         .small_vertical_line2{margin-left: 28.3333333571%;}
-         .small_vertical_line3{margin-left: 42.6666666857%;}
-         .small_vertical_line4{margin-left: 57.0000000142714%;}
-         .small_vertical_line5{margin-left: 71.3333333428%;}
-         .small_vertical_line6{margin-left: 85.6666666714%;}
-         .small_logo{
-         display: none;
-         }
-         .big_logo{
-         font-size: 2px;
-         padding-top: 2px;
-         min-width: 130px;
-         display:inline;
-         }
-         .vertical_line1,
-         .vertical_line2,
-         .vertical_line3,
-         .vertical_line4,
-         .vertical_line5,
-         .vertical_line6,
-         .vertical_line7,
-         .vertical_line8,
-         .vertical_line9 {
-         width: 0.33%;
-         padding-bottom: 96.66%;
-         margin-top: 1.67%;
-         border-radius: 1px;
-         position: absolute;
-         background-color: rgb(123, 128, 131);
-         }
-         .vertical_line1_r,
-         .vertical_line2_r,
-         .vertical_line3_r,
-         .vertical_line4_r,
-         .vertical_line5_r,
-         .vertical_line6_r,
-         .vertical_line7_r,
-         .vertical_line8_r,
-         .vertical_line9_r {
-         width: 0.33%;
-         padding-bottom: 96.66%;
-         margin-top: 1.67%;
-         border-radius: 1px;
-         position: absolute;
-         background-color: rgb(49, 49, 52);
-         }
-         .vertical_line1 {
-         margin-left: 9.835%;
-         }
-         .vertical_line2 {
-         margin-left: 19.835%;
-         }
-         .vertical_line3 {
-         margin-left: 29.835%;
-         }
-         .vertical_line4 {
-         margin-left: 39.835%;
-         }
-         .vertical_line5 {
-         margin-left: 49.835%;
-         }
-         .vertical_line6 {
-         margin-left: 59.835%;
-         }
-         .vertical_line7 {
-         margin-left: 69.835%;
-         }
-         .vertical_line8 {
-         margin-left: 79.835%;
-         }
-         .vertical_line9 {
-         margin-left: 89.835%;
-         }
-         .vertical_line1_r {
-         margin-left: 9.835%;
-         }
-         .vertical_line2_r {
-         margin-left: 19.835%;
-         }
-         .vertical_line3_r {
-         margin-left: 29.835%;
-         }
-         .vertical_line4_r {
-         margin-left: 39.835%;
-         }
-         .vertical_line5_r {
-         margin-left: 49.835%;
-         }
-         .vertical_line6_r {
-         margin-left: 59.835%;
-         }
-         .vertical_line7_r {
-         margin-left: 69.835%;
-         }
-         .vertical_line8_r {
-         margin-left: 79.835%;
-         }
-         .vertical_line9_r {
-         margin-left: 89.835%;
-         }
-         .horizontal_line1,
-         .horizontal_line2,
-         .horizontal_line3,
-         .horizontal_line4,
-         .horizontal_line5,
-         .horizontal_line6,
-         .horizontal_line7,
-         .horizontal_line8,
-         .horizontal_line9 {
-         width: 0px;
-         height: 0px;
-         padding-right: 96.66%;
-         padding-bottom: 0.3333333%;
-         margin-left: 1.666667%;
-         border-radius: 1px;
-         position: absolute;
-         background-color: rgb(123, 128, 131);
-         }
-         .horizontal_line1_r,
-         .horizontal_line2_r,
-         .horizontal_line3_r,
-         .horizontal_line4_r,
-         .horizontal_line5_r,
-         .horizontal_line6_r,
-         .horizontal_line7_r,
-         .horizontal_line8_r,
-         .horizontal_line9_r {
-         width: 0px;
-         height: 0px;
-         padding-right: 96.66%;
-         padding-bottom: 0.3333333%;
-         margin-left: 1.666667%;
-         border-radius: 1px;
-         position: absolute;
-         background-color: rgb(49, 49, 52);
-         }
-         .horizontal_line1 {
-         margin-top: 9.835%;
-         }
-         .horizontal_line2 {
-         margin-top: 19.835%;
-         }
-         .horizontal_line3 {
-         margin-top: 29.835%;
-         }
-         .horizontal_line4 {
-         margin-top: 39.835%;
-         }
-         .horizontal_line5 {
-         margin-top: 49.835%;
-         }
-         .horizontal_line6 {
-         margin-top: 59.835%;
-         }
-         .horizontal_line7 {
-         margin-top: 69.835%;
-         }
-         .horizontal_line8 {
-         margin-top: 79.835%;
-         }
-         .horizontal_line9 {
-         margin-top: 89.835%;
-         }
-         .horizontal_line1_r {
-         margin-top: 9.835%;
-         }
-         .horizontal_line2_r {
-         margin-top: 19.835%;
-         }
-         .horizontal_line3_r {
-         margin-top: 29.835%;
-         }
-         .horizontal_line4_r {
-         margin-top: 39.835%;
-         }
-         .horizontal_line5_r {
-         margin-top: 49.835%;
-         }
-         .horizontal_line6_r {
-         margin-top: 59.835%;
-         }
-         .horizontal_line7_r {
-         margin-top: 69.835%;
-         }
-         .horizontal_line8_r {
-         margin-top: 79.835%;
-         }
-         .horizontal_line9_r {
-         margin-top: 89.835%;
-         }
-         .greybox_left {
-         padding-bottom: min((100vh - 130px), 41.65vw);
-         padding-right: min((100vh - 130px), 41.65vw);
-         --widthX : min((100vh - 130px), 41.65vw);
-         display: inline-block;
-         position: absolute;
-         margin-left: calc(50vw - var(--widthX) - 4.44vw);
-         margin-top: 3.25%;
-         border-radius: 1.66666667%;
-         background-color: rgb(49, 49, 52);
-         font-size: 0px;
-         overflow:hidden;
-         }
-         .greybox_left_cover{
-         width:110%;
-         height:110%;
-         position: absolute;
-         margin-left: 0%;
-         margin-top: 0%;
-         background-color: rgb(49, 49, 52);
-         opacity: 0.7;
-         font-size: 0px;
-         z-index:2;
-         display:none;
-         transition: opacity 0.5s;
-         }
-         .place_here_text{
-         width: 65.9248957%;
-         height: 18.2197497%;
-         margin-left: 17.1070932%;
-         margin-top: 40.8901252%;
-         font-size: 0px;
-         opacity: 1;
-         z-index:2;
-         display:none;
-         position: absolute;
-         transition: opacity 0.5s;
-         }
-         .greybox_right {
-         padding-bottom: min((100vh - 130px), 41.65vw);
-         padding-right: min((100vh - 130px), 41.65vw);
-         --widthX : min((100vh - 130px), 41.65vw);
-         display: inline-block;
-         position: absolute;
-         margin-left: 4.44vw;
-         margin-top: 3.25%;
-         border-radius: 1.66666667%;
-         background-color: rgb(49, 49, 52);
-         font-size: 0px;
-         }
-         .pseudo_span {
-         font-family: Helvetica, Arial;
-         display: inline;
-         color: rgb(32, 33, 36);
-         vertical-align: top;
-         padding: 0px 0px 0px 0px;
-         }
-         .pseudo_span2 {
-         font-family: Helvetica, Arial;
-         display: inline;
-         color: rgb(32, 33, 36);
-         vertical-align: top;
-         padding: 0px 0px 0px 0px;
-         display: none;
-         }
-         @media screen and (max-width: 600px) {
-         .menu_icon{
-         width : 24px;
-         height: 24px;
-         margin-top : 13px;
-         margin-left :8px;
-         }
-         .version_name{
-         display: none;
-         }
-         .battleship_logo{
-         width : auto;
-         height: 20px;
-         margin-top : 15px;
-         margin-left : 48px;
-         }
-         .question_mark {
-         width : 24px;
-         height: 24px;
-         margin-top : 13px;
-         margin-left : calc(100vw - 96px);
-         }
-         .full_screen {
-         width : 24px;
-         height: 24px;
-         margin-top : 13px;
-         margin-left : calc(100vw - 64px);
-         }
-         .exit_full_screen {
-         width : 24px;
-         height: 24px;
-         margin-top : 13px;
-         margin-left : calc(100vw - 64px);
-         }
-         .account_circle {
-         display: inline;
-         width : 24px;
-         height: 24px;
-         margin-top : 13px;
-         margin-left : calc(100vw - 32px);
-         position: absolute;
-         }
-         .pseudo_span {
-         display: none;
-         font-size: 20px;
-         }
-         .pseudo_span2 {
-         display: inline-block;
-         font-size: 16px;
-         }
-         .flex-container > div {
-         min-width: 0px;
-         }
-         }
-         .LogoFirstHalf {
-         font-family: Impact, Arial;
-         display: inline;
-         color: rgb(91, 136, 238);
-         vertical-align: top;
-         font-weight: bold;
-         font-size: 30px;
-         padding: 0px;
-         }
-         .LogoSecondHalf {
-         font-family: Impact, Arial;
-         display: inline;
-         color: rgb(124, 128, 131);
-         vertical-align: top;
-         text-align: left;
-         font-weight: bold;
-         font-size: 30px;
-         padding: 0px;
-         }
-         .red_dot {
-         display: inline;
-         z-index: 1;
-         }
-         .left_side {
-         background-color: rgb(32, 33, 36);
-         height: 100%;
-         width: 50%;
-         display: inline-block;
-         }
-         .right_side {
-         background-color: rgb(32, 33, 36);
-         height: 100%;
-         width: 50%;
-         display: inline-block;
-         }
-         @media only screen and (max-width: 600px) {
-         .right_side {
-         width: 100%;
-         height: 50%;
-         display: block;
-         background-color: rgb(32, 33, 36);
-         position: relative;
-         }
-         .left_side {
-         width: 100%;
-         height: 50%;
-         display: block;
-         background-color: rgb(32, 33, 36);
-         position: relative;
-         }
-         .greybox_left {
-         margin-top: 0px;
-         padding-bottom: min((100vh - var(--fullScreenVar))/2, 94vw);
-         padding-right: min((100vh - var(--fullScreenVar))/2, 94vw);
-         --widthD : min((100vh - var(--fullScreenVar))/2, 94vw);
-         display: inline-block;
-         position: absolute;
-         margin-left: max(3%, calc((100% - var(--widthD))/2));
-         bottom : 1%;
-         }
-         .greybox_right {
-         margin-top: 0px;
-         padding-bottom: min((100vh - var(--fullScreenVar))/2, 94vw);
-         padding-right: min((100vh - var(--fullScreenVar))/2, 94vw);
-         --widthD : min((100vh - var(--fullScreenVar))/2, 94vw);
-         display: inline-block;
-         position: absolute;
-         margin-left: max(3%, calc((100% - var(--widthD))/2));
-         margin-bottom : calc(50vh - var(--widthD));
-         top: 1%;
-         }
-         }
-         @media only screen and (max-width: 320px) {
-         .small_logo{
-         display: inline;
-         }
-         .big_logo{
-         font-size: 2px;
-         padding-top: 2px;
-         min-width: 130px;
-         display:none;
-         }
-         .menu_icon{
-         width : 12px;
-         height: 12px;
-         margin-top : 19px;
-         margin-left :4px;
-         }
-         .version_name{
-         display: none;
-         }
-         .battleship_logo{
-         width : auto;
-         height: 12px;
-         margin-top : 19px;
-         margin-left : 20px;
-         }
-         .question_mark {
-         width : 12px;
-         height: 12px;
-         margin-top : 19px;
-         margin-left : calc(100vw - 48px);
-         }
-         .full_screen {
-         width : 12px;
-         height: 12px;
-         margin-top : 19px;
-         margin-left : calc(100vw - 32px);
-         }
-         .exit_full_screen{
-         width : 24px;
-         height: 24px;
-         margin-top : 13px;
-         margin-left : calc(100vw - 64px);
-         }
-         .account_circle {
-         width : 12px;
-         height: 12px;
-         margin-top : 19px;
-         margin-left : calc(100vw - 16px);
-         }
-      </style>
-      <link rel="stylesheet" href="Pseudo_square.css" />
-      
-      <link rel="icon" href="favicon_6.png" type="image/x-icon">
-   </head>
-   <body style="background-color: rgb(32, 33, 36);" onmouseup="place_here_text_hide()" onload="full_var_set()" onresize="full_var_set()" onkeydown="key_down_handler(event)" onkeyup="key_up_handler(event)">
-      <div class="master_flexbox">
-         <div class="flex-container">
-            <img class = "menu_icon" id="menu_ic" alt="menu_icon" src="menu.svg">
-            <img class = "version_name" id="ver_name" alt="version_name" src="version_name.svg">
-            <img class = "battleship_logo" id="bship_logo" alt="battleship_logo" src="battleship_logo.svg">
-            <img class = "account_circle" id="acc_cir" alt="account_circle" src="account_circle.svg">
-            <img class = "full_screen" id="full_scr" alt="full_screen" src="full_scr.svg" onclick="full_sc()">
-            <img class = "exit_full_screen" id="exit_full_scr" alt="exit_full_screen" src="exit_full_scr.svg" onclick="full_sc()">
-            <img class = "question_mark" id="q_mark" alt="question_mark" src="question_mark.svg">
-         </div>
-         <div class="content">
-            <div class="left_side">
-               <div class="greybox_left" id="left_greybox">
-                  <div class="greybox_left_cover" id="greybo_lef_cov"></div>
-                  <img class="place_here_text" src="Place_here_text.svg" id="plac_here_txt" alt="plac_here_txt">
-                  <div class="ps_001" id="pseudo_square_1" >
-                     <div class="actual_square_001" id="actual_sq_1"></div>
-                  </div>
-                  <div class="ps_002" id="pseudo_square_2" >
-                     <div class="actual_square_002" id="actual_sq_2"></div>
-                  </div>
-                  <div class="ps_003" id="pseudo_square_3" >
-                     <div class="actual_square_003" id="actual_sq_3"></div>
-                  </div>
-                  <div class="ps_004" id="pseudo_square_4" >
-                     <div class="actual_square_004" id="actual_sq_4"></div>
-                  </div>
-                  <div class="ps_005" id="pseudo_square_5" >
-                     <div class="actual_square_005" id="actual_sq_5"></div>
-                  </div>
-                  <div class="ps_006" id="pseudo_square_6" >
-                     <div class="actual_square_006" id="actual_sq_6"></div>
-                  </div>
-                  <div class="ps_007" id="pseudo_square_7" >
-                     <div class="actual_square_007" id="actual_sq_7"></div>
-                  </div>
-                  <div class="ps_008" id="pseudo_square_8" >
-                     <div class="actual_square_008" id="actual_sq_8"></div>
-                  </div>
-                  <div class="ps_009" id="pseudo_square_9" >
-                     <div class="actual_square_009" id="actual_sq_9"></div>
-                  </div>
-                  <div class="ps_010" id="pseudo_square_10" >
-                     <div class="actual_square_010" id="actual_sq_10"></div>
-                  </div>
-                  <div class="ps_011" id="pseudo_square_11" >
-                     <div class="actual_square_011" id="actual_sq_11"></div>
-                  </div>
-                  <div class="ps_012" id="pseudo_square_12" >
-                     <div class="actual_square_012" id="actual_sq_12"></div>
-                  </div>
-                  <div class="ps_013" id="pseudo_square_13" >
-                     <div class="actual_square_013" id="actual_sq_13"></div>
-                  </div>
-                  <div class="ps_014" id="pseudo_square_14" >
-                     <div class="actual_square_014" id="actual_sq_14"></div>
-                  </div>
-                  <div class="ps_015" id="pseudo_square_15" >
-                     <div class="actual_square_015" id="actual_sq_15"></div>
-                  </div>
-                  <div class="ps_016" id="pseudo_square_16" >
-                     <div class="actual_square_016" id="actual_sq_16"></div>
-                  </div>
-                  <div class="ps_017" id="pseudo_square_17" >
-                     <div class="actual_square_017" id="actual_sq_17"></div>
-                  </div>
-                  <div class="ps_018" id="pseudo_square_18" >
-                     <div class="actual_square_018" id="actual_sq_18"></div>
-                  </div>
-                  <div class="ps_019" id="pseudo_square_19" >
-                     <div class="actual_square_019" id="actual_sq_19"></div>
-                  </div>
-                  <div class="ps_020" id="pseudo_square_20" >
-                     <div class="actual_square_020" id="actual_sq_20"></div>
-                  </div>
-                  <div class="ps_021" id="pseudo_square_21" >
-                     <div class="actual_square_021" id="actual_sq_21"></div>
-                  </div>
-                  <div class="ps_022" id="pseudo_square_22" >
-                     <div class="actual_square_022" id="actual_sq_22"></div>
-                  </div>
-                  <div class="ps_023" id="pseudo_square_23" >
-                     <div class="actual_square_023" id="actual_sq_23"></div>
-                  </div>
-                  <div class="ps_024" id="pseudo_square_24" >
-                     <div class="actual_square_024" id="actual_sq_24"></div>
-                  </div>
-                  <div class="ps_025" id="pseudo_square_25" >
-                     <div class="actual_square_025" id="actual_sq_25"></div>
-                  </div>
-                  <div class="ps_026" id="pseudo_square_26" >
-                     <div class="actual_square_026" id="actual_sq_26"></div>
-                  </div>
-                  <div class="ps_027" id="pseudo_square_27" >
-                     <div class="actual_square_027" id="actual_sq_27"></div>
-                  </div>
-                  <div class="ps_028" id="pseudo_square_28" >
-                     <div class="actual_square_028" id="actual_sq_28"></div>
-                  </div>
-                  <div class="ps_029" id="pseudo_square_29" >
-                     <div class="actual_square_029" id="actual_sq_29"></div>
-                  </div>
-                  <div class="ps_030" id="pseudo_square_30" >
-                     <div class="actual_square_030" id="actual_sq_30"></div>
-                  </div>
-                  <div class="ps_031" id="pseudo_square_31" >
-                     <div class="actual_square_031" id="actual_sq_31"></div>
-                  </div>
-                  <div class="ps_032" id="pseudo_square_32" >
-                     <div class="actual_square_032" id="actual_sq_32"></div>
-                  </div>
-                  <div class="ps_033" id="pseudo_square_33" >
-                     <div class="actual_square_033" id="actual_sq_33"></div>
-                  </div>
-                  <div class="ps_034" id="pseudo_square_34" >
-                     <div class="actual_square_034" id="actual_sq_34"></div>
-                  </div>
-                  <div class="ps_035" id="pseudo_square_35" >
-                     <div class="actual_square_035" id="actual_sq_35"></div>
-                  </div>
-                  <div class="ps_036" id="pseudo_square_36" >
-                     <div class="actual_square_036" id="actual_sq_36"></div>
-                  </div>
-                  <div class="ps_037" id="pseudo_square_37" >
-                     <div class="actual_square_037" id="actual_sq_37"></div>
-                  </div>
-                  <div class="ps_038" id="pseudo_square_38" >
-                     <div class="actual_square_038" id="actual_sq_38"></div>
-                  </div>
-                  <div class="ps_039" id="pseudo_square_39" >
-                     <div class="actual_square_039" id="actual_sq_39"></div>
-                  </div>
-                  <div class="ps_040" id="pseudo_square_40" >
-                     <div class="actual_square_040" id="actual_sq_40"></div>
-                  </div>
-                  <div class="ps_041" id="pseudo_square_41" >
-                     <div class="actual_square_041" id="actual_sq_41"></div>
-                  </div>
-                  <div class="ps_042" id="pseudo_square_42" >
-                     <div class="actual_square_042" id="actual_sq_42"></div>
-                  </div>
-                  <div class="ps_043" id="pseudo_square_43" >
-                     <div class="actual_square_043" id="actual_sq_43"></div>
-                  </div>
-                  <div class="ps_044" id="pseudo_square_44" >
-                     <div class="actual_square_044" id="actual_sq_44"></div>
-                  </div>
-                  <div class="ps_045" id="pseudo_square_45" >
-                     <div class="actual_square_045" id="actual_sq_45"></div>
-                  </div>
-                  <div class="ps_046" id="pseudo_square_46" >
-                     <div class="actual_square_046" id="actual_sq_46"></div>
-                  </div>
-                  <div class="ps_047" id="pseudo_square_47" >
-                     <div class="actual_square_047" id="actual_sq_47"></div>
-                  </div>
-                  <div class="ps_048" id="pseudo_square_48" >
-                     <div class="actual_square_048" id="actual_sq_48"></div>
-                  </div>
-                  <div class="ps_049" id="pseudo_square_49" >
-                     <div class="actual_square_049" id="actual_sq_49"></div>
-                  </div>
-                  <div class="ps_050" id="pseudo_square_50" >
-                     <div class="actual_square_050" id="actual_sq_50"></div>
-                  </div>
-                  <div class="ps_051" id="pseudo_square_51" >
-                     <div class="actual_square_051" id="actual_sq_51"></div>
-                  </div>
-                  <div class="ps_052" id="pseudo_square_52" >
-                     <div class="actual_square_052" id="actual_sq_52"></div>
-                  </div>
-                  <div class="ps_053" id="pseudo_square_53" >
-                     <div class="actual_square_053" id="actual_sq_53"></div>
-                  </div>
-                  <div class="ps_054" id="pseudo_square_54" >
-                     <div class="actual_square_054" id="actual_sq_54"></div>
-                  </div>
-                  <div class="ps_055" id="pseudo_square_55" >
-                     <div class="actual_square_055" id="actual_sq_55"></div>
-                  </div>
-                  <div class="ps_056" id="pseudo_square_56" >
-                     <div class="actual_square_056" id="actual_sq_56"></div>
-                  </div>
-                  <div class="ps_057" id="pseudo_square_57" >
-                     <div class="actual_square_057" id="actual_sq_57"></div>
-                  </div>
-                  <div class="ps_058" id="pseudo_square_58" >
-                     <div class="actual_square_058" id="actual_sq_58"></div>
-                  </div>
-                  <div class="ps_059" id="pseudo_square_59" >
-                     <div class="actual_square_059" id="actual_sq_59"></div>
-                  </div>
-                  <div class="ps_060" id="pseudo_square_60" >
-                     <div class="actual_square_060" id="actual_sq_60"></div>
-                  </div>
-                  <div class="ps_061" id="pseudo_square_61" >
-                     <div class="actual_square_061" id="actual_sq_61"></div>
-                  </div>
-                  <div class="ps_062" id="pseudo_square_62" >
-                     <div class="actual_square_062" id="actual_sq_62"></div>
-                  </div>
-                  <div class="ps_063" id="pseudo_square_63" >
-                     <div class="actual_square_063" id="actual_sq_63"></div>
-                  </div>
-                  <div class="ps_064" id="pseudo_square_64" >
-                     <div class="actual_square_064" id="actual_sq_64"></div>
-                  </div>
-                  <div class="ps_065" id="pseudo_square_65" >
-                     <div class="actual_square_065" id="actual_sq_65"></div>
-                  </div>
-                  <div class="ps_066" id="pseudo_square_66" >
-                     <div class="actual_square_066" id="actual_sq_66"></div>
-                  </div>
-                  <div class="ps_067" id="pseudo_square_67" >
-                     <div class="actual_square_067" id="actual_sq_67"></div>
-                  </div>
-                  <div class="ps_068" id="pseudo_square_68" >
-                     <div class="actual_square_068" id="actual_sq_68"></div>
-                  </div>
-                  <div class="ps_069" id="pseudo_square_69" >
-                     <div class="actual_square_069" id="actual_sq_69"></div>
-                  </div>
-                  <div class="ps_070" id="pseudo_square_70" >
-                     <div class="actual_square_070" id="actual_sq_70"></div>
-                  </div>
-                  <div class="ps_071" id="pseudo_square_71" >
-                     <div class="actual_square_071" id="actual_sq_71"></div>
-                  </div>
-                  <div class="ps_072" id="pseudo_square_72" >
-                     <div class="actual_square_072" id="actual_sq_72"></div>
-                  </div>
-                  <div class="ps_073" id="pseudo_square_73" >
-                     <div class="actual_square_073" id="actual_sq_73"></div>
-                  </div>
-                  <div class="ps_074" id="pseudo_square_74" >
-                     <div class="actual_square_074" id="actual_sq_74"></div>
-                  </div>
-                  <div class="ps_075" id="pseudo_square_75" >
-                     <div class="actual_square_075" id="actual_sq_75"></div>
-                  </div>
-                  <div class="ps_076" id="pseudo_square_76" >
-                     <div class="actual_square_076" id="actual_sq_76"></div>
-                  </div>
-                  <div class="ps_077" id="pseudo_square_77" >
-                     <div class="actual_square_077" id="actual_sq_77"></div>
-                  </div>
-                  <div class="ps_078" id="pseudo_square_78" >
-                     <div class="actual_square_078" id="actual_sq_78"></div>
-                  </div>
-                  <div class="ps_079" id="pseudo_square_79" >
-                     <div class="actual_square_079" id="actual_sq_79"></div>
-                  </div>
-                  <div class="ps_080" id="pseudo_square_80" >
-                     <div class="actual_square_080" id="actual_sq_80"></div>
-                  </div>
-                  <div class="ps_081" id="pseudo_square_81" >
-                     <div class="actual_square_081" id="actual_sq_81"></div>
-                  </div>
-                  <div class="ps_082" id="pseudo_square_82" >
-                     <div class="actual_square_082" id="actual_sq_82"></div>
-                  </div>
-                  <div class="ps_083" id="pseudo_square_83" >
-                     <div class="actual_square_083" id="actual_sq_83"></div>
-                  </div>
-                  <div class="ps_084" id="pseudo_square_84" >
-                     <div class="actual_square_084" id="actual_sq_84"></div>
-                  </div>
-                  <div class="ps_085" id="pseudo_square_85" >
-                     <div class="actual_square_085" id="actual_sq_85"></div>
-                  </div>
-                  <div class="ps_086" id="pseudo_square_86" >
-                     <div class="actual_square_086" id="actual_sq_86"></div>
-                  </div>
-                  <div class="ps_087" id="pseudo_square_87" >
-                     <div class="actual_square_087" id="actual_sq_87"></div>
-                  </div>
-                  <div class="ps_088" id="pseudo_square_88" >
-                     <div class="actual_square_088" id="actual_sq_88"></div>
-                  </div>
-                  <div class="ps_089" id="pseudo_square_89" >
-                     <div class="actual_square_089" id="actual_sq_89"></div>
-                  </div>
-                  <div class="ps_090" id="pseudo_square_90" >
-                     <div class="actual_square_090" id="actual_sq_90"></div>
-                  </div>
-                  <div class="ps_091" id="pseudo_square_91" >
-                     <div class="actual_square_091" id="actual_sq_91"></div>
-                  </div>
-                  <div class="ps_092" id="pseudo_square_92" >
-                     <div class="actual_square_092" id="actual_sq_92"></div>
-                  </div>
-                  <div class="ps_093" id="pseudo_square_93" >
-                     <div class="actual_square_093" id="actual_sq_93"></div>
-                  </div>
-                  <div class="ps_094" id="pseudo_square_94" >
-                     <div class="actual_square_094" id="actual_sq_94"></div>
-                  </div>
-                  <div class="ps_095" id="pseudo_square_95" >
-                     <div class="actual_square_095" id="actual_sq_95"></div>
-                  </div>
-                  <div class="ps_096" id="pseudo_square_96" >
-                     <div class="actual_square_096" id="actual_sq_96"></div>
-                  </div>
-                  <div class="ps_097" id="pseudo_square_97" >
-                     <div class="actual_square_097" id="actual_sq_97"></div>
-                  </div>
-                  <div class="ps_098" id="pseudo_square_98" >
-                     <div class="actual_square_098" id="actual_sq_98"></div>
-                  </div>
-                  <div class="ps_099" id="pseudo_square_99" >
-                     <div class="actual_square_099" id="actual_sq_99"></div>
-                  </div>
-                  <div class="ps_100" id="pseudo_square_100" >
-                     <div class="actual_square_100" id="actual_sq_100"></div>
-                  </div>
-                  <div class="vertical_line1"></div>
-                  <div class="vertical_line2"></div>
-                  <div class="vertical_line3"></div>
-                  <div class="vertical_line4"></div>
-                  <div class="vertical_line5"></div>
-                  <div class="vertical_line6"></div>
-                  <div class="vertical_line7"></div>
-                  <div class="vertical_line8"></div>
-                  <div class="vertical_line9"></div>
-                  <div class="horizontal_line1"></div>
-                  <div class="horizontal_line2"></div>
-                  <div class="horizontal_line3"></div>
-                  <div class="horizontal_line4"></div>
-                  <div class="horizontal_line5"></div>
-                  <div class="horizontal_line6"></div>
-                  <div class="horizontal_line7"></div>
-                  <div class="horizontal_line8"></div>
-                  <div class="horizontal_line9"></div>
-               </div>
-               <!-- end of greybox_left -->
-            </div>
-            <div class="right_side">
-               <div class="greybox_right" id="right_greybox">
-                  <p id="demo" class="test_screen_resolution"><img src="place_your_ships.svg" oncontextmenu="return false;" alt="place_your_ships"></p>
-                  <div class="ship_sample_cover" id="ship_samp_cov" oncontextmenu="return false;"></div>
-                  <div class="ship_sample" id="ship_samp"  oncontextmenu="return false;">
-                     <div class="small_ship" id="sml_shp" oncontextmenu="return false;"></div>
-                     <div class="small_horizontal_line1" id="small_horiz_line_1"></div>
-                     <div class="small_horizontal_line2" id="small_horiz_line_2"></div>
-                     <div class="small_horizontal_line3" id="small_horiz_line_3"></div>
-                     <div class="small_horizontal_line4" id="small_horiz_line_4"></div>
-                     <div class="small_horizontal_line5" id="small_horiz_line_5"></div>
-                     <div class="small_horizontal_line6" id="small_horiz_line_6"></div>
-                     <div class="small_vertical_line1" id="small_vert_line_1"></div>
-                     <div class="small_vertical_line2" id="small_vert_line_2"></div>
-                     <div class="small_vertical_line3" id="small_vert_line_3"></div>
-                     <div class="small_vertical_line4" id="small_vert_line_4"></div>
-                     <div class="small_vertical_line5" id="small_vert_line_5"></div>
-                     <div class="small_vertical_line6" id="small_vert_line_6"></div>
-                     <div class="aircraft_carrier" id="air_carr"><img src="aircraft_carrier_name.svg" oncontextmenu="return false;" alt="aircraft_carrier_name"></div>
-                     <div class="battleship" id="battl"><img src="battleship_name.svg" alt="battleship_name"oncontextmenu="return false;"></div>
-                     <div class="destroyer" id="destr"><img src="destroyer_name.svg" alt="destroyer_name" oncontextmenu="return false;"></div>
-                     <div class="submarine" id="submar"><img src="submarine_name.svg" alt="submarine_name" oncontextmenu="return false;"></div>
-                     <div class="patrol_boat" id="pat_bo"><img src="patrol_boat_name.svg" alt="patrol_boat_name" oncontextmenu="return false;"></div>
-                     <div class="all_ships_placed" id="all_shp_pla"><img src="all_ships_placed_name.svg" alt="all_ships_placed_name" oncontextmenu="return false;"></div>
-                     <div class="check_mark" id="chk_mar"><img src="checkmark.svg" alt="checkmark" oncontextmenu="return false;"></div>
-                  </div>
-                  <!-- end of ship_sample  -->
-                  <div class="erase_all" id="era_all" oncontextmenu="return false;"></div>
-                  <img class="erase_all_txt" id="era_all_img" src="Erase_all_text.svg" alt="Erase_all_text" oncontextmenu="return false;">
-                  <img class="erase_all_txt" id="era_all_grey_img" src="Erase_all_text_grey.svg"  alt="Erase_all_text_grey" oncontextmenu="return false;" style="display:none;">
-                  <div class="submit" id="submt" oncontextmenu="return false;"></div>
-                  <img class="submit_txt" id="submt_img" src="Submit_dark_text.svg" alt="Submit_dark_text" oncontextmenu="return false;">
-                  <div class="rotate_options_wrapper" id="rotate_opt_wra" oncontextmenu="return false;"></div>
-                  <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" oncontextmenu="return false;" alt="rotate" ></div>
-                  <div class="rotate_text" id="rotate_txt"><img src="rotate_text.svg" alt="rotate_text" oncontextmenu="return false;"></div>
-                  <div class="vertical_line1_r"   id="right_vert_line_1"></div>
-                  <div class="vertical_line2_r"   id="right_vert_line_2"></div>
-                  <div class="vertical_line3_r"   id="right_vert_line_3"></div>
-                  <div class="vertical_line4_r"   id="right_vert_line_4"></div>
-                  <div class="vertical_line5_r"   id="right_vert_line_5"></div>
-                  <div class="vertical_line6_r"   id="right_vert_line_6"></div>
-                  <div class="vertical_line7_r"   id="right_vert_line_7"></div>
-                  <div class="vertical_line8_r"   id="right_vert_line_8"></div>
-                  <div class="vertical_line9_r"   id="right_vert_line_9"></div>
-                  <div class="horizontal_line1_r" id="right_horiz_line_1"></div>
-                  <div class="horizontal_line2_r" id="right_horiz_line_2"></div>
-                  <div class="horizontal_line3_r" id="right_horiz_line_3"></div>
-                  <div class="horizontal_line4_r" id="right_horiz_line_4"></div>
-                  <div class="horizontal_line5_r" id="right_horiz_line_5"></div>
-                  <div class="horizontal_line6_r" id="right_horiz_line_6"></div>
-                  <div class="horizontal_line7_r" id="right_horiz_line_7"></div>
-                  <div class="horizontal_line8_r" id="right_horiz_line_8"></div>
-                  <div class="horizontal_line9_r" id="right_horiz_line_9"></div>
-                  <div style="display:none" id="temp_div_x"></div>
-                  <div style="display:none" id="temp_div_y"></div>
-                  <div style="display:none" id="t_x"></div>
-                  <div style="display:none" id="t_y"></div>
-               </div>
-            </div>
-         </div>
-         <!-- end of content -->
-      </div>
-      <!-- end of master_flexbox -->
-   </body>
-   <script>
-      document.getElementById("ship_samp").addEventListener("touchstart", place_here_text_show_touch, {passive: true});
-      document.getElementById("ship_samp").addEventListener("touchend", place_here_text_hide_touch, {passive: true});
-      document.getElementById("ship_samp").addEventListener("mousedown", place_here_text_show, {passive: true});
-      document.getElementById("ship_samp").addEventListener("mouseup", place_here_text_hide, {passive: true});
-      
-      
-      document.getElementById("era_all").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
-      document.getElementById("era_all").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
-      document.getElementById("era_all").addEventListener("mouseover", erase_active_1, {passive: true});
-      document.getElementById("era_all").addEventListener("mouseout", erase_active_0, {passive: true});
-      document.getElementById("era_all").addEventListener("mousedown", erase_ships, {passive: true});
-      
-      
-      document.getElementById("era_all_img").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
-      document.getElementById("era_all_img").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
-      document.getElementById("era_all_img").addEventListener("mouseover", erase_active_1, {passive: true});
-      document.getElementById("era_all_img").addEventListener("mouseout", erase_active_0, {passive: true});
-      document.getElementById("era_all_img").addEventListener("mousedown", erase_ships, {passive: true});
-      
-      document.getElementById("era_all_grey_img").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
-      document.getElementById("era_all_grey_img").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
-      document.getElementById("era_all_grey_img").addEventListener("mouseover", erase_active_1, {passive: true});
-      document.getElementById("era_all_grey_img").addEventListener("mouseout", erase_active_0, {passive: true});
-      document.getElementById("era_all_grey_img").addEventListener("mousedown", erase_ships, {passive: true});
-      
-      document.getElementById("submt").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-      document.getElementById("submt").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
-      document.getElementById("submt").addEventListener("mouseover", submit_active_1, {passive: true});
-      document.getElementById("submt").addEventListener("mouseout", submit_active_0, {passive: true});
-      document.getElementById("submt").addEventListener("mousedown", submit_ships, {passive: true});
-      
-      document.getElementById("submt_img").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-      document.getElementById("submt_img").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
-      document.getElementById("submt_img").addEventListener("mouseover", submit_active_1, {passive: true});
-      document.getElementById("submt_img").addEventListener("mouseout", submit_active_0, {passive: true});
-      document.getElementById("submt_img").addEventListener("mousedown", submit_ships, {passive: true});
-      
-      
-      
-      
-      document.getElementById("rotate_opt_wra").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
-      document.getElementById("rotate_opt_wra").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
-      document.getElementById("rotate_opt_wra").addEventListener("mouseover", rotate_opacity_1, {passive: true});
-      document.getElementById("rotate_opt_wra").addEventListener("mouseout", rotate_opacity_0, {passive: true});
-      document.getElementById("rotate_opt_wra").addEventListener("mousedown", rotate_ship, {passive: true});
-      
-      document.getElementById("rotate_opt").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
-      document.getElementById("rotate_opt").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
-      document.getElementById("rotate_opt").addEventListener("mouseover", rotate_opacity_1, {passive: true});
-      document.getElementById("rotate_opt").addEventListener("mouseout", rotate_opacity_0, {passive: true});
-      document.getElementById("rotate_opt").addEventListener("mousedown", rotate_ship, {passive: true});
-      
-      document.getElementById("rotate_txt").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
-      document.getElementById("rotate_txt").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
-      document.getElementById("rotate_txt").addEventListener("mouseover", rotate_opacity_1, {passive: true});
-      document.getElementById("rotate_txt").addEventListener("mouseout", rotate_opacity_0, {passive: true});
-      document.getElementById("rotate_txt").addEventListener("mousedown", rotate_ship, {passive: true});
-      
-      for (let i = 61; i <= 100; i++) {
-         let str1 = "actual_sq_"+i+"";
-         document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
-      }
-      
-      for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
-         let str1 = "pseudo_square_"+i+"";
-         document.getElementById(str1).addEventListener("touchcancel", function(){button_in_handler(this, event)}, {passive: true});
-         document.getElementById(str1).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
-         document.getElementById(str1).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
-         document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-         document.getElementById(str1).addEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
-      }
-      
-      for (let i = 1; i <= 9; i++) {
-         let str1 = "right_vert_line_"+i+"";
-         let str2 = "right_horiz_line_"+i+"";
-         
-         document.getElementById(str1).style.display = "none";
-         document.getElementById(str2).style.display = "none";
-       
-      }
-      
-      document.addEventListener("visibilitychange", () => {
-          
-              document.getElementById("rotate_opt_wra").style.opacity = "0";
-          
-          
-              document.getElementById("era_all_img").style.display = "inline";
-              document.getElementById("era_all_grey_img").style.display = "none";
-              document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
-          
-         
-                  
-                  document.getElementById("greybo_lef_cov").style.display = "none";
-                  document.getElementById("plac_here_txt").style.display  = "none";
-                 
-                  document.getElementById("greybo_lef_cov").style.zIndex = "2";
-                  document.getElementById("plac_here_txt").style.zIndex  = "2";
-              
-              
-         if (document.hidden && (!window.screenTop && !window.screenY)) {
-             f_screen = 0;
-             document.getElementById("full_scr").style.display = "inline";
-             document.getElementById("exit_full_scr").style.display = "none";
-             document.documentElement.style.setProperty('--fullScreenVar', "160px");
-             if (document.exitFullscreen && (!window.screenTop && !window.screenY)) {
-                 document.exitFullscreen();
-             } else if (document.webkitExitFullscreen) {
-                 /* Safari */
-                 document.webkitExitFullscreen();
-             } else if (document.msExitFullscreen) {
-                 /* IE11 */
-                 document.msExitFullscreen();
-             }
-            // tab is changed
-         }
-      }, {passive: true});
-      
-      
-      /* function toggleZoomScreen() {
-        document.body.style.zoom = "100%";
-      }
-      
-      var w = window.innerWidth;
-      var h = window.innerHeight;
-      
-      var x = document.getElementById("demo");
-      x.innerHTML = w + " x " + h;
-      */
-   </script>
-</html>
+//document.getElementById("actual_sq_061").style.backgroundColor = "white";
+const shipSet = [-5, -4, -3, -3, -2];
+var ship_counter = 0;
+var active_ship = shipSet[ship_counter];
+var placed_ships = [0, 0, 0, 0, 0];
+var ship_position = [0, 0, 0, 0, 0];
+var occupied_squares = []; //Squares where a 'ship head' is present
+var blocked_squares = []; //These take care of boundary_overflow  red highlight
+var disabled_squares_vertical = [];
+var disabled_squares_horizontal = [];
+var all_good = 0;
+var rotate_flag = 0;
+var tempRot = 0;
+var rotate_var = 0;
+var f_screen = 0;
+var erase_flag = 0;
+var place_text_flag = 0;
+var all_ships_placed_var = 0;
+var submit_flag = 0; // Becomes 1 when all ships are submitted, otherwise stays 0
+
+
+for (let i = 0; i < 101; i++) {
+    blocked_squares[i] = 0;
+    occupied_squares[i] = 0;
+    disabled_squares_vertical[i] = 0;
+    disabled_squares_horizontal[i] = 0;
+}
+
+for (let i = 61; i <= 100; i++) {
+    blocked_squares[i] = 1;
+    document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
+    document.documentElement.style.setProperty('--ht_reduced_global_' + i, "475%");
+}
+
+function rotate_opacity_1() {
+
+    if (rotate_flag == 0 && submit_flag == 0 && all_ships_placed_var == 0) {
+        document.getElementById("rotate_opt_wra").style.opacity = "1";
+    }
+}
+
+function rotate_opacity_bytouch_1() {
+    if (submit_flag == 0 && all_ships_placed_var == 0) {
+        // rotate_caller_touch();
+        rotate_flag = 1;
+        document.getElementById("rotate_opt_wra").style.opacity = "1";
+    }
+}
+
+function rotate_opacity_0() {
+
+    if (rotate_flag == 0 && submit_flag == 0 && all_ships_placed_var == 0) {
+        document.getElementById("rotate_opt_wra").style.opacity = "0";
+    }
+}
+
+function rotate_opacity_bytouch_0() {
+    if (submit_flag == 0 && all_ships_placed_var == 0) {
+        rotate_flag = 1;
+        document.getElementById("rotate_opt_wra").style.opacity = "0";
+    }
+}
+
+
+
+function erase_active_bytouch_1() {
+    if (submit_flag == 0) {
+        erase_flag = 1;
+        document.getElementById("era_all_img").style.display = "none";
+        document.getElementById("era_all_grey_img").style.display = "inline";
+        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+        erase_ships();
+    }
+}
+
+function erase_active_bytouch_0() {
+    if (submit_flag == 0) {
+        erase_flag = 1;
+        document.getElementById("era_all_img").style.display = "inline";
+        document.getElementById("era_all_grey_img").style.display = "none";
+        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    }
+}
+
+function erase_active_1() {
+    if (erase_flag == 0 && submit_flag == 0) {
+        document.getElementById("era_all_img").style.display = "none";
+        document.getElementById("era_all_grey_img").style.display = "inline";
+        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+    }
+}
+
+function erase_active_0() {
+    if (erase_flag == 0 && submit_flag == 0) {
+        document.getElementById("era_all_img").style.display = "inline";
+        document.getElementById("era_all_grey_img").style.display = "none";
+        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    }
+}
+
+
+
+function submit_active_bytouch_1() {
+    //    erase_flag = 1;
+    //    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+    //    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+}
+
+function submit_active_bytouch_0() {
+    //    erase_flag = 1;
+    //    document.getElementById("era_all_img").src = "Erase_all_text.svg";
+    //    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+}
+
+function submit_active_1() {
+    //    if (erase_flag == 0)
+    //    {
+    //        document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+    //        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+    //    }
+}
+
+function submit_active_0() {
+    //    if (erase_flag == 0)
+    //    {
+    //        document.getElementById("era_all_img").src = "Erase_all_text.svg";
+    //        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    //    }
+}
+
+function submit_ships() {
+    if (all_ships_placed_var == 1) {
+        submit_flag = 1;
+        for (let i = 0; i < 5; i++) // submitting the ships
+        {
+            let targ_sq = ship_position[i];
+            if (ship_position[i] < 0) {
+                targ_sq = targ_sq * (-1);
+            }
+            document.getElementById("actual_sq_" + targ_sq).style.backgroundColor = "rgba(94,94,94,0)";
+            document.getElementById("actual_sq_" + targ_sq).style.border = "1px solid rgb(221, 223, 225)";
+        }
+    } //end of if
+} // end of submit_ships()
+
+function key_down_handler(event) {
+    if (event.key == " ") {
+        rotate_opacity_1();
+        rotate_ship();
+    } else if (event.key == "x" || event.key == "X") {
+        erase_active_1();
+        erase_ships();
+    }
+
+}
+
+function key_up_handler(event) {
+    if (event.key == " ") {
+        rotate_opacity_0();
+    } else if (event.key == "x" || event.key == "X") {
+        erase_active_0();
+    }
+
+}
+
+function hover_square_opacity_1(a) {
+    let str = a.toElement.id;
+    let sq_no = 200;
+    //if(str[0] == 'a' || str[0] == 'p')
+
+    if (str[0] == 'a') {
+        sq_no = str.slice(10, );
+    } else if (str[0] == 'p') {
+        sq_no = str.slice(14, );
+    }
+    //console.log("actual_sq_"+sq_no);
+    if (occupied_squares[sq_no] == 0)
+        document.getElementById("actual_sq_" + sq_no).style.opacity = "1";
+}
+
+function hover_square_opacity_0(a) {
+    let str = a.fromElement.id;
+    let sq_no = 200;
+    //if(str[0] == 'a' || str[0] == 'p')
+
+    if (str[0] == 'a') {
+        sq_no = str.slice(10, );
+    } else if (str[0] == 'p') {
+        sq_no = str.slice(14, );
+    }
+    //console.log("actual_sq_"+sq_no);
+    if (occupied_squares[sq_no] == 0)
+        document.getElementById("actual_sq_" + sq_no).style.opacity = "0";
+}
+
+function erase_ships_1() {
+    location.reload();
+}
+
+function place_here_text_show_touch() {
+    //document.getElementById("greybo_lef_cov").style.display = "inline";
+    if (all_ships_placed_var == 0) {
+        place_text_flag = 1;
+        document.getElementById("greybo_lef_cov").style.display = "inline";
+        document.getElementById("plac_here_txt").style.display = "inline";
+
+        document.getElementById("greybo_lef_cov").style.zIndex = "3";
+        document.getElementById("plac_here_txt").style.zIndex = "4";
+    }
+}
+
+function place_here_text_hide_touch() {
+    place_text_flag = 1;
+
+    document.getElementById("greybo_lef_cov").style.display = "none";
+    document.getElementById("plac_here_txt").style.display = "none";
+
+    document.getElementById("greybo_lef_cov").style.zIndex = "2";
+    document.getElementById("plac_here_txt").style.zIndex = "2";
+    //document.getElementById("greybo_lef_cov").style.opacity = "0";
+
+}
+
+function place_here_text_show() {
+    //document.getElementById("greybo_lef_cov").style.display = "inline";
+    if (all_ships_placed_var == 0) {
+        if (place_text_flag == 0) {
+            document.getElementById("greybo_lef_cov").style.display = "inline";
+            document.getElementById("plac_here_txt").style.display = "inline";
+
+            document.getElementById("greybo_lef_cov").style.zIndex = "3";
+            document.getElementById("plac_here_txt").style.zIndex = "3";
+        }
+    }
+}
+
+function place_here_text_hide() { //console.log('in here');
+    if (place_text_flag == 0) {
+
+        document.getElementById("greybo_lef_cov").style.display = "none";
+        document.getElementById("plac_here_txt").style.display = "none";
+
+        document.getElementById("greybo_lef_cov").style.zIndex = "2";
+        document.getElementById("plac_here_txt").style.zIndex = "2";
+    }
+    //document.getElementById("greybo_lef_cov").style.opacity = "0";
+}
+
+function erase_ships() {
+    if (submit_flag == 0) {
+        
+        for (let i = 0; i < 5; i++) {
+            if(ship_position[i] == 0) {break;}
+            document.getElementById("actual_sq_" + Math.abs(ship_position[i])).style.transition = "width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s";
+        }
+        all_ships_placed_var = 0;
+
+
+        for (let i = 1; i <= 100; i++) {
+            document.getElementById("actual_sq_" + i).style.display = "inline";
+            document.getElementById("actual_sq_" + i).style.opacity = "0";
+            document.getElementById("actual_sq_" + i).style.backgroundColor = "rgb(94,94,94)";
+            document.documentElement.style.setProperty('--wd_global_' + i, "75%");
+            document.documentElement.style.setProperty('--ht_global_' + i, "475%");
+            document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
+            document.documentElement.style.setProperty('--ht_reduced_global_' + i, "450%");
+            document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
+            document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, "2.6315789479%");
+            document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
+            document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, "1.8518518522%");
+
+        }
+
+        ship_counter = 0;
+        active_ship = shipSet[ship_counter];
+        for (let i = 0; i < 5; i++) {
+            placed_ships[i] = 0;
+            ship_position[i] = 0;
+        }
+        for (let i = 0; i < 101; i++) {
+            blocked_squares[i] = 0;
+            occupied_squares[i] = 0;
+            disabled_squares_vertical[i] = 0;
+            disabled_squares_horizontal[i] = 0;
+        }
+        for (let i = 61; i <= 100; i++) {
+            blocked_squares[i] = 1;
+            document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
+            document.documentElement.style.setProperty('--ht_reduced_global_' + i, "475%");
+        }
+        all_good = 0;
+        rotate_flag = 0;
+
+        rotate_var = 0;
+
+        document.getElementById("all_shp_pla").style.display = "none";
+        document.getElementById("air_carr").style.display = "inline";
+        document.getElementById("battl").style.display = "none";
+        document.getElementById("destr").style.display = "none";
+        document.getElementById("submar").style.display = "none";
+        document.getElementById("pat_bo").style.display = "none";
+
+        if (tempRot % 180 == 90) {
+            tempRot += 90;
+            document.getElementById("sml_shp").style.rotate = tempRot + "deg";
+        }
+        document.getElementById("sml_shp").style.translate = "0% 0%";
+
+        for (let i = 1; i <= 6; i++) {
+            document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
+            document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
+        }
+        document.getElementById("chk_mar").style.display = "none";
+
+        let sml_shp_size = shipSet[ship_counter];
+        if (shipSet[ship_counter + 1] < 0) {
+            sml_shp_size = sml_shp_size * (-1);
+        }
+        let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
+        let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
+        document.getElementById("sml_shp").style.height = small_ship_height + "%";
+        document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
+        document.getElementById("sml_shp").style.translate = "0% 0%";
+        document.getElementById("sml_shp").style.display = "inline";
+
+        document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
+        document.getElementById("submt_img").src = "Submit_dark_text.svg";
+
+        boundary_overflow();
+
+    } //end of if(submit_flag == 0)
+} //end of erase ships
+
+
+
+
+function button_in_handler(a, event) {
+    actual_id = "actual_sq_" + parseInt(a.id.slice(14, ));
+    square_number = parseInt(a.id.slice(14, ));
+    all_good = 0;
+
+    //    if(ship_counter > 0)
+    //    { compute_vertical_disabled_squares();
+    //      compute_horizontal_disabled_squares();
+    //    }
+
+    if ((active_ship > 0 && disabled_squares_horizontal[parseInt(a.id.slice(14, ))] == 0) || (active_ship < 0 && disabled_squares_vertical[parseInt(a.id.slice(14, ))] == 0)) {
+        all_good = 1;
+    }
+
+    if (blocked_squares[square_number] == 0 && placed_ships[4] == 0 && all_good == 1) //checking the actual square number of the board, not array index
+    {
+        all_good = 0;
+
+        for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
+            if (occupied_squares[i] == 0) {
+                blocked_squares[i] = 0;
+                let str1 = "actual_sq_" + i + "";
+                document.getElementById(str1).style.opacity = "0";
+                document.getElementById(str1).style.backgroundColor = "rgb(94,94,94)";
+                document.documentElement.style.setProperty('--mar_' + i, "25%");
+            }
+        } //end of loop
+
+        document.getElementById(actual_id).style.backgroundColor = "rgb(91, 137,238)"; //Setting the ship color to Blue
+
+        document.getElementById(actual_id).style.opacity = 1;
+        //console.log(document.documentElement.style.getPropertyValue("--Opac_1"));
+        placed_ships[ship_counter] = active_ship;
+        ship_position[ship_counter] = parseInt(a.id.slice(14, )); //Storing the ship location
+
+        if (tempRot % 180 == 90) {
+            tempRot += 90;
+            document.getElementById("sml_shp").style.rotate = tempRot + "deg";
+        }
+
+        let sml_shp_size = shipSet[ship_counter + 1];
+        if (shipSet[ship_counter + 1] < 0) {
+            sml_shp_size = sml_shp_size * (-1);
+        }
+        let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
+        let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
+        document.getElementById("sml_shp").style.height = small_ship_height + "%";
+        document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
+        if (sml_shp_size == 3) {
+            document.getElementById("sml_shp").style.translate = "0% 0%";
+        }
+
+
+        //Changing the ship names in ship sample
+        if (ship_counter == 0) {
+            document.getElementById("air_carr").style.display = "none";
+            document.getElementById("battl").style.display = "inline";
+        } else if (ship_counter == 1) {
+            document.getElementById("battl").style.display = "none";
+            document.getElementById("destr").style.display = "inline";
+        } else if (ship_counter == 2) {
+            document.getElementById("destr").style.display = "none";
+            document.getElementById("submar").style.display = "inline";
+        } else if (ship_counter == 3) {
+            document.getElementById("submar").style.display = "none";
+            document.getElementById("pat_bo").style.display = "inline";
+        } else if (ship_counter == 4) {
+            all_ships_placed_var = 1;
+            for (let i = 0; i < 5; i++) {
+                if(ship_position[i] == 0) {break;}
+                document.getElementById("actual_sq_" + Math.abs(ship_position[i])).style.transition = "width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0s";
+            }
+            document.getElementById("pat_bo").style.display = "none";
+            document.getElementById("sml_shp").style.display = "none";
+            document.getElementById("all_shp_pla").style.display = "inline";
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(66,66,66)";
+                document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(66,66,66)";
+
+            }
+            document.getElementById("chk_mar").style.display = "inline";
+            document.getElementById("submt").style.border = "1px solid rgb(123, 128, 131)";
+            document.getElementById("submt_img").src = "Submit_text.svg";
+
+
+
+
+        }
+
+
+        occupied_squares[parseInt(a.id.slice(14, ))] = 1;
+        ship_counter++;
+        active_ship = shipSet[ship_counter];
+
+        if (ship_counter == 5) {
+            for (let i = 1; i <= 100; i++) //diabling the highlighting as all the ships have been placed
+            {
+                if (occupied_squares[i] == 0) {
+                    document.getElementById("actual_sq_" + i).style.display = "none";
+                }
+            }
+        }
+        compute_horizontal_disabled_squares();
+        compute_vertical_disabled_squares();
+
+        //for (let i = 0; i < 101; i++)
+        //{console.log("i="+i+" dis="+disabled_squares_vertical[i]); }
+
+        if (active_ship > 0) {
+            let full_width = active_ship * 100 - 25;
+            let reduced_width = active_ship * 100 - 50;
+            let full_border_radius = 1250.00000025 / full_width;
+            let reduced_border_radius = 833.3333335 / reduced_width;
+
+            for (let i = 1; i <= 100; i++) {
+                if (occupied_squares[i] == 0) {
+                    document.documentElement.style.setProperty('--wd_global_' + i, full_width + "%");
+                    document.documentElement.style.setProperty('--ht_global_' + i, '75%');
+                    document.documentElement.style.setProperty('--wd_reduced_global_' + i, reduced_width + "%");
+                    document.documentElement.style.setProperty('--ht_reduced_global_' + i, '50%');
+                    document.documentElement.style.setProperty('--borderRadius_G_X_' + i, full_border_radius + "%");
+                    document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, '16.6666667%');
+                    document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, reduced_border_radius + "%");
+                    document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, '16.6666667%');
+                }
+            }
+        } else if (active_ship < 0) {
+            let full_height = active_ship * (-1) * 100 - 25;
+            let reduced_height = active_ship * (-1) * 100 - 50;
+            let full_border_radius = 1250.00000025 / full_height;
+            let reduced_border_radius = 833.3333335 / reduced_height;
+
+            for (let i = 1; i <= 100; i++) {
+                if (occupied_squares[i] == 0) {
+                    document.documentElement.style.setProperty('--wd_global_' + i, "75%");
+                    document.documentElement.style.setProperty('--ht_global_' + i, full_height + "%");
+                    document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
+                    document.documentElement.style.setProperty('--ht_reduced_global_' + i, reduced_height + "%");
+                    document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
+                    document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, full_border_radius + "%");
+                    document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
+                    document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, reduced_border_radius + "%");
+                }
+            }
+        }
+
+        boundary_overflow();
+
+        // }//end of mouseUp(event)
+    } //end of if(blocked_squares[square_number] == 0)
+} //end of function
+
+/*
+function rotate_caller_touch()
+{
+    if(rotate_var == 0)
+    {
+        rotate_var = 1;
+        rotate_ship();
+    }
+    
+}
+
+function rotate_caller_click()
+{
+    if(rotate_var == 0)
+    {
+        rotate_var = 1;
+        rotate_ship();
+    }
+    
+}*/
+
+
+
+function full_sc() {
+
+    if (f_screen == 0) {
+        f_screen = 1;
+        document.getElementById("full_scr").style.display = "none";
+        document.getElementById("exit_full_scr").style.display = "inline";
+        document.documentElement.style.setProperty('--fullScreenVar', "80px");
+        var elem = document.documentElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+            /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            /* IE11 */
+            elem.msRequestFullscreen();
+        }
+    } else {
+        f_screen = 0;
+        document.getElementById("exit_full_scr").style.display = "none";
+
+        document.documentElement.style.setProperty('--fullScreenVar', "160px");
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            /* Safari */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            /* IE11 */
+            document.msExitFullscreen();
+        }
+        document.getElementById("full_scr").style.display = "inline";
+    }
+}
+
+function full_var_set() {
+    if (!(!window.screenTop && !window.screenY)) {
+
+    }
+}
+
+function rotate_ship() {
+    //    if (!window.screenTop && !window.screenY) {
+    //        console.log('Browser is in fullscreen');
+    //    }
+
+    active_ship = active_ship * -1;
+    tempRot += 90;
+    document.getElementById("sml_shp").style.rotate = tempRot + "deg";
+    //rotate_var = 0;
+
+    let sml_shp_size = shipSet[ship_counter];
+    if (shipSet[ship_counter] < 0) {
+        sml_shp_size = sml_shp_size * (-1);
+    }
+    let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
+    let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
+    document.getElementById("sml_shp").style.height = small_ship_height + "%";
+    document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
+    if (sml_shp_size == 4 && tempRot % 180 == 90) {
+        document.getElementById("sml_shp").style.translate = "68.2539680923% 13.3956386231%";
+    }
+    if ((sml_shp_size == 4 || sml_shp_size == 2) && tempRot % 180 == 0) {
+        document.getElementById("sml_shp").style.translate = "0% 0%";
+    }
+
+    if (sml_shp_size == 2 && tempRot % 180 == 90) {
+        document.getElementById("sml_shp").style.translate = "68.2539680923% 29.6551723019%";
+    }
+
+    if (active_ship > 0) // HORIZONTAL
+    {
+        let full_width = active_ship * 100 - 25;
+        let reduced_width = active_ship * 100 - 50;
+        let full_border_radius = 1250.00000025 / full_width;
+        let reduced_border_radius = 833.3333335 / reduced_width;
+
+        for (let i = 1; i <= 100; i++) {
+            if (occupied_squares[i] == 0) {
+                document.documentElement.style.setProperty('--wd_global_' + i, full_width + "%");
+                document.documentElement.style.setProperty('--ht_global_' + i, '75%');
+                document.documentElement.style.setProperty('--wd_reduced_global_' + i, reduced_width + "%");
+                document.documentElement.style.setProperty('--ht_reduced_global_' + i, '50%');
+                document.documentElement.style.setProperty('--borderRadius_G_X_' + i, full_border_radius + "%");
+                document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, '16.6666667%');
+                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, reduced_border_radius + "%");
+                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, '16.6666667%');
+            }
+        }
+    } else if (active_ship < 0) // VERTICAL
+    {
+        let full_height = active_ship * (-1) * 100 - 25;
+        let reduced_height = active_ship * (-1) * 100 - 50;
+        let full_border_radius = 1250.00000025 / full_height;
+        let reduced_border_radius = 833.3333335 / reduced_height;
+
+        for (let i = 1; i <= 100; i++) {
+            if (occupied_squares[i] == 0) {
+                document.documentElement.style.setProperty('--wd_global_' + i, "75%");
+                document.documentElement.style.setProperty('--ht_global_' + i, full_height + "%");
+                document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
+                document.documentElement.style.setProperty('--ht_reduced_global_' + i, reduced_height + "%");
+                document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
+                document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, full_border_radius + "%");
+                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
+                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, reduced_border_radius + "%");
+            }
+        }
+    }
+    boundary_overflow();
+} //end of rotate()
+
+
+
+
+//--------------------------------------------------------   boundary_overflow()    ----------------------------------------------------------------
+function boundary_overflow() {
+
+    for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
+        if (occupied_squares[i] == 0) {
+            blocked_squares[i] = 0;
+            let str1 = "actual_sq_" + i + "";
+            document.getElementById(str1).style.backgroundColor = "rgb(94,94,94)";
+            document.documentElement.style.setProperty('--mar_' + i, "25%");
+        }
+    } //end of loop
+
+
+    if (active_ship > 0) //HORIZONTAL
+    {
+        for (let i = 1; i <= 100; i++) {
+            if (((active_ship - (10 - i % 10)) >= 2 || (i % 10 == 0)) && occupied_squares[i] == 0) {
+                let str1 = "actual_sq_" + i + "";
+                let full_width = active_ship * 100 - 25;
+                document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
+                blocked_squares[i] = 1;
+                document.documentElement.style.setProperty('--wd_reduced_global_' + i, full_width + "%");
+                document.documentElement.style.setProperty('--ht_reduced_global_' + i, "75%");
+                document.documentElement.style.setProperty('--mar_' + i, "12.5%");
+            } //end of if
+
+        } //end of loop
+    } //end of if
+    else if (active_ship < 0) //VERTICAL
+    {
+        for (let i = 1; i <= 100; i++) {
+            if ((i > (100 - ((active_ship * (-1)) * 10 - 10))) && occupied_squares[i] == 0) {
+                let full_height = active_ship * (-1) * 100 - 25;
+                let str1 = "actual_sq_" + i + "";
+                document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
+                blocked_squares[i] = 1;
+                document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
+                document.documentElement.style.setProperty('--ht_reduced_global_' + i, full_height + "%");
+                document.documentElement.style.setProperty('--mar_' + i, "12.5%");
+            } //end of if
+        }
+    }
+
+} // end of boundary_overflow
+
+
+
+//--------------------------------------------------   compute_horizontal_disabled_squares()    ----------------------------------------------------
+function compute_horizontal_disabled_squares() {
+    let act_ship = shipSet[ship_counter];
+    if (active_ship < 0) {
+        act_ship = act_ship * (-1);
+    }
+
+    for (let i = 0; i < 101; i++) { // resetting the disabled squares
+        disabled_squares_horizontal[i] = 0;
+    }
+
+
+    for (let i = 0; i <= ship_counter; i++) {
+        let ship_size = placed_ships[i];
+        let shipPos = ship_position[i];
+
+        if (ship_size < 0) //vertical
+        {
+            ship_size = ship_size * (-1);
+            for (let j = 0; j < ship_size; j++) {
+                for (let i = 0; i < act_ship; i++) {
+                    if ((shipPos + (10 * j) - i) % 10 == 1) {
+                        disabled_squares_horizontal[shipPos + (10 * j) - i] = 1;
+                        break;
+                    } else {
+                        disabled_squares_horizontal[shipPos + (10 * j) - i] = 1;
+                    }
+                } //end of loop
+            } //end of j loop
+        } //end of if(ship_size > 0)
+        else if (ship_size > 0) //horizontal
+        {
+            for (let k = shipPos; k <= ship_size + shipPos - 1; k++) //squares within the ship
+            {
+                disabled_squares_horizontal[k] = 1;
+
+            }
+
+            for (let i = 0; i < act_ship; i++) {
+                if ((shipPos - i) % 10 <= 0) break;
+                disabled_squares_horizontal[shipPos - i] = 1;
+            } //end of loop
+
+
+        } // end of else if
+
+    } //end of for loop
+} // end of compute_horizontal_disabled_squares
+
+
+
+//--------------------------------------------------   compute_vertical_disabled_squares()    ----------------------------------------------------
+function compute_vertical_disabled_squares() {
+    let act_ship = active_ship;
+    if (active_ship < 0) {
+        act_ship = act_ship * (-1);
+    }
+
+    for (let i = 0; i < 101; i++) { // resetting the disabled squares
+        disabled_squares_vertical[i] = 0;
+    }
+
+    for (let i = 0; i <= ship_counter; i++) {
+        let ship_size = placed_ships[i];
+        let shipPos = ship_position[i];
+
+        if (ship_size < 0) //vertical
+        {
+            ship_size = ship_size * (-1);
+            for (let k = 0; k <= ship_size - 1; k++) {
+                disabled_squares_vertical[shipPos + 10 * k] = 1; //squares within the ship
+
+            }
+            for (let i = 0; i < act_ship; i++) {
+                if ((shipPos - 10 * i) <= 0) break;
+                disabled_squares_vertical[shipPos - 10 * i] = 1;
+            } //end of loop
+
+        } //end of if(ship_size < 0 )
+        else if (ship_size > 0) //horizontal
+        {
+            for (let j = 0; j < ship_size; j++) {
+                for (let i = 0; i < act_ship; i++) {
+                    if ((shipPos - (10 * i) + j) <= 0) break;
+                    disabled_squares_vertical[shipPos - (10 * i) + j] = 1;
+
+                } //end of loop
+            } //end of j loop
+
+
+        } //end of else if
+    } //end of master for-loop
+} //end of compute_vertical_disabled_squares
