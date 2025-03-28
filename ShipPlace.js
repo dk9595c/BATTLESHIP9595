@@ -40,8 +40,7 @@ function rotate_opacity_1() {
 }
 
 function rotate_opacity_bytouch_1() {
-    if(submit_flag == 0 && all_ships_placed_var == 0)
-    {
+    if (submit_flag == 0 && all_ships_placed_var == 0) {
         // rotate_caller_touch();
         rotate_flag = 1;
         document.getElementById("rotate_opt_wra").style.opacity = "1";
@@ -56,28 +55,27 @@ function rotate_opacity_0() {
 }
 
 function rotate_opacity_bytouch_0() {
-   if(submit_flag == 0 && all_ships_placed_var == 0)
-   {
-       rotate_flag = 1;
-       document.getElementById("rotate_opt_wra").style.opacity = "0";
-   }
+    if (submit_flag == 0 && all_ships_placed_var == 0) {
+        rotate_flag = 1;
+        document.getElementById("rotate_opt_wra").style.opacity = "0";
+    }
 }
 
 
 
 function erase_active_bytouch_1() {
-   if(submit_flag == 0)
-   {   erase_flag = 1;
-       document.getElementById("era_all_img").style.display = "none";
-       document.getElementById("era_all_grey_img").style.display = "inline";
-       document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
-       erase_ships();
-   }
+    if (submit_flag == 0) {
+        erase_flag = 1;
+        document.getElementById("era_all_img").style.display = "none";
+        document.getElementById("era_all_grey_img").style.display = "inline";
+        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+        erase_ships();
+    }
 }
 
 function erase_active_bytouch_0() {
-    if(submit_flag == 0)
-    {   erase_flag = 1;
+    if (submit_flag == 0) {
+        erase_flag = 1;
         document.getElementById("era_all_img").style.display = "inline";
         document.getElementById("era_all_grey_img").style.display = "none";
         document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
@@ -85,8 +83,7 @@ function erase_active_bytouch_0() {
 }
 
 function erase_active_1() {
-    if (erase_flag == 0 && submit_flag == 0)
-    {
+    if (erase_flag == 0 && submit_flag == 0) {
         document.getElementById("era_all_img").style.display = "none";
         document.getElementById("era_all_grey_img").style.display = "inline";
         document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
@@ -94,8 +91,7 @@ function erase_active_1() {
 }
 
 function erase_active_0() {
-    if (erase_flag == 0 && submit_flag == 0)
-    {
+    if (erase_flag == 0 && submit_flag == 0) {
         document.getElementById("era_all_img").style.display = "inline";
         document.getElementById("era_all_grey_img").style.display = "none";
         document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
@@ -105,72 +101,66 @@ function erase_active_0() {
 
 
 function submit_active_bytouch_1() {
-//    erase_flag = 1;
-//    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
-//    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+    //    erase_flag = 1;
+    //    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+    //    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
 }
 
 function submit_active_bytouch_0() {
-//    erase_flag = 1;
-//    document.getElementById("era_all_img").src = "Erase_all_text.svg";
-//    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    //    erase_flag = 1;
+    //    document.getElementById("era_all_img").src = "Erase_all_text.svg";
+    //    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
 }
 
 function submit_active_1() {
-//    if (erase_flag == 0)
-//    {
-//        document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
-//        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
-//    }
+    //    if (erase_flag == 0)
+    //    {
+    //        document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
+    //        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+    //    }
 }
 
 function submit_active_0() {
-//    if (erase_flag == 0)
-//    {
-//        document.getElementById("era_all_img").src = "Erase_all_text.svg";
-//        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
-//    }
+    //    if (erase_flag == 0)
+    //    {
+    //        document.getElementById("era_all_img").src = "Erase_all_text.svg";
+    //        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    //    }
 }
 
-function submit_ships(){
- if(all_ships_placed_var == 1)
- { submit_flag = 1;
-     for (let i = 0; i <5; i++) // submitting the ships
-     {let targ_sq = ship_position[i];
-         if(ship_position[i] < 0)
-         {
-             targ_sq = targ_sq * (-1);
-         }
-         document.getElementById("actual_sq_"+targ_sq).style.backgroundColor = "rgba(94,94,94,0)";
-         document.getElementById("actual_sq_"+targ_sq).style.border = "1px solid rgb(221, 223, 225)";
-     }
- } //end of if
+function submit_ships() {
+    if (all_ships_placed_var == 1) {
+        submit_flag = 1;
+        for (let i = 0; i < 5; i++) // submitting the ships
+        {
+            let targ_sq = ship_position[i];
+            if (ship_position[i] < 0) {
+                targ_sq = targ_sq * (-1);
+            }
+            document.getElementById("actual_sq_" + targ_sq).style.backgroundColor = "rgba(94,94,94,0)";
+            document.getElementById("actual_sq_" + targ_sq).style.border = "1px solid rgb(221, 223, 225)";
+        }
+    } //end of if
 } // end of submit_ships()
 
-function key_down_handler(event)
-{
-    if(event.key == " ")
-    {rotate_opacity_1();
-     rotate_ship();
+function key_down_handler(event) {
+    if (event.key == " ") {
+        rotate_opacity_1();
+        rotate_ship();
+    } else if (event.key == "x" || event.key == "X") {
+        erase_active_1();
+        erase_ships();
     }
-    
-    else if(event.key == "x" || event.key == "X")
-    {erase_active_1();
-     erase_ships();
-    }
-    
+
 }
 
-function key_up_handler(event)
-{
-    if(event.key == " ")
-    {rotate_opacity_0();
+function key_up_handler(event) {
+    if (event.key == " ") {
+        rotate_opacity_0();
+    } else if (event.key == "x" || event.key == "X") {
+        erase_active_0();
     }
-    
-    else if(event.key == "x" || event.key == "X")
-    {erase_active_0();
-    }
-    
+
 }
 
 function hover_square_opacity_1(a) {
@@ -207,143 +197,139 @@ function erase_ships_1() {
     location.reload();
 }
 
-function place_here_text_show_touch(){
+function place_here_text_show_touch() {
     //document.getElementById("greybo_lef_cov").style.display = "inline";
-    if(all_ships_placed_var == 0)
-    {
+    if (all_ships_placed_var == 0) {
         place_text_flag = 1;
         document.getElementById("greybo_lef_cov").style.display = "inline";
-        document.getElementById("plac_here_txt").style.display  = "inline";
-        
+        document.getElementById("plac_here_txt").style.display = "inline";
+
         document.getElementById("greybo_lef_cov").style.zIndex = "3";
-        document.getElementById("plac_here_txt").style.zIndex  = "4";
+        document.getElementById("plac_here_txt").style.zIndex = "4";
     }
 }
 
-function place_here_text_hide_touch()
-{
+function place_here_text_hide_touch() {
     place_text_flag = 1;
-    
+
     document.getElementById("greybo_lef_cov").style.display = "none";
-    document.getElementById("plac_here_txt").style.display  = "none";
-   
+    document.getElementById("plac_here_txt").style.display = "none";
+
     document.getElementById("greybo_lef_cov").style.zIndex = "2";
-    document.getElementById("plac_here_txt").style.zIndex  = "2";
+    document.getElementById("plac_here_txt").style.zIndex = "2";
     //document.getElementById("greybo_lef_cov").style.opacity = "0";
-    
+
 }
 
-function place_here_text_show(){
+function place_here_text_show() {
     //document.getElementById("greybo_lef_cov").style.display = "inline";
- if(all_ships_placed_var == 0)
- { if(place_text_flag == 0)
-   {
-      document.getElementById("greybo_lef_cov").style.display = "inline";
-      document.getElementById("plac_here_txt").style.display  = "inline";
-     
-      document.getElementById("greybo_lef_cov").style.zIndex = "3";
-      document.getElementById("plac_here_txt").style.zIndex  = "3";
-   }
- }
+    if (all_ships_placed_var == 0) {
+        if (place_text_flag == 0) {
+            document.getElementById("greybo_lef_cov").style.display = "inline";
+            document.getElementById("plac_here_txt").style.display = "inline";
+
+            document.getElementById("greybo_lef_cov").style.zIndex = "3";
+            document.getElementById("plac_here_txt").style.zIndex = "3";
+        }
+    }
 }
 
-function place_here_text_hide()
-{  //console.log('in here');
-    if(place_text_flag == 0)
-        {
-            
-            document.getElementById("greybo_lef_cov").style.display = "none";
-            document.getElementById("plac_here_txt").style.display  = "none";
-           
-            document.getElementById("greybo_lef_cov").style.zIndex = "2";
-            document.getElementById("plac_here_txt").style.zIndex  = "2";
-        }
+function place_here_text_hide() { //console.log('in here');
+    if (place_text_flag == 0) {
+
+        document.getElementById("greybo_lef_cov").style.display = "none";
+        document.getElementById("plac_here_txt").style.display = "none";
+
+        document.getElementById("greybo_lef_cov").style.zIndex = "2";
+        document.getElementById("plac_here_txt").style.zIndex = "2";
+    }
     //document.getElementById("greybo_lef_cov").style.opacity = "0";
 }
 
 function erase_ships() {
- if(submit_flag == 0)
- {   for(i=0; i<5; i++)
-     {
-       document.getElementById("actual_sq_"+Math.abs(ship_position[i])).style.transition="width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s";
-     }
-     all_ships_placed_var = 0;
-     
-     
-     for (let i = 1; i <= 100; i++)
-     {
-         document.getElementById("actual_sq_" + i).style.display = "inline";
-         document.getElementById("actual_sq_" + i).style.opacity = "0";
-         document.getElementById("actual_sq_" + i).style.backgroundColor = "rgb(94,94,94)";
-         document.documentElement.style.setProperty('--wd_global_' + i, "75%");
-         document.documentElement.style.setProperty('--ht_global_' + i, "475%");
-         document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
-         document.documentElement.style.setProperty('--ht_reduced_global_' + i, "450%");
-         document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
-         document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, "2.6315789479%");
-         document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
-         document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, "1.8518518522%");
-         
-     }
-     
-     ship_counter = 0;
-     active_ship = shipSet[ship_counter];
-     for (let i = 0; i < 5; i++) {
-         placed_ships[i] = 0;
-         ship_position[i] = 0;
-     }
-     for (let i = 0; i < 101; i++) {
-         blocked_squares[i] = 0;
-         occupied_squares[i] = 0;
-         disabled_squares_vertical[i] = 0;
-         disabled_squares_horizontal[i] = 0;
-     }
-     for (let i = 61; i <= 100; i++) {
-         blocked_squares[i] = 1;
-         document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
-         document.documentElement.style.setProperty('--ht_reduced_global_' + i, "475%");
-     }
-     all_good = 0;
-     rotate_flag = 0;
-     
-     rotate_var = 0;
-     
-     document.getElementById("all_shp_pla").style.display = "none";
-     document.getElementById("air_carr").style.display = "inline";
-     document.getElementById("battl").style.display = "none";
-     document.getElementById("destr").style.display = "none";
-     document.getElementById("submar").style.display = "none";
-     document.getElementById("pat_bo").style.display = "none";
-     
-     if (tempRot % 180 == 90) {
-         tempRot += 90;
-         document.getElementById("sml_shp").style.rotate = tempRot + "deg";
-     }
-     document.getElementById("sml_shp").style.translate = "0% 0%";
-     
-     for (let i = 1; i <= 6; i++) {
-         document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
-         document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
-     }
-     document.getElementById("chk_mar").style.display = "none";
-     
-     let sml_shp_size = shipSet[ship_counter];
-     if (shipSet[ship_counter + 1] < 0) {
-         sml_shp_size = sml_shp_size * (-1);
-     }
-     let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
-     let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
-     document.getElementById("sml_shp").style.height = small_ship_height + "%";
-     document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
-     document.getElementById("sml_shp").style.translate = "0% 0%";
-     document.getElementById("sml_shp").style.display = "inline";
-     
-     document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
-     document.getElementById("submt_img").src="Submit_dark_text.svg";
-     
-     boundary_overflow();
-     
- } //end of if(submit_flag == 0)
+    if (submit_flag == 0) {
+        
+        for (let i = 0; i < 5; i++) {
+            if(ship_position[i] == 0) {break;}
+            console.log("actual_sq_" + Math.abs(ship_position[i]));
+            document.getElementById("actual_sq_" + Math.abs(ship_position[i])).style.transition = "width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s";
+        }
+        all_ships_placed_var = 0;
+
+
+        for (let i = 1; i <= 100; i++) {
+            document.getElementById("actual_sq_" + i).style.display = "inline";
+            document.getElementById("actual_sq_" + i).style.opacity = "0";
+            document.getElementById("actual_sq_" + i).style.backgroundColor = "rgb(94,94,94)";
+            document.documentElement.style.setProperty('--wd_global_' + i, "75%");
+            document.documentElement.style.setProperty('--ht_global_' + i, "475%");
+            document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
+            document.documentElement.style.setProperty('--ht_reduced_global_' + i, "450%");
+            document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
+            document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, "2.6315789479%");
+            document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
+            document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, "1.8518518522%");
+
+        }
+
+        ship_counter = 0;
+        active_ship = shipSet[ship_counter];
+        for (let i = 0; i < 5; i++) {
+            placed_ships[i] = 0;
+            ship_position[i] = 0;
+        }
+        for (let i = 0; i < 101; i++) {
+            blocked_squares[i] = 0;
+            occupied_squares[i] = 0;
+            disabled_squares_vertical[i] = 0;
+            disabled_squares_horizontal[i] = 0;
+        }
+        for (let i = 61; i <= 100; i++) {
+            blocked_squares[i] = 1;
+            document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
+            document.documentElement.style.setProperty('--ht_reduced_global_' + i, "475%");
+        }
+        all_good = 0;
+        rotate_flag = 0;
+
+        rotate_var = 0;
+
+        document.getElementById("all_shp_pla").style.display = "none";
+        document.getElementById("air_carr").style.display = "inline";
+        document.getElementById("battl").style.display = "none";
+        document.getElementById("destr").style.display = "none";
+        document.getElementById("submar").style.display = "none";
+        document.getElementById("pat_bo").style.display = "none";
+
+        if (tempRot % 180 == 90) {
+            tempRot += 90;
+            document.getElementById("sml_shp").style.rotate = tempRot + "deg";
+        }
+        document.getElementById("sml_shp").style.translate = "0% 0%";
+
+        for (let i = 1; i <= 6; i++) {
+            document.getElementById("small_horiz_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
+            document.getElementById("small_vert_line_" + i).style.backgroundColor = "rgb(123, 128, 131)";
+        }
+        document.getElementById("chk_mar").style.display = "none";
+
+        let sml_shp_size = shipSet[ship_counter];
+        if (shipSet[ship_counter + 1] < 0) {
+            sml_shp_size = sml_shp_size * (-1);
+        }
+        let small_ship_height = sml_shp_size * 11.97524575 - 3.5000000072;
+        let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
+        document.getElementById("sml_shp").style.height = small_ship_height + "%";
+        document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
+        document.getElementById("sml_shp").style.translate = "0% 0%";
+        document.getElementById("sml_shp").style.display = "inline";
+
+        document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
+        document.getElementById("submt_img").src = "Submit_dark_text.svg";
+
+        boundary_overflow();
+
+    } //end of if(submit_flag == 0)
 } //end of erase ships
 
 
@@ -366,7 +352,7 @@ function button_in_handler(a, event) {
     if (blocked_squares[square_number] == 0 && placed_ships[4] == 0 && all_good == 1) //checking the actual square number of the board, not array index
     {
         all_good = 0;
-        
+
         for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
             if (occupied_squares[i] == 0) {
                 blocked_squares[i] = 0;
@@ -376,7 +362,7 @@ function button_in_handler(a, event) {
                 document.documentElement.style.setProperty('--mar_' + i, "25%");
             }
         } //end of loop
-        
+
         document.getElementById(actual_id).style.backgroundColor = "rgb(91, 137,238)"; //Setting the ship color to Blue
 
         document.getElementById(actual_id).style.opacity = 1;
@@ -415,13 +401,12 @@ function button_in_handler(a, event) {
         } else if (ship_counter == 3) {
             document.getElementById("submar").style.display = "none";
             document.getElementById("pat_bo").style.display = "inline";
-        } else if (ship_counter == 4)
-         {
+        } else if (ship_counter == 4) {
             all_ships_placed_var = 1;
-             for(i=0; i<5; i++)
-             {
-                 document.getElementById("actual_sq_"+Math.abs(ship_position[i])).style.transition="width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0s";
-             }
+            for (let i = 0; i < 5; i++) {
+                if(ship_position[i] == 0) {break;}
+                document.getElementById("actual_sq_" + Math.abs(ship_position[i])).style.transition = "width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0s";
+            }
             document.getElementById("pat_bo").style.display = "none";
             document.getElementById("sml_shp").style.display = "none";
             document.getElementById("all_shp_pla").style.display = "inline";
@@ -432,31 +417,29 @@ function button_in_handler(a, event) {
             }
             document.getElementById("chk_mar").style.display = "inline";
             document.getElementById("submt").style.border = "1px solid rgb(123, 128, 131)";
-            document.getElementById("submt_img").src="Submit_text.svg";
-            
-             
-            
-            
-         }
+            document.getElementById("submt_img").src = "Submit_text.svg";
+
+
+
+
+        }
 
 
         occupied_squares[parseInt(a.id.slice(14, ))] = 1;
         ship_counter++;
         active_ship = shipSet[ship_counter];
 
-        if (ship_counter == 5)
-        {
+        if (ship_counter == 5) {
             for (let i = 1; i <= 100; i++) //diabling the highlighting as all the ships have been placed
             {
-                if(occupied_squares[i] == 0)
-                {
-                    document.getElementById("actual_sq_"+i).style.display = "none";
+                if (occupied_squares[i] == 0) {
+                    document.getElementById("actual_sq_" + i).style.display = "none";
                 }
             }
         }
         compute_horizontal_disabled_squares();
         compute_vertical_disabled_squares();
-        
+
         //for (let i = 0; i < 101; i++)
         //{console.log("i="+i+" dis="+disabled_squares_vertical[i]); }
 
@@ -528,7 +511,7 @@ function rotate_caller_click()
 
 
 function full_sc() {
-    
+
     if (f_screen == 0) {
         f_screen = 1;
         document.getElementById("full_scr").style.display = "none";
@@ -547,7 +530,7 @@ function full_sc() {
     } else {
         f_screen = 0;
         document.getElementById("exit_full_scr").style.display = "none";
-        
+
         document.documentElement.style.setProperty('--fullScreenVar', "160px");
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -562,18 +545,16 @@ function full_sc() {
     }
 }
 
-function full_var_set()
-{
-  if (!(!window.screenTop && !window.screenY))
-  {
-      
-  }
+function full_var_set() {
+    if (!(!window.screenTop && !window.screenY)) {
+
+    }
 }
 
 function rotate_ship() {
-//    if (!window.screenTop && !window.screenY) {
-//        console.log('Browser is in fullscreen');
-//    }
+    //    if (!window.screenTop && !window.screenY) {
+    //        console.log('Browser is in fullscreen');
+    //    }
 
     active_ship = active_ship * -1;
     tempRot += 90;
