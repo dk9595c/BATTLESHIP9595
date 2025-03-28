@@ -306,6 +306,15 @@
          height:5.42420028%;
          z-index:2;
          }
+          .light_submit_txt{
+          display:none;
+          position:absolute;
+          margin-left:74.365743%;
+          margin-top:61.6828929%;
+          width:12.1864557%;
+          height:5.42420028%;
+          z-index:2;
+          }
          .all_ships_placed{
          z-index:4;
          width: 61.5430355%;
@@ -1183,6 +1192,7 @@
                   <img class="erase_all_txt" id="era_all_grey_img" src="Erase_all_text_grey.svg"  alt="Erase_all_text_grey" oncontextmenu="return false;" style="display:none;">
                   <div class="submit" id="submt" oncontextmenu="return false;"></div>
                   <img class="submit_txt" id="submt_img" src="Submit_dark_text.svg" alt="Submit_dark_text" oncontextmenu="return false;">
+                  <img class="light_submit_txt" id="light_submt_img" src="Submit_light_text.svg" alt="Submit_light_text" oncontextmenu="return false;">
                   <div class="rotate_options_wrapper" id="rotate_opt_wra" oncontextmenu="return false;"></div>
                   <div class="rotate_option" id="rotate_opt"><img src="rotate.svg" oncontextmenu="return false;" alt="rotate" ></div>
                   <div class="rotate_text" id="rotate_txt"><img src="rotate_text.svg" alt="rotate_text" oncontextmenu="return false;"></div>
@@ -1247,11 +1257,11 @@
       document.getElementById("submt").addEventListener("mouseout", submit_active_0, {passive: true});
       document.getElementById("submt").addEventListener("mousedown", submit_ships, {passive: true});
       
-      document.getElementById("submt_img").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-      document.getElementById("submt_img").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
-      document.getElementById("submt_img").addEventListener("mouseover", submit_active_1, {passive: true});
-      document.getElementById("submt_img").addEventListener("mouseout", submit_active_0, {passive: true});
-      document.getElementById("submt_img").addEventListener("mousedown", submit_ships, {passive: true});
+      document.getElementById("light_submt_img").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
+      document.getElementById("light_submt_img").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
+      document.getElementById("light_submt_img").addEventListener("mouseover", submit_active_1, {passive: true});
+      document.getElementById("light_submt_img").addEventListener("mouseout", submit_active_0, {passive: true});
+      document.getElementById("light_submt_img").addEventListener("mousedown", submit_ships, {passive: true});
       
       
       
