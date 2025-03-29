@@ -1047,7 +1047,9 @@
      margin-left: 12.5%;
      margin-top: 12.5%;
      opacity: var(--Opac_0);
+     box-sizing: border-box;
      transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s;
+     
 }
 
 .actual_square_001 {
