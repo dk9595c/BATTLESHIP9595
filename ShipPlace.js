@@ -416,7 +416,7 @@ function button_in_handler(a, event) {
 
             }
             document.getElementById("chk_mar").style.display = "inline";
-            document.getElementById("submt").style.border = "1px solid rgb(123, 128, 131)";
+            document.getElementById("submt").style.border = "0.7px solid rgb(123, 128, 131)";
             document.getElementById("submt_img").style.display = "none";
             document.getElementById("light_submt_img").style.display = "inline";
 
