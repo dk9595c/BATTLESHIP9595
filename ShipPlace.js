@@ -17,6 +17,7 @@ var erase_flag = 0;
 var place_text_flag = 0;
 var all_ships_placed_var = 0;
 var submit_flag = 0; // Becomes 1 when all ships are submitted, otherwise stays 0
+var sub_flag = 0; // just to take care of appearance of submit button
 
 
 for (let i = 0; i < 101; i++) {
@@ -101,32 +102,47 @@ function erase_active_0() {
 
 
 function submit_active_bytouch_1() {
-    //    erase_flag = 1;
-    //    document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
-    //    document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
+        
+    if (submit_flag == 0 && all_ships_placed_var == 1) {
+        sub_flag = 1;
+        document.getElementById("light_submt_img").style.display = "none";
+        document.getElementById("grey_submt_img").style.display = "inline";
+        document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
+        
+    }
 }
 
 function submit_active_bytouch_0() {
-    //    erase_flag = 1;
-    //    document.getElementById("era_all_img").src = "Erase_all_text.svg";
-    //    document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+    if (all_ships_placed_var == 1) {
+        sub_flag = 1;
+        document.getElementById("light_submt_img").style.display = "inline";
+        document.getElementById("grey_submt_img").style.display = "none";
+        document.getElementById("submt").style.backgroundColor = "rgb(49,49,52)";
+        
+    }
 }
 
 function submit_active_1() {
-    //    if (erase_flag == 0)
-    //    {
-    //        document.getElementById("era_all_img").src = "Erase_all_text_grey.svg";
-    //        document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
-    //    }
+    if (submit_flag == 0 && sub_flag == 0 && all_ships_placed_var == 1) {
+        
+        document.getElementById("light_submt_img").style.display = "none";
+        document.getElementById("grey_submt_img").style.display = "inline";
+        document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
+        
+    }
 }
 
 function submit_active_0() {
-    //    if (erase_flag == 0)
-    //    {
-    //        document.getElementById("era_all_img").src = "Erase_all_text.svg";
-    //        document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
-    //    }
+    if (sub_flag == 0 && all_ships_placed_var == 1) {
+        
+        document.getElementById("light_submt_img").style.display = "inline";
+        document.getElementById("grey_submt_img").style.display = "none";
+        document.getElementById("submt").style.backgroundColor = "rgb(49,49,52)";
+        
+    }
 }
+
+
 
 function submit_ships() {
     if (all_ships_placed_var == 1) {
@@ -150,6 +166,9 @@ function key_down_handler(event) {
     } else if (event.key == "x" || event.key == "X") {
         erase_active_1();
         erase_ships();
+    }
+    else if (event.key == "f" || event.key == "F") {
+        full_sc();
     }
 
 }
