@@ -108,6 +108,7 @@ function submit_active_bytouch_1() {
         document.getElementById("light_submt_img").style.display = "none";
         document.getElementById("grey_submt_img").style.display = "inline";
         document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
+        submit_ships();
       
     }
 }
@@ -151,7 +152,7 @@ function remove_controls()
          document.getElementById("right_horiz_line_"+j).style.display = "inline";
          document.getElementById("right_horiz_line_"+j).style.backgroundColor = "rgb(123, 128, 131)";
          
-         document.getElementById("left_greybox").style.opacity = "0.4";
+        // document.getElementById("left_greybox").style.opacity = "0.4";
          
      }
     const myInterval = setInterval(function()
