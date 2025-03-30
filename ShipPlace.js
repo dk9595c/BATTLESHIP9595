@@ -108,7 +108,7 @@ function submit_active_bytouch_1() {
         document.getElementById("light_submt_img").style.display = "none";
         document.getElementById("grey_submt_img").style.display = "inline";
         document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
-        
+        submit_ships();
     }
 }
 
