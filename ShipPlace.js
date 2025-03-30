@@ -143,7 +143,7 @@ function submit_active_0() {
 
 
 function remove_controls()
-{   let i=1, a = 100, j=0;
+{   let i=1, a = 70, j=0;
     for(let j=1; j<=9; j++)
      {
          document.getElementById("right_vert_line_"+j).style.display = "inline";
@@ -834,7 +834,7 @@ function compute_vertical_disabled_squares() {
             }
             for (let i = 0; i < act_ship; i++) {
                 if ((shipPos - 10 * i) <= 0) break;
-                disabled_squares_vertical[shipPos - 10 * i] = 1;
+                disabled_squares_vertical[shipPos - 10 * i] = 1; 
             } //end of loop
 
         } //end of if(ship_size < 0 )
