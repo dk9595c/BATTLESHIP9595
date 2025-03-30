@@ -108,7 +108,7 @@ function submit_active_bytouch_1() {
         document.getElementById("light_submt_img").style.display = "none";
         document.getElementById("grey_submt_img").style.display = "inline";
         document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
-        submit_ships();
+      
     }
 }
 
@@ -138,14 +138,69 @@ function submit_active_0() {
         document.getElementById("light_submt_img").style.display = "inline";
         document.getElementById("grey_submt_img").style.display = "none";
         document.getElementById("submt").style.backgroundColor = "rgb(49,49,52)";
-        
     }
+}
+
+
+function remove_controls()
+{   let i=1, a = 100, j=0;
+    for(let j=1; j<=9; j++)
+     {
+         document.getElementById("right_vert_line_"+j).style.display = "inline";
+         document.getElementById("right_vert_line_"+j).style.backgroundColor = "rgb(123, 128, 131)";
+         document.getElementById("right_horiz_line_"+j).style.display = "inline";
+         document.getElementById("right_horiz_line_"+j).style.backgroundColor = "rgb(123, 128, 131)";
+         
+     }
+    const myInterval = setInterval(function()
+     {  i+=1; ++j;
+        if(i/a >= 1)
+          {clearInterval(myInterval);
+           
+                  document.getElementById("rotate_opt_wra").style.display = "none";
+                  document.getElementById("demo").style.display = "none";
+                  document.getElementById("ship_samp").style.display = "none";
+                  document.getElementById("era_all").style.display = "none";
+                  document.getElementById("era_all_img").style.display = "none";
+                  document.getElementById("era_all_grey_img").style.display = "none";
+                  
+                  document.getElementById("submt").style.display = "none";
+                  document.getElementById("submt_img").style.display = "none";
+                  document.getElementById("light_submt_img").style.display = "none";
+                  document.getElementById("grey_submt_img").style.display = "none";
+                  
+                  document.getElementById("rotate_opt").style.display = "none";
+                  document.getElementById("rotate_txt").style.display = "none";
+              
+              
+              
+              }
+          
+        
+        document.getElementById("demo").style.opacity             = 1-i/a;
+        document.getElementById("ship_samp").style.opacity        = 1-i/a;
+        document.getElementById("era_all").style.opacity          = 1-i/a;
+        document.getElementById("era_all_img").style.opacity      = 1-i/a;
+        document.getElementById("era_all_grey_img").style.opacity = 1-i/a;
+        
+        document.getElementById("submt").style.opacity            = 1-i/a;
+        document.getElementById("submt_img").style.opacity        = 1-i/a;
+        document.getElementById("light_submt_img").style.opacity  = 1-i/a;
+        document.getElementById("grey_submt_img").style.opacity   = 1-i/a;
+        
+        document.getElementById("rotate_opt").style.opacity       = 1-i/a;
+        document.getElementById("rotate_txt").style.opacity       = 1-i/a;
+       
+        
+       // console.log(1-i/a+","+j);
+       
+     }, 1);
 }
 
 
 
 function submit_ships() {
-    if (all_ships_placed_var == 1) {
+    if (all_ships_placed_var == 1 && submit_flag == 0) {
         submit_flag = 1;
         for (let i = 0; i < 5; i++) // submitting the ships
         {
@@ -157,6 +212,16 @@ function submit_ships() {
             document.getElementById("actual_sq_" + targ_sq).style.border = "1px solid rgb(221, 223, 225)";
         }
     } //end of if
+    document.getElementById("submt").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
+    document.getElementById("submt").removeEventListener("mouseover", submit_active_1, {passive: true});
+    document.getElementById("submt").removeEventListener("mousedown", submit_ships, {passive: true});
+    document.getElementById("light_submt_img").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
+    document.getElementById("light_submt_img").removeEventListener("mouseover", submit_active_1, {passive: true});
+    document.getElementById("light_submt_img").removeEventListener("mousedown", submit_ships, {passive: true});
+    document.getElementById("grey_submt_img").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
+    document.getElementById("grey_submt_img").removeEventListener("mouseover", submit_active_1, {passive: true});
+    document.getElementById("grey_submt_img").removeEventListener("mousedown", submit_ships, {passive: true});
+    remove_controls();
 } // end of submit_ships()
 
 function key_down_handler(event) {
