@@ -151,6 +151,8 @@ function remove_controls()
          document.getElementById("right_horiz_line_"+j).style.display = "inline";
          document.getElementById("right_horiz_line_"+j).style.backgroundColor = "rgb(123, 128, 131)";
          
+         document.getElementById("left_greybox").style.opacity = "0.4";
+         
      }
     const myInterval = setInterval(function()
      {  i+=1; ++j;
