@@ -144,7 +144,7 @@ function submit_active_0() {
 
 
 function remove_controls()
-{   let i=1, a = 70, j=0;
+{   let i=1, a = 1, j=0;
     for(let j=1; j<=9; j++)
      {
          document.getElementById("right_vert_line_"+j).style.display = "inline";
