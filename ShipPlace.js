@@ -202,7 +202,7 @@ function remove_controls()
     
     for(let loop_var = 1; loop_var <= 100; loop_var++)
     {
-        dom_string+="<div class=\"ps_right_"+loop_var+"\" id=\"pseudo_square_right_"+loop_var+"\" style = \"width: 10%; height: 10%; position: absolute; display: inline; z-index: 2; opacity : 1;\"><div class=\"actual_square_right_"+loop_var+"\" id=\"actual_sq_right_"+loop_var+"\" style =\" position: absolute; display: inline; z-index: 1; background-color: rgb(94,94,94); width: 75%; height: 75%; border-radius: 16.6666667%; margin-left: 12.5%; margin-top: 12.5%; opacity: 0; box-sizing: border-box; transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s;\"></div></div>"
+        dom_string+="<div class=\"ps_right_"+loop_var+"\" id=\"pseudo_square_right_"+loop_var+"\" style = \"width: 10%; height: 10%; position: absolute; display: inline; z-index: 2; opacity : 1;\"><div class=\"actual_square_right_"+loop_var+"\" id=\"actual_sq_right_"+loop_var+"\"></div></div>"
        // console.log(dom_string);
     }
     //console.log(dom_string);
