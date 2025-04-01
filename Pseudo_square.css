@@ -1,1038 +1,924 @@
 :root {
---widthD: min((100vh - 60px)/2, 100vw);
---heightD: min((100vh - 60px)/2, 100vw);
---widthX: 2px;
---heightX: 2px;
---bordRadY: 10;
-
---small_ded : 0px;
-
---fullScreenVar: 160px;
-
---borderRadius_G_X : 16.6666667%;
---borderRadius_G_Y : 2.6315794737%;
-
---borderRadius_reduced_X : 16.6666667%;
---borderRadius_reduced_Y : 1.85185%;
-
---Opac_1 : 1;
---Opac_0 : 0;
-
---bordRadiusGlobal: 2.6315794737%;
-
---ht_global: 475%;
-
---ht_reduced_global: 450%;
-
---wd_global: 75%;
---wd_reduced_global : 50%;
-
-
---mar_1: 25%;
---mar_2: 25%;
---mar_3: 25%;
---mar_4: 25%;
---mar_5: 25%;
---mar_6: 25%;
---mar_7: 25%;
---mar_8: 25%;
---mar_9: 25%;
---mar_10: 25%;
---mar_11: 25%;
---mar_12: 25%;
---mar_13: 25%;
---mar_14: 25%;
---mar_15: 25%;
---mar_16: 25%;
---mar_17: 25%;
---mar_18: 25%;
---mar_19: 25%;
---mar_20: 25%;
---mar_21: 25%;
---mar_22: 25%;
---mar_23: 25%;
---mar_24: 25%;
---mar_25: 25%;
---mar_26: 25%;
---mar_27: 25%;
---mar_28: 25%;
---mar_29: 25%;
---mar_30: 25%;
---mar_31: 25%;
---mar_32: 25%;
---mar_33: 25%;
---mar_34: 25%;
---mar_35: 25%;
---mar_36: 25%;
---mar_37: 25%;
---mar_38: 25%;
---mar_39: 25%;
---mar_40: 25%;
---mar_41: 25%;
---mar_42: 25%;
---mar_43: 25%;
---mar_44: 25%;
---mar_45: 25%;
---mar_46: 25%;
---mar_47: 25%;
---mar_48: 25%;
---mar_49: 25%;
---mar_50: 25%;
---mar_51: 25%;
---mar_52: 25%;
---mar_53: 25%;
---mar_54: 25%;
---mar_55: 25%;
---mar_56: 25%;
---mar_57: 25%;
---mar_58: 25%;
---mar_59: 25%;
---mar_60: 25%;
---mar_61: 12.5%;
---mar_62: 12.5%;
---mar_63: 12.5%;
---mar_64: 12.5%;
---mar_65: 12.5%;
---mar_66: 12.5%;
---mar_67: 12.5%;
---mar_68: 12.5%;
---mar_69: 12.5%;
---mar_70: 12.5%;
---mar_71: 12.5%;
---mar_72: 12.5%;
---mar_73: 12.5%;
---mar_74: 12.5%;
---mar_75: 12.5%;
---mar_76: 12.5%;
---mar_77: 12.5%;
---mar_78: 12.5%;
---mar_79: 12.5%;
---mar_80: 12.5%;
---mar_81: 12.5%;
---mar_82: 12.5%;
---mar_83: 12.5%;
---mar_84: 12.5%;
---mar_85: 12.5%;
---mar_86: 12.5%;
---mar_87: 12.5%;
---mar_88: 12.5%;
---mar_89: 12.5%;
---mar_90: 12.5%;
---mar_91: 12.5%;
---mar_92: 12.5%;
---mar_93: 12.5%;
---mar_94: 12.5%;
---mar_95: 12.5%;
---mar_96: 12.5%;
---mar_97: 12.5%;
---mar_98: 12.5%;
---mar_99: 12.5%;
---mar_100: 12.5%;
-
---wd_global_1 : 75%;
---ht_global_1 : 475%;
---wd_reduced_global_1 : 50%;
---ht_reduced_global_1 : 450%;
---borderRadius_G_X_1  : 16.6666667%;
---borderRadius_G_Y_1  : 2.6315794737%;
---borderRadius_reduced_X_1 : 15.78948%;
---borderRadius_reduced_Y_1 : 1.85185%;
-
---wd_global_2 : 75%;
---ht_global_2 : 475%;
---wd_reduced_global_2 : 50%;
---ht_reduced_global_2 : 450%;
---borderRadius_G_X_2  : 16.6666667%;
---borderRadius_G_Y_2  : 2.6315794737%;
---borderRadius_reduced_X_2 : 15.78948%;
---borderRadius_reduced_Y_2 : 1.85185%;
-
---wd_global_3 : 75%;
---ht_global_3 : 475%;
---wd_reduced_global_3 : 50%;
---ht_reduced_global_3 : 450%;
---borderRadius_G_X_3  : 16.6666667%;
---borderRadius_G_Y_3  : 2.6315794737%;
---borderRadius_reduced_X_3 : 15.78948%;
---borderRadius_reduced_Y_3 : 1.85185%;
-
---wd_global_4 : 75%;
---ht_global_4 : 475%;
---wd_reduced_global_4 : 50%;
---ht_reduced_global_4 : 450%;
---borderRadius_G_X_4  : 16.6666667%;
---borderRadius_G_Y_4  : 2.6315794737%;
---borderRadius_reduced_X_4 : 15.78948%;
---borderRadius_reduced_Y_4 : 1.85185%;
-
---wd_global_5 : 75%;
---ht_global_5 : 475%;
---wd_reduced_global_5 : 50%;
---ht_reduced_global_5 : 450%;
---borderRadius_G_X_5  : 16.6666667%;
---borderRadius_G_Y_5  : 2.6315794737%;
---borderRadius_reduced_X_5 : 15.78948%;
---borderRadius_reduced_Y_5 : 1.85185%;
-
---wd_global_6 : 75%;
---ht_global_6 : 475%;
---wd_reduced_global_6 : 50%;
---ht_reduced_global_6 : 450%;
---borderRadius_G_X_6  : 16.6666667%;
---borderRadius_G_Y_6  : 2.6315794737%;
---borderRadius_reduced_X_6 : 15.78948%;
---borderRadius_reduced_Y_6 : 1.85185%;
-
---wd_global_7 : 75%;
---ht_global_7 : 475%;
---wd_reduced_global_7 : 50%;
---ht_reduced_global_7 : 450%;
---borderRadius_G_X_7  : 16.6666667%;
---borderRadius_G_Y_7  : 2.6315794737%;
---borderRadius_reduced_X_7 : 15.78948%;
---borderRadius_reduced_Y_7 : 1.85185%;
-
---wd_global_8 : 75%;
---ht_global_8 : 475%;
---wd_reduced_global_8 : 50%;
---ht_reduced_global_8 : 450%;
---borderRadius_G_X_8  : 16.6666667%;
---borderRadius_G_Y_8  : 2.6315794737%;
---borderRadius_reduced_X_8 : 15.78948%;
---borderRadius_reduced_Y_8 : 1.85185%;
-
---wd_global_9 : 75%;
---ht_global_9 : 475%;
---wd_reduced_global_9 : 50%;
---ht_reduced_global_9 : 450%;
---borderRadius_G_X_9  : 16.6666667%;
---borderRadius_G_Y_9  : 2.6315794737%;
---borderRadius_reduced_X_9 : 15.78948%;
---borderRadius_reduced_Y_9 : 1.85185%;
-
---wd_global_10 : 75%;
---ht_global_10 : 475%;
---wd_reduced_global_10 : 50%;
---ht_reduced_global_10 : 450%;
---borderRadius_G_X_10  : 16.6666667%;
---borderRadius_G_Y_10  : 2.6315794737%;
---borderRadius_reduced_X_10 : 15.78948%;
---borderRadius_reduced_Y_10 : 1.85185%;
-
---wd_global_11 : 75%;
---ht_global_11 : 475%;
---wd_reduced_global_11 : 50%;
---ht_reduced_global_11 : 450%;
---borderRadius_G_X_11  : 16.6666667%;
---borderRadius_G_Y_11  : 2.6315794737%;
---borderRadius_reduced_X_11 : 15.78948%;
---borderRadius_reduced_Y_11 : 1.85185%;
-
---wd_global_12 : 75%;
---ht_global_12 : 475%;
---wd_reduced_global_12 : 50%;
---ht_reduced_global_12 : 450%;
---borderRadius_G_X_12  : 16.6666667%;
---borderRadius_G_Y_12  : 2.6315794737%;
---borderRadius_reduced_X_12 : 15.78948%;
---borderRadius_reduced_Y_12 : 1.85185%;
-
---wd_global_13 : 75%;
---ht_global_13 : 475%;
---wd_reduced_global_13 : 50%;
---ht_reduced_global_13 : 450%;
---borderRadius_G_X_13  : 16.6666667%;
---borderRadius_G_Y_13  : 2.6315794737%;
---borderRadius_reduced_X_13 : 15.78948%;
---borderRadius_reduced_Y_13 : 1.85185%;
-
---wd_global_14 : 75%;
---ht_global_14 : 475%;
---wd_reduced_global_14 : 50%;
---ht_reduced_global_14 : 450%;
---borderRadius_G_X_14  : 16.6666667%;
---borderRadius_G_Y_14  : 2.6315794737%;
---borderRadius_reduced_X_14 : 15.78948%;
---borderRadius_reduced_Y_14 : 1.85185%;
-
---wd_global_15 : 75%;
---ht_global_15 : 475%;
---wd_reduced_global_15 : 50%;
---ht_reduced_global_15 : 450%;
---borderRadius_G_X_15  : 16.6666667%;
---borderRadius_G_Y_15  : 2.6315794737%;
---borderRadius_reduced_X_15 : 15.78948%;
---borderRadius_reduced_Y_15 : 1.85185%;
-
---wd_global_16 : 75%;
---ht_global_16 : 475%;
---wd_reduced_global_16 : 50%;
---ht_reduced_global_16 : 450%;
---borderRadius_G_X_16  : 16.6666667%;
---borderRadius_G_Y_16  : 2.6315794737%;
---borderRadius_reduced_X_16 : 15.78948%;
---borderRadius_reduced_Y_16 : 1.85185%;
-
---wd_global_17 : 75%;
---ht_global_17 : 475%;
---wd_reduced_global_17 : 50%;
---ht_reduced_global_17 : 450%;
---borderRadius_G_X_17  : 16.6666667%;
---borderRadius_G_Y_17  : 2.6315794737%;
---borderRadius_reduced_X_17 : 15.78948%;
---borderRadius_reduced_Y_17 : 1.85185%;
-
---wd_global_18 : 75%;
---ht_global_18 : 475%;
---wd_reduced_global_18 : 50%;
---ht_reduced_global_18 : 450%;
---borderRadius_G_X_18  : 16.6666667%;
---borderRadius_G_Y_18  : 2.6315794737%;
---borderRadius_reduced_X_18 : 15.78948%;
---borderRadius_reduced_Y_18 : 1.85185%;
-
---wd_global_19 : 75%;
---ht_global_19 : 475%;
---wd_reduced_global_19 : 50%;
---ht_reduced_global_19 : 450%;
---borderRadius_G_X_19  : 16.6666667%;
---borderRadius_G_Y_19  : 2.6315794737%;
---borderRadius_reduced_X_19 : 15.78948%;
---borderRadius_reduced_Y_19 : 1.85185%;
-
---wd_global_20 : 75%;
---ht_global_20 : 475%;
---wd_reduced_global_20 : 50%;
---ht_reduced_global_20 : 450%;
---borderRadius_G_X_20  : 16.6666667%;
---borderRadius_G_Y_20  : 2.6315794737%;
---borderRadius_reduced_X_20 : 15.78948%;
---borderRadius_reduced_Y_20 : 1.85185%;
-
---wd_global_21 : 75%;
---ht_global_21 : 475%;
---wd_reduced_global_21 : 50%;
---ht_reduced_global_21 : 450%;
---borderRadius_G_X_21  : 16.6666667%;
---borderRadius_G_Y_21  : 2.6315794737%;
---borderRadius_reduced_X_21 : 15.78948%;
---borderRadius_reduced_Y_21 : 1.85185%;
-
---wd_global_22 : 75%;
---ht_global_22 : 475%;
---wd_reduced_global_22 : 50%;
---ht_reduced_global_22 : 450%;
---borderRadius_G_X_22  : 16.6666667%;
---borderRadius_G_Y_22  : 2.6315794737%;
---borderRadius_reduced_X_22 : 15.78948%;
---borderRadius_reduced_Y_22 : 1.85185%;
-
---wd_global_23 : 75%;
---ht_global_23 : 475%;
---wd_reduced_global_23 : 50%;
---ht_reduced_global_23 : 450%;
---borderRadius_G_X_23  : 16.6666667%;
---borderRadius_G_Y_23  : 2.6315794737%;
---borderRadius_reduced_X_23 : 15.78948%;
---borderRadius_reduced_Y_23 : 1.85185%;
-
---wd_global_24 : 75%;
---ht_global_24 : 475%;
---wd_reduced_global_24 : 50%;
---ht_reduced_global_24 : 450%;
---borderRadius_G_X_24  : 16.6666667%;
---borderRadius_G_Y_24  : 2.6315794737%;
---borderRadius_reduced_X_24 : 15.78948%;
---borderRadius_reduced_Y_24 : 1.85185%;
-
---wd_global_25 : 75%;
---ht_global_25 : 475%;
---wd_reduced_global_25 : 50%;
---ht_reduced_global_25 : 450%;
---borderRadius_G_X_25  : 16.6666667%;
---borderRadius_G_Y_25  : 2.6315794737%;
---borderRadius_reduced_X_25 : 15.78948%;
---borderRadius_reduced_Y_25 : 1.85185%;
-
---wd_global_26 : 75%;
---ht_global_26 : 475%;
---wd_reduced_global_26 : 50%;
---ht_reduced_global_26 : 450%;
---borderRadius_G_X_26  : 16.6666667%;
---borderRadius_G_Y_26  : 2.6315794737%;
---borderRadius_reduced_X_26 : 15.78948%;
---borderRadius_reduced_Y_26 : 1.85185%;
-
---wd_global_27 : 75%;
---ht_global_27 : 475%;
---wd_reduced_global_27 : 50%;
---ht_reduced_global_27 : 450%;
---borderRadius_G_X_27  : 16.6666667%;
---borderRadius_G_Y_27  : 2.6315794737%;
---borderRadius_reduced_X_27 : 15.78948%;
---borderRadius_reduced_Y_27 : 1.85185%;
-
---wd_global_28 : 75%;
---ht_global_28 : 475%;
---wd_reduced_global_28 : 50%;
---ht_reduced_global_28 : 450%;
---borderRadius_G_X_28  : 16.6666667%;
---borderRadius_G_Y_28  : 2.6315794737%;
---borderRadius_reduced_X_28 : 15.78948%;
---borderRadius_reduced_Y_28 : 1.85185%;
-
---wd_global_29 : 75%;
---ht_global_29 : 475%;
---wd_reduced_global_29 : 50%;
---ht_reduced_global_29 : 450%;
---borderRadius_G_X_29  : 16.6666667%;
---borderRadius_G_Y_29  : 2.6315794737%;
---borderRadius_reduced_X_29 : 15.78948%;
---borderRadius_reduced_Y_29 : 1.85185%;
-
---wd_global_30 : 75%;
---ht_global_30 : 475%;
---wd_reduced_global_30 : 50%;
---ht_reduced_global_30 : 450%;
---borderRadius_G_X_30  : 16.6666667%;
---borderRadius_G_Y_30  : 2.6315794737%;
---borderRadius_reduced_X_30 : 15.78948%;
---borderRadius_reduced_Y_30 : 1.85185%;
-
---wd_global_31 : 75%;
---ht_global_31 : 475%;
---wd_reduced_global_31 : 50%;
---ht_reduced_global_31 : 450%;
---borderRadius_G_X_31  : 16.6666667%;
---borderRadius_G_Y_31  : 2.6315794737%;
---borderRadius_reduced_X_31 : 15.78948%;
---borderRadius_reduced_Y_31 : 1.85185%;
-
---wd_global_32 : 75%;
---ht_global_32 : 475%;
---wd_reduced_global_32 : 50%;
---ht_reduced_global_32 : 450%;
---borderRadius_G_X_32  : 16.6666667%;
---borderRadius_G_Y_32  : 2.6315794737%;
---borderRadius_reduced_X_32 : 15.78948%;
---borderRadius_reduced_Y_32 : 1.85185%;
-
---wd_global_33 : 75%;
---ht_global_33 : 475%;
---wd_reduced_global_33 : 50%;
---ht_reduced_global_33 : 450%;
---borderRadius_G_X_33  : 16.6666667%;
---borderRadius_G_Y_33  : 2.6315794737%;
---borderRadius_reduced_X_33 : 15.78948%;
---borderRadius_reduced_Y_33 : 1.85185%;
-
---wd_global_34 : 75%;
---ht_global_34 : 475%;
---wd_reduced_global_34 : 50%;
---ht_reduced_global_34 : 450%;
---borderRadius_G_X_34  : 16.6666667%;
---borderRadius_G_Y_34  : 2.6315794737%;
---borderRadius_reduced_X_34 : 15.78948%;
---borderRadius_reduced_Y_34 : 1.85185%;
-
---wd_global_35 : 75%;
---ht_global_35 : 475%;
---wd_reduced_global_35 : 50%;
---ht_reduced_global_35 : 450%;
---borderRadius_G_X_35  : 16.6666667%;
---borderRadius_G_Y_35  : 2.6315794737%;
---borderRadius_reduced_X_35 : 15.78948%;
---borderRadius_reduced_Y_35 : 1.85185%;
-
---wd_global_36 : 75%;
---ht_global_36 : 475%;
---wd_reduced_global_36 : 50%;
---ht_reduced_global_36 : 450%;
---borderRadius_G_X_36  : 16.6666667%;
---borderRadius_G_Y_36  : 2.6315794737%;
---borderRadius_reduced_X_36 : 15.78948%;
---borderRadius_reduced_Y_36 : 1.85185%;
-
---wd_global_37 : 75%;
---ht_global_37 : 475%;
---wd_reduced_global_37 : 50%;
---ht_reduced_global_37 : 450%;
---borderRadius_G_X_37  : 16.6666667%;
---borderRadius_G_Y_37  : 2.6315794737%;
---borderRadius_reduced_X_37 : 15.78948%;
---borderRadius_reduced_Y_37 : 1.85185%;
-
---wd_global_38 : 75%;
---ht_global_38 : 475%;
---wd_reduced_global_38 : 50%;
---ht_reduced_global_38 : 450%;
---borderRadius_G_X_38  : 16.6666667%;
---borderRadius_G_Y_38  : 2.6315794737%;
---borderRadius_reduced_X_38 : 15.78948%;
---borderRadius_reduced_Y_38 : 1.85185%;
-
---wd_global_39 : 75%;
---ht_global_39 : 475%;
---wd_reduced_global_39 : 50%;
---ht_reduced_global_39 : 450%;
---borderRadius_G_X_39  : 16.6666667%;
---borderRadius_G_Y_39  : 2.6315794737%;
---borderRadius_reduced_X_39 : 15.78948%;
---borderRadius_reduced_Y_39 : 1.85185%;
-
---wd_global_40 : 75%;
---ht_global_40 : 475%;
---wd_reduced_global_40 : 50%;
---ht_reduced_global_40 : 450%;
---borderRadius_G_X_40  : 16.6666667%;
---borderRadius_G_Y_40  : 2.6315794737%;
---borderRadius_reduced_X_40 : 15.78948%;
---borderRadius_reduced_Y_40 : 1.85185%;
-
---wd_global_41 : 75%;
---ht_global_41 : 475%;
---wd_reduced_global_41 : 50%;
---ht_reduced_global_41 : 450%;
---borderRadius_G_X_41  : 16.6666667%;
---borderRadius_G_Y_41  : 2.6315794737%;
---borderRadius_reduced_X_41 : 15.78948%;
---borderRadius_reduced_Y_41 : 1.85185%;
-
---wd_global_42 : 75%;
---ht_global_42 : 475%;
---wd_reduced_global_42 : 50%;
---ht_reduced_global_42 : 450%;
---borderRadius_G_X_42  : 16.6666667%;
---borderRadius_G_Y_42  : 2.6315794737%;
---borderRadius_reduced_X_42 : 15.78948%;
---borderRadius_reduced_Y_42 : 1.85185%;
-
---wd_global_43 : 75%;
---ht_global_43 : 475%;
---wd_reduced_global_43 : 50%;
---ht_reduced_global_43 : 450%;
---borderRadius_G_X_43  : 16.6666667%;
---borderRadius_G_Y_43  : 2.6315794737%;
---borderRadius_reduced_X_43 : 15.78948%;
---borderRadius_reduced_Y_43 : 1.85185%;
-
---wd_global_44 : 75%;
---ht_global_44 : 475%;
---wd_reduced_global_44 : 50%;
---ht_reduced_global_44 : 450%;
---borderRadius_G_X_44  : 16.6666667%;
---borderRadius_G_Y_44  : 2.6315794737%;
---borderRadius_reduced_X_44 : 15.78948%;
---borderRadius_reduced_Y_44 : 1.85185%;
-
---wd_global_45 : 75%;
---ht_global_45 : 475%;
---wd_reduced_global_45 : 50%;
---ht_reduced_global_45 : 450%;
---borderRadius_G_X_45  : 16.6666667%;
---borderRadius_G_Y_45  : 2.6315794737%;
---borderRadius_reduced_X_45 : 15.78948%;
---borderRadius_reduced_Y_45 : 1.85185%;
-
---wd_global_46 : 75%;
---ht_global_46 : 475%;
---wd_reduced_global_46 : 50%;
---ht_reduced_global_46 : 450%;
---borderRadius_G_X_46  : 16.6666667%;
---borderRadius_G_Y_46  : 2.6315794737%;
---borderRadius_reduced_X_46 : 15.78948%;
---borderRadius_reduced_Y_46 : 1.85185%;
-
---wd_global_47 : 75%;
---ht_global_47 : 475%;
---wd_reduced_global_47 : 50%;
---ht_reduced_global_47 : 450%;
---borderRadius_G_X_47  : 16.6666667%;
---borderRadius_G_Y_47  : 2.6315794737%;
---borderRadius_reduced_X_47 : 15.78948%;
---borderRadius_reduced_Y_47 : 1.85185%;
-
---wd_global_48 : 75%;
---ht_global_48 : 475%;
---wd_reduced_global_48 : 50%;
---ht_reduced_global_48 : 450%;
---borderRadius_G_X_48  : 16.6666667%;
---borderRadius_G_Y_48  : 2.6315794737%;
---borderRadius_reduced_X_48 : 15.78948%;
---borderRadius_reduced_Y_48 : 1.85185%;
-
---wd_global_49 : 75%;
---ht_global_49 : 475%;
---wd_reduced_global_49 : 50%;
---ht_reduced_global_49 : 450%;
---borderRadius_G_X_49  : 16.6666667%;
---borderRadius_G_Y_49  : 2.6315794737%;
---borderRadius_reduced_X_49 : 15.78948%;
---borderRadius_reduced_Y_49 : 1.85185%;
-
---wd_global_50 : 75%;
---ht_global_50 : 475%;
---wd_reduced_global_50 : 50%;
---ht_reduced_global_50 : 450%;
---borderRadius_G_X_50  : 16.6666667%;
---borderRadius_G_Y_50  : 2.6315794737%;
---borderRadius_reduced_X_50 : 15.78948%;
---borderRadius_reduced_Y_50 : 1.85185%;
-
---wd_global_51 : 75%;
---ht_global_51 : 475%;
---wd_reduced_global_51 : 50%;
---ht_reduced_global_51 : 450%;
---borderRadius_G_X_51  : 16.6666667%;
---borderRadius_G_Y_51  : 2.6315794737%;
---borderRadius_reduced_X_51 : 15.78948%;
---borderRadius_reduced_Y_51 : 1.85185%;
-
---wd_global_52 : 75%;
---ht_global_52 : 475%;
---wd_reduced_global_52 : 50%;
---ht_reduced_global_52 : 450%;
---borderRadius_G_X_52  : 16.6666667%;
---borderRadius_G_Y_52  : 2.6315794737%;
---borderRadius_reduced_X_52 : 15.78948%;
---borderRadius_reduced_Y_52 : 1.85185%;
-
---wd_global_53 : 75%;
---ht_global_53 : 475%;
---wd_reduced_global_53 : 50%;
---ht_reduced_global_53 : 450%;
---borderRadius_G_X_53  : 16.6666667%;
---borderRadius_G_Y_53  : 2.6315794737%;
---borderRadius_reduced_X_53 : 15.78948%;
---borderRadius_reduced_Y_53 : 1.85185%;
-
---wd_global_54 : 75%;
---ht_global_54 : 475%;
---wd_reduced_global_54 : 50%;
---ht_reduced_global_54 : 450%;
---borderRadius_G_X_54  : 16.6666667%;
---borderRadius_G_Y_54  : 2.6315794737%;
---borderRadius_reduced_X_54 : 15.78948%;
---borderRadius_reduced_Y_54 : 1.85185%;
-
---wd_global_55 : 75%;
---ht_global_55 : 475%;
---wd_reduced_global_55 : 50%;
---ht_reduced_global_55 : 450%;
---borderRadius_G_X_55  : 16.6666667%;
---borderRadius_G_Y_55  : 2.6315794737%;
---borderRadius_reduced_X_55 : 15.78948%;
---borderRadius_reduced_Y_55 : 1.85185%;
-
---wd_global_56 : 75%;
---ht_global_56 : 475%;
---wd_reduced_global_56 : 50%;
---ht_reduced_global_56 : 450%;
---borderRadius_G_X_56  : 16.6666667%;
---borderRadius_G_Y_56  : 2.6315794737%;
---borderRadius_reduced_X_56 : 15.78948%;
---borderRadius_reduced_Y_56 : 1.85185%;
-
---wd_global_57 : 75%;
---ht_global_57 : 475%;
---wd_reduced_global_57 : 50%;
---ht_reduced_global_57 : 450%;
---borderRadius_G_X_57  : 16.6666667%;
---borderRadius_G_Y_57  : 2.6315794737%;
---borderRadius_reduced_X_57 : 15.78948%;
---borderRadius_reduced_Y_57 : 1.85185%;
-
---wd_global_58 : 75%;
---ht_global_58 : 475%;
---wd_reduced_global_58 : 50%;
---ht_reduced_global_58 : 450%;
---borderRadius_G_X_58  : 16.6666667%;
---borderRadius_G_Y_58  : 2.6315794737%;
---borderRadius_reduced_X_58 : 15.78948%;
---borderRadius_reduced_Y_58 : 1.85185%;
-
---wd_global_59 : 75%;
---ht_global_59 : 475%;
---wd_reduced_global_59 : 50%;
---ht_reduced_global_59 : 450%;
---borderRadius_G_X_59  : 16.6666667%;
---borderRadius_G_Y_59  : 2.6315794737%;
---borderRadius_reduced_X_59 : 15.78948%;
---borderRadius_reduced_Y_59 : 1.85185%;
-
---wd_global_60 : 75%;
---ht_global_60 : 475%;
---wd_reduced_global_60 : 50%;
---ht_reduced_global_60 : 450%;
---borderRadius_G_X_60  : 16.6666667%;
---borderRadius_G_Y_60  : 2.6315794737%;
---borderRadius_reduced_X_60 : 15.78948%;
---borderRadius_reduced_Y_60 : 1.85185%;
-
---wd_global_61 : 75%;
---ht_global_61 : 475%;
---wd_reduced_global_61 : 50%;
---ht_reduced_global_61 : 450%;
---borderRadius_G_X_61  : 16.6666667%;
---borderRadius_G_Y_61  : 2.6315794737%;
---borderRadius_reduced_X_61 : 15.78948%;
---borderRadius_reduced_Y_61 : 1.85185%;
-
---wd_global_62 : 75%;
---ht_global_62 : 475%;
---wd_reduced_global_62 : 50%;
---ht_reduced_global_62 : 450%;
---borderRadius_G_X_62  : 16.6666667%;
---borderRadius_G_Y_62  : 2.6315794737%;
---borderRadius_reduced_X_62 : 15.78948%;
---borderRadius_reduced_Y_62 : 1.85185%;
-
---wd_global_63 : 75%;
---ht_global_63 : 475%;
---wd_reduced_global_63 : 50%;
---ht_reduced_global_63 : 450%;
---borderRadius_G_X_63  : 16.6666667%;
---borderRadius_G_Y_63  : 2.6315794737%;
---borderRadius_reduced_X_63 : 15.78948%;
---borderRadius_reduced_Y_63 : 1.85185%;
-
---wd_global_64 : 75%;
---ht_global_64 : 475%;
---wd_reduced_global_64 : 50%;
---ht_reduced_global_64 : 450%;
---borderRadius_G_X_64  : 16.6666667%;
---borderRadius_G_Y_64  : 2.6315794737%;
---borderRadius_reduced_X_64 : 15.78948%;
---borderRadius_reduced_Y_64 : 1.85185%;
-
---wd_global_65 : 75%;
---ht_global_65 : 475%;
---wd_reduced_global_65 : 50%;
---ht_reduced_global_65 : 450%;
---borderRadius_G_X_65  : 16.6666667%;
---borderRadius_G_Y_65  : 2.6315794737%;
---borderRadius_reduced_X_65 : 15.78948%;
---borderRadius_reduced_Y_65 : 1.85185%;
-
---wd_global_66 : 75%;
---ht_global_66 : 475%;
---wd_reduced_global_66 : 50%;
---ht_reduced_global_66 : 450%;
---borderRadius_G_X_66  : 16.6666667%;
---borderRadius_G_Y_66  : 2.6315794737%;
---borderRadius_reduced_X_66 : 15.78948%;
---borderRadius_reduced_Y_66 : 1.85185%;
-
---wd_global_67 : 75%;
---ht_global_67 : 475%;
---wd_reduced_global_67 : 50%;
---ht_reduced_global_67 : 450%;
---borderRadius_G_X_67  : 16.6666667%;
---borderRadius_G_Y_67  : 2.6315794737%;
---borderRadius_reduced_X_67 : 15.78948%;
---borderRadius_reduced_Y_67 : 1.85185%;
-
---wd_global_68 : 75%;
---ht_global_68 : 475%;
---wd_reduced_global_68 : 50%;
---ht_reduced_global_68 : 450%;
---borderRadius_G_X_68  : 16.6666667%;
---borderRadius_G_Y_68  : 2.6315794737%;
---borderRadius_reduced_X_68 : 15.78948%;
---borderRadius_reduced_Y_68 : 1.85185%;
-
---wd_global_69 : 75%;
---ht_global_69 : 475%;
---wd_reduced_global_69 : 50%;
---ht_reduced_global_69 : 450%;
---borderRadius_G_X_69  : 16.6666667%;
---borderRadius_G_Y_69  : 2.6315794737%;
---borderRadius_reduced_X_69 : 15.78948%;
---borderRadius_reduced_Y_69 : 1.85185%;
-
---wd_global_70 : 75%;
---ht_global_70 : 475%;
---wd_reduced_global_70 : 50%;
---ht_reduced_global_70 : 450%;
---borderRadius_G_X_70  : 16.6666667%;
---borderRadius_G_Y_70  : 2.6315794737%;
---borderRadius_reduced_X_70 : 15.78948%;
---borderRadius_reduced_Y_70 : 1.85185%;
-
---wd_global_71 : 75%;
---ht_global_71 : 475%;
---wd_reduced_global_71 : 50%;
---ht_reduced_global_71 : 450%;
---borderRadius_G_X_71  : 16.6666667%;
---borderRadius_G_Y_71  : 2.6315794737%;
---borderRadius_reduced_X_71 : 15.78948%;
---borderRadius_reduced_Y_71 : 1.85185%;
-
---wd_global_72 : 75%;
---ht_global_72 : 475%;
---wd_reduced_global_72 : 50%;
---ht_reduced_global_72 : 450%;
---borderRadius_G_X_72  : 16.6666667%;
---borderRadius_G_Y_72  : 2.6315794737%;
---borderRadius_reduced_X_72 : 15.78948%;
---borderRadius_reduced_Y_72 : 1.85185%;
-
---wd_global_73 : 75%;
---ht_global_73 : 475%;
---wd_reduced_global_73 : 50%;
---ht_reduced_global_73 : 450%;
---borderRadius_G_X_73  : 16.6666667%;
---borderRadius_G_Y_73  : 2.6315794737%;
---borderRadius_reduced_X_73 : 15.78948%;
---borderRadius_reduced_Y_73 : 1.85185%;
-
---wd_global_74 : 75%;
---ht_global_74 : 475%;
---wd_reduced_global_74 : 50%;
---ht_reduced_global_74 : 450%;
---borderRadius_G_X_74  : 16.6666667%;
---borderRadius_G_Y_74  : 2.6315794737%;
---borderRadius_reduced_X_74 : 15.78948%;
---borderRadius_reduced_Y_74 : 1.85185%;
-
---wd_global_75 : 75%;
---ht_global_75 : 475%;
---wd_reduced_global_75 : 50%;
---ht_reduced_global_75 : 450%;
---borderRadius_G_X_75  : 16.6666667%;
---borderRadius_G_Y_75  : 2.6315794737%;
---borderRadius_reduced_X_75 : 15.78948%;
---borderRadius_reduced_Y_75 : 1.85185%;
-
---wd_global_76 : 75%;
---ht_global_76 : 475%;
---wd_reduced_global_76 : 50%;
---ht_reduced_global_76 : 450%;
---borderRadius_G_X_76  : 16.6666667%;
---borderRadius_G_Y_76  : 2.6315794737%;
---borderRadius_reduced_X_76 : 15.78948%;
---borderRadius_reduced_Y_76 : 1.85185%;
-
---wd_global_77 : 75%;
---ht_global_77 : 475%;
---wd_reduced_global_77 : 50%;
---ht_reduced_global_77 : 450%;
---borderRadius_G_X_77  : 16.6666667%;
---borderRadius_G_Y_77  : 2.6315794737%;
---borderRadius_reduced_X_77 : 15.78948%;
---borderRadius_reduced_Y_77 : 1.85185%;
-
---wd_global_78 : 75%;
---ht_global_78 : 475%;
---wd_reduced_global_78 : 50%;
---ht_reduced_global_78 : 450%;
---borderRadius_G_X_78  : 16.6666667%;
---borderRadius_G_Y_78  : 2.6315794737%;
---borderRadius_reduced_X_78 : 15.78948%;
---borderRadius_reduced_Y_78 : 1.85185%;
-
---wd_global_79 : 75%;
---ht_global_79 : 475%;
---wd_reduced_global_79 : 50%;
---ht_reduced_global_79 : 450%;
---borderRadius_G_X_79  : 16.6666667%;
---borderRadius_G_Y_79  : 2.6315794737%;
---borderRadius_reduced_X_79 : 15.78948%;
---borderRadius_reduced_Y_79 : 1.85185%;
-
---wd_global_80 : 75%;
---ht_global_80 : 475%;
---wd_reduced_global_80 : 50%;
---ht_reduced_global_80 : 450%;
---borderRadius_G_X_80  : 16.6666667%;
---borderRadius_G_Y_80  : 2.6315794737%;
---borderRadius_reduced_X_80 : 15.78948%;
---borderRadius_reduced_Y_80 : 1.85185%;
-
---wd_global_81 : 75%;
---ht_global_81 : 475%;
---wd_reduced_global_81 : 50%;
---ht_reduced_global_81 : 450%;
---borderRadius_G_X_81  : 16.6666667%;
---borderRadius_G_Y_81  : 2.6315794737%;
---borderRadius_reduced_X_81 : 15.78948%;
---borderRadius_reduced_Y_81 : 1.85185%;
-
---wd_global_82 : 75%;
---ht_global_82 : 475%;
---wd_reduced_global_82 : 50%;
---ht_reduced_global_82 : 450%;
---borderRadius_G_X_82  : 16.6666667%;
---borderRadius_G_Y_82  : 2.6315794737%;
---borderRadius_reduced_X_82 : 15.78948%;
---borderRadius_reduced_Y_82 : 1.85185%;
-
---wd_global_83 : 75%;
---ht_global_83 : 475%;
---wd_reduced_global_83 : 50%;
---ht_reduced_global_83 : 450%;
---borderRadius_G_X_83  : 16.6666667%;
---borderRadius_G_Y_83  : 2.6315794737%;
---borderRadius_reduced_X_83 : 15.78948%;
---borderRadius_reduced_Y_83 : 1.85185%;
-
---wd_global_84 : 75%;
---ht_global_84 : 475%;
---wd_reduced_global_84 : 50%;
---ht_reduced_global_84 : 450%;
---borderRadius_G_X_84  : 16.6666667%;
---borderRadius_G_Y_84  : 2.6315794737%;
---borderRadius_reduced_X_84 : 15.78948%;
---borderRadius_reduced_Y_84 : 1.85185%;
-
---wd_global_85 : 75%;
---ht_global_85 : 475%;
---wd_reduced_global_85 : 50%;
---ht_reduced_global_85 : 450%;
---borderRadius_G_X_85  : 16.6666667%;
---borderRadius_G_Y_85  : 2.6315794737%;
---borderRadius_reduced_X_85 : 15.78948%;
---borderRadius_reduced_Y_85 : 1.85185%;
-
---wd_global_86 : 75%;
---ht_global_86 : 475%;
---wd_reduced_global_86 : 50%;
---ht_reduced_global_86 : 450%;
---borderRadius_G_X_86  : 16.6666667%;
---borderRadius_G_Y_86  : 2.6315794737%;
---borderRadius_reduced_X_86 : 15.78948%;
---borderRadius_reduced_Y_86 : 1.85185%;
-
---wd_global_87 : 75%;
---ht_global_87 : 475%;
---wd_reduced_global_87 : 50%;
---ht_reduced_global_87 : 450%;
---borderRadius_G_X_87  : 16.6666667%;
---borderRadius_G_Y_87  : 2.6315794737%;
---borderRadius_reduced_X_87 : 15.78948%;
---borderRadius_reduced_Y_87 : 1.85185%;
-
---wd_global_88 : 75%;
---ht_global_88 : 475%;
---wd_reduced_global_88 : 50%;
---ht_reduced_global_88 : 450%;
---borderRadius_G_X_88  : 16.6666667%;
---borderRadius_G_Y_88  : 2.6315794737%;
---borderRadius_reduced_X_88 : 15.78948%;
---borderRadius_reduced_Y_88 : 1.85185%;
-
---wd_global_89 : 75%;
---ht_global_89 : 475%;
---wd_reduced_global_89 : 50%;
---ht_reduced_global_89 : 450%;
---borderRadius_G_X_89  : 16.6666667%;
---borderRadius_G_Y_89  : 2.6315794737%;
---borderRadius_reduced_X_89 : 15.78948%;
---borderRadius_reduced_Y_89 : 1.85185%;
-
---wd_global_90 : 75%;
---ht_global_90 : 475%;
---wd_reduced_global_90 : 50%;
---ht_reduced_global_90 : 450%;
---borderRadius_G_X_90  : 16.6666667%;
---borderRadius_G_Y_90  : 2.6315794737%;
---borderRadius_reduced_X_90 : 15.78948%;
---borderRadius_reduced_Y_90 : 1.85185%;
-
---wd_global_91 : 75%;
---ht_global_91 : 475%;
---wd_reduced_global_91 : 50%;
---ht_reduced_global_91 : 450%;
---borderRadius_G_X_91  : 16.6666667%;
---borderRadius_G_Y_91  : 2.6315794737%;
---borderRadius_reduced_X_91 : 15.78948%;
---borderRadius_reduced_Y_91 : 1.85185%;
-
---wd_global_92 : 75%;
---ht_global_92 : 475%;
---wd_reduced_global_92 : 50%;
---ht_reduced_global_92 : 450%;
---borderRadius_G_X_92  : 16.6666667%;
---borderRadius_G_Y_92  : 2.6315794737%;
---borderRadius_reduced_X_92 : 15.78948%;
---borderRadius_reduced_Y_92 : 1.85185%;
-
---wd_global_93 : 75%;
---ht_global_93 : 475%;
---wd_reduced_global_93 : 50%;
---ht_reduced_global_93 : 450%;
---borderRadius_G_X_93  : 16.6666667%;
---borderRadius_G_Y_93  : 2.6315794737%;
---borderRadius_reduced_X_93 : 15.78948%;
---borderRadius_reduced_Y_93 : 1.85185%;
-
---wd_global_94 : 75%;
---ht_global_94 : 475%;
---wd_reduced_global_94 : 50%;
---ht_reduced_global_94 : 450%;
---borderRadius_G_X_94  : 16.6666667%;
---borderRadius_G_Y_94  : 2.6315794737%;
---borderRadius_reduced_X_94 : 15.78948%;
---borderRadius_reduced_Y_94 : 1.85185%;
-
---wd_global_95 : 75%;
---ht_global_95 : 475%;
---wd_reduced_global_95 : 50%;
---ht_reduced_global_95 : 450%;
---borderRadius_G_X_95  : 16.6666667%;
---borderRadius_G_Y_95  : 2.6315794737%;
---borderRadius_reduced_X_95 : 15.78948%;
---borderRadius_reduced_Y_95 : 1.85185%;
-
---wd_global_96 : 75%;
---ht_global_96 : 475%;
---wd_reduced_global_96 : 50%;
---ht_reduced_global_96 : 450%;
---borderRadius_G_X_96  : 16.6666667%;
---borderRadius_G_Y_96  : 2.6315794737%;
---borderRadius_reduced_X_96 : 15.78948%;
---borderRadius_reduced_Y_96 : 1.85185%;
-
---wd_global_97 : 75%;
---ht_global_97 : 475%;
---wd_reduced_global_97 : 50%;
---ht_reduced_global_97 : 450%;
---borderRadius_G_X_97  : 16.6666667%;
---borderRadius_G_Y_97  : 2.6315794737%;
---borderRadius_reduced_X_97 : 15.78948%;
---borderRadius_reduced_Y_97 : 1.85185%;
-
---wd_global_98 : 75%;
---ht_global_98 : 475%;
---wd_reduced_global_98 : 50%;
---ht_reduced_global_98 : 450%;
---borderRadius_G_X_98  : 16.6666667%;
---borderRadius_G_Y_98  : 2.6315794737%;
---borderRadius_reduced_X_98 : 15.78948%;
---borderRadius_reduced_Y_98 : 1.85185%;
-
---wd_global_99 : 75%;
---ht_global_99 : 475%;
---wd_reduced_global_99 : 50%;
---ht_reduced_global_99 : 450%;
---borderRadius_G_X_99  : 16.6666667%;
---borderRadius_G_Y_99  : 2.6315794737%;
---borderRadius_reduced_X_99 : 15.78948%;
---borderRadius_reduced_Y_99 : 1.85185%;
-
---wd_global_100 : 75%;
---ht_global_100 : 475%;
---wd_reduced_global_100 : 50%;
---ht_reduced_global_100 : 450%;
---borderRadius_G_X_100  : 16.6666667%;
---borderRadius_G_Y_100  : 2.6315794737%;
---borderRadius_reduced_X_100 : 15.78948%;
---borderRadius_reduced_Y_100 : 1.85185%;
-
-
+     --widthD: min((100vh - 60px)/2, 100vw);
+     --heightD: min((100vh - 60px)/2, 100vw);
+     --widthX: 2px;
+     --heightX: 2px;
+     --bordRadY: 10;
+     --small_ded : 0px;
+     --fullScreenVar: 160px;
+     --borderRadius_G_X : 16.6666667%;
+     --borderRadius_G_Y : 2.6315794737%;
+     --borderRadius_reduced_X : 16.6666667%;
+     --borderRadius_reduced_Y : 1.85185%;
+     --Opac_1 : 1;
+     --Opac_0 : 0;
+     --bordRadiusGlobal: 2.6315794737%;
+     --ht_global: 475%;
+     --ht_reduced_global: 450%;
+     --wd_global: 75%;
+     --wd_reduced_global : 50%;
+     --mar_1: 25%;
+     --mar_2: 25%;
+     --mar_3: 25%;
+     --mar_4: 25%;
+     --mar_5: 25%;
+     --mar_6: 25%;
+     --mar_7: 25%;
+     --mar_8: 25%;
+     --mar_9: 25%;
+     --mar_10: 25%;
+     --mar_11: 25%;
+     --mar_12: 25%;
+     --mar_13: 25%;
+     --mar_14: 25%;
+     --mar_15: 25%;
+     --mar_16: 25%;
+     --mar_17: 25%;
+     --mar_18: 25%;
+     --mar_19: 25%;
+     --mar_20: 25%;
+     --mar_21: 25%;
+     --mar_22: 25%;
+     --mar_23: 25%;
+     --mar_24: 25%;
+     --mar_25: 25%;
+     --mar_26: 25%;
+     --mar_27: 25%;
+     --mar_28: 25%;
+     --mar_29: 25%;
+     --mar_30: 25%;
+     --mar_31: 25%;
+     --mar_32: 25%;
+     --mar_33: 25%;
+     --mar_34: 25%;
+     --mar_35: 25%;
+     --mar_36: 25%;
+     --mar_37: 25%;
+     --mar_38: 25%;
+     --mar_39: 25%;
+     --mar_40: 25%;
+     --mar_41: 25%;
+     --mar_42: 25%;
+     --mar_43: 25%;
+     --mar_44: 25%;
+     --mar_45: 25%;
+     --mar_46: 25%;
+     --mar_47: 25%;
+     --mar_48: 25%;
+     --mar_49: 25%;
+     --mar_50: 25%;
+     --mar_51: 25%;
+     --mar_52: 25%;
+     --mar_53: 25%;
+     --mar_54: 25%;
+     --mar_55: 25%;
+     --mar_56: 25%;
+     --mar_57: 25%;
+     --mar_58: 25%;
+     --mar_59: 25%;
+     --mar_60: 25%;
+     --mar_61: 12.5%;
+     --mar_62: 12.5%;
+     --mar_63: 12.5%;
+     --mar_64: 12.5%;
+     --mar_65: 12.5%;
+     --mar_66: 12.5%;
+     --mar_67: 12.5%;
+     --mar_68: 12.5%;
+     --mar_69: 12.5%;
+     --mar_70: 12.5%;
+     --mar_71: 12.5%;
+     --mar_72: 12.5%;
+     --mar_73: 12.5%;
+     --mar_74: 12.5%;
+     --mar_75: 12.5%;
+     --mar_76: 12.5%;
+     --mar_77: 12.5%;
+     --mar_78: 12.5%;
+     --mar_79: 12.5%;
+     --mar_80: 12.5%;
+     --mar_81: 12.5%;
+     --mar_82: 12.5%;
+     --mar_83: 12.5%;
+     --mar_84: 12.5%;
+     --mar_85: 12.5%;
+     --mar_86: 12.5%;
+     --mar_87: 12.5%;
+     --mar_88: 12.5%;
+     --mar_89: 12.5%;
+     --mar_90: 12.5%;
+     --mar_91: 12.5%;
+     --mar_92: 12.5%;
+     --mar_93: 12.5%;
+     --mar_94: 12.5%;
+     --mar_95: 12.5%;
+     --mar_96: 12.5%;
+     --mar_97: 12.5%;
+     --mar_98: 12.5%;
+     --mar_99: 12.5%;
+     --mar_100: 12.5%;
+     --wd_global_1 : 75%;
+     --ht_global_1 : 475%;
+     --wd_reduced_global_1 : 50%;
+     --ht_reduced_global_1 : 450%;
+     --borderRadius_G_X_1 : 16.6666667%;
+     --borderRadius_G_Y_1 : 2.6315794737%;
+     --borderRadius_reduced_X_1 : 15.78948%;
+     --borderRadius_reduced_Y_1 : 1.85185%;
+     --wd_global_2 : 75%;
+     --ht_global_2 : 475%;
+     --wd_reduced_global_2 : 50%;
+     --ht_reduced_global_2 : 450%;
+     --borderRadius_G_X_2 : 16.6666667%;
+     --borderRadius_G_Y_2 : 2.6315794737%;
+     --borderRadius_reduced_X_2 : 15.78948%;
+     --borderRadius_reduced_Y_2 : 1.85185%;
+     --wd_global_3 : 75%;
+     --ht_global_3 : 475%;
+     --wd_reduced_global_3 : 50%;
+     --ht_reduced_global_3 : 450%;
+     --borderRadius_G_X_3 : 16.6666667%;
+     --borderRadius_G_Y_3 : 2.6315794737%;
+     --borderRadius_reduced_X_3 : 15.78948%;
+     --borderRadius_reduced_Y_3 : 1.85185%;
+     --wd_global_4 : 75%;
+     --ht_global_4 : 475%;
+     --wd_reduced_global_4 : 50%;
+     --ht_reduced_global_4 : 450%;
+     --borderRadius_G_X_4 : 16.6666667%;
+     --borderRadius_G_Y_4 : 2.6315794737%;
+     --borderRadius_reduced_X_4 : 15.78948%;
+     --borderRadius_reduced_Y_4 : 1.85185%;
+     --wd_global_5 : 75%;
+     --ht_global_5 : 475%;
+     --wd_reduced_global_5 : 50%;
+     --ht_reduced_global_5 : 450%;
+     --borderRadius_G_X_5 : 16.6666667%;
+     --borderRadius_G_Y_5 : 2.6315794737%;
+     --borderRadius_reduced_X_5 : 15.78948%;
+     --borderRadius_reduced_Y_5 : 1.85185%;
+     --wd_global_6 : 75%;
+     --ht_global_6 : 475%;
+     --wd_reduced_global_6 : 50%;
+     --ht_reduced_global_6 : 450%;
+     --borderRadius_G_X_6 : 16.6666667%;
+     --borderRadius_G_Y_6 : 2.6315794737%;
+     --borderRadius_reduced_X_6 : 15.78948%;
+     --borderRadius_reduced_Y_6 : 1.85185%;
+     --wd_global_7 : 75%;
+     --ht_global_7 : 475%;
+     --wd_reduced_global_7 : 50%;
+     --ht_reduced_global_7 : 450%;
+     --borderRadius_G_X_7 : 16.6666667%;
+     --borderRadius_G_Y_7 : 2.6315794737%;
+     --borderRadius_reduced_X_7 : 15.78948%;
+     --borderRadius_reduced_Y_7 : 1.85185%;
+     --wd_global_8 : 75%;
+     --ht_global_8 : 475%;
+     --wd_reduced_global_8 : 50%;
+     --ht_reduced_global_8 : 450%;
+     --borderRadius_G_X_8 : 16.6666667%;
+     --borderRadius_G_Y_8 : 2.6315794737%;
+     --borderRadius_reduced_X_8 : 15.78948%;
+     --borderRadius_reduced_Y_8 : 1.85185%;
+     --wd_global_9 : 75%;
+     --ht_global_9 : 475%;
+     --wd_reduced_global_9 : 50%;
+     --ht_reduced_global_9 : 450%;
+     --borderRadius_G_X_9 : 16.6666667%;
+     --borderRadius_G_Y_9 : 2.6315794737%;
+     --borderRadius_reduced_X_9 : 15.78948%;
+     --borderRadius_reduced_Y_9 : 1.85185%;
+     --wd_global_10 : 75%;
+     --ht_global_10 : 475%;
+     --wd_reduced_global_10 : 50%;
+     --ht_reduced_global_10 : 450%;
+     --borderRadius_G_X_10 : 16.6666667%;
+     --borderRadius_G_Y_10 : 2.6315794737%;
+     --borderRadius_reduced_X_10 : 15.78948%;
+     --borderRadius_reduced_Y_10 : 1.85185%;
+     --wd_global_11 : 75%;
+     --ht_global_11 : 475%;
+     --wd_reduced_global_11 : 50%;
+     --ht_reduced_global_11 : 450%;
+     --borderRadius_G_X_11 : 16.6666667%;
+     --borderRadius_G_Y_11 : 2.6315794737%;
+     --borderRadius_reduced_X_11 : 15.78948%;
+     --borderRadius_reduced_Y_11 : 1.85185%;
+     --wd_global_12 : 75%;
+     --ht_global_12 : 475%;
+     --wd_reduced_global_12 : 50%;
+     --ht_reduced_global_12 : 450%;
+     --borderRadius_G_X_12 : 16.6666667%;
+     --borderRadius_G_Y_12 : 2.6315794737%;
+     --borderRadius_reduced_X_12 : 15.78948%;
+     --borderRadius_reduced_Y_12 : 1.85185%;
+     --wd_global_13 : 75%;
+     --ht_global_13 : 475%;
+     --wd_reduced_global_13 : 50%;
+     --ht_reduced_global_13 : 450%;
+     --borderRadius_G_X_13 : 16.6666667%;
+     --borderRadius_G_Y_13 : 2.6315794737%;
+     --borderRadius_reduced_X_13 : 15.78948%;
+     --borderRadius_reduced_Y_13 : 1.85185%;
+     --wd_global_14 : 75%;
+     --ht_global_14 : 475%;
+     --wd_reduced_global_14 : 50%;
+     --ht_reduced_global_14 : 450%;
+     --borderRadius_G_X_14 : 16.6666667%;
+     --borderRadius_G_Y_14 : 2.6315794737%;
+     --borderRadius_reduced_X_14 : 15.78948%;
+     --borderRadius_reduced_Y_14 : 1.85185%;
+     --wd_global_15 : 75%;
+     --ht_global_15 : 475%;
+     --wd_reduced_global_15 : 50%;
+     --ht_reduced_global_15 : 450%;
+     --borderRadius_G_X_15 : 16.6666667%;
+     --borderRadius_G_Y_15 : 2.6315794737%;
+     --borderRadius_reduced_X_15 : 15.78948%;
+     --borderRadius_reduced_Y_15 : 1.85185%;
+     --wd_global_16 : 75%;
+     --ht_global_16 : 475%;
+     --wd_reduced_global_16 : 50%;
+     --ht_reduced_global_16 : 450%;
+     --borderRadius_G_X_16 : 16.6666667%;
+     --borderRadius_G_Y_16 : 2.6315794737%;
+     --borderRadius_reduced_X_16 : 15.78948%;
+     --borderRadius_reduced_Y_16 : 1.85185%;
+     --wd_global_17 : 75%;
+     --ht_global_17 : 475%;
+     --wd_reduced_global_17 : 50%;
+     --ht_reduced_global_17 : 450%;
+     --borderRadius_G_X_17 : 16.6666667%;
+     --borderRadius_G_Y_17 : 2.6315794737%;
+     --borderRadius_reduced_X_17 : 15.78948%;
+     --borderRadius_reduced_Y_17 : 1.85185%;
+     --wd_global_18 : 75%;
+     --ht_global_18 : 475%;
+     --wd_reduced_global_18 : 50%;
+     --ht_reduced_global_18 : 450%;
+     --borderRadius_G_X_18 : 16.6666667%;
+     --borderRadius_G_Y_18 : 2.6315794737%;
+     --borderRadius_reduced_X_18 : 15.78948%;
+     --borderRadius_reduced_Y_18 : 1.85185%;
+     --wd_global_19 : 75%;
+     --ht_global_19 : 475%;
+     --wd_reduced_global_19 : 50%;
+     --ht_reduced_global_19 : 450%;
+     --borderRadius_G_X_19 : 16.6666667%;
+     --borderRadius_G_Y_19 : 2.6315794737%;
+     --borderRadius_reduced_X_19 : 15.78948%;
+     --borderRadius_reduced_Y_19 : 1.85185%;
+     --wd_global_20 : 75%;
+     --ht_global_20 : 475%;
+     --wd_reduced_global_20 : 50%;
+     --ht_reduced_global_20 : 450%;
+     --borderRadius_G_X_20 : 16.6666667%;
+     --borderRadius_G_Y_20 : 2.6315794737%;
+     --borderRadius_reduced_X_20 : 15.78948%;
+     --borderRadius_reduced_Y_20 : 1.85185%;
+     --wd_global_21 : 75%;
+     --ht_global_21 : 475%;
+     --wd_reduced_global_21 : 50%;
+     --ht_reduced_global_21 : 450%;
+     --borderRadius_G_X_21 : 16.6666667%;
+     --borderRadius_G_Y_21 : 2.6315794737%;
+     --borderRadius_reduced_X_21 : 15.78948%;
+     --borderRadius_reduced_Y_21 : 1.85185%;
+     --wd_global_22 : 75%;
+     --ht_global_22 : 475%;
+     --wd_reduced_global_22 : 50%;
+     --ht_reduced_global_22 : 450%;
+     --borderRadius_G_X_22 : 16.6666667%;
+     --borderRadius_G_Y_22 : 2.6315794737%;
+     --borderRadius_reduced_X_22 : 15.78948%;
+     --borderRadius_reduced_Y_22 : 1.85185%;
+     --wd_global_23 : 75%;
+     --ht_global_23 : 475%;
+     --wd_reduced_global_23 : 50%;
+     --ht_reduced_global_23 : 450%;
+     --borderRadius_G_X_23 : 16.6666667%;
+     --borderRadius_G_Y_23 : 2.6315794737%;
+     --borderRadius_reduced_X_23 : 15.78948%;
+     --borderRadius_reduced_Y_23 : 1.85185%;
+     --wd_global_24 : 75%;
+     --ht_global_24 : 475%;
+     --wd_reduced_global_24 : 50%;
+     --ht_reduced_global_24 : 450%;
+     --borderRadius_G_X_24 : 16.6666667%;
+     --borderRadius_G_Y_24 : 2.6315794737%;
+     --borderRadius_reduced_X_24 : 15.78948%;
+     --borderRadius_reduced_Y_24 : 1.85185%;
+     --wd_global_25 : 75%;
+     --ht_global_25 : 475%;
+     --wd_reduced_global_25 : 50%;
+     --ht_reduced_global_25 : 450%;
+     --borderRadius_G_X_25 : 16.6666667%;
+     --borderRadius_G_Y_25 : 2.6315794737%;
+     --borderRadius_reduced_X_25 : 15.78948%;
+     --borderRadius_reduced_Y_25 : 1.85185%;
+     --wd_global_26 : 75%;
+     --ht_global_26 : 475%;
+     --wd_reduced_global_26 : 50%;
+     --ht_reduced_global_26 : 450%;
+     --borderRadius_G_X_26 : 16.6666667%;
+     --borderRadius_G_Y_26 : 2.6315794737%;
+     --borderRadius_reduced_X_26 : 15.78948%;
+     --borderRadius_reduced_Y_26 : 1.85185%;
+     --wd_global_27 : 75%;
+     --ht_global_27 : 475%;
+     --wd_reduced_global_27 : 50%;
+     --ht_reduced_global_27 : 450%;
+     --borderRadius_G_X_27 : 16.6666667%;
+     --borderRadius_G_Y_27 : 2.6315794737%;
+     --borderRadius_reduced_X_27 : 15.78948%;
+     --borderRadius_reduced_Y_27 : 1.85185%;
+     --wd_global_28 : 75%;
+     --ht_global_28 : 475%;
+     --wd_reduced_global_28 : 50%;
+     --ht_reduced_global_28 : 450%;
+     --borderRadius_G_X_28 : 16.6666667%;
+     --borderRadius_G_Y_28 : 2.6315794737%;
+     --borderRadius_reduced_X_28 : 15.78948%;
+     --borderRadius_reduced_Y_28 : 1.85185%;
+     --wd_global_29 : 75%;
+     --ht_global_29 : 475%;
+     --wd_reduced_global_29 : 50%;
+     --ht_reduced_global_29 : 450%;
+     --borderRadius_G_X_29 : 16.6666667%;
+     --borderRadius_G_Y_29 : 2.6315794737%;
+     --borderRadius_reduced_X_29 : 15.78948%;
+     --borderRadius_reduced_Y_29 : 1.85185%;
+     --wd_global_30 : 75%;
+     --ht_global_30 : 475%;
+     --wd_reduced_global_30 : 50%;
+     --ht_reduced_global_30 : 450%;
+     --borderRadius_G_X_30 : 16.6666667%;
+     --borderRadius_G_Y_30 : 2.6315794737%;
+     --borderRadius_reduced_X_30 : 15.78948%;
+     --borderRadius_reduced_Y_30 : 1.85185%;
+     --wd_global_31 : 75%;
+     --ht_global_31 : 475%;
+     --wd_reduced_global_31 : 50%;
+     --ht_reduced_global_31 : 450%;
+     --borderRadius_G_X_31 : 16.6666667%;
+     --borderRadius_G_Y_31 : 2.6315794737%;
+     --borderRadius_reduced_X_31 : 15.78948%;
+     --borderRadius_reduced_Y_31 : 1.85185%;
+     --wd_global_32 : 75%;
+     --ht_global_32 : 475%;
+     --wd_reduced_global_32 : 50%;
+     --ht_reduced_global_32 : 450%;
+     --borderRadius_G_X_32 : 16.6666667%;
+     --borderRadius_G_Y_32 : 2.6315794737%;
+     --borderRadius_reduced_X_32 : 15.78948%;
+     --borderRadius_reduced_Y_32 : 1.85185%;
+     --wd_global_33 : 75%;
+     --ht_global_33 : 475%;
+     --wd_reduced_global_33 : 50%;
+     --ht_reduced_global_33 : 450%;
+     --borderRadius_G_X_33 : 16.6666667%;
+     --borderRadius_G_Y_33 : 2.6315794737%;
+     --borderRadius_reduced_X_33 : 15.78948%;
+     --borderRadius_reduced_Y_33 : 1.85185%;
+     --wd_global_34 : 75%;
+     --ht_global_34 : 475%;
+     --wd_reduced_global_34 : 50%;
+     --ht_reduced_global_34 : 450%;
+     --borderRadius_G_X_34 : 16.6666667%;
+     --borderRadius_G_Y_34 : 2.6315794737%;
+     --borderRadius_reduced_X_34 : 15.78948%;
+     --borderRadius_reduced_Y_34 : 1.85185%;
+     --wd_global_35 : 75%;
+     --ht_global_35 : 475%;
+     --wd_reduced_global_35 : 50%;
+     --ht_reduced_global_35 : 450%;
+     --borderRadius_G_X_35 : 16.6666667%;
+     --borderRadius_G_Y_35 : 2.6315794737%;
+     --borderRadius_reduced_X_35 : 15.78948%;
+     --borderRadius_reduced_Y_35 : 1.85185%;
+     --wd_global_36 : 75%;
+     --ht_global_36 : 475%;
+     --wd_reduced_global_36 : 50%;
+     --ht_reduced_global_36 : 450%;
+     --borderRadius_G_X_36 : 16.6666667%;
+     --borderRadius_G_Y_36 : 2.6315794737%;
+     --borderRadius_reduced_X_36 : 15.78948%;
+     --borderRadius_reduced_Y_36 : 1.85185%;
+     --wd_global_37 : 75%;
+     --ht_global_37 : 475%;
+     --wd_reduced_global_37 : 50%;
+     --ht_reduced_global_37 : 450%;
+     --borderRadius_G_X_37 : 16.6666667%;
+     --borderRadius_G_Y_37 : 2.6315794737%;
+     --borderRadius_reduced_X_37 : 15.78948%;
+     --borderRadius_reduced_Y_37 : 1.85185%;
+     --wd_global_38 : 75%;
+     --ht_global_38 : 475%;
+     --wd_reduced_global_38 : 50%;
+     --ht_reduced_global_38 : 450%;
+     --borderRadius_G_X_38 : 16.6666667%;
+     --borderRadius_G_Y_38 : 2.6315794737%;
+     --borderRadius_reduced_X_38 : 15.78948%;
+     --borderRadius_reduced_Y_38 : 1.85185%;
+     --wd_global_39 : 75%;
+     --ht_global_39 : 475%;
+     --wd_reduced_global_39 : 50%;
+     --ht_reduced_global_39 : 450%;
+     --borderRadius_G_X_39 : 16.6666667%;
+     --borderRadius_G_Y_39 : 2.6315794737%;
+     --borderRadius_reduced_X_39 : 15.78948%;
+     --borderRadius_reduced_Y_39 : 1.85185%;
+     --wd_global_40 : 75%;
+     --ht_global_40 : 475%;
+     --wd_reduced_global_40 : 50%;
+     --ht_reduced_global_40 : 450%;
+     --borderRadius_G_X_40 : 16.6666667%;
+     --borderRadius_G_Y_40 : 2.6315794737%;
+     --borderRadius_reduced_X_40 : 15.78948%;
+     --borderRadius_reduced_Y_40 : 1.85185%;
+     --wd_global_41 : 75%;
+     --ht_global_41 : 475%;
+     --wd_reduced_global_41 : 50%;
+     --ht_reduced_global_41 : 450%;
+     --borderRadius_G_X_41 : 16.6666667%;
+     --borderRadius_G_Y_41 : 2.6315794737%;
+     --borderRadius_reduced_X_41 : 15.78948%;
+     --borderRadius_reduced_Y_41 : 1.85185%;
+     --wd_global_42 : 75%;
+     --ht_global_42 : 475%;
+     --wd_reduced_global_42 : 50%;
+     --ht_reduced_global_42 : 450%;
+     --borderRadius_G_X_42 : 16.6666667%;
+     --borderRadius_G_Y_42 : 2.6315794737%;
+     --borderRadius_reduced_X_42 : 15.78948%;
+     --borderRadius_reduced_Y_42 : 1.85185%;
+     --wd_global_43 : 75%;
+     --ht_global_43 : 475%;
+     --wd_reduced_global_43 : 50%;
+     --ht_reduced_global_43 : 450%;
+     --borderRadius_G_X_43 : 16.6666667%;
+     --borderRadius_G_Y_43 : 2.6315794737%;
+     --borderRadius_reduced_X_43 : 15.78948%;
+     --borderRadius_reduced_Y_43 : 1.85185%;
+     --wd_global_44 : 75%;
+     --ht_global_44 : 475%;
+     --wd_reduced_global_44 : 50%;
+     --ht_reduced_global_44 : 450%;
+     --borderRadius_G_X_44 : 16.6666667%;
+     --borderRadius_G_Y_44 : 2.6315794737%;
+     --borderRadius_reduced_X_44 : 15.78948%;
+     --borderRadius_reduced_Y_44 : 1.85185%;
+     --wd_global_45 : 75%;
+     --ht_global_45 : 475%;
+     --wd_reduced_global_45 : 50%;
+     --ht_reduced_global_45 : 450%;
+     --borderRadius_G_X_45 : 16.6666667%;
+     --borderRadius_G_Y_45 : 2.6315794737%;
+     --borderRadius_reduced_X_45 : 15.78948%;
+     --borderRadius_reduced_Y_45 : 1.85185%;
+     --wd_global_46 : 75%;
+     --ht_global_46 : 475%;
+     --wd_reduced_global_46 : 50%;
+     --ht_reduced_global_46 : 450%;
+     --borderRadius_G_X_46 : 16.6666667%;
+     --borderRadius_G_Y_46 : 2.6315794737%;
+     --borderRadius_reduced_X_46 : 15.78948%;
+     --borderRadius_reduced_Y_46 : 1.85185%;
+     --wd_global_47 : 75%;
+     --ht_global_47 : 475%;
+     --wd_reduced_global_47 : 50%;
+     --ht_reduced_global_47 : 450%;
+     --borderRadius_G_X_47 : 16.6666667%;
+     --borderRadius_G_Y_47 : 2.6315794737%;
+     --borderRadius_reduced_X_47 : 15.78948%;
+     --borderRadius_reduced_Y_47 : 1.85185%;
+     --wd_global_48 : 75%;
+     --ht_global_48 : 475%;
+     --wd_reduced_global_48 : 50%;
+     --ht_reduced_global_48 : 450%;
+     --borderRadius_G_X_48 : 16.6666667%;
+     --borderRadius_G_Y_48 : 2.6315794737%;
+     --borderRadius_reduced_X_48 : 15.78948%;
+     --borderRadius_reduced_Y_48 : 1.85185%;
+     --wd_global_49 : 75%;
+     --ht_global_49 : 475%;
+     --wd_reduced_global_49 : 50%;
+     --ht_reduced_global_49 : 450%;
+     --borderRadius_G_X_49 : 16.6666667%;
+     --borderRadius_G_Y_49 : 2.6315794737%;
+     --borderRadius_reduced_X_49 : 15.78948%;
+     --borderRadius_reduced_Y_49 : 1.85185%;
+     --wd_global_50 : 75%;
+     --ht_global_50 : 475%;
+     --wd_reduced_global_50 : 50%;
+     --ht_reduced_global_50 : 450%;
+     --borderRadius_G_X_50 : 16.6666667%;
+     --borderRadius_G_Y_50 : 2.6315794737%;
+     --borderRadius_reduced_X_50 : 15.78948%;
+     --borderRadius_reduced_Y_50 : 1.85185%;
+     --wd_global_51 : 75%;
+     --ht_global_51 : 475%;
+     --wd_reduced_global_51 : 50%;
+     --ht_reduced_global_51 : 450%;
+     --borderRadius_G_X_51 : 16.6666667%;
+     --borderRadius_G_Y_51 : 2.6315794737%;
+     --borderRadius_reduced_X_51 : 15.78948%;
+     --borderRadius_reduced_Y_51 : 1.85185%;
+     --wd_global_52 : 75%;
+     --ht_global_52 : 475%;
+     --wd_reduced_global_52 : 50%;
+     --ht_reduced_global_52 : 450%;
+     --borderRadius_G_X_52 : 16.6666667%;
+     --borderRadius_G_Y_52 : 2.6315794737%;
+     --borderRadius_reduced_X_52 : 15.78948%;
+     --borderRadius_reduced_Y_52 : 1.85185%;
+     --wd_global_53 : 75%;
+     --ht_global_53 : 475%;
+     --wd_reduced_global_53 : 50%;
+     --ht_reduced_global_53 : 450%;
+     --borderRadius_G_X_53 : 16.6666667%;
+     --borderRadius_G_Y_53 : 2.6315794737%;
+     --borderRadius_reduced_X_53 : 15.78948%;
+     --borderRadius_reduced_Y_53 : 1.85185%;
+     --wd_global_54 : 75%;
+     --ht_global_54 : 475%;
+     --wd_reduced_global_54 : 50%;
+     --ht_reduced_global_54 : 450%;
+     --borderRadius_G_X_54 : 16.6666667%;
+     --borderRadius_G_Y_54 : 2.6315794737%;
+     --borderRadius_reduced_X_54 : 15.78948%;
+     --borderRadius_reduced_Y_54 : 1.85185%;
+     --wd_global_55 : 75%;
+     --ht_global_55 : 475%;
+     --wd_reduced_global_55 : 50%;
+     --ht_reduced_global_55 : 450%;
+     --borderRadius_G_X_55 : 16.6666667%;
+     --borderRadius_G_Y_55 : 2.6315794737%;
+     --borderRadius_reduced_X_55 : 15.78948%;
+     --borderRadius_reduced_Y_55 : 1.85185%;
+     --wd_global_56 : 75%;
+     --ht_global_56 : 475%;
+     --wd_reduced_global_56 : 50%;
+     --ht_reduced_global_56 : 450%;
+     --borderRadius_G_X_56 : 16.6666667%;
+     --borderRadius_G_Y_56 : 2.6315794737%;
+     --borderRadius_reduced_X_56 : 15.78948%;
+     --borderRadius_reduced_Y_56 : 1.85185%;
+     --wd_global_57 : 75%;
+     --ht_global_57 : 475%;
+     --wd_reduced_global_57 : 50%;
+     --ht_reduced_global_57 : 450%;
+     --borderRadius_G_X_57 : 16.6666667%;
+     --borderRadius_G_Y_57 : 2.6315794737%;
+     --borderRadius_reduced_X_57 : 15.78948%;
+     --borderRadius_reduced_Y_57 : 1.85185%;
+     --wd_global_58 : 75%;
+     --ht_global_58 : 475%;
+     --wd_reduced_global_58 : 50%;
+     --ht_reduced_global_58 : 450%;
+     --borderRadius_G_X_58 : 16.6666667%;
+     --borderRadius_G_Y_58 : 2.6315794737%;
+     --borderRadius_reduced_X_58 : 15.78948%;
+     --borderRadius_reduced_Y_58 : 1.85185%;
+     --wd_global_59 : 75%;
+     --ht_global_59 : 475%;
+     --wd_reduced_global_59 : 50%;
+     --ht_reduced_global_59 : 450%;
+     --borderRadius_G_X_59 : 16.6666667%;
+     --borderRadius_G_Y_59 : 2.6315794737%;
+     --borderRadius_reduced_X_59 : 15.78948%;
+     --borderRadius_reduced_Y_59 : 1.85185%;
+     --wd_global_60 : 75%;
+     --ht_global_60 : 475%;
+     --wd_reduced_global_60 : 50%;
+     --ht_reduced_global_60 : 450%;
+     --borderRadius_G_X_60 : 16.6666667%;
+     --borderRadius_G_Y_60 : 2.6315794737%;
+     --borderRadius_reduced_X_60 : 15.78948%;
+     --borderRadius_reduced_Y_60 : 1.85185%;
+     --wd_global_61 : 75%;
+     --ht_global_61 : 475%;
+     --wd_reduced_global_61 : 50%;
+     --ht_reduced_global_61 : 450%;
+     --borderRadius_G_X_61 : 16.6666667%;
+     --borderRadius_G_Y_61 : 2.6315794737%;
+     --borderRadius_reduced_X_61 : 15.78948%;
+     --borderRadius_reduced_Y_61 : 1.85185%;
+     --wd_global_62 : 75%;
+     --ht_global_62 : 475%;
+     --wd_reduced_global_62 : 50%;
+     --ht_reduced_global_62 : 450%;
+     --borderRadius_G_X_62 : 16.6666667%;
+     --borderRadius_G_Y_62 : 2.6315794737%;
+     --borderRadius_reduced_X_62 : 15.78948%;
+     --borderRadius_reduced_Y_62 : 1.85185%;
+     --wd_global_63 : 75%;
+     --ht_global_63 : 475%;
+     --wd_reduced_global_63 : 50%;
+     --ht_reduced_global_63 : 450%;
+     --borderRadius_G_X_63 : 16.6666667%;
+     --borderRadius_G_Y_63 : 2.6315794737%;
+     --borderRadius_reduced_X_63 : 15.78948%;
+     --borderRadius_reduced_Y_63 : 1.85185%;
+     --wd_global_64 : 75%;
+     --ht_global_64 : 475%;
+     --wd_reduced_global_64 : 50%;
+     --ht_reduced_global_64 : 450%;
+     --borderRadius_G_X_64 : 16.6666667%;
+     --borderRadius_G_Y_64 : 2.6315794737%;
+     --borderRadius_reduced_X_64 : 15.78948%;
+     --borderRadius_reduced_Y_64 : 1.85185%;
+     --wd_global_65 : 75%;
+     --ht_global_65 : 475%;
+     --wd_reduced_global_65 : 50%;
+     --ht_reduced_global_65 : 450%;
+     --borderRadius_G_X_65 : 16.6666667%;
+     --borderRadius_G_Y_65 : 2.6315794737%;
+     --borderRadius_reduced_X_65 : 15.78948%;
+     --borderRadius_reduced_Y_65 : 1.85185%;
+     --wd_global_66 : 75%;
+     --ht_global_66 : 475%;
+     --wd_reduced_global_66 : 50%;
+     --ht_reduced_global_66 : 450%;
+     --borderRadius_G_X_66 : 16.6666667%;
+     --borderRadius_G_Y_66 : 2.6315794737%;
+     --borderRadius_reduced_X_66 : 15.78948%;
+     --borderRadius_reduced_Y_66 : 1.85185%;
+     --wd_global_67 : 75%;
+     --ht_global_67 : 475%;
+     --wd_reduced_global_67 : 50%;
+     --ht_reduced_global_67 : 450%;
+     --borderRadius_G_X_67 : 16.6666667%;
+     --borderRadius_G_Y_67 : 2.6315794737%;
+     --borderRadius_reduced_X_67 : 15.78948%;
+     --borderRadius_reduced_Y_67 : 1.85185%;
+     --wd_global_68 : 75%;
+     --ht_global_68 : 475%;
+     --wd_reduced_global_68 : 50%;
+     --ht_reduced_global_68 : 450%;
+     --borderRadius_G_X_68 : 16.6666667%;
+     --borderRadius_G_Y_68 : 2.6315794737%;
+     --borderRadius_reduced_X_68 : 15.78948%;
+     --borderRadius_reduced_Y_68 : 1.85185%;
+     --wd_global_69 : 75%;
+     --ht_global_69 : 475%;
+     --wd_reduced_global_69 : 50%;
+     --ht_reduced_global_69 : 450%;
+     --borderRadius_G_X_69 : 16.6666667%;
+     --borderRadius_G_Y_69 : 2.6315794737%;
+     --borderRadius_reduced_X_69 : 15.78948%;
+     --borderRadius_reduced_Y_69 : 1.85185%;
+     --wd_global_70 : 75%;
+     --ht_global_70 : 475%;
+     --wd_reduced_global_70 : 50%;
+     --ht_reduced_global_70 : 450%;
+     --borderRadius_G_X_70 : 16.6666667%;
+     --borderRadius_G_Y_70 : 2.6315794737%;
+     --borderRadius_reduced_X_70 : 15.78948%;
+     --borderRadius_reduced_Y_70 : 1.85185%;
+     --wd_global_71 : 75%;
+     --ht_global_71 : 475%;
+     --wd_reduced_global_71 : 50%;
+     --ht_reduced_global_71 : 450%;
+     --borderRadius_G_X_71 : 16.6666667%;
+     --borderRadius_G_Y_71 : 2.6315794737%;
+     --borderRadius_reduced_X_71 : 15.78948%;
+     --borderRadius_reduced_Y_71 : 1.85185%;
+     --wd_global_72 : 75%;
+     --ht_global_72 : 475%;
+     --wd_reduced_global_72 : 50%;
+     --ht_reduced_global_72 : 450%;
+     --borderRadius_G_X_72 : 16.6666667%;
+     --borderRadius_G_Y_72 : 2.6315794737%;
+     --borderRadius_reduced_X_72 : 15.78948%;
+     --borderRadius_reduced_Y_72 : 1.85185%;
+     --wd_global_73 : 75%;
+     --ht_global_73 : 475%;
+     --wd_reduced_global_73 : 50%;
+     --ht_reduced_global_73 : 450%;
+     --borderRadius_G_X_73 : 16.6666667%;
+     --borderRadius_G_Y_73 : 2.6315794737%;
+     --borderRadius_reduced_X_73 : 15.78948%;
+     --borderRadius_reduced_Y_73 : 1.85185%;
+     --wd_global_74 : 75%;
+     --ht_global_74 : 475%;
+     --wd_reduced_global_74 : 50%;
+     --ht_reduced_global_74 : 450%;
+     --borderRadius_G_X_74 : 16.6666667%;
+     --borderRadius_G_Y_74 : 2.6315794737%;
+     --borderRadius_reduced_X_74 : 15.78948%;
+     --borderRadius_reduced_Y_74 : 1.85185%;
+     --wd_global_75 : 75%;
+     --ht_global_75 : 475%;
+     --wd_reduced_global_75 : 50%;
+     --ht_reduced_global_75 : 450%;
+     --borderRadius_G_X_75 : 16.6666667%;
+     --borderRadius_G_Y_75 : 2.6315794737%;
+     --borderRadius_reduced_X_75 : 15.78948%;
+     --borderRadius_reduced_Y_75 : 1.85185%;
+     --wd_global_76 : 75%;
+     --ht_global_76 : 475%;
+     --wd_reduced_global_76 : 50%;
+     --ht_reduced_global_76 : 450%;
+     --borderRadius_G_X_76 : 16.6666667%;
+     --borderRadius_G_Y_76 : 2.6315794737%;
+     --borderRadius_reduced_X_76 : 15.78948%;
+     --borderRadius_reduced_Y_76 : 1.85185%;
+     --wd_global_77 : 75%;
+     --ht_global_77 : 475%;
+     --wd_reduced_global_77 : 50%;
+     --ht_reduced_global_77 : 450%;
+     --borderRadius_G_X_77 : 16.6666667%;
+     --borderRadius_G_Y_77 : 2.6315794737%;
+     --borderRadius_reduced_X_77 : 15.78948%;
+     --borderRadius_reduced_Y_77 : 1.85185%;
+     --wd_global_78 : 75%;
+     --ht_global_78 : 475%;
+     --wd_reduced_global_78 : 50%;
+     --ht_reduced_global_78 : 450%;
+     --borderRadius_G_X_78 : 16.6666667%;
+     --borderRadius_G_Y_78 : 2.6315794737%;
+     --borderRadius_reduced_X_78 : 15.78948%;
+     --borderRadius_reduced_Y_78 : 1.85185%;
+     --wd_global_79 : 75%;
+     --ht_global_79 : 475%;
+     --wd_reduced_global_79 : 50%;
+     --ht_reduced_global_79 : 450%;
+     --borderRadius_G_X_79 : 16.6666667%;
+     --borderRadius_G_Y_79 : 2.6315794737%;
+     --borderRadius_reduced_X_79 : 15.78948%;
+     --borderRadius_reduced_Y_79 : 1.85185%;
+     --wd_global_80 : 75%;
+     --ht_global_80 : 475%;
+     --wd_reduced_global_80 : 50%;
+     --ht_reduced_global_80 : 450%;
+     --borderRadius_G_X_80 : 16.6666667%;
+     --borderRadius_G_Y_80 : 2.6315794737%;
+     --borderRadius_reduced_X_80 : 15.78948%;
+     --borderRadius_reduced_Y_80 : 1.85185%;
+     --wd_global_81 : 75%;
+     --ht_global_81 : 475%;
+     --wd_reduced_global_81 : 50%;
+     --ht_reduced_global_81 : 450%;
+     --borderRadius_G_X_81 : 16.6666667%;
+     --borderRadius_G_Y_81 : 2.6315794737%;
+     --borderRadius_reduced_X_81 : 15.78948%;
+     --borderRadius_reduced_Y_81 : 1.85185%;
+     --wd_global_82 : 75%;
+     --ht_global_82 : 475%;
+     --wd_reduced_global_82 : 50%;
+     --ht_reduced_global_82 : 450%;
+     --borderRadius_G_X_82 : 16.6666667%;
+     --borderRadius_G_Y_82 : 2.6315794737%;
+     --borderRadius_reduced_X_82 : 15.78948%;
+     --borderRadius_reduced_Y_82 : 1.85185%;
+     --wd_global_83 : 75%;
+     --ht_global_83 : 475%;
+     --wd_reduced_global_83 : 50%;
+     --ht_reduced_global_83 : 450%;
+     --borderRadius_G_X_83 : 16.6666667%;
+     --borderRadius_G_Y_83 : 2.6315794737%;
+     --borderRadius_reduced_X_83 : 15.78948%;
+     --borderRadius_reduced_Y_83 : 1.85185%;
+     --wd_global_84 : 75%;
+     --ht_global_84 : 475%;
+     --wd_reduced_global_84 : 50%;
+     --ht_reduced_global_84 : 450%;
+     --borderRadius_G_X_84 : 16.6666667%;
+     --borderRadius_G_Y_84 : 2.6315794737%;
+     --borderRadius_reduced_X_84 : 15.78948%;
+     --borderRadius_reduced_Y_84 : 1.85185%;
+     --wd_global_85 : 75%;
+     --ht_global_85 : 475%;
+     --wd_reduced_global_85 : 50%;
+     --ht_reduced_global_85 : 450%;
+     --borderRadius_G_X_85 : 16.6666667%;
+     --borderRadius_G_Y_85 : 2.6315794737%;
+     --borderRadius_reduced_X_85 : 15.78948%;
+     --borderRadius_reduced_Y_85 : 1.85185%;
+     --wd_global_86 : 75%;
+     --ht_global_86 : 475%;
+     --wd_reduced_global_86 : 50%;
+     --ht_reduced_global_86 : 450%;
+     --borderRadius_G_X_86 : 16.6666667%;
+     --borderRadius_G_Y_86 : 2.6315794737%;
+     --borderRadius_reduced_X_86 : 15.78948%;
+     --borderRadius_reduced_Y_86 : 1.85185%;
+     --wd_global_87 : 75%;
+     --ht_global_87 : 475%;
+     --wd_reduced_global_87 : 50%;
+     --ht_reduced_global_87 : 450%;
+     --borderRadius_G_X_87 : 16.6666667%;
+     --borderRadius_G_Y_87 : 2.6315794737%;
+     --borderRadius_reduced_X_87 : 15.78948%;
+     --borderRadius_reduced_Y_87 : 1.85185%;
+     --wd_global_88 : 75%;
+     --ht_global_88 : 475%;
+     --wd_reduced_global_88 : 50%;
+     --ht_reduced_global_88 : 450%;
+     --borderRadius_G_X_88 : 16.6666667%;
+     --borderRadius_G_Y_88 : 2.6315794737%;
+     --borderRadius_reduced_X_88 : 15.78948%;
+     --borderRadius_reduced_Y_88 : 1.85185%;
+     --wd_global_89 : 75%;
+     --ht_global_89 : 475%;
+     --wd_reduced_global_89 : 50%;
+     --ht_reduced_global_89 : 450%;
+     --borderRadius_G_X_89 : 16.6666667%;
+     --borderRadius_G_Y_89 : 2.6315794737%;
+     --borderRadius_reduced_X_89 : 15.78948%;
+     --borderRadius_reduced_Y_89 : 1.85185%;
+     --wd_global_90 : 75%;
+     --ht_global_90 : 475%;
+     --wd_reduced_global_90 : 50%;
+     --ht_reduced_global_90 : 450%;
+     --borderRadius_G_X_90 : 16.6666667%;
+     --borderRadius_G_Y_90 : 2.6315794737%;
+     --borderRadius_reduced_X_90 : 15.78948%;
+     --borderRadius_reduced_Y_90 : 1.85185%;
+     --wd_global_91 : 75%;
+     --ht_global_91 : 475%;
+     --wd_reduced_global_91 : 50%;
+     --ht_reduced_global_91 : 450%;
+     --borderRadius_G_X_91 : 16.6666667%;
+     --borderRadius_G_Y_91 : 2.6315794737%;
+     --borderRadius_reduced_X_91 : 15.78948%;
+     --borderRadius_reduced_Y_91 : 1.85185%;
+     --wd_global_92 : 75%;
+     --ht_global_92 : 475%;
+     --wd_reduced_global_92 : 50%;
+     --ht_reduced_global_92 : 450%;
+     --borderRadius_G_X_92 : 16.6666667%;
+     --borderRadius_G_Y_92 : 2.6315794737%;
+     --borderRadius_reduced_X_92 : 15.78948%;
+     --borderRadius_reduced_Y_92 : 1.85185%;
+     --wd_global_93 : 75%;
+     --ht_global_93 : 475%;
+     --wd_reduced_global_93 : 50%;
+     --ht_reduced_global_93 : 450%;
+     --borderRadius_G_X_93 : 16.6666667%;
+     --borderRadius_G_Y_93 : 2.6315794737%;
+     --borderRadius_reduced_X_93 : 15.78948%;
+     --borderRadius_reduced_Y_93 : 1.85185%;
+     --wd_global_94 : 75%;
+     --ht_global_94 : 475%;
+     --wd_reduced_global_94 : 50%;
+     --ht_reduced_global_94 : 450%;
+     --borderRadius_G_X_94 : 16.6666667%;
+     --borderRadius_G_Y_94 : 2.6315794737%;
+     --borderRadius_reduced_X_94 : 15.78948%;
+     --borderRadius_reduced_Y_94 : 1.85185%;
+     --wd_global_95 : 75%;
+     --ht_global_95 : 475%;
+     --wd_reduced_global_95 : 50%;
+     --ht_reduced_global_95 : 450%;
+     --borderRadius_G_X_95 : 16.6666667%;
+     --borderRadius_G_Y_95 : 2.6315794737%;
+     --borderRadius_reduced_X_95 : 15.78948%;
+     --borderRadius_reduced_Y_95 : 1.85185%;
+     --wd_global_96 : 75%;
+     --ht_global_96 : 475%;
+     --wd_reduced_global_96 : 50%;
+     --ht_reduced_global_96 : 450%;
+     --borderRadius_G_X_96 : 16.6666667%;
+     --borderRadius_G_Y_96 : 2.6315794737%;
+     --borderRadius_reduced_X_96 : 15.78948%;
+     --borderRadius_reduced_Y_96 : 1.85185%;
+     --wd_global_97 : 75%;
+     --ht_global_97 : 475%;
+     --wd_reduced_global_97 : 50%;
+     --ht_reduced_global_97 : 450%;
+     --borderRadius_G_X_97 : 16.6666667%;
+     --borderRadius_G_Y_97 : 2.6315794737%;
+     --borderRadius_reduced_X_97 : 15.78948%;
+     --borderRadius_reduced_Y_97 : 1.85185%;
+     --wd_global_98 : 75%;
+     --ht_global_98 : 475%;
+     --wd_reduced_global_98 : 50%;
+     --ht_reduced_global_98 : 450%;
+     --borderRadius_G_X_98 : 16.6666667%;
+     --borderRadius_G_Y_98 : 2.6315794737%;
+     --borderRadius_reduced_X_98 : 15.78948%;
+     --borderRadius_reduced_Y_98 : 1.85185%;
+     --wd_global_99 : 75%;
+     --ht_global_99 : 475%;
+     --wd_reduced_global_99 : 50%;
+     --ht_reduced_global_99 : 450%;
+     --borderRadius_G_X_99 : 16.6666667%;
+     --borderRadius_G_Y_99 : 2.6315794737%;
+     --borderRadius_reduced_X_99 : 15.78948%;
+     --borderRadius_reduced_Y_99 : 1.85185%;
+     --wd_global_100 : 75%;
+     --ht_global_100 : 475%;
+     --wd_reduced_global_100 : 50%;
+     --ht_reduced_global_100 : 450%;
+     --borderRadius_G_X_100 : 16.6666667%;
+     --borderRadius_G_Y_100 : 2.6315794737%;
+     --borderRadius_reduced_X_100 : 15.78948%;
+     --borderRadius_reduced_Y_100 : 1.85185%;
 }
-
-.ps_001, .ps_002, .ps_003, .ps_004, .ps_005, .ps_006, .ps_007, .ps_008, .ps_009, .ps_010, .ps_011, .ps_012, .ps_013, .ps_014, .ps_015, .ps_016, .ps_017, .ps_018, .ps_019, .ps_020, .ps_021, .ps_022, .ps_023, .ps_024, .ps_025, .ps_026, .ps_027, .ps_028, .ps_029, .ps_030, .ps_031, .ps_032, .ps_033, .ps_034, .ps_035, .ps_036, .ps_037, .ps_038, .ps_039, .ps_040, .ps_041, .ps_042, .ps_043, .ps_044, .ps_045, .ps_046, .ps_047, .ps_048, .ps_049, .ps_050, .ps_051, .ps_052, .ps_053, .ps_054, .ps_055, .ps_056, .ps_057, .ps_058, .ps_059, .ps_060, .ps_061, .ps_062, .ps_063, .ps_064, .ps_065, .ps_066, .ps_067, .ps_068, .ps_069, .ps_070, .ps_071, .ps_072, .ps_073, .ps_074, .ps_075, .ps_076, .ps_077, .ps_078, .ps_079, .ps_080, .ps_081, .ps_082, .ps_083, .ps_084, .ps_085, .ps_086, .ps_087, .ps_088, .ps_089, .ps_090, .ps_091, .ps_092, .ps_093, .ps_094, .ps_095, .ps_096, .ps_097, .ps_098, .ps_099, .ps_100 {
+ .ps_001, .ps_002, .ps_003, .ps_004, .ps_005, .ps_006, .ps_007, .ps_008, .ps_009, .ps_010, .ps_011, .ps_012, .ps_013, .ps_014, .ps_015, .ps_016, .ps_017, .ps_018, .ps_019, .ps_020, .ps_021, .ps_022, .ps_023, .ps_024, .ps_025, .ps_026, .ps_027, .ps_028, .ps_029, .ps_030, .ps_031, .ps_032, .ps_033, .ps_034, .ps_035, .ps_036, .ps_037, .ps_038, .ps_039, .ps_040, .ps_041, .ps_042, .ps_043, .ps_044, .ps_045, .ps_046, .ps_047, .ps_048, .ps_049, .ps_050, .ps_051, .ps_052, .ps_053, .ps_054, .ps_055, .ps_056, .ps_057, .ps_058, .ps_059, .ps_060, .ps_061, .ps_062, .ps_063, .ps_064, .ps_065, .ps_066, .ps_067, .ps_068, .ps_069, .ps_070, .ps_071, .ps_072, .ps_073, .ps_074, .ps_075, .ps_076, .ps_077, .ps_078, .ps_079, .ps_080, .ps_081, .ps_082, .ps_083, .ps_084, .ps_085, .ps_086, .ps_087, .ps_088, .ps_089, .ps_090, .ps_091, .ps_092, .ps_093, .ps_094, .ps_095, .ps_096, .ps_097, .ps_098, .ps_099, .ps_100 {
      width: 10%;
      height: 10%;
      position: absolute;
@@ -1040,10 +926,7 @@
      z-index: 2;
      opacity : 1;
 }
-
-
  .actual_square_001, .actual_square_002, .actual_square_003, .actual_square_004, .actual_square_005, .actual_square_006, .actual_square_007, .actual_square_008, .actual_square_009, .actual_square_010, .actual_square_011, .actual_square_012, .actual_square_013, .actual_square_014, .actual_square_015, .actual_square_016, .actual_square_017, .actual_square_018, .actual_square_019, .actual_square_020, .actual_square_021, .actual_square_022, .actual_square_023, .actual_square_024, .actual_square_025, .actual_square_026, .actual_square_027, .actual_square_028, .actual_square_029, .actual_square_030, .actual_square_031, .actual_square_032, .actual_square_033, .actual_square_034, .actual_square_035, .actual_square_036, .actual_square_037, .actual_square_038, .actual_square_039, .actual_square_040, .actual_square_041, .actual_square_042, .actual_square_043, .actual_square_044, .actual_square_045, .actual_square_046, .actual_square_047, .actual_square_048, .actual_square_049, .actual_square_050, .actual_square_051, .actual_square_052, .actual_square_053, .actual_square_054, .actual_square_055, .actual_square_056, .actual_square_057, .actual_square_058, .actual_square_059, .actual_square_060, .actual_square_061, .actual_square_062, .actual_square_063, .actual_square_064, .actual_square_065, .actual_square_066, .actual_square_067, .actual_square_068, .actual_square_069, .actual_square_070, .actual_square_071, .actual_square_072, .actual_square_073, .actual_square_074, .actual_square_075, .actual_square_076, .actual_square_077, .actual_square_078, .actual_square_079, .actual_square_080, .actual_square_081, .actual_square_082, .actual_square_083, .actual_square_084, .actual_square_085, .actual_square_086, .actual_square_087, .actual_square_088, .actual_square_089, .actual_square_090, .actual_square_091, .actual_square_092, .actual_square_093, .actual_square_094, .actual_square_095, .actual_square_096, .actual_square_097, .actual_square_098, .actual_square_099, .actual_square_100 {
-     
      position: absolute;
      display: inline;
      z-index: 1;
@@ -1053,617 +936,522 @@
      opacity: var(--Opac_0);
      box-sizing: border-box;
      transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s;
-     
-}
-
-.actual_square_001 {
-    width: var(--wd_global_1);
-    height: var(--ht_global_1);
-    border-radius: var(--borderRadius_G_X_1) / var(--borderRadius_G_Y_1);
-}
-
-.actual_square_002 {
-    width: var(--wd_global_2);
-    height: var(--ht_global_2);
-    border-radius: var(--borderRadius_G_X_2) / var(--borderRadius_G_Y_2);
-}
-
-.actual_square_003 {
-    width: var(--wd_global_3);
-    height: var(--ht_global_3);
-    border-radius: var(--borderRadius_G_X_3) / var(--borderRadius_G_Y_3);
-}
-
-.actual_square_004 {
-    width: var(--wd_global_4);
-    height: var(--ht_global_4);
-    border-radius: var(--borderRadius_G_X_4) / var(--borderRadius_G_Y_4);
-}
-
-.actual_square_005 {
-    width: var(--wd_global_5);
-    height: var(--ht_global_5);
-    border-radius: var(--borderRadius_G_X_5) / var(--borderRadius_G_Y_5);
-}
-
-.actual_square_006 {
-    width: var(--wd_global_6);
-    height: var(--ht_global_6);
-    border-radius: var(--borderRadius_G_X_6) / var(--borderRadius_G_Y_6);
-}
-
-.actual_square_007 {
-    width: var(--wd_global_7);
-    height: var(--ht_global_7);
-    border-radius: var(--borderRadius_G_X_7) / var(--borderRadius_G_Y_7);
-}
-
-.actual_square_008 {
-    width: var(--wd_global_8);
-    height: var(--ht_global_8);
-    border-radius: var(--borderRadius_G_X_8) / var(--borderRadius_G_Y_8);
-}
-
-.actual_square_009 {
-    width: var(--wd_global_9);
-    height: var(--ht_global_9);
-    border-radius: var(--borderRadius_G_X_9) / var(--borderRadius_G_Y_9);
-}
-
-.actual_square_010 {
-    width: var(--wd_global_10);
-    height: var(--ht_global_10);
-    border-radius: var(--borderRadius_G_X_10) / var(--borderRadius_G_Y_10);
-}
-
-.actual_square_011 {
-    width: var(--wd_global_11);
-    height: var(--ht_global_11);
-    border-radius: var(--borderRadius_G_X_11) / var(--borderRadius_G_Y_11);
-}
-
-.actual_square_012 {
-    width: var(--wd_global_12);
-    height: var(--ht_global_12);
-    border-radius: var(--borderRadius_G_X_12) / var(--borderRadius_G_Y_12);
-}
-
-.actual_square_013 {
-    width: var(--wd_global_13);
-    height: var(--ht_global_13);
-    border-radius: var(--borderRadius_G_X_13) / var(--borderRadius_G_Y_13);
-}
-
-.actual_square_014 {
-    width: var(--wd_global_14);
-    height: var(--ht_global_14);
-    border-radius: var(--borderRadius_G_X_14) / var(--borderRadius_G_Y_14);
-}
-
-.actual_square_015 {
-    width: var(--wd_global_15);
-    height: var(--ht_global_15);
-    border-radius: var(--borderRadius_G_X_15) / var(--borderRadius_G_Y_15);
-}
-
-.actual_square_016 {
-    width: var(--wd_global_16);
-    height: var(--ht_global_16);
-    border-radius: var(--borderRadius_G_X_16) / var(--borderRadius_G_Y_16);
-}
-
-.actual_square_017 {
-    width: var(--wd_global_17);
-    height: var(--ht_global_17);
-    border-radius: var(--borderRadius_G_X_17) / var(--borderRadius_G_Y_17);
-}
-
-.actual_square_018 {
-    width: var(--wd_global_18);
-    height: var(--ht_global_18);
-    border-radius: var(--borderRadius_G_X_18) / var(--borderRadius_G_Y_18);
-}
-
-.actual_square_019 {
-    width: var(--wd_global_19);
-    height: var(--ht_global_19);
-    border-radius: var(--borderRadius_G_X_19) / var(--borderRadius_G_Y_19);
-}
-
-.actual_square_020 {
-    width: var(--wd_global_20);
-    height: var(--ht_global_20);
-    border-radius: var(--borderRadius_G_X_20) / var(--borderRadius_G_Y_20);
-}
-
-.actual_square_021 {
-    width: var(--wd_global_21);
-    height: var(--ht_global_21);
-    border-radius: var(--borderRadius_G_X_21) / var(--borderRadius_G_Y_21);
-}
-
-.actual_square_022 {
-    width: var(--wd_global_22);
-    height: var(--ht_global_22);
-    border-radius: var(--borderRadius_G_X_22) / var(--borderRadius_G_Y_22);
-}
-
-.actual_square_023 {
-    width: var(--wd_global_23);
-    height: var(--ht_global_23);
-    border-radius: var(--borderRadius_G_X_23) / var(--borderRadius_G_Y_23);
-}
-
-.actual_square_024 {
-    width: var(--wd_global_24);
-    height: var(--ht_global_24);
-    border-radius: var(--borderRadius_G_X_24) / var(--borderRadius_G_Y_24);
-}
-
-.actual_square_025 {
-    width: var(--wd_global_25);
-    height: var(--ht_global_25);
-    border-radius: var(--borderRadius_G_X_25) / var(--borderRadius_G_Y_25);
-}
-
-.actual_square_026 {
-    width: var(--wd_global_26);
-    height: var(--ht_global_26);
-    border-radius: var(--borderRadius_G_X_26) / var(--borderRadius_G_Y_26);
-}
-
-.actual_square_027 {
-    width: var(--wd_global_27);
-    height: var(--ht_global_27);
-    border-radius: var(--borderRadius_G_X_27) / var(--borderRadius_G_Y_27);
-}
-
-.actual_square_028 {
-    width: var(--wd_global_28);
-    height: var(--ht_global_28);
-    border-radius: var(--borderRadius_G_X_28) / var(--borderRadius_G_Y_28);
-}
-
-.actual_square_029 {
-    width: var(--wd_global_29);
-    height: var(--ht_global_29);
-    border-radius: var(--borderRadius_G_X_29) / var(--borderRadius_G_Y_29);
-}
-
-.actual_square_030 {
-    width: var(--wd_global_30);
-    height: var(--ht_global_30);
-    border-radius: var(--borderRadius_G_X_30) / var(--borderRadius_G_Y_30);
-}
-
-.actual_square_031 {
-    width: var(--wd_global_31);
-    height: var(--ht_global_31);
-    border-radius: var(--borderRadius_G_X_31) / var(--borderRadius_G_Y_31);
-}
-
-.actual_square_032 {
-    width: var(--wd_global_32);
-    height: var(--ht_global_32);
-    border-radius: var(--borderRadius_G_X_32) / var(--borderRadius_G_Y_32);
-}
-
-.actual_square_033 {
-    width: var(--wd_global_33);
-    height: var(--ht_global_33);
-    border-radius: var(--borderRadius_G_X_33) / var(--borderRadius_G_Y_33);
-}
-
-.actual_square_034 {
-    width: var(--wd_global_34);
-    height: var(--ht_global_34);
-    border-radius: var(--borderRadius_G_X_34) / var(--borderRadius_G_Y_34);
-}
-
-.actual_square_035 {
-    width: var(--wd_global_35);
-    height: var(--ht_global_35);
-    border-radius: var(--borderRadius_G_X_35) / var(--borderRadius_G_Y_35);
-}
-
-.actual_square_036 {
-    width: var(--wd_global_36);
-    height: var(--ht_global_36);
-    border-radius: var(--borderRadius_G_X_36) / var(--borderRadius_G_Y_36);
-}
-
-.actual_square_037 {
-    width: var(--wd_global_37);
-    height: var(--ht_global_37);
-    border-radius: var(--borderRadius_G_X_37) / var(--borderRadius_G_Y_37);
-}
-
-.actual_square_038 {
-    width: var(--wd_global_38);
-    height: var(--ht_global_38);
-    border-radius: var(--borderRadius_G_X_38) / var(--borderRadius_G_Y_38);
-}
-
-.actual_square_039 {
-    width: var(--wd_global_39);
-    height: var(--ht_global_39);
-    border-radius: var(--borderRadius_G_X_39) / var(--borderRadius_G_Y_39);
-}
-
-.actual_square_040 {
-    width: var(--wd_global_40);
-    height: var(--ht_global_40);
-    border-radius: var(--borderRadius_G_X_40) / var(--borderRadius_G_Y_40);
-}
-
-.actual_square_041 {
-    width: var(--wd_global_41);
-    height: var(--ht_global_41);
-    border-radius: var(--borderRadius_G_X_41) / var(--borderRadius_G_Y_41);
-}
-
-.actual_square_042 {
-    width: var(--wd_global_42);
-    height: var(--ht_global_42);
-    border-radius: var(--borderRadius_G_X_42) / var(--borderRadius_G_Y_42);
-}
-
-.actual_square_043 {
-    width: var(--wd_global_43);
-    height: var(--ht_global_43);
-    border-radius: var(--borderRadius_G_X_43) / var(--borderRadius_G_Y_43);
-}
-
-.actual_square_044 {
-    width: var(--wd_global_44);
-    height: var(--ht_global_44);
-    border-radius: var(--borderRadius_G_X_44) / var(--borderRadius_G_Y_44);
-}
-
-.actual_square_045 {
-    width: var(--wd_global_45);
-    height: var(--ht_global_45);
-    border-radius: var(--borderRadius_G_X_45) / var(--borderRadius_G_Y_45);
-}
-
-.actual_square_046 {
-    width: var(--wd_global_46);
-    height: var(--ht_global_46);
-    border-radius: var(--borderRadius_G_X_46) / var(--borderRadius_G_Y_46);
-}
-
-.actual_square_047 {
-    width: var(--wd_global_47);
-    height: var(--ht_global_47);
-    border-radius: var(--borderRadius_G_X_47) / var(--borderRadius_G_Y_47);
-}
-
-.actual_square_048 {
-    width: var(--wd_global_48);
-    height: var(--ht_global_48);
-    border-radius: var(--borderRadius_G_X_48) / var(--borderRadius_G_Y_48);
-}
-
-.actual_square_049 {
-    width: var(--wd_global_49);
-    height: var(--ht_global_49);
-    border-radius: var(--borderRadius_G_X_49) / var(--borderRadius_G_Y_49);
-}
-
-.actual_square_050 {
-    width: var(--wd_global_50);
-    height: var(--ht_global_50);
-    border-radius: var(--borderRadius_G_X_50) / var(--borderRadius_G_Y_50);
-}
-
-.actual_square_051 {
-    width: var(--wd_global_51);
-    height: var(--ht_global_51);
-    border-radius: var(--borderRadius_G_X_51) / var(--borderRadius_G_Y_51);
-}
-
-.actual_square_052 {
-    width: var(--wd_global_52);
-    height: var(--ht_global_52);
-    border-radius: var(--borderRadius_G_X_52) / var(--borderRadius_G_Y_52);
-}
-
-.actual_square_053 {
-    width: var(--wd_global_53);
-    height: var(--ht_global_53);
-    border-radius: var(--borderRadius_G_X_53) / var(--borderRadius_G_Y_53);
-}
-
-.actual_square_054 {
-    width: var(--wd_global_54);
-    height: var(--ht_global_54);
-    border-radius: var(--borderRadius_G_X_54) / var(--borderRadius_G_Y_54);
-}
-
-.actual_square_055 {
-    width: var(--wd_global_55);
-    height: var(--ht_global_55);
-    border-radius: var(--borderRadius_G_X_55) / var(--borderRadius_G_Y_55);
-}
-
-.actual_square_056 {
-    width: var(--wd_global_56);
-    height: var(--ht_global_56);
-    border-radius: var(--borderRadius_G_X_56) / var(--borderRadius_G_Y_56);
-}
-
-.actual_square_057 {
-    width: var(--wd_global_57);
-    height: var(--ht_global_57);
-    border-radius: var(--borderRadius_G_X_57) / var(--borderRadius_G_Y_57);
-}
-
-.actual_square_058 {
-    width: var(--wd_global_58);
-    height: var(--ht_global_58);
-    border-radius: var(--borderRadius_G_X_58) / var(--borderRadius_G_Y_58);
-}
-
-.actual_square_059 {
-    width: var(--wd_global_59);
-    height: var(--ht_global_59);
-    border-radius: var(--borderRadius_G_X_59) / var(--borderRadius_G_Y_59);
-}
-
-.actual_square_060 {
-    width: var(--wd_global_60);
-    height: var(--ht_global_60);
-    border-radius: var(--borderRadius_G_X_60) / var(--borderRadius_G_Y_60);
-}
-
-.actual_square_061 {
-    width: var(--wd_global_61);
-    height: var(--ht_global_61);
-    border-radius: var(--borderRadius_G_X_61) / var(--borderRadius_G_Y_61);
-}
-
-.actual_square_062 {
-    width: var(--wd_global_62);
-    height: var(--ht_global_62);
-    border-radius: var(--borderRadius_G_X_62) / var(--borderRadius_G_Y_62);
-}
-
-.actual_square_063 {
-    width: var(--wd_global_63);
-    height: var(--ht_global_63);
-    border-radius: var(--borderRadius_G_X_63) / var(--borderRadius_G_Y_63);
-}
-
-.actual_square_064 {
-    width: var(--wd_global_64);
-    height: var(--ht_global_64);
-    border-radius: var(--borderRadius_G_X_64) / var(--borderRadius_G_Y_64);
-}
-
-.actual_square_065 {
-    width: var(--wd_global_65);
-    height: var(--ht_global_65);
-    border-radius: var(--borderRadius_G_X_65) / var(--borderRadius_G_Y_65);
-}
-
-.actual_square_066 {
-    width: var(--wd_global_66);
-    height: var(--ht_global_66);
-    border-radius: var(--borderRadius_G_X_66) / var(--borderRadius_G_Y_66);
-}
-
-.actual_square_067 {
-    width: var(--wd_global_67);
-    height: var(--ht_global_67);
-    border-radius: var(--borderRadius_G_X_67) / var(--borderRadius_G_Y_67);
-}
-
-.actual_square_068 {
-    width: var(--wd_global_68);
-    height: var(--ht_global_68);
-    border-radius: var(--borderRadius_G_X_68) / var(--borderRadius_G_Y_68);
-}
-
-.actual_square_069 {
-    width: var(--wd_global_69);
-    height: var(--ht_global_69);
-    border-radius: var(--borderRadius_G_X_69) / var(--borderRadius_G_Y_69);
-}
-
-.actual_square_070 {
-    width: var(--wd_global_70);
-    height: var(--ht_global_70);
-    border-radius: var(--borderRadius_G_X_70) / var(--borderRadius_G_Y_70);
-}
-
-.actual_square_071 {
-    width: var(--wd_global_71);
-    height: var(--ht_global_71);
-    border-radius: var(--borderRadius_G_X_71) / var(--borderRadius_G_Y_71);
-}
-
-.actual_square_072 {
-    width: var(--wd_global_72);
-    height: var(--ht_global_72);
-    border-radius: var(--borderRadius_G_X_72) / var(--borderRadius_G_Y_72);
-}
-
-.actual_square_073 {
-    width: var(--wd_global_73);
-    height: var(--ht_global_73);
-    border-radius: var(--borderRadius_G_X_73) / var(--borderRadius_G_Y_73);
-}
-
-.actual_square_074 {
-    width: var(--wd_global_74);
-    height: var(--ht_global_74);
-    border-radius: var(--borderRadius_G_X_74) / var(--borderRadius_G_Y_74);
-}
-
-.actual_square_075 {
-    width: var(--wd_global_75);
-    height: var(--ht_global_75);
-    border-radius: var(--borderRadius_G_X_75) / var(--borderRadius_G_Y_75);
-}
-
-.actual_square_076 {
-    width: var(--wd_global_76);
-    height: var(--ht_global_76);
-    border-radius: var(--borderRadius_G_X_76) / var(--borderRadius_G_Y_76);
-}
-
-.actual_square_077 {
-    width: var(--wd_global_77);
-    height: var(--ht_global_77);
-    border-radius: var(--borderRadius_G_X_77) / var(--borderRadius_G_Y_77);
-}
-
-.actual_square_078 {
-    width: var(--wd_global_78);
-    height: var(--ht_global_78);
-    border-radius: var(--borderRadius_G_X_78) / var(--borderRadius_G_Y_78);
-}
-
-.actual_square_079 {
-    width: var(--wd_global_79);
-    height: var(--ht_global_79);
-    border-radius: var(--borderRadius_G_X_79) / var(--borderRadius_G_Y_79);
-}
-
-.actual_square_080 {
-    width: var(--wd_global_80);
-    height: var(--ht_global_80);
-    border-radius: var(--borderRadius_G_X_80) / var(--borderRadius_G_Y_80);
-}
-
-.actual_square_081 {
-    width: var(--wd_global_81);
-    height: var(--ht_global_81);
-    border-radius: var(--borderRadius_G_X_81) / var(--borderRadius_G_Y_81);
-}
-
-.actual_square_082 {
-    width: var(--wd_global_82);
-    height: var(--ht_global_82);
-    border-radius: var(--borderRadius_G_X_82) / var(--borderRadius_G_Y_82);
-}
-
-.actual_square_083 {
-    width: var(--wd_global_83);
-    height: var(--ht_global_83);
-    border-radius: var(--borderRadius_G_X_83) / var(--borderRadius_G_Y_83);
-}
-
-.actual_square_084 {
-    width: var(--wd_global_84);
-    height: var(--ht_global_84);
-    border-radius: var(--borderRadius_G_X_84) / var(--borderRadius_G_Y_84);
-}
-
-.actual_square_085 {
-    width: var(--wd_global_85);
-    height: var(--ht_global_85);
-    border-radius: var(--borderRadius_G_X_85) / var(--borderRadius_G_Y_85);
-}
-
-.actual_square_086 {
-    width: var(--wd_global_86);
-    height: var(--ht_global_86);
-    border-radius: var(--borderRadius_G_X_86) / var(--borderRadius_G_Y_86);
-}
-
-.actual_square_087 {
-    width: var(--wd_global_87);
-    height: var(--ht_global_87);
-    border-radius: var(--borderRadius_G_X_87) / var(--borderRadius_G_Y_87);
-}
-
-.actual_square_088 {
-    width: var(--wd_global_88);
-    height: var(--ht_global_88);
-    border-radius: var(--borderRadius_G_X_88) / var(--borderRadius_G_Y_88);
-}
-
-.actual_square_089 {
-    width: var(--wd_global_89);
-    height: var(--ht_global_89);
-    border-radius: var(--borderRadius_G_X_89) / var(--borderRadius_G_Y_89);
-}
-
-.actual_square_090 {
-    width: var(--wd_global_90);
-    height: var(--ht_global_90);
-    border-radius: var(--borderRadius_G_X_90) / var(--borderRadius_G_Y_90);
-}
-
-.actual_square_091 {
-    width: var(--wd_global_91);
-    height: var(--ht_global_91);
-    border-radius: var(--borderRadius_G_X_91) / var(--borderRadius_G_Y_91);
-}
-
-.actual_square_092 {
-    width: var(--wd_global_92);
-    height: var(--ht_global_92);
-    border-radius: var(--borderRadius_G_X_92) / var(--borderRadius_G_Y_92);
-}
-
-.actual_square_093 {
-    width: var(--wd_global_93);
-    height: var(--ht_global_93);
-    border-radius: var(--borderRadius_G_X_93) / var(--borderRadius_G_Y_93);
-}
-
-.actual_square_094 {
-    width: var(--wd_global_94);
-    height: var(--ht_global_94);
-    border-radius: var(--borderRadius_G_X_94) / var(--borderRadius_G_Y_94);
-}
-
-.actual_square_095 {
-    width: var(--wd_global_95);
-    height: var(--ht_global_95);
-    border-radius: var(--borderRadius_G_X_95) / var(--borderRadius_G_Y_95);
-}
-
-.actual_square_096 {
-    width: var(--wd_global_96);
-    height: var(--ht_global_96);
-    border-radius: var(--borderRadius_G_X_96) / var(--borderRadius_G_Y_96);
-}
-
-.actual_square_097 {
-    width: var(--wd_global_97);
-    height: var(--ht_global_97);
-    border-radius: var(--borderRadius_G_X_97) / var(--borderRadius_G_Y_97);
-}
-
-.actual_square_098 {
-    width: var(--wd_global_98);
-    height: var(--ht_global_98);
-    border-radius: var(--borderRadius_G_X_98) / var(--borderRadius_G_Y_98);
-}
-
-.actual_square_099 {
-    width: var(--wd_global_99);
-    height: var(--ht_global_99);
-    border-radius: var(--borderRadius_G_X_99) / var(--borderRadius_G_Y_99);
-}
-
-.actual_square_100 {
-    width: var(--wd_global_100);
-    height: var(--ht_global_100);
-    border-radius: var(--borderRadius_G_X_100) / var(--borderRadius_G_Y_100);
-}
-
-
-
-
-
-
-
-/*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH  psuedo_squares   HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
-
+}
+.actual_square_right_1,.actual_square_right_2,.actual_square_right_3,.actual_square_right_4,.actual_square_right_5,.actual_square_right_6,.actual_square_right_7,.actual_square_right_8,.actual_square_right_9,.actual_square_right_10,.actual_square_right_11,.actual_square_right_12,.actual_square_right_13,.actual_square_right_14,.actual_square_right_15,.actual_square_right_16,.actual_square_right_17,.actual_square_right_18,.actual_square_right_19,.actual_square_right_20,.actual_square_right_21,.actual_square_right_22,.actual_square_right_23,.actual_square_right_24,.actual_square_right_25,.actual_square_right_26,.actual_square_right_27,.actual_square_right_28,.actual_square_right_29,.actual_square_right_30,.actual_square_right_31,.actual_square_right_32,.actual_square_right_33,.actual_square_right_34,.actual_square_right_35,.actual_square_right_36,.actual_square_right_37,.actual_square_right_38,.actual_square_right_39,.actual_square_right_40,.actual_square_right_41,.actual_square_right_42,.actual_square_right_43,.actual_square_right_44,.actual_square_right_45,.actual_square_right_46,.actual_square_right_47,.actual_square_right_48,.actual_square_right_49,.actual_square_right_50,.actual_square_right_51,.actual_square_right_52,.actual_square_right_53,.actual_square_right_54,.actual_square_right_55,.actual_square_right_56,.actual_square_right_57,.actual_square_right_58,.actual_square_right_59,.actual_square_right_60,.actual_square_right_61,.actual_square_right_62,.actual_square_right_63,.actual_square_right_64,.actual_square_right_65,.actual_square_right_66,.actual_square_right_67,.actual_square_right_68,.actual_square_right_69,.actual_square_right_70,.actual_square_right_71,.actual_square_right_72,.actual_square_right_73,.actual_square_right_74,.actual_square_right_75,.actual_square_right_76,.actual_square_right_77,.actual_square_right_78,.actual_square_right_79,.actual_square_right_80,.actual_square_right_81,.actual_square_right_82,.actual_square_right_83,.actual_square_right_84,.actual_square_right_85,.actual_square_right_86,.actual_square_right_87,.actual_square_right_88,.actual_square_right_89,.actual_square_right_90,.actual_square_right_91,.actual_square_right_92,.actual_square_right_93,.actual_square_right_94,.actual_square_right_95,.actual_square_right_96,.actual_square_right_97,.actual_square_right_98,.actual_square_right_99,.actual_square_right_100{
+     position: absolute;
+     display: inline;
+     z-index: 1;
+     background-color: rgb(94,94,94);
+     width: 75%;
+     height: 75%;
+     border-radius: 16.6666667%;
+     margin-left: 12.5%;
+     margin-top: 12.5%;
+     opacity: 0;
+     box-sizing: border-box;
+     transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s;
+}
+ .actual_square_001 {
+     width: var(--wd_global_1);
+     height: var(--ht_global_1);
+     border-radius: var(--borderRadius_G_X_1) / var(--borderRadius_G_Y_1);
+}
+ .actual_square_002 {
+     width: var(--wd_global_2);
+     height: var(--ht_global_2);
+     border-radius: var(--borderRadius_G_X_2) / var(--borderRadius_G_Y_2);
+}
+ .actual_square_003 {
+     width: var(--wd_global_3);
+     height: var(--ht_global_3);
+     border-radius: var(--borderRadius_G_X_3) / var(--borderRadius_G_Y_3);
+}
+ .actual_square_004 {
+     width: var(--wd_global_4);
+     height: var(--ht_global_4);
+     border-radius: var(--borderRadius_G_X_4) / var(--borderRadius_G_Y_4);
+}
+ .actual_square_005 {
+     width: var(--wd_global_5);
+     height: var(--ht_global_5);
+     border-radius: var(--borderRadius_G_X_5) / var(--borderRadius_G_Y_5);
+}
+ .actual_square_006 {
+     width: var(--wd_global_6);
+     height: var(--ht_global_6);
+     border-radius: var(--borderRadius_G_X_6) / var(--borderRadius_G_Y_6);
+}
+ .actual_square_007 {
+     width: var(--wd_global_7);
+     height: var(--ht_global_7);
+     border-radius: var(--borderRadius_G_X_7) / var(--borderRadius_G_Y_7);
+}
+ .actual_square_008 {
+     width: var(--wd_global_8);
+     height: var(--ht_global_8);
+     border-radius: var(--borderRadius_G_X_8) / var(--borderRadius_G_Y_8);
+}
+ .actual_square_009 {
+     width: var(--wd_global_9);
+     height: var(--ht_global_9);
+     border-radius: var(--borderRadius_G_X_9) / var(--borderRadius_G_Y_9);
+}
+ .actual_square_010 {
+     width: var(--wd_global_10);
+     height: var(--ht_global_10);
+     border-radius: var(--borderRadius_G_X_10) / var(--borderRadius_G_Y_10);
+}
+ .actual_square_011 {
+     width: var(--wd_global_11);
+     height: var(--ht_global_11);
+     border-radius: var(--borderRadius_G_X_11) / var(--borderRadius_G_Y_11);
+}
+ .actual_square_012 {
+     width: var(--wd_global_12);
+     height: var(--ht_global_12);
+     border-radius: var(--borderRadius_G_X_12) / var(--borderRadius_G_Y_12);
+}
+ .actual_square_013 {
+     width: var(--wd_global_13);
+     height: var(--ht_global_13);
+     border-radius: var(--borderRadius_G_X_13) / var(--borderRadius_G_Y_13);
+}
+ .actual_square_014 {
+     width: var(--wd_global_14);
+     height: var(--ht_global_14);
+     border-radius: var(--borderRadius_G_X_14) / var(--borderRadius_G_Y_14);
+}
+ .actual_square_015 {
+     width: var(--wd_global_15);
+     height: var(--ht_global_15);
+     border-radius: var(--borderRadius_G_X_15) / var(--borderRadius_G_Y_15);
+}
+ .actual_square_016 {
+     width: var(--wd_global_16);
+     height: var(--ht_global_16);
+     border-radius: var(--borderRadius_G_X_16) / var(--borderRadius_G_Y_16);
+}
+ .actual_square_017 {
+     width: var(--wd_global_17);
+     height: var(--ht_global_17);
+     border-radius: var(--borderRadius_G_X_17) / var(--borderRadius_G_Y_17);
+}
+ .actual_square_018 {
+     width: var(--wd_global_18);
+     height: var(--ht_global_18);
+     border-radius: var(--borderRadius_G_X_18) / var(--borderRadius_G_Y_18);
+}
+ .actual_square_019 {
+     width: var(--wd_global_19);
+     height: var(--ht_global_19);
+     border-radius: var(--borderRadius_G_X_19) / var(--borderRadius_G_Y_19);
+}
+ .actual_square_020 {
+     width: var(--wd_global_20);
+     height: var(--ht_global_20);
+     border-radius: var(--borderRadius_G_X_20) / var(--borderRadius_G_Y_20);
+}
+ .actual_square_021 {
+     width: var(--wd_global_21);
+     height: var(--ht_global_21);
+     border-radius: var(--borderRadius_G_X_21) / var(--borderRadius_G_Y_21);
+}
+ .actual_square_022 {
+     width: var(--wd_global_22);
+     height: var(--ht_global_22);
+     border-radius: var(--borderRadius_G_X_22) / var(--borderRadius_G_Y_22);
+}
+ .actual_square_023 {
+     width: var(--wd_global_23);
+     height: var(--ht_global_23);
+     border-radius: var(--borderRadius_G_X_23) / var(--borderRadius_G_Y_23);
+}
+ .actual_square_024 {
+     width: var(--wd_global_24);
+     height: var(--ht_global_24);
+     border-radius: var(--borderRadius_G_X_24) / var(--borderRadius_G_Y_24);
+}
+ .actual_square_025 {
+     width: var(--wd_global_25);
+     height: var(--ht_global_25);
+     border-radius: var(--borderRadius_G_X_25) / var(--borderRadius_G_Y_25);
+}
+ .actual_square_026 {
+     width: var(--wd_global_26);
+     height: var(--ht_global_26);
+     border-radius: var(--borderRadius_G_X_26) / var(--borderRadius_G_Y_26);
+}
+ .actual_square_027 {
+     width: var(--wd_global_27);
+     height: var(--ht_global_27);
+     border-radius: var(--borderRadius_G_X_27) / var(--borderRadius_G_Y_27);
+}
+ .actual_square_028 {
+     width: var(--wd_global_28);
+     height: var(--ht_global_28);
+     border-radius: var(--borderRadius_G_X_28) / var(--borderRadius_G_Y_28);
+}
+ .actual_square_029 {
+     width: var(--wd_global_29);
+     height: var(--ht_global_29);
+     border-radius: var(--borderRadius_G_X_29) / var(--borderRadius_G_Y_29);
+}
+ .actual_square_030 {
+     width: var(--wd_global_30);
+     height: var(--ht_global_30);
+     border-radius: var(--borderRadius_G_X_30) / var(--borderRadius_G_Y_30);
+}
+ .actual_square_031 {
+     width: var(--wd_global_31);
+     height: var(--ht_global_31);
+     border-radius: var(--borderRadius_G_X_31) / var(--borderRadius_G_Y_31);
+}
+ .actual_square_032 {
+     width: var(--wd_global_32);
+     height: var(--ht_global_32);
+     border-radius: var(--borderRadius_G_X_32) / var(--borderRadius_G_Y_32);
+}
+ .actual_square_033 {
+     width: var(--wd_global_33);
+     height: var(--ht_global_33);
+     border-radius: var(--borderRadius_G_X_33) / var(--borderRadius_G_Y_33);
+}
+ .actual_square_034 {
+     width: var(--wd_global_34);
+     height: var(--ht_global_34);
+     border-radius: var(--borderRadius_G_X_34) / var(--borderRadius_G_Y_34);
+}
+ .actual_square_035 {
+     width: var(--wd_global_35);
+     height: var(--ht_global_35);
+     border-radius: var(--borderRadius_G_X_35) / var(--borderRadius_G_Y_35);
+}
+ .actual_square_036 {
+     width: var(--wd_global_36);
+     height: var(--ht_global_36);
+     border-radius: var(--borderRadius_G_X_36) / var(--borderRadius_G_Y_36);
+}
+ .actual_square_037 {
+     width: var(--wd_global_37);
+     height: var(--ht_global_37);
+     border-radius: var(--borderRadius_G_X_37) / var(--borderRadius_G_Y_37);
+}
+ .actual_square_038 {
+     width: var(--wd_global_38);
+     height: var(--ht_global_38);
+     border-radius: var(--borderRadius_G_X_38) / var(--borderRadius_G_Y_38);
+}
+ .actual_square_039 {
+     width: var(--wd_global_39);
+     height: var(--ht_global_39);
+     border-radius: var(--borderRadius_G_X_39) / var(--borderRadius_G_Y_39);
+}
+ .actual_square_040 {
+     width: var(--wd_global_40);
+     height: var(--ht_global_40);
+     border-radius: var(--borderRadius_G_X_40) / var(--borderRadius_G_Y_40);
+}
+ .actual_square_041 {
+     width: var(--wd_global_41);
+     height: var(--ht_global_41);
+     border-radius: var(--borderRadius_G_X_41) / var(--borderRadius_G_Y_41);
+}
+ .actual_square_042 {
+     width: var(--wd_global_42);
+     height: var(--ht_global_42);
+     border-radius: var(--borderRadius_G_X_42) / var(--borderRadius_G_Y_42);
+}
+ .actual_square_043 {
+     width: var(--wd_global_43);
+     height: var(--ht_global_43);
+     border-radius: var(--borderRadius_G_X_43) / var(--borderRadius_G_Y_43);
+}
+ .actual_square_044 {
+     width: var(--wd_global_44);
+     height: var(--ht_global_44);
+     border-radius: var(--borderRadius_G_X_44) / var(--borderRadius_G_Y_44);
+}
+ .actual_square_045 {
+     width: var(--wd_global_45);
+     height: var(--ht_global_45);
+     border-radius: var(--borderRadius_G_X_45) / var(--borderRadius_G_Y_45);
+}
+ .actual_square_046 {
+     width: var(--wd_global_46);
+     height: var(--ht_global_46);
+     border-radius: var(--borderRadius_G_X_46) / var(--borderRadius_G_Y_46);
+}
+ .actual_square_047 {
+     width: var(--wd_global_47);
+     height: var(--ht_global_47);
+     border-radius: var(--borderRadius_G_X_47) / var(--borderRadius_G_Y_47);
+}
+ .actual_square_048 {
+     width: var(--wd_global_48);
+     height: var(--ht_global_48);
+     border-radius: var(--borderRadius_G_X_48) / var(--borderRadius_G_Y_48);
+}
+ .actual_square_049 {
+     width: var(--wd_global_49);
+     height: var(--ht_global_49);
+     border-radius: var(--borderRadius_G_X_49) / var(--borderRadius_G_Y_49);
+}
+ .actual_square_050 {
+     width: var(--wd_global_50);
+     height: var(--ht_global_50);
+     border-radius: var(--borderRadius_G_X_50) / var(--borderRadius_G_Y_50);
+}
+ .actual_square_051 {
+     width: var(--wd_global_51);
+     height: var(--ht_global_51);
+     border-radius: var(--borderRadius_G_X_51) / var(--borderRadius_G_Y_51);
+}
+ .actual_square_052 {
+     width: var(--wd_global_52);
+     height: var(--ht_global_52);
+     border-radius: var(--borderRadius_G_X_52) / var(--borderRadius_G_Y_52);
+}
+ .actual_square_053 {
+     width: var(--wd_global_53);
+     height: var(--ht_global_53);
+     border-radius: var(--borderRadius_G_X_53) / var(--borderRadius_G_Y_53);
+}
+ .actual_square_054 {
+     width: var(--wd_global_54);
+     height: var(--ht_global_54);
+     border-radius: var(--borderRadius_G_X_54) / var(--borderRadius_G_Y_54);
+}
+ .actual_square_055 {
+     width: var(--wd_global_55);
+     height: var(--ht_global_55);
+     border-radius: var(--borderRadius_G_X_55) / var(--borderRadius_G_Y_55);
+}
+ .actual_square_056 {
+     width: var(--wd_global_56);
+     height: var(--ht_global_56);
+     border-radius: var(--borderRadius_G_X_56) / var(--borderRadius_G_Y_56);
+}
+ .actual_square_057 {
+     width: var(--wd_global_57);
+     height: var(--ht_global_57);
+     border-radius: var(--borderRadius_G_X_57) / var(--borderRadius_G_Y_57);
+}
+ .actual_square_058 {
+     width: var(--wd_global_58);
+     height: var(--ht_global_58);
+     border-radius: var(--borderRadius_G_X_58) / var(--borderRadius_G_Y_58);
+}
+ .actual_square_059 {
+     width: var(--wd_global_59);
+     height: var(--ht_global_59);
+     border-radius: var(--borderRadius_G_X_59) / var(--borderRadius_G_Y_59);
+}
+ .actual_square_060 {
+     width: var(--wd_global_60);
+     height: var(--ht_global_60);
+     border-radius: var(--borderRadius_G_X_60) / var(--borderRadius_G_Y_60);
+}
+ .actual_square_061 {
+     width: var(--wd_global_61);
+     height: var(--ht_global_61);
+     border-radius: var(--borderRadius_G_X_61) / var(--borderRadius_G_Y_61);
+}
+ .actual_square_062 {
+     width: var(--wd_global_62);
+     height: var(--ht_global_62);
+     border-radius: var(--borderRadius_G_X_62) / var(--borderRadius_G_Y_62);
+}
+ .actual_square_063 {
+     width: var(--wd_global_63);
+     height: var(--ht_global_63);
+     border-radius: var(--borderRadius_G_X_63) / var(--borderRadius_G_Y_63);
+}
+ .actual_square_064 {
+     width: var(--wd_global_64);
+     height: var(--ht_global_64);
+     border-radius: var(--borderRadius_G_X_64) / var(--borderRadius_G_Y_64);
+}
+ .actual_square_065 {
+     width: var(--wd_global_65);
+     height: var(--ht_global_65);
+     border-radius: var(--borderRadius_G_X_65) / var(--borderRadius_G_Y_65);
+}
+ .actual_square_066 {
+     width: var(--wd_global_66);
+     height: var(--ht_global_66);
+     border-radius: var(--borderRadius_G_X_66) / var(--borderRadius_G_Y_66);
+}
+ .actual_square_067 {
+     width: var(--wd_global_67);
+     height: var(--ht_global_67);
+     border-radius: var(--borderRadius_G_X_67) / var(--borderRadius_G_Y_67);
+}
+ .actual_square_068 {
+     width: var(--wd_global_68);
+     height: var(--ht_global_68);
+     border-radius: var(--borderRadius_G_X_68) / var(--borderRadius_G_Y_68);
+}
+ .actual_square_069 {
+     width: var(--wd_global_69);
+     height: var(--ht_global_69);
+     border-radius: var(--borderRadius_G_X_69) / var(--borderRadius_G_Y_69);
+}
+ .actual_square_070 {
+     width: var(--wd_global_70);
+     height: var(--ht_global_70);
+     border-radius: var(--borderRadius_G_X_70) / var(--borderRadius_G_Y_70);
+}
+ .actual_square_071 {
+     width: var(--wd_global_71);
+     height: var(--ht_global_71);
+     border-radius: var(--borderRadius_G_X_71) / var(--borderRadius_G_Y_71);
+}
+ .actual_square_072 {
+     width: var(--wd_global_72);
+     height: var(--ht_global_72);
+     border-radius: var(--borderRadius_G_X_72) / var(--borderRadius_G_Y_72);
+}
+ .actual_square_073 {
+     width: var(--wd_global_73);
+     height: var(--ht_global_73);
+     border-radius: var(--borderRadius_G_X_73) / var(--borderRadius_G_Y_73);
+}
+ .actual_square_074 {
+     width: var(--wd_global_74);
+     height: var(--ht_global_74);
+     border-radius: var(--borderRadius_G_X_74) / var(--borderRadius_G_Y_74);
+}
+ .actual_square_075 {
+     width: var(--wd_global_75);
+     height: var(--ht_global_75);
+     border-radius: var(--borderRadius_G_X_75) / var(--borderRadius_G_Y_75);
+}
+ .actual_square_076 {
+     width: var(--wd_global_76);
+     height: var(--ht_global_76);
+     border-radius: var(--borderRadius_G_X_76) / var(--borderRadius_G_Y_76);
+}
+ .actual_square_077 {
+     width: var(--wd_global_77);
+     height: var(--ht_global_77);
+     border-radius: var(--borderRadius_G_X_77) / var(--borderRadius_G_Y_77);
+}
+ .actual_square_078 {
+     width: var(--wd_global_78);
+     height: var(--ht_global_78);
+     border-radius: var(--borderRadius_G_X_78) / var(--borderRadius_G_Y_78);
+}
+ .actual_square_079 {
+     width: var(--wd_global_79);
+     height: var(--ht_global_79);
+     border-radius: var(--borderRadius_G_X_79) / var(--borderRadius_G_Y_79);
+}
+ .actual_square_080 {
+     width: var(--wd_global_80);
+     height: var(--ht_global_80);
+     border-radius: var(--borderRadius_G_X_80) / var(--borderRadius_G_Y_80);
+}
+ .actual_square_081 {
+     width: var(--wd_global_81);
+     height: var(--ht_global_81);
+     border-radius: var(--borderRadius_G_X_81) / var(--borderRadius_G_Y_81);
+}
+ .actual_square_082 {
+     width: var(--wd_global_82);
+     height: var(--ht_global_82);
+     border-radius: var(--borderRadius_G_X_82) / var(--borderRadius_G_Y_82);
+}
+ .actual_square_083 {
+     width: var(--wd_global_83);
+     height: var(--ht_global_83);
+     border-radius: var(--borderRadius_G_X_83) / var(--borderRadius_G_Y_83);
+}
+ .actual_square_084 {
+     width: var(--wd_global_84);
+     height: var(--ht_global_84);
+     border-radius: var(--borderRadius_G_X_84) / var(--borderRadius_G_Y_84);
+}
+ .actual_square_085 {
+     width: var(--wd_global_85);
+     height: var(--ht_global_85);
+     border-radius: var(--borderRadius_G_X_85) / var(--borderRadius_G_Y_85);
+}
+ .actual_square_086 {
+     width: var(--wd_global_86);
+     height: var(--ht_global_86);
+     border-radius: var(--borderRadius_G_X_86) / var(--borderRadius_G_Y_86);
+}
+ .actual_square_087 {
+     width: var(--wd_global_87);
+     height: var(--ht_global_87);
+     border-radius: var(--borderRadius_G_X_87) / var(--borderRadius_G_Y_87);
+}
+ .actual_square_088 {
+     width: var(--wd_global_88);
+     height: var(--ht_global_88);
+     border-radius: var(--borderRadius_G_X_88) / var(--borderRadius_G_Y_88);
+}
+ .actual_square_089 {
+     width: var(--wd_global_89);
+     height: var(--ht_global_89);
+     border-radius: var(--borderRadius_G_X_89) / var(--borderRadius_G_Y_89);
+}
+ .actual_square_090 {
+     width: var(--wd_global_90);
+     height: var(--ht_global_90);
+     border-radius: var(--borderRadius_G_X_90) / var(--borderRadius_G_Y_90);
+}
+ .actual_square_091 {
+     width: var(--wd_global_91);
+     height: var(--ht_global_91);
+     border-radius: var(--borderRadius_G_X_91) / var(--borderRadius_G_Y_91);
+}
+ .actual_square_092 {
+     width: var(--wd_global_92);
+     height: var(--ht_global_92);
+     border-radius: var(--borderRadius_G_X_92) / var(--borderRadius_G_Y_92);
+}
+ .actual_square_093 {
+     width: var(--wd_global_93);
+     height: var(--ht_global_93);
+     border-radius: var(--borderRadius_G_X_93) / var(--borderRadius_G_Y_93);
+}
+ .actual_square_094 {
+     width: var(--wd_global_94);
+     height: var(--ht_global_94);
+     border-radius: var(--borderRadius_G_X_94) / var(--borderRadius_G_Y_94);
+}
+ .actual_square_095 {
+     width: var(--wd_global_95);
+     height: var(--ht_global_95);
+     border-radius: var(--borderRadius_G_X_95) / var(--borderRadius_G_Y_95);
+}
+ .actual_square_096 {
+     width: var(--wd_global_96);
+     height: var(--ht_global_96);
+     border-radius: var(--borderRadius_G_X_96) / var(--borderRadius_G_Y_96);
+}
+ .actual_square_097 {
+     width: var(--wd_global_97);
+     height: var(--ht_global_97);
+     border-radius: var(--borderRadius_G_X_97) / var(--borderRadius_G_Y_97);
+}
+ .actual_square_098 {
+     width: var(--wd_global_98);
+     height: var(--ht_global_98);
+     border-radius: var(--borderRadius_G_X_98) / var(--borderRadius_G_Y_98);
+}
+ .actual_square_099 {
+     width: var(--wd_global_99);
+     height: var(--ht_global_99);
+     border-radius: var(--borderRadius_G_X_99) / var(--borderRadius_G_Y_99);
+}
+ .actual_square_100 {
+     width: var(--wd_global_100);
+     height: var(--ht_global_100);
+     border-radius: var(--borderRadius_G_X_100) / var(--borderRadius_G_Y_100);
+}
+/*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH psuedo_squares HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
  .ps_001{
      border-radius: 16.66667% 0% 0% 0%;
 }
@@ -2067,1232 +1855,1114 @@
      margin-top: 90%;
 }
 /* ------------------- 100 ------------------------ */
-
-
-
-
-
-
-/*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH  psuedo_squares_right   HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
-
-.ps_right_1 {
-    border-radius: 16.66667% 0% 0% 0%;
+/*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH psuedo_squares_right HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+ .ps_right_1 {
+     border-radius: 16.66667% 0% 0% 0%;
 }
-.ps_right_2 {
-    margin-left: 10%;
-    margin-top: 0%;
+ .ps_right_2 {
+     margin-left: 10%;
+     margin-top: 0%;
 }
-.ps_right_3 {
-    margin-left: 20%;
-    margin-top: 0%;
+ .ps_right_3 {
+     margin-left: 20%;
+     margin-top: 0%;
 }
-.ps_right_4 {
-    margin-left: 30%;
-    margin-top: 0%;
+ .ps_right_4 {
+     margin-left: 30%;
+     margin-top: 0%;
 }
-.ps_right_5 {
-    margin-left:40%;
-    margin-top: 0%;
+ .ps_right_5 {
+     margin-left:40%;
+     margin-top: 0%;
 }
-.ps_right_6 {
-    margin-left:50%;
-    margin-top: 0%;
+ .ps_right_6 {
+     margin-left:50%;
+     margin-top: 0%;
 }
-.ps_right_7 {
-    margin-left:60%;
-    margin-top: 0%;
+ .ps_right_7 {
+     margin-left:60%;
+     margin-top: 0%;
 }
-.ps_right_8 {
-    margin-left:70%;
-    margin-top: 0%;
+ .ps_right_8 {
+     margin-left:70%;
+     margin-top: 0%;
 }
-.ps_right_9 {
-    margin-left:80%;
-    margin-top: 0%;
+ .ps_right_9 {
+     margin-left:80%;
+     margin-top: 0%;
 }
-.ps_right_10 {
-    border-radius: 0% 16.66667% 0% 0%;
-    margin-left:90%;
-    margin-top: 0%;
+ .ps_right_10 {
+     border-radius: 0% 16.66667% 0% 0%;
+     margin-left:90%;
+     margin-top: 0%;
 }
 /* ------------------- 10 ------------------------ */
-.ps_right_11 {
-    margin-top: 10%;
+ .ps_right_11 {
+     margin-top: 10%;
 }
-.ps_right_12 {
-    margin-left:10%;
-    margin-top: 10%;
+ .ps_right_12 {
+     margin-left:10%;
+     margin-top: 10%;
 }
-.ps_right_13 {
-    margin-left:20%;
-    margin-top: 10%;
+ .ps_right_13 {
+     margin-left:20%;
+     margin-top: 10%;
 }
-.ps_right_14 {
-    margin-left:30%;
-    margin-top: 10%;
+ .ps_right_14 {
+     margin-left:30%;
+     margin-top: 10%;
 }
-.ps_right_15 {
-    margin-left:40%;
-    margin-top: 10%;
+ .ps_right_15 {
+     margin-left:40%;
+     margin-top: 10%;
 }
-.ps_right_16 {
-    margin-left:50%;
-    margin-top: 10%;
+ .ps_right_16 {
+     margin-left:50%;
+     margin-top: 10%;
 }
-.ps_right_17 {
-    margin-left:60%;
-    margin-top: 10%;
+ .ps_right_17 {
+     margin-left:60%;
+     margin-top: 10%;
 }
-.ps_right_18 {
-    margin-left:70%;
-    margin-top: 10%;
+ .ps_right_18 {
+     margin-left:70%;
+     margin-top: 10%;
 }
-.ps_right_19 {
-    margin-left:80%;
-    margin-top: 10%;
+ .ps_right_19 {
+     margin-left:80%;
+     margin-top: 10%;
 }
-.ps_right_20 {
-    margin-left:90%;
-    margin-top: 10%;
+ .ps_right_20 {
+     margin-left:90%;
+     margin-top: 10%;
 }
 /* ------------------- 20 ------------------------ */
-.ps_right_21 {
-    margin-top: 20%;
+ .ps_right_21 {
+     margin-top: 20%;
 }
-.ps_right_22 {
-    margin-left:10%;
-    margin-top: 20%;
+ .ps_right_22 {
+     margin-left:10%;
+     margin-top: 20%;
 }
-.ps_right_23 {
-    margin-left:20%;
-    margin-top: 20%;
+ .ps_right_23 {
+     margin-left:20%;
+     margin-top: 20%;
 }
-.ps_right_24 {
-    margin-left:30%;
-    margin-top: 20%;
+ .ps_right_24 {
+     margin-left:30%;
+     margin-top: 20%;
 }
-.ps_right_25 {
-    margin-left:40%;
-    margin-top: 20%;
+ .ps_right_25 {
+     margin-left:40%;
+     margin-top: 20%;
 }
-.ps_right_26 {
-    margin-left:50%;
-    margin-top: 20%;
+ .ps_right_26 {
+     margin-left:50%;
+     margin-top: 20%;
 }
-.ps_right_27 {
-    margin-left:60%;
-    margin-top: 20%;
+ .ps_right_27 {
+     margin-left:60%;
+     margin-top: 20%;
 }
-.ps_right_28 {
-    margin-left:70%;
-    margin-top: 20%;
+ .ps_right_28 {
+     margin-left:70%;
+     margin-top: 20%;
 }
-.ps_right_29 {
-    margin-left:80%;
-    margin-top: 20%;
+ .ps_right_29 {
+     margin-left:80%;
+     margin-top: 20%;
 }
-.ps_right_30 {
-    margin-left:90%;
-    margin-top: 20%;
+ .ps_right_30 {
+     margin-left:90%;
+     margin-top: 20%;
 }
 /* ------------------- 30 ------------------------ */
-.ps_right_31 {
-    margin-top: 30%;
+ .ps_right_31 {
+     margin-top: 30%;
 }
-.ps_right_32 {
-    margin-left:10%;
-    margin-top: 30%;
+ .ps_right_32 {
+     margin-left:10%;
+     margin-top: 30%;
 }
-.ps_right_33 {
-    margin-left:20%;
-    margin-top: 30%;
+ .ps_right_33 {
+     margin-left:20%;
+     margin-top: 30%;
 }
-.ps_right_34 {
-    margin-left:30%;
-    margin-top: 30%;
+ .ps_right_34 {
+     margin-left:30%;
+     margin-top: 30%;
 }
-.ps_right_35 {
-    margin-left:40%;
-    margin-top: 30%;
+ .ps_right_35 {
+     margin-left:40%;
+     margin-top: 30%;
 }
-.ps_right_36 {
-    margin-left:50%;
-    margin-top: 30%;
+ .ps_right_36 {
+     margin-left:50%;
+     margin-top: 30%;
 }
-.ps_right_37 {
-    margin-left:60%;
-    margin-top: 30%;
+ .ps_right_37 {
+     margin-left:60%;
+     margin-top: 30%;
 }
-.ps_right_38 {
-    margin-left:70%;
-    margin-top: 30%;
+ .ps_right_38 {
+     margin-left:70%;
+     margin-top: 30%;
 }
-.ps_right_39 {
-    margin-left:80%;
-    margin-top: 30%;
+ .ps_right_39 {
+     margin-left:80%;
+     margin-top: 30%;
 }
-.ps_right_40 {
-    margin-left:90%;
-    margin-top: 30%;
+ .ps_right_40 {
+     margin-left:90%;
+     margin-top: 30%;
 }
 /* ------------------- 40 ------------------------ */
-.ps_right_41 {
-    margin-top: 40%;
+ .ps_right_41 {
+     margin-top: 40%;
 }
-.ps_right_42 {
-    margin-left:10%;
-    margin-top: 40%;
+ .ps_right_42 {
+     margin-left:10%;
+     margin-top: 40%;
 }
-.ps_right_43 {
-    margin-left:20%;
-    margin-top: 40%;
+ .ps_right_43 {
+     margin-left:20%;
+     margin-top: 40%;
 }
-.ps_right_44 {
-    margin-left:30%;
-    margin-top: 40%;
+ .ps_right_44 {
+     margin-left:30%;
+     margin-top: 40%;
 }
-.ps_right_45 {
-    margin-left:40%;
-    margin-top: 40%;
+ .ps_right_45 {
+     margin-left:40%;
+     margin-top: 40%;
 }
-.ps_right_46 {
-    margin-left:50%;
-    margin-top: 40%;
+ .ps_right_46 {
+     margin-left:50%;
+     margin-top: 40%;
 }
-.ps_right_47 {
-    margin-left:60%;
-    margin-top: 40%;
+ .ps_right_47 {
+     margin-left:60%;
+     margin-top: 40%;
 }
-.ps_right_48 {
-    margin-left:70%;
-    margin-top: 40%;
+ .ps_right_48 {
+     margin-left:70%;
+     margin-top: 40%;
 }
-.ps_right_49 {
-    margin-left:80%;
-    margin-top: 40%;
+ .ps_right_49 {
+     margin-left:80%;
+     margin-top: 40%;
 }
-.ps_right_50 {
-    margin-left:90%;
-    margin-top: 40%;
+ .ps_right_50 {
+     margin-left:90%;
+     margin-top: 40%;
 }
 /* ------------------- 50 ------------------------ */
-.ps_right_51 {
-    margin-top: 50%;
+ .ps_right_51 {
+     margin-top: 50%;
 }
-.ps_right_52 {
-    margin-left: 10%;
-    margin-top: 50%;
+ .ps_right_52 {
+     margin-left: 10%;
+     margin-top: 50%;
 }
-.ps_right_53 {
-    margin-left: 20%;
-    margin-top: 50%;
+ .ps_right_53 {
+     margin-left: 20%;
+     margin-top: 50%;
 }
-.ps_right_54 {
-    margin-left: 30%;
-    margin-top: 50%;
+ .ps_right_54 {
+     margin-left: 30%;
+     margin-top: 50%;
 }
-.ps_right_55 {
-    margin-left:40%;
-    margin-top: 50%;
+ .ps_right_55 {
+     margin-left:40%;
+     margin-top: 50%;
 }
-.ps_right_56 {
-    margin-left:50%;
-    margin-top: 50%;
+ .ps_right_56 {
+     margin-left:50%;
+     margin-top: 50%;
 }
-.ps_right_57 {
-    margin-left:60%;
-    margin-top: 50%;
+ .ps_right_57 {
+     margin-left:60%;
+     margin-top: 50%;
 }
-.ps_right_58 {
-    margin-left:70%;
-    margin-top: 50%;
+ .ps_right_58 {
+     margin-left:70%;
+     margin-top: 50%;
 }
-.ps_right_59 {
-    margin-left:80%;
-    margin-top: 50%;
+ .ps_right_59 {
+     margin-left:80%;
+     margin-top: 50%;
 }
-.ps_right_60 {
-    margin-left:90%;
-    margin-top: 50%;
+ .ps_right_60 {
+     margin-left:90%;
+     margin-top: 50%;
 }
 /* ------------------- 60 ------------------------ */
-.ps_right_61 {
-    margin-top: 60%;
+ .ps_right_61 {
+     margin-top: 60%;
 }
-.ps_right_62 {
-    margin-left:10%;
-    margin-top: 60%;
+ .ps_right_62 {
+     margin-left:10%;
+     margin-top: 60%;
 }
-.ps_right_63 {
-    margin-left:20%;
-    margin-top: 60%;
+ .ps_right_63 {
+     margin-left:20%;
+     margin-top: 60%;
 }
-.ps_right_64 {
-    margin-left:30%;
-    margin-top: 60%;
+ .ps_right_64 {
+     margin-left:30%;
+     margin-top: 60%;
 }
-.ps_right_65 {
-    margin-left:40%;
-    margin-top: 60%;
+ .ps_right_65 {
+     margin-left:40%;
+     margin-top: 60%;
 }
-.ps_right_66 {
-    margin-left:50%;
-    margin-top: 60%;
+ .ps_right_66 {
+     margin-left:50%;
+     margin-top: 60%;
 }
-.ps_right_67 {
-    margin-left:60%;
-    margin-top: 60%;
+ .ps_right_67 {
+     margin-left:60%;
+     margin-top: 60%;
 }
-.ps_right_68 {
-    margin-left:70%;
-    margin-top: 60%;
+ .ps_right_68 {
+     margin-left:70%;
+     margin-top: 60%;
 }
-.ps_right_69 {
-    margin-left:80%;
-    margin-top: 60%;
+ .ps_right_69 {
+     margin-left:80%;
+     margin-top: 60%;
 }
-.ps_right_70 {
-    margin-left:90%;
-    margin-top: 60%;
+ .ps_right_70 {
+     margin-left:90%;
+     margin-top: 60%;
 }
 /* ------------------- 70 ------------------------ */
-.ps_right_71 {
-    margin-top: 70%;
+ .ps_right_71 {
+     margin-top: 70%;
 }
-.ps_right_72 {
-    margin-left:10%;
-    margin-top: 70%;
+ .ps_right_72 {
+     margin-left:10%;
+     margin-top: 70%;
 }
-.ps_right_73 {
-    margin-left:20%;
-    margin-top: 70%;
+ .ps_right_73 {
+     margin-left:20%;
+     margin-top: 70%;
 }
-.ps_right_74 {
-    margin-left:30%;
-    margin-top: 70%;
+ .ps_right_74 {
+     margin-left:30%;
+     margin-top: 70%;
 }
-.ps_right_75 {
-    margin-left:40%;
-    margin-top: 70%;
+ .ps_right_75 {
+     margin-left:40%;
+     margin-top: 70%;
 }
-.ps_right_76 {
-    margin-left:50%;
-    margin-top: 70%;
+ .ps_right_76 {
+     margin-left:50%;
+     margin-top: 70%;
 }
-.ps_right_77 {
-    margin-left:60%;
-    margin-top: 70%;
+ .ps_right_77 {
+     margin-left:60%;
+     margin-top: 70%;
 }
-.ps_right_78 {
-    margin-left:70%;
-    margin-top: 70%;
+ .ps_right_78 {
+     margin-left:70%;
+     margin-top: 70%;
 }
-.ps_right_79 {
-    margin-left:80%;
-    margin-top: 70%;
+ .ps_right_79 {
+     margin-left:80%;
+     margin-top: 70%;
 }
-.ps_right_80 {
-    margin-left:90%;
-    margin-top: 70%;
+ .ps_right_80 {
+     margin-left:90%;
+     margin-top: 70%;
 }
 /* ------------------- 80 ------------------------ */
-.ps_right_81 {
-    margin-top: 80%;
+ .ps_right_81 {
+     margin-top: 80%;
 }
-.ps_right_82 {
-    margin-left:10%;
-    margin-top: 80%;
+ .ps_right_82 {
+     margin-left:10%;
+     margin-top: 80%;
 }
-.ps_right_83 {
-    margin-left:20%;
-    margin-top: 80%;
+ .ps_right_83 {
+     margin-left:20%;
+     margin-top: 80%;
 }
-.ps_right_84 {
-    margin-left:30%;
-    margin-top: 80%;
+ .ps_right_84 {
+     margin-left:30%;
+     margin-top: 80%;
 }
-.ps_right_85 {
-    margin-left:40%;
-    margin-top: 80%;
+ .ps_right_85 {
+     margin-left:40%;
+     margin-top: 80%;
 }
-.ps_right_86 {
-    margin-left:50%;
-    margin-top: 80%;
+ .ps_right_86 {
+     margin-left:50%;
+     margin-top: 80%;
 }
-.ps_right_87 {
-    margin-left:60%;
-    margin-top: 80%;
+ .ps_right_87 {
+     margin-left:60%;
+     margin-top: 80%;
 }
-.ps_right_88 {
-    margin-left:70%;
-    margin-top: 80%;
+ .ps_right_88 {
+     margin-left:70%;
+     margin-top: 80%;
 }
-.ps_right_89 {
-    margin-left:80%;
-    margin-top: 80%;
+ .ps_right_89 {
+     margin-left:80%;
+     margin-top: 80%;
 }
-.ps_right_90 {
-    margin-left:90%;
-    margin-top: 80%;
+ .ps_right_90 {
+     margin-left:90%;
+     margin-top: 80%;
 }
 /* ------------------- 90 ------------------------ */
-.ps_right_91 {
-    border-radius: 0% 0% 0% 16.66667%;
-    margin-top: 90%;
+ .ps_right_91 {
+     border-radius: 0% 0% 0% 16.66667%;
+     margin-top: 90%;
 }
-.ps_right_92 {
-    margin-left:10%;
-    margin-top: 90%;
+ .ps_right_92 {
+     margin-left:10%;
+     margin-top: 90%;
 }
-.ps_right_93 {
-    margin-left:20%;
-    margin-top: 90%;
+ .ps_right_93 {
+     margin-left:20%;
+     margin-top: 90%;
 }
-.ps_right_94 {
-    margin-left:30%;
-    margin-top: 90%;
+ .ps_right_94 {
+     margin-left:30%;
+     margin-top: 90%;
 }
-.ps_right_95 {
-    margin-left:40%;
-    margin-top: 90%;
+ .ps_right_95 {
+     margin-left:40%;
+     margin-top: 90%;
 }
-.ps_right_96 {
-    margin-left:50%;
-    margin-top: 90%;
+ .ps_right_96 {
+     margin-left:50%;
+     margin-top: 90%;
 }
-.ps_right_97 {
-    margin-left:60%;
-    margin-top: 90%;
+ .ps_right_97 {
+     margin-left:60%;
+     margin-top: 90%;
 }
-.ps_right_98 {
-    margin-left:70%;
-    margin-top: 90%;
+ .ps_right_98 {
+     margin-left:70%;
+     margin-top: 90%;
 }
-.ps_right_99 {
-    margin-left:80%;
-    margin-top: 90%;
+ .ps_right_99 {
+     margin-left:80%;
+     margin-top: 90%;
 }
-.ps_right_100 {
-    border-radius: 0% 0% 16.66667% 0%;
-    margin-left:90%;
-    margin-top: 90%;
+ .ps_right_100 {
+     border-radius: 0% 0% 16.66667% 0%;
+     margin-left:90%;
+     margin-top: 90%;
 }
 /* ------------------- 100 ------------------------ */
-
- 
 /* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH CLICK HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
-.ps_001:active .actual_square_001 {
-    width: var(--wd_reduced_global_1);
-    height: var(--ht_reduced_global_1);
-    margin-left: var(--mar_1);
-    margin-top: var(--mar_1);
-    border-radius: var(--borderRadius_reduced_X_1) / var(--borderRadius_reduced_Y_1);
-}
-
-.ps_002:active .actual_square_002 {
-    width: var(--wd_reduced_global_2);
-    height: var(--ht_reduced_global_2);
-    margin-left: var(--mar_2);
-    margin-top: var(--mar_2);
-    border-radius: var(--borderRadius_reduced_X_2) / var(--borderRadius_reduced_Y_2);
-}
-
-.ps_003:active .actual_square_003 {
-    width: var(--wd_reduced_global_3);
-    height: var(--ht_reduced_global_3);
-    margin-left: var(--mar_3);
-    margin-top: var(--mar_3);
-    border-radius: var(--borderRadius_reduced_X_3) / var(--borderRadius_reduced_Y_3);
-}
-
-.ps_004:active .actual_square_004 {
-    width: var(--wd_reduced_global_4);
-    height: var(--ht_reduced_global_4);
-    margin-left: var(--mar_4);
-    margin-top: var(--mar_4);
-    border-radius: var(--borderRadius_reduced_X_4) / var(--borderRadius_reduced_Y_4);
-}
-
-.ps_005:active .actual_square_005 {
-    width: var(--wd_reduced_global_5);
-    height: var(--ht_reduced_global_5);
-    margin-left: var(--mar_5);
-    margin-top: var(--mar_5);
-    border-radius: var(--borderRadius_reduced_X_5) / var(--borderRadius_reduced_Y_5);
-}
-
-.ps_006:active .actual_square_006 {
-    width: var(--wd_reduced_global_6);
-    height: var(--ht_reduced_global_6);
-    margin-left: var(--mar_6);
-    margin-top: var(--mar_6);
-    border-radius: var(--borderRadius_reduced_X_6) / var(--borderRadius_reduced_Y_6);
-}
-
-.ps_007:active .actual_square_007 {
-    width: var(--wd_reduced_global_7);
-    height: var(--ht_reduced_global_7);
-    margin-left: var(--mar_7);
-    margin-top: var(--mar_7);
-    border-radius: var(--borderRadius_reduced_X_7) / var(--borderRadius_reduced_Y_7);
-}
-
-.ps_008:active .actual_square_008 {
-    width: var(--wd_reduced_global_8);
-    height: var(--ht_reduced_global_8);
-    margin-left: var(--mar_8);
-    margin-top: var(--mar_8);
-    border-radius: var(--borderRadius_reduced_X_8) / var(--borderRadius_reduced_Y_8);
-}
-
-.ps_009:active .actual_square_009 {
-    width: var(--wd_reduced_global_9);
-    height: var(--ht_reduced_global_9);
-    margin-left: var(--mar_9);
-    margin-top: var(--mar_9);
-    border-radius: var(--borderRadius_reduced_X_9) / var(--borderRadius_reduced_Y_9);
-}
-
-.ps_010:active .actual_square_010 {
-    width: var(--wd_reduced_global_10);
-    height: var(--ht_reduced_global_10);
-    margin-left: var(--mar_10);
-    margin-top: var(--mar_10);
-    border-radius: var(--borderRadius_reduced_X_10) / var(--borderRadius_reduced_Y_10);
-}
-
-.ps_011:active .actual_square_011 {
-    width: var(--wd_reduced_global_11);
-    height: var(--ht_reduced_global_11);
-    margin-left: var(--mar_11);
-    margin-top: var(--mar_11);
-    border-radius: var(--borderRadius_reduced_X_11) / var(--borderRadius_reduced_Y_11);
-}
-
-.ps_012:active .actual_square_012 {
-    width: var(--wd_reduced_global_12);
-    height: var(--ht_reduced_global_12);
-    margin-left: var(--mar_12);
-    margin-top: var(--mar_12);
-    border-radius: var(--borderRadius_reduced_X_12) / var(--borderRadius_reduced_Y_12);
-}
-
-.ps_013:active .actual_square_013 {
-    width: var(--wd_reduced_global_13);
-    height: var(--ht_reduced_global_13);
-    margin-left: var(--mar_13);
-    margin-top: var(--mar_13);
-    border-radius: var(--borderRadius_reduced_X_13) / var(--borderRadius_reduced_Y_13);
-}
-
-.ps_014:active .actual_square_014 {
-    width: var(--wd_reduced_global_14);
-    height: var(--ht_reduced_global_14);
-    margin-left: var(--mar_14);
-    margin-top: var(--mar_14);
-    border-radius: var(--borderRadius_reduced_X_14) / var(--borderRadius_reduced_Y_14);
-}
-
-.ps_015:active .actual_square_015 {
-    width: var(--wd_reduced_global_15);
-    height: var(--ht_reduced_global_15);
-    margin-left: var(--mar_15);
-    margin-top: var(--mar_15);
-    border-radius: var(--borderRadius_reduced_X_15) / var(--borderRadius_reduced_Y_15);
-}
-
-.ps_016:active .actual_square_016 {
-    width: var(--wd_reduced_global_16);
-    height: var(--ht_reduced_global_16);
-    margin-left: var(--mar_16);
-    margin-top: var(--mar_16);
-    border-radius: var(--borderRadius_reduced_X_16) / var(--borderRadius_reduced_Y_16);
-}
-
-.ps_017:active .actual_square_017 {
-    width: var(--wd_reduced_global_17);
-    height: var(--ht_reduced_global_17);
-    margin-left: var(--mar_17);
-    margin-top: var(--mar_17);
-    border-radius: var(--borderRadius_reduced_X_17) / var(--borderRadius_reduced_Y_17);
-}
-
-.ps_018:active .actual_square_018 {
-    width: var(--wd_reduced_global_18);
-    height: var(--ht_reduced_global_18);
-    margin-left: var(--mar_18);
-    margin-top: var(--mar_18);
-    border-radius: var(--borderRadius_reduced_X_18) / var(--borderRadius_reduced_Y_18);
-}
-
-.ps_019:active .actual_square_019 {
-    width: var(--wd_reduced_global_19);
-    height: var(--ht_reduced_global_19);
-    margin-left: var(--mar_19);
-    margin-top: var(--mar_19);
-    border-radius: var(--borderRadius_reduced_X_19) / var(--borderRadius_reduced_Y_19);
-}
-
-.ps_020:active .actual_square_020 {
-    width: var(--wd_reduced_global_20);
-    height: var(--ht_reduced_global_20);
-    margin-left: var(--mar_20);
-    margin-top: var(--mar_20);
-    border-radius: var(--borderRadius_reduced_X_20) / var(--borderRadius_reduced_Y_20);
-}
-
-.ps_021:active .actual_square_021 {
-    width: var(--wd_reduced_global_21);
-    height: var(--ht_reduced_global_21);
-    margin-left: var(--mar_21);
-    margin-top: var(--mar_21);
-    border-radius: var(--borderRadius_reduced_X_21) / var(--borderRadius_reduced_Y_21);
-}
-
-.ps_022:active .actual_square_022 {
-    width: var(--wd_reduced_global_22);
-    height: var(--ht_reduced_global_22);
-    margin-left: var(--mar_22);
-    margin-top: var(--mar_22);
-    border-radius: var(--borderRadius_reduced_X_22) / var(--borderRadius_reduced_Y_22);
-}
-
-.ps_023:active .actual_square_023 {
-    width: var(--wd_reduced_global_23);
-    height: var(--ht_reduced_global_23);
-    margin-left: var(--mar_23);
-    margin-top: var(--mar_23);
-    border-radius: var(--borderRadius_reduced_X_23) / var(--borderRadius_reduced_Y_23);
-}
-
-.ps_024:active .actual_square_024 {
-    width: var(--wd_reduced_global_24);
-    height: var(--ht_reduced_global_24);
-    margin-left: var(--mar_24);
-    margin-top: var(--mar_24);
-    border-radius: var(--borderRadius_reduced_X_24) / var(--borderRadius_reduced_Y_24);
-}
-
-.ps_025:active .actual_square_025 {
-    width: var(--wd_reduced_global_25);
-    height: var(--ht_reduced_global_25);
-    margin-left: var(--mar_25);
-    margin-top: var(--mar_25);
-    border-radius: var(--borderRadius_reduced_X_25) / var(--borderRadius_reduced_Y_25);
-}
-
-.ps_026:active .actual_square_026 {
-    width: var(--wd_reduced_global_26);
-    height: var(--ht_reduced_global_26);
-    margin-left: var(--mar_26);
-    margin-top: var(--mar_26);
-    border-radius: var(--borderRadius_reduced_X_26) / var(--borderRadius_reduced_Y_26);
-}
-
-.ps_027:active .actual_square_027 {
-    width: var(--wd_reduced_global_27);
-    height: var(--ht_reduced_global_27);
-    margin-left: var(--mar_27);
-    margin-top: var(--mar_27);
-    border-radius: var(--borderRadius_reduced_X_27) / var(--borderRadius_reduced_Y_27);
-}
-
-.ps_028:active .actual_square_028 {
-    width: var(--wd_reduced_global_28);
-    height: var(--ht_reduced_global_28);
-    margin-left: var(--mar_28);
-    margin-top: var(--mar_28);
-    border-radius: var(--borderRadius_reduced_X_28) / var(--borderRadius_reduced_Y_28);
-}
-
-.ps_029:active .actual_square_029 {
-    width: var(--wd_reduced_global_29);
-    height: var(--ht_reduced_global_29);
-    margin-left: var(--mar_29);
-    margin-top: var(--mar_29);
-    border-radius: var(--borderRadius_reduced_X_29) / var(--borderRadius_reduced_Y_29);
-}
-
-.ps_030:active .actual_square_030 {
-    width: var(--wd_reduced_global_30);
-    height: var(--ht_reduced_global_30);
-    margin-left: var(--mar_30);
-    margin-top: var(--mar_30);
-    border-radius: var(--borderRadius_reduced_X_30) / var(--borderRadius_reduced_Y_30);
-}
-
-.ps_031:active .actual_square_031 {
-    width: var(--wd_reduced_global_31);
-    height: var(--ht_reduced_global_31);
-    margin-left: var(--mar_31);
-    margin-top: var(--mar_31);
-    border-radius: var(--borderRadius_reduced_X_31) / var(--borderRadius_reduced_Y_31);
-}
-
-.ps_032:active .actual_square_032 {
-    width: var(--wd_reduced_global_32);
-    height: var(--ht_reduced_global_32);
-    margin-left: var(--mar_32);
-    margin-top: var(--mar_32);
-    border-radius: var(--borderRadius_reduced_X_32) / var(--borderRadius_reduced_Y_32);
-}
-
-.ps_033:active .actual_square_033 {
-    width: var(--wd_reduced_global_33);
-    height: var(--ht_reduced_global_33);
-    margin-left: var(--mar_33);
-    margin-top: var(--mar_33);
-    border-radius: var(--borderRadius_reduced_X_33) / var(--borderRadius_reduced_Y_33);
-}
-
-.ps_034:active .actual_square_034 {
-    width: var(--wd_reduced_global_34);
-    height: var(--ht_reduced_global_34);
-    margin-left: var(--mar_34);
-    margin-top: var(--mar_34);
-    border-radius: var(--borderRadius_reduced_X_34) / var(--borderRadius_reduced_Y_34);
-}
-
-.ps_035:active .actual_square_035 {
-    width: var(--wd_reduced_global_35);
-    height: var(--ht_reduced_global_35);
-    margin-left: var(--mar_35);
-    margin-top: var(--mar_35);
-    border-radius: var(--borderRadius_reduced_X_35) / var(--borderRadius_reduced_Y_35);
-}
-
-.ps_036:active .actual_square_036 {
-    width: var(--wd_reduced_global_36);
-    height: var(--ht_reduced_global_36);
-    margin-left: var(--mar_36);
-    margin-top: var(--mar_36);
-    border-radius: var(--borderRadius_reduced_X_36) / var(--borderRadius_reduced_Y_36);
-}
-
-.ps_037:active .actual_square_037 {
-    width: var(--wd_reduced_global_37);
-    height: var(--ht_reduced_global_37);
-    margin-left: var(--mar_37);
-    margin-top: var(--mar_37);
-    border-radius: var(--borderRadius_reduced_X_37) / var(--borderRadius_reduced_Y_37);
-}
-
-.ps_038:active .actual_square_038 {
-    width: var(--wd_reduced_global_38);
-    height: var(--ht_reduced_global_38);
-    margin-left: var(--mar_38);
-    margin-top: var(--mar_38);
-    border-radius: var(--borderRadius_reduced_X_38) / var(--borderRadius_reduced_Y_38);
-}
-
-.ps_039:active .actual_square_039 {
-    width: var(--wd_reduced_global_39);
-    height: var(--ht_reduced_global_39);
-    margin-left: var(--mar_39);
-    margin-top: var(--mar_39);
-    border-radius: var(--borderRadius_reduced_X_39) / var(--borderRadius_reduced_Y_39);
-}
-
-.ps_040:active .actual_square_040 {
-    width: var(--wd_reduced_global_40);
-    height: var(--ht_reduced_global_40);
-    margin-left: var(--mar_40);
-    margin-top: var(--mar_40);
-    border-radius: var(--borderRadius_reduced_X_40) / var(--borderRadius_reduced_Y_40);
-}
-
-.ps_041:active .actual_square_041 {
-    width: var(--wd_reduced_global_41);
-    height: var(--ht_reduced_global_41);
-    margin-left: var(--mar_41);
-    margin-top: var(--mar_41);
-    border-radius: var(--borderRadius_reduced_X_41) / var(--borderRadius_reduced_Y_41);
-}
-
-.ps_042:active .actual_square_042 {
-    width: var(--wd_reduced_global_42);
-    height: var(--ht_reduced_global_42);
-    margin-left: var(--mar_42);
-    margin-top: var(--mar_42);
-    border-radius: var(--borderRadius_reduced_X_42) / var(--borderRadius_reduced_Y_42);
-}
-
-.ps_043:active .actual_square_043 {
-    width: var(--wd_reduced_global_43);
-    height: var(--ht_reduced_global_43);
-    margin-left: var(--mar_43);
-    margin-top: var(--mar_43);
-    border-radius: var(--borderRadius_reduced_X_43) / var(--borderRadius_reduced_Y_43);
-}
-
-.ps_044:active .actual_square_044 {
-    width: var(--wd_reduced_global_44);
-    height: var(--ht_reduced_global_44);
-    margin-left: var(--mar_44);
-    margin-top: var(--mar_44);
-    border-radius: var(--borderRadius_reduced_X_44) / var(--borderRadius_reduced_Y_44);
-}
-
-.ps_045:active .actual_square_045 {
-    width: var(--wd_reduced_global_45);
-    height: var(--ht_reduced_global_45);
-    margin-left: var(--mar_45);
-    margin-top: var(--mar_45);
-    border-radius: var(--borderRadius_reduced_X_45) / var(--borderRadius_reduced_Y_45);
-}
-
-.ps_046:active .actual_square_046 {
-    width: var(--wd_reduced_global_46);
-    height: var(--ht_reduced_global_46);
-    margin-left: var(--mar_46);
-    margin-top: var(--mar_46);
-    border-radius: var(--borderRadius_reduced_X_46) / var(--borderRadius_reduced_Y_46);
-}
-
-.ps_047:active .actual_square_047 {
-    width: var(--wd_reduced_global_47);
-    height: var(--ht_reduced_global_47);
-    margin-left: var(--mar_47);
-    margin-top: var(--mar_47);
-    border-radius: var(--borderRadius_reduced_X_47) / var(--borderRadius_reduced_Y_47);
-}
-
-.ps_048:active .actual_square_048 {
-    width: var(--wd_reduced_global_48);
-    height: var(--ht_reduced_global_48);
-    margin-left: var(--mar_48);
-    margin-top: var(--mar_48);
-    border-radius: var(--borderRadius_reduced_X_48) / var(--borderRadius_reduced_Y_48);
-}
-
-.ps_049:active .actual_square_049 {
-    width: var(--wd_reduced_global_49);
-    height: var(--ht_reduced_global_49);
-    margin-left: var(--mar_49);
-    margin-top: var(--mar_49);
-    border-radius: var(--borderRadius_reduced_X_49) / var(--borderRadius_reduced_Y_49);
-}
-
-.ps_050:active .actual_square_050 {
-    width: var(--wd_reduced_global_50);
-    height: var(--ht_reduced_global_50);
-    margin-left: var(--mar_50);
-    margin-top: var(--mar_50);
-    border-radius: var(--borderRadius_reduced_X_50) / var(--borderRadius_reduced_Y_50);
-}
-
-.ps_051:active .actual_square_051 {
-    width: var(--wd_reduced_global_51);
-    height: var(--ht_reduced_global_51);
-    margin-left: var(--mar_51);
-    margin-top: var(--mar_51);
-    border-radius: var(--borderRadius_reduced_X_51) / var(--borderRadius_reduced_Y_51);
-}
-
-.ps_052:active .actual_square_052 {
-    width: var(--wd_reduced_global_52);
-    height: var(--ht_reduced_global_52);
-    margin-left: var(--mar_52);
-    margin-top: var(--mar_52);
-    border-radius: var(--borderRadius_reduced_X_52) / var(--borderRadius_reduced_Y_52);
-}
-
-.ps_053:active .actual_square_053 {
-    width: var(--wd_reduced_global_53);
-    height: var(--ht_reduced_global_53);
-    margin-left: var(--mar_53);
-    margin-top: var(--mar_53);
-    border-radius: var(--borderRadius_reduced_X_53) / var(--borderRadius_reduced_Y_53);
-}
-
-.ps_054:active .actual_square_054 {
-    width: var(--wd_reduced_global_54);
-    height: var(--ht_reduced_global_54);
-    margin-left: var(--mar_54);
-    margin-top: var(--mar_54);
-    border-radius: var(--borderRadius_reduced_X_54) / var(--borderRadius_reduced_Y_54);
-}
-
-.ps_055:active .actual_square_055 {
-    width: var(--wd_reduced_global_55);
-    height: var(--ht_reduced_global_55);
-    margin-left: var(--mar_55);
-    margin-top: var(--mar_55);
-    border-radius: var(--borderRadius_reduced_X_55) / var(--borderRadius_reduced_Y_55);
-}
-
-.ps_056:active .actual_square_056 {
-    width: var(--wd_reduced_global_56);
-    height: var(--ht_reduced_global_56);
-    margin-left: var(--mar_56);
-    margin-top: var(--mar_56);
-    border-radius: var(--borderRadius_reduced_X_56) / var(--borderRadius_reduced_Y_56);
-}
-
-.ps_057:active .actual_square_057 {
-    width: var(--wd_reduced_global_57);
-    height: var(--ht_reduced_global_57);
-    margin-left: var(--mar_57);
-    margin-top: var(--mar_57);
-    border-radius: var(--borderRadius_reduced_X_57) / var(--borderRadius_reduced_Y_57);
-}
-
-.ps_058:active .actual_square_058 {
-    width: var(--wd_reduced_global_58);
-    height: var(--ht_reduced_global_58);
-    margin-left: var(--mar_58);
-    margin-top: var(--mar_58);
-    border-radius: var(--borderRadius_reduced_X_58) / var(--borderRadius_reduced_Y_58);
-}
-
-.ps_059:active .actual_square_059 {
-    width: var(--wd_reduced_global_59);
-    height: var(--ht_reduced_global_59);
-    margin-left: var(--mar_59);
-    margin-top: var(--mar_59);
-    border-radius: var(--borderRadius_reduced_X_59) / var(--borderRadius_reduced_Y_59);
-}
-
-.ps_060:active .actual_square_060 {
-    width: var(--wd_reduced_global_60);
-    height: var(--ht_reduced_global_60);
-    margin-left: var(--mar_60);
-    margin-top: var(--mar_60);
-    border-radius: var(--borderRadius_reduced_X_60) / var(--borderRadius_reduced_Y_60);
-}
-
-.ps_061:active .actual_square_061 {
-    width: var(--wd_reduced_global_61);
-    height: var(--ht_reduced_global_61);
-    margin-left: var(--mar_61);
-    margin-top: var(--mar_61);
-    border-radius: var(--borderRadius_reduced_X_61) / var(--borderRadius_reduced_Y_61);
-}
-
-.ps_062:active .actual_square_062 {
-    width: var(--wd_reduced_global_62);
-    height: var(--ht_reduced_global_62);
-    margin-left: var(--mar_62);
-    margin-top: var(--mar_62);
-    border-radius: var(--borderRadius_reduced_X_62) / var(--borderRadius_reduced_Y_62);
-}
-
-.ps_063:active .actual_square_063 {
-    width: var(--wd_reduced_global_63);
-    height: var(--ht_reduced_global_63);
-    margin-left: var(--mar_63);
-    margin-top: var(--mar_63);
-    border-radius: var(--borderRadius_reduced_X_63) / var(--borderRadius_reduced_Y_63);
-}
-
-.ps_064:active .actual_square_064 {
-    width: var(--wd_reduced_global_64);
-    height: var(--ht_reduced_global_64);
-    margin-left: var(--mar_64);
-    margin-top: var(--mar_64);
-    border-radius: var(--borderRadius_reduced_X_64) / var(--borderRadius_reduced_Y_64);
-}
-
-.ps_065:active .actual_square_065 {
-    width: var(--wd_reduced_global_65);
-    height: var(--ht_reduced_global_65);
-    margin-left: var(--mar_65);
-    margin-top: var(--mar_65);
-    border-radius: var(--borderRadius_reduced_X_65) / var(--borderRadius_reduced_Y_65);
-}
-
-.ps_066:active .actual_square_066 {
-    width: var(--wd_reduced_global_66);
-    height: var(--ht_reduced_global_66);
-    margin-left: var(--mar_66);
-    margin-top: var(--mar_66);
-    border-radius: var(--borderRadius_reduced_X_66) / var(--borderRadius_reduced_Y_66);
-}
-
-.ps_067:active .actual_square_067 {
-    width: var(--wd_reduced_global_67);
-    height: var(--ht_reduced_global_67);
-    margin-left: var(--mar_67);
-    margin-top: var(--mar_67);
-    border-radius: var(--borderRadius_reduced_X_67) / var(--borderRadius_reduced_Y_67);
-}
-
-.ps_068:active .actual_square_068 {
-    width: var(--wd_reduced_global_68);
-    height: var(--ht_reduced_global_68);
-    margin-left: var(--mar_68);
-    margin-top: var(--mar_68);
-    border-radius: var(--borderRadius_reduced_X_68) / var(--borderRadius_reduced_Y_68);
-}
-
-.ps_069:active .actual_square_069 {
-    width: var(--wd_reduced_global_69);
-    height: var(--ht_reduced_global_69);
-    margin-left: var(--mar_69);
-    margin-top: var(--mar_69);
-    border-radius: var(--borderRadius_reduced_X_69) / var(--borderRadius_reduced_Y_69);
-}
-
-.ps_070:active .actual_square_070 {
-    width: var(--wd_reduced_global_70);
-    height: var(--ht_reduced_global_70);
-    margin-left: var(--mar_70);
-    margin-top: var(--mar_70);
-    border-radius: var(--borderRadius_reduced_X_70) / var(--borderRadius_reduced_Y_70);
-}
-
-.ps_071:active .actual_square_071 {
-    width: var(--wd_reduced_global_71);
-    height: var(--ht_reduced_global_71);
-    margin-left: var(--mar_71);
-    margin-top: var(--mar_71);
-    border-radius: var(--borderRadius_reduced_X_71) / var(--borderRadius_reduced_Y_71);
-}
-
-.ps_072:active .actual_square_072 {
-    width: var(--wd_reduced_global_72);
-    height: var(--ht_reduced_global_72);
-    margin-left: var(--mar_72);
-    margin-top: var(--mar_72);
-    border-radius: var(--borderRadius_reduced_X_72) / var(--borderRadius_reduced_Y_72);
-}
-
-.ps_073:active .actual_square_073 {
-    width: var(--wd_reduced_global_73);
-    height: var(--ht_reduced_global_73);
-    margin-left: var(--mar_73);
-    margin-top: var(--mar_73);
-    border-radius: var(--borderRadius_reduced_X_73) / var(--borderRadius_reduced_Y_73);
-}
-
-.ps_074:active .actual_square_074 {
-    width: var(--wd_reduced_global_74);
-    height: var(--ht_reduced_global_74);
-    margin-left: var(--mar_74);
-    margin-top: var(--mar_74);
-    border-radius: var(--borderRadius_reduced_X_74) / var(--borderRadius_reduced_Y_74);
-}
-
-.ps_075:active .actual_square_075 {
-    width: var(--wd_reduced_global_75);
-    height: var(--ht_reduced_global_75);
-    margin-left: var(--mar_75);
-    margin-top: var(--mar_75);
-    border-radius: var(--borderRadius_reduced_X_75) / var(--borderRadius_reduced_Y_75);
-}
-
-.ps_076:active .actual_square_076 {
-    width: var(--wd_reduced_global_76);
-    height: var(--ht_reduced_global_76);
-    margin-left: var(--mar_76);
-    margin-top: var(--mar_76);
-    border-radius: var(--borderRadius_reduced_X_76) / var(--borderRadius_reduced_Y_76);
-}
-
-.ps_077:active .actual_square_077 {
-    width: var(--wd_reduced_global_77);
-    height: var(--ht_reduced_global_77);
-    margin-left: var(--mar_77);
-    margin-top: var(--mar_77);
-    border-radius: var(--borderRadius_reduced_X_77) / var(--borderRadius_reduced_Y_77);
-}
-
-.ps_078:active .actual_square_078 {
-    width: var(--wd_reduced_global_78);
-    height: var(--ht_reduced_global_78);
-    margin-left: var(--mar_78);
-    margin-top: var(--mar_78);
-    border-radius: var(--borderRadius_reduced_X_78) / var(--borderRadius_reduced_Y_78);
-}
-
-.ps_079:active .actual_square_079 {
-    width: var(--wd_reduced_global_79);
-    height: var(--ht_reduced_global_79);
-    margin-left: var(--mar_79);
-    margin-top: var(--mar_79);
-    border-radius: var(--borderRadius_reduced_X_79) / var(--borderRadius_reduced_Y_79);
-}
-
-.ps_080:active .actual_square_080 {
-    width: var(--wd_reduced_global_80);
-    height: var(--ht_reduced_global_80);
-    margin-left: var(--mar_80);
-    margin-top: var(--mar_80);
-    border-radius: var(--borderRadius_reduced_X_80) / var(--borderRadius_reduced_Y_80);
-}
-
-.ps_081:active .actual_square_081 {
-    width: var(--wd_reduced_global_81);
-    height: var(--ht_reduced_global_81);
-    margin-left: var(--mar_81);
-    margin-top: var(--mar_81);
-    border-radius: var(--borderRadius_reduced_X_81) / var(--borderRadius_reduced_Y_81);
-}
-
-.ps_082:active .actual_square_082 {
-    width: var(--wd_reduced_global_82);
-    height: var(--ht_reduced_global_82);
-    margin-left: var(--mar_82);
-    margin-top: var(--mar_82);
-    border-radius: var(--borderRadius_reduced_X_82) / var(--borderRadius_reduced_Y_82);
-}
-
-.ps_083:active .actual_square_083 {
-    width: var(--wd_reduced_global_83);
-    height: var(--ht_reduced_global_83);
-    margin-left: var(--mar_83);
-    margin-top: var(--mar_83);
-    border-radius: var(--borderRadius_reduced_X_83) / var(--borderRadius_reduced_Y_83);
-}
-
-.ps_084:active .actual_square_084 {
-    width: var(--wd_reduced_global_84);
-    height: var(--ht_reduced_global_84);
-    margin-left: var(--mar_84);
-    margin-top: var(--mar_84);
-    border-radius: var(--borderRadius_reduced_X_84) / var(--borderRadius_reduced_Y_84);
-}
-
-.ps_085:active .actual_square_085 {
-    width: var(--wd_reduced_global_85);
-    height: var(--ht_reduced_global_85);
-    margin-left: var(--mar_85);
-    margin-top: var(--mar_85);
-    border-radius: var(--borderRadius_reduced_X_85) / var(--borderRadius_reduced_Y_85);
-}
-
-.ps_086:active .actual_square_086 {
-    width: var(--wd_reduced_global_86);
-    height: var(--ht_reduced_global_86);
-    margin-left: var(--mar_86);
-    margin-top: var(--mar_86);
-    border-radius: var(--borderRadius_reduced_X_86) / var(--borderRadius_reduced_Y_86);
-}
-
-.ps_087:active .actual_square_087 {
-    width: var(--wd_reduced_global_87);
-    height: var(--ht_reduced_global_87);
-    margin-left: var(--mar_87);
-    margin-top: var(--mar_87);
-    border-radius: var(--borderRadius_reduced_X_87) / var(--borderRadius_reduced_Y_87);
-}
-
-.ps_088:active .actual_square_088 {
-    width: var(--wd_reduced_global_88);
-    height: var(--ht_reduced_global_88);
-    margin-left: var(--mar_88);
-    margin-top: var(--mar_88);
-    border-radius: var(--borderRadius_reduced_X_88) / var(--borderRadius_reduced_Y_88);
-}
-
-.ps_089:active .actual_square_089 {
-    width: var(--wd_reduced_global_89);
-    height: var(--ht_reduced_global_89);
-    margin-left: var(--mar_89);
-    margin-top: var(--mar_89);
-    border-radius: var(--borderRadius_reduced_X_89) / var(--borderRadius_reduced_Y_89);
-}
-
-.ps_090:active .actual_square_090 {
-    width: var(--wd_reduced_global_90);
-    height: var(--ht_reduced_global_90);
-    margin-left: var(--mar_90);
-    margin-top: var(--mar_90);
-    border-radius: var(--borderRadius_reduced_X_90) / var(--borderRadius_reduced_Y_90);
-}
-
-.ps_091:active .actual_square_091 {
-    width: var(--wd_reduced_global_91);
-    height: var(--ht_reduced_global_91);
-    margin-left: var(--mar_91);
-    margin-top: var(--mar_91);
-    border-radius: var(--borderRadius_reduced_X_91) / var(--borderRadius_reduced_Y_91);
-}
-
-.ps_092:active .actual_square_092 {
-    width: var(--wd_reduced_global_92);
-    height: var(--ht_reduced_global_92);
-    margin-left: var(--mar_92);
-    margin-top: var(--mar_92);
-    border-radius: var(--borderRadius_reduced_X_92) / var(--borderRadius_reduced_Y_92);
-}
-
-.ps_093:active .actual_square_093 {
-    width: var(--wd_reduced_global_93);
-    height: var(--ht_reduced_global_93);
-    margin-left: var(--mar_93);
-    margin-top: var(--mar_93);
-    border-radius: var(--borderRadius_reduced_X_93) / var(--borderRadius_reduced_Y_93);
-}
-
-.ps_094:active .actual_square_094 {
-    width: var(--wd_reduced_global_94);
-    height: var(--ht_reduced_global_94);
-    margin-left: var(--mar_94);
-    margin-top: var(--mar_94);
-    border-radius: var(--borderRadius_reduced_X_94) / var(--borderRadius_reduced_Y_94);
-}
-
-.ps_095:active .actual_square_095 {
-    width: var(--wd_reduced_global_95);
-    height: var(--ht_reduced_global_95);
-    margin-left: var(--mar_95);
-    margin-top: var(--mar_95);
-    border-radius: var(--borderRadius_reduced_X_95) / var(--borderRadius_reduced_Y_95);
-}
-
-.ps_096:active .actual_square_096 {
-    width: var(--wd_reduced_global_96);
-    height: var(--ht_reduced_global_96);
-    margin-left: var(--mar_96);
-    margin-top: var(--mar_96);
-    border-radius: var(--borderRadius_reduced_X_96) / var(--borderRadius_reduced_Y_96);
-}
-
-.ps_097:active .actual_square_097 {
-    width: var(--wd_reduced_global_97);
-    height: var(--ht_reduced_global_97);
-    margin-left: var(--mar_97);
-    margin-top: var(--mar_97);
-    border-radius: var(--borderRadius_reduced_X_97) / var(--borderRadius_reduced_Y_97);
-}
-
-.ps_098:active .actual_square_098 {
-    width: var(--wd_reduced_global_98);
-    height: var(--ht_reduced_global_98);
-    margin-left: var(--mar_98);
-    margin-top: var(--mar_98);
-    border-radius: var(--borderRadius_reduced_X_98) / var(--borderRadius_reduced_Y_98);
-}
-
-.ps_099:active .actual_square_099 {
-    width: var(--wd_reduced_global_99);
-    height: var(--ht_reduced_global_99);
-    margin-left: var(--mar_99);
-    margin-top: var(--mar_99);
-    border-radius: var(--borderRadius_reduced_X_99) / var(--borderRadius_reduced_Y_99);
-}
-
-.ps_100:active .actual_square_100 {
-    width: var(--wd_reduced_global_100);
-    height: var(--ht_reduced_global_100);
-    margin-left: var(--mar_100);
-    margin-top: var(--mar_100);
-    border-radius: var(--borderRadius_reduced_X_100) / var(--borderRadius_reduced_Y_100);
-}
-
-
-
+ .ps_001:active .actual_square_001 {
+     width: var(--wd_reduced_global_1);
+     height: var(--ht_reduced_global_1);
+     margin-left: var(--mar_1);
+     margin-top: var(--mar_1);
+     border-radius: var(--borderRadius_reduced_X_1) / var(--borderRadius_reduced_Y_1);
+}
+ .ps_002:active .actual_square_002 {
+     width: var(--wd_reduced_global_2);
+     height: var(--ht_reduced_global_2);
+     margin-left: var(--mar_2);
+     margin-top: var(--mar_2);
+     border-radius: var(--borderRadius_reduced_X_2) / var(--borderRadius_reduced_Y_2);
+}
+ .ps_003:active .actual_square_003 {
+     width: var(--wd_reduced_global_3);
+     height: var(--ht_reduced_global_3);
+     margin-left: var(--mar_3);
+     margin-top: var(--mar_3);
+     border-radius: var(--borderRadius_reduced_X_3) / var(--borderRadius_reduced_Y_3);
+}
+ .ps_004:active .actual_square_004 {
+     width: var(--wd_reduced_global_4);
+     height: var(--ht_reduced_global_4);
+     margin-left: var(--mar_4);
+     margin-top: var(--mar_4);
+     border-radius: var(--borderRadius_reduced_X_4) / var(--borderRadius_reduced_Y_4);
+}
+ .ps_005:active .actual_square_005 {
+     width: var(--wd_reduced_global_5);
+     height: var(--ht_reduced_global_5);
+     margin-left: var(--mar_5);
+     margin-top: var(--mar_5);
+     border-radius: var(--borderRadius_reduced_X_5) / var(--borderRadius_reduced_Y_5);
+}
+ .ps_006:active .actual_square_006 {
+     width: var(--wd_reduced_global_6);
+     height: var(--ht_reduced_global_6);
+     margin-left: var(--mar_6);
+     margin-top: var(--mar_6);
+     border-radius: var(--borderRadius_reduced_X_6) / var(--borderRadius_reduced_Y_6);
+}
+ .ps_007:active .actual_square_007 {
+     width: var(--wd_reduced_global_7);
+     height: var(--ht_reduced_global_7);
+     margin-left: var(--mar_7);
+     margin-top: var(--mar_7);
+     border-radius: var(--borderRadius_reduced_X_7) / var(--borderRadius_reduced_Y_7);
+}
+ .ps_008:active .actual_square_008 {
+     width: var(--wd_reduced_global_8);
+     height: var(--ht_reduced_global_8);
+     margin-left: var(--mar_8);
+     margin-top: var(--mar_8);
+     border-radius: var(--borderRadius_reduced_X_8) / var(--borderRadius_reduced_Y_8);
+}
+ .ps_009:active .actual_square_009 {
+     width: var(--wd_reduced_global_9);
+     height: var(--ht_reduced_global_9);
+     margin-left: var(--mar_9);
+     margin-top: var(--mar_9);
+     border-radius: var(--borderRadius_reduced_X_9) / var(--borderRadius_reduced_Y_9);
+}
+ .ps_010:active .actual_square_010 {
+     width: var(--wd_reduced_global_10);
+     height: var(--ht_reduced_global_10);
+     margin-left: var(--mar_10);
+     margin-top: var(--mar_10);
+     border-radius: var(--borderRadius_reduced_X_10) / var(--borderRadius_reduced_Y_10);
+}
+ .ps_011:active .actual_square_011 {
+     width: var(--wd_reduced_global_11);
+     height: var(--ht_reduced_global_11);
+     margin-left: var(--mar_11);
+     margin-top: var(--mar_11);
+     border-radius: var(--borderRadius_reduced_X_11) / var(--borderRadius_reduced_Y_11);
+}
+ .ps_012:active .actual_square_012 {
+     width: var(--wd_reduced_global_12);
+     height: var(--ht_reduced_global_12);
+     margin-left: var(--mar_12);
+     margin-top: var(--mar_12);
+     border-radius: var(--borderRadius_reduced_X_12) / var(--borderRadius_reduced_Y_12);
+}
+ .ps_013:active .actual_square_013 {
+     width: var(--wd_reduced_global_13);
+     height: var(--ht_reduced_global_13);
+     margin-left: var(--mar_13);
+     margin-top: var(--mar_13);
+     border-radius: var(--borderRadius_reduced_X_13) / var(--borderRadius_reduced_Y_13);
+}
+ .ps_014:active .actual_square_014 {
+     width: var(--wd_reduced_global_14);
+     height: var(--ht_reduced_global_14);
+     margin-left: var(--mar_14);
+     margin-top: var(--mar_14);
+     border-radius: var(--borderRadius_reduced_X_14) / var(--borderRadius_reduced_Y_14);
+}
+ .ps_015:active .actual_square_015 {
+     width: var(--wd_reduced_global_15);
+     height: var(--ht_reduced_global_15);
+     margin-left: var(--mar_15);
+     margin-top: var(--mar_15);
+     border-radius: var(--borderRadius_reduced_X_15) / var(--borderRadius_reduced_Y_15);
+}
+ .ps_016:active .actual_square_016 {
+     width: var(--wd_reduced_global_16);
+     height: var(--ht_reduced_global_16);
+     margin-left: var(--mar_16);
+     margin-top: var(--mar_16);
+     border-radius: var(--borderRadius_reduced_X_16) / var(--borderRadius_reduced_Y_16);
+}
+ .ps_017:active .actual_square_017 {
+     width: var(--wd_reduced_global_17);
+     height: var(--ht_reduced_global_17);
+     margin-left: var(--mar_17);
+     margin-top: var(--mar_17);
+     border-radius: var(--borderRadius_reduced_X_17) / var(--borderRadius_reduced_Y_17);
+}
+ .ps_018:active .actual_square_018 {
+     width: var(--wd_reduced_global_18);
+     height: var(--ht_reduced_global_18);
+     margin-left: var(--mar_18);
+     margin-top: var(--mar_18);
+     border-radius: var(--borderRadius_reduced_X_18) / var(--borderRadius_reduced_Y_18);
+}
+ .ps_019:active .actual_square_019 {
+     width: var(--wd_reduced_global_19);
+     height: var(--ht_reduced_global_19);
+     margin-left: var(--mar_19);
+     margin-top: var(--mar_19);
+     border-radius: var(--borderRadius_reduced_X_19) / var(--borderRadius_reduced_Y_19);
+}
+ .ps_020:active .actual_square_020 {
+     width: var(--wd_reduced_global_20);
+     height: var(--ht_reduced_global_20);
+     margin-left: var(--mar_20);
+     margin-top: var(--mar_20);
+     border-radius: var(--borderRadius_reduced_X_20) / var(--borderRadius_reduced_Y_20);
+}
+ .ps_021:active .actual_square_021 {
+     width: var(--wd_reduced_global_21);
+     height: var(--ht_reduced_global_21);
+     margin-left: var(--mar_21);
+     margin-top: var(--mar_21);
+     border-radius: var(--borderRadius_reduced_X_21) / var(--borderRadius_reduced_Y_21);
+}
+ .ps_022:active .actual_square_022 {
+     width: var(--wd_reduced_global_22);
+     height: var(--ht_reduced_global_22);
+     margin-left: var(--mar_22);
+     margin-top: var(--mar_22);
+     border-radius: var(--borderRadius_reduced_X_22) / var(--borderRadius_reduced_Y_22);
+}
+ .ps_023:active .actual_square_023 {
+     width: var(--wd_reduced_global_23);
+     height: var(--ht_reduced_global_23);
+     margin-left: var(--mar_23);
+     margin-top: var(--mar_23);
+     border-radius: var(--borderRadius_reduced_X_23) / var(--borderRadius_reduced_Y_23);
+}
+ .ps_024:active .actual_square_024 {
+     width: var(--wd_reduced_global_24);
+     height: var(--ht_reduced_global_24);
+     margin-left: var(--mar_24);
+     margin-top: var(--mar_24);
+     border-radius: var(--borderRadius_reduced_X_24) / var(--borderRadius_reduced_Y_24);
+}
+ .ps_025:active .actual_square_025 {
+     width: var(--wd_reduced_global_25);
+     height: var(--ht_reduced_global_25);
+     margin-left: var(--mar_25);
+     margin-top: var(--mar_25);
+     border-radius: var(--borderRadius_reduced_X_25) / var(--borderRadius_reduced_Y_25);
+}
+ .ps_026:active .actual_square_026 {
+     width: var(--wd_reduced_global_26);
+     height: var(--ht_reduced_global_26);
+     margin-left: var(--mar_26);
+     margin-top: var(--mar_26);
+     border-radius: var(--borderRadius_reduced_X_26) / var(--borderRadius_reduced_Y_26);
+}
+ .ps_027:active .actual_square_027 {
+     width: var(--wd_reduced_global_27);
+     height: var(--ht_reduced_global_27);
+     margin-left: var(--mar_27);
+     margin-top: var(--mar_27);
+     border-radius: var(--borderRadius_reduced_X_27) / var(--borderRadius_reduced_Y_27);
+}
+ .ps_028:active .actual_square_028 {
+     width: var(--wd_reduced_global_28);
+     height: var(--ht_reduced_global_28);
+     margin-left: var(--mar_28);
+     margin-top: var(--mar_28);
+     border-radius: var(--borderRadius_reduced_X_28) / var(--borderRadius_reduced_Y_28);
+}
+ .ps_029:active .actual_square_029 {
+     width: var(--wd_reduced_global_29);
+     height: var(--ht_reduced_global_29);
+     margin-left: var(--mar_29);
+     margin-top: var(--mar_29);
+     border-radius: var(--borderRadius_reduced_X_29) / var(--borderRadius_reduced_Y_29);
+}
+ .ps_030:active .actual_square_030 {
+     width: var(--wd_reduced_global_30);
+     height: var(--ht_reduced_global_30);
+     margin-left: var(--mar_30);
+     margin-top: var(--mar_30);
+     border-radius: var(--borderRadius_reduced_X_30) / var(--borderRadius_reduced_Y_30);
+}
+ .ps_031:active .actual_square_031 {
+     width: var(--wd_reduced_global_31);
+     height: var(--ht_reduced_global_31);
+     margin-left: var(--mar_31);
+     margin-top: var(--mar_31);
+     border-radius: var(--borderRadius_reduced_X_31) / var(--borderRadius_reduced_Y_31);
+}
+ .ps_032:active .actual_square_032 {
+     width: var(--wd_reduced_global_32);
+     height: var(--ht_reduced_global_32);
+     margin-left: var(--mar_32);
+     margin-top: var(--mar_32);
+     border-radius: var(--borderRadius_reduced_X_32) / var(--borderRadius_reduced_Y_32);
+}
+ .ps_033:active .actual_square_033 {
+     width: var(--wd_reduced_global_33);
+     height: var(--ht_reduced_global_33);
+     margin-left: var(--mar_33);
+     margin-top: var(--mar_33);
+     border-radius: var(--borderRadius_reduced_X_33) / var(--borderRadius_reduced_Y_33);
+}
+ .ps_034:active .actual_square_034 {
+     width: var(--wd_reduced_global_34);
+     height: var(--ht_reduced_global_34);
+     margin-left: var(--mar_34);
+     margin-top: var(--mar_34);
+     border-radius: var(--borderRadius_reduced_X_34) / var(--borderRadius_reduced_Y_34);
+}
+ .ps_035:active .actual_square_035 {
+     width: var(--wd_reduced_global_35);
+     height: var(--ht_reduced_global_35);
+     margin-left: var(--mar_35);
+     margin-top: var(--mar_35);
+     border-radius: var(--borderRadius_reduced_X_35) / var(--borderRadius_reduced_Y_35);
+}
+ .ps_036:active .actual_square_036 {
+     width: var(--wd_reduced_global_36);
+     height: var(--ht_reduced_global_36);
+     margin-left: var(--mar_36);
+     margin-top: var(--mar_36);
+     border-radius: var(--borderRadius_reduced_X_36) / var(--borderRadius_reduced_Y_36);
+}
+ .ps_037:active .actual_square_037 {
+     width: var(--wd_reduced_global_37);
+     height: var(--ht_reduced_global_37);
+     margin-left: var(--mar_37);
+     margin-top: var(--mar_37);
+     border-radius: var(--borderRadius_reduced_X_37) / var(--borderRadius_reduced_Y_37);
+}
+ .ps_038:active .actual_square_038 {
+     width: var(--wd_reduced_global_38);
+     height: var(--ht_reduced_global_38);
+     margin-left: var(--mar_38);
+     margin-top: var(--mar_38);
+     border-radius: var(--borderRadius_reduced_X_38) / var(--borderRadius_reduced_Y_38);
+}
+ .ps_039:active .actual_square_039 {
+     width: var(--wd_reduced_global_39);
+     height: var(--ht_reduced_global_39);
+     margin-left: var(--mar_39);
+     margin-top: var(--mar_39);
+     border-radius: var(--borderRadius_reduced_X_39) / var(--borderRadius_reduced_Y_39);
+}
+ .ps_040:active .actual_square_040 {
+     width: var(--wd_reduced_global_40);
+     height: var(--ht_reduced_global_40);
+     margin-left: var(--mar_40);
+     margin-top: var(--mar_40);
+     border-radius: var(--borderRadius_reduced_X_40) / var(--borderRadius_reduced_Y_40);
+}
+ .ps_041:active .actual_square_041 {
+     width: var(--wd_reduced_global_41);
+     height: var(--ht_reduced_global_41);
+     margin-left: var(--mar_41);
+     margin-top: var(--mar_41);
+     border-radius: var(--borderRadius_reduced_X_41) / var(--borderRadius_reduced_Y_41);
+}
+ .ps_042:active .actual_square_042 {
+     width: var(--wd_reduced_global_42);
+     height: var(--ht_reduced_global_42);
+     margin-left: var(--mar_42);
+     margin-top: var(--mar_42);
+     border-radius: var(--borderRadius_reduced_X_42) / var(--borderRadius_reduced_Y_42);
+}
+ .ps_043:active .actual_square_043 {
+     width: var(--wd_reduced_global_43);
+     height: var(--ht_reduced_global_43);
+     margin-left: var(--mar_43);
+     margin-top: var(--mar_43);
+     border-radius: var(--borderRadius_reduced_X_43) / var(--borderRadius_reduced_Y_43);
+}
+ .ps_044:active .actual_square_044 {
+     width: var(--wd_reduced_global_44);
+     height: var(--ht_reduced_global_44);
+     margin-left: var(--mar_44);
+     margin-top: var(--mar_44);
+     border-radius: var(--borderRadius_reduced_X_44) / var(--borderRadius_reduced_Y_44);
+}
+ .ps_045:active .actual_square_045 {
+     width: var(--wd_reduced_global_45);
+     height: var(--ht_reduced_global_45);
+     margin-left: var(--mar_45);
+     margin-top: var(--mar_45);
+     border-radius: var(--borderRadius_reduced_X_45) / var(--borderRadius_reduced_Y_45);
+}
+ .ps_046:active .actual_square_046 {
+     width: var(--wd_reduced_global_46);
+     height: var(--ht_reduced_global_46);
+     margin-left: var(--mar_46);
+     margin-top: var(--mar_46);
+     border-radius: var(--borderRadius_reduced_X_46) / var(--borderRadius_reduced_Y_46);
+}
+ .ps_047:active .actual_square_047 {
+     width: var(--wd_reduced_global_47);
+     height: var(--ht_reduced_global_47);
+     margin-left: var(--mar_47);
+     margin-top: var(--mar_47);
+     border-radius: var(--borderRadius_reduced_X_47) / var(--borderRadius_reduced_Y_47);
+}
+ .ps_048:active .actual_square_048 {
+     width: var(--wd_reduced_global_48);
+     height: var(--ht_reduced_global_48);
+     margin-left: var(--mar_48);
+     margin-top: var(--mar_48);
+     border-radius: var(--borderRadius_reduced_X_48) / var(--borderRadius_reduced_Y_48);
+}
+ .ps_049:active .actual_square_049 {
+     width: var(--wd_reduced_global_49);
+     height: var(--ht_reduced_global_49);
+     margin-left: var(--mar_49);
+     margin-top: var(--mar_49);
+     border-radius: var(--borderRadius_reduced_X_49) / var(--borderRadius_reduced_Y_49);
+}
+ .ps_050:active .actual_square_050 {
+     width: var(--wd_reduced_global_50);
+     height: var(--ht_reduced_global_50);
+     margin-left: var(--mar_50);
+     margin-top: var(--mar_50);
+     border-radius: var(--borderRadius_reduced_X_50) / var(--borderRadius_reduced_Y_50);
+}
+ .ps_051:active .actual_square_051 {
+     width: var(--wd_reduced_global_51);
+     height: var(--ht_reduced_global_51);
+     margin-left: var(--mar_51);
+     margin-top: var(--mar_51);
+     border-radius: var(--borderRadius_reduced_X_51) / var(--borderRadius_reduced_Y_51);
+}
+ .ps_052:active .actual_square_052 {
+     width: var(--wd_reduced_global_52);
+     height: var(--ht_reduced_global_52);
+     margin-left: var(--mar_52);
+     margin-top: var(--mar_52);
+     border-radius: var(--borderRadius_reduced_X_52) / var(--borderRadius_reduced_Y_52);
+}
+ .ps_053:active .actual_square_053 {
+     width: var(--wd_reduced_global_53);
+     height: var(--ht_reduced_global_53);
+     margin-left: var(--mar_53);
+     margin-top: var(--mar_53);
+     border-radius: var(--borderRadius_reduced_X_53) / var(--borderRadius_reduced_Y_53);
+}
+ .ps_054:active .actual_square_054 {
+     width: var(--wd_reduced_global_54);
+     height: var(--ht_reduced_global_54);
+     margin-left: var(--mar_54);
+     margin-top: var(--mar_54);
+     border-radius: var(--borderRadius_reduced_X_54) / var(--borderRadius_reduced_Y_54);
+}
+ .ps_055:active .actual_square_055 {
+     width: var(--wd_reduced_global_55);
+     height: var(--ht_reduced_global_55);
+     margin-left: var(--mar_55);
+     margin-top: var(--mar_55);
+     border-radius: var(--borderRadius_reduced_X_55) / var(--borderRadius_reduced_Y_55);
+}
+ .ps_056:active .actual_square_056 {
+     width: var(--wd_reduced_global_56);
+     height: var(--ht_reduced_global_56);
+     margin-left: var(--mar_56);
+     margin-top: var(--mar_56);
+     border-radius: var(--borderRadius_reduced_X_56) / var(--borderRadius_reduced_Y_56);
+}
+ .ps_057:active .actual_square_057 {
+     width: var(--wd_reduced_global_57);
+     height: var(--ht_reduced_global_57);
+     margin-left: var(--mar_57);
+     margin-top: var(--mar_57);
+     border-radius: var(--borderRadius_reduced_X_57) / var(--borderRadius_reduced_Y_57);
+}
+ .ps_058:active .actual_square_058 {
+     width: var(--wd_reduced_global_58);
+     height: var(--ht_reduced_global_58);
+     margin-left: var(--mar_58);
+     margin-top: var(--mar_58);
+     border-radius: var(--borderRadius_reduced_X_58) / var(--borderRadius_reduced_Y_58);
+}
+ .ps_059:active .actual_square_059 {
+     width: var(--wd_reduced_global_59);
+     height: var(--ht_reduced_global_59);
+     margin-left: var(--mar_59);
+     margin-top: var(--mar_59);
+     border-radius: var(--borderRadius_reduced_X_59) / var(--borderRadius_reduced_Y_59);
+}
+ .ps_060:active .actual_square_060 {
+     width: var(--wd_reduced_global_60);
+     height: var(--ht_reduced_global_60);
+     margin-left: var(--mar_60);
+     margin-top: var(--mar_60);
+     border-radius: var(--borderRadius_reduced_X_60) / var(--borderRadius_reduced_Y_60);
+}
+ .ps_061:active .actual_square_061 {
+     width: var(--wd_reduced_global_61);
+     height: var(--ht_reduced_global_61);
+     margin-left: var(--mar_61);
+     margin-top: var(--mar_61);
+     border-radius: var(--borderRadius_reduced_X_61) / var(--borderRadius_reduced_Y_61);
+}
+ .ps_062:active .actual_square_062 {
+     width: var(--wd_reduced_global_62);
+     height: var(--ht_reduced_global_62);
+     margin-left: var(--mar_62);
+     margin-top: var(--mar_62);
+     border-radius: var(--borderRadius_reduced_X_62) / var(--borderRadius_reduced_Y_62);
+}
+ .ps_063:active .actual_square_063 {
+     width: var(--wd_reduced_global_63);
+     height: var(--ht_reduced_global_63);
+     margin-left: var(--mar_63);
+     margin-top: var(--mar_63);
+     border-radius: var(--borderRadius_reduced_X_63) / var(--borderRadius_reduced_Y_63);
+}
+ .ps_064:active .actual_square_064 {
+     width: var(--wd_reduced_global_64);
+     height: var(--ht_reduced_global_64);
+     margin-left: var(--mar_64);
+     margin-top: var(--mar_64);
+     border-radius: var(--borderRadius_reduced_X_64) / var(--borderRadius_reduced_Y_64);
+}
+ .ps_065:active .actual_square_065 {
+     width: var(--wd_reduced_global_65);
+     height: var(--ht_reduced_global_65);
+     margin-left: var(--mar_65);
+     margin-top: var(--mar_65);
+     border-radius: var(--borderRadius_reduced_X_65) / var(--borderRadius_reduced_Y_65);
+}
+ .ps_066:active .actual_square_066 {
+     width: var(--wd_reduced_global_66);
+     height: var(--ht_reduced_global_66);
+     margin-left: var(--mar_66);
+     margin-top: var(--mar_66);
+     border-radius: var(--borderRadius_reduced_X_66) / var(--borderRadius_reduced_Y_66);
+}
+ .ps_067:active .actual_square_067 {
+     width: var(--wd_reduced_global_67);
+     height: var(--ht_reduced_global_67);
+     margin-left: var(--mar_67);
+     margin-top: var(--mar_67);
+     border-radius: var(--borderRadius_reduced_X_67) / var(--borderRadius_reduced_Y_67);
+}
+ .ps_068:active .actual_square_068 {
+     width: var(--wd_reduced_global_68);
+     height: var(--ht_reduced_global_68);
+     margin-left: var(--mar_68);
+     margin-top: var(--mar_68);
+     border-radius: var(--borderRadius_reduced_X_68) / var(--borderRadius_reduced_Y_68);
+}
+ .ps_069:active .actual_square_069 {
+     width: var(--wd_reduced_global_69);
+     height: var(--ht_reduced_global_69);
+     margin-left: var(--mar_69);
+     margin-top: var(--mar_69);
+     border-radius: var(--borderRadius_reduced_X_69) / var(--borderRadius_reduced_Y_69);
+}
+ .ps_070:active .actual_square_070 {
+     width: var(--wd_reduced_global_70);
+     height: var(--ht_reduced_global_70);
+     margin-left: var(--mar_70);
+     margin-top: var(--mar_70);
+     border-radius: var(--borderRadius_reduced_X_70) / var(--borderRadius_reduced_Y_70);
+}
+ .ps_071:active .actual_square_071 {
+     width: var(--wd_reduced_global_71);
+     height: var(--ht_reduced_global_71);
+     margin-left: var(--mar_71);
+     margin-top: var(--mar_71);
+     border-radius: var(--borderRadius_reduced_X_71) / var(--borderRadius_reduced_Y_71);
+}
+ .ps_072:active .actual_square_072 {
+     width: var(--wd_reduced_global_72);
+     height: var(--ht_reduced_global_72);
+     margin-left: var(--mar_72);
+     margin-top: var(--mar_72);
+     border-radius: var(--borderRadius_reduced_X_72) / var(--borderRadius_reduced_Y_72);
+}
+ .ps_073:active .actual_square_073 {
+     width: var(--wd_reduced_global_73);
+     height: var(--ht_reduced_global_73);
+     margin-left: var(--mar_73);
+     margin-top: var(--mar_73);
+     border-radius: var(--borderRadius_reduced_X_73) / var(--borderRadius_reduced_Y_73);
+}
+ .ps_074:active .actual_square_074 {
+     width: var(--wd_reduced_global_74);
+     height: var(--ht_reduced_global_74);
+     margin-left: var(--mar_74);
+     margin-top: var(--mar_74);
+     border-radius: var(--borderRadius_reduced_X_74) / var(--borderRadius_reduced_Y_74);
+}
+ .ps_075:active .actual_square_075 {
+     width: var(--wd_reduced_global_75);
+     height: var(--ht_reduced_global_75);
+     margin-left: var(--mar_75);
+     margin-top: var(--mar_75);
+     border-radius: var(--borderRadius_reduced_X_75) / var(--borderRadius_reduced_Y_75);
+}
+ .ps_076:active .actual_square_076 {
+     width: var(--wd_reduced_global_76);
+     height: var(--ht_reduced_global_76);
+     margin-left: var(--mar_76);
+     margin-top: var(--mar_76);
+     border-radius: var(--borderRadius_reduced_X_76) / var(--borderRadius_reduced_Y_76);
+}
+ .ps_077:active .actual_square_077 {
+     width: var(--wd_reduced_global_77);
+     height: var(--ht_reduced_global_77);
+     margin-left: var(--mar_77);
+     margin-top: var(--mar_77);
+     border-radius: var(--borderRadius_reduced_X_77) / var(--borderRadius_reduced_Y_77);
+}
+ .ps_078:active .actual_square_078 {
+     width: var(--wd_reduced_global_78);
+     height: var(--ht_reduced_global_78);
+     margin-left: var(--mar_78);
+     margin-top: var(--mar_78);
+     border-radius: var(--borderRadius_reduced_X_78) / var(--borderRadius_reduced_Y_78);
+}
+ .ps_079:active .actual_square_079 {
+     width: var(--wd_reduced_global_79);
+     height: var(--ht_reduced_global_79);
+     margin-left: var(--mar_79);
+     margin-top: var(--mar_79);
+     border-radius: var(--borderRadius_reduced_X_79) / var(--borderRadius_reduced_Y_79);
+}
+ .ps_080:active .actual_square_080 {
+     width: var(--wd_reduced_global_80);
+     height: var(--ht_reduced_global_80);
+     margin-left: var(--mar_80);
+     margin-top: var(--mar_80);
+     border-radius: var(--borderRadius_reduced_X_80) / var(--borderRadius_reduced_Y_80);
+}
+ .ps_081:active .actual_square_081 {
+     width: var(--wd_reduced_global_81);
+     height: var(--ht_reduced_global_81);
+     margin-left: var(--mar_81);
+     margin-top: var(--mar_81);
+     border-radius: var(--borderRadius_reduced_X_81) / var(--borderRadius_reduced_Y_81);
+}
+ .ps_082:active .actual_square_082 {
+     width: var(--wd_reduced_global_82);
+     height: var(--ht_reduced_global_82);
+     margin-left: var(--mar_82);
+     margin-top: var(--mar_82);
+     border-radius: var(--borderRadius_reduced_X_82) / var(--borderRadius_reduced_Y_82);
+}
+ .ps_083:active .actual_square_083 {
+     width: var(--wd_reduced_global_83);
+     height: var(--ht_reduced_global_83);
+     margin-left: var(--mar_83);
+     margin-top: var(--mar_83);
+     border-radius: var(--borderRadius_reduced_X_83) / var(--borderRadius_reduced_Y_83);
+}
+ .ps_084:active .actual_square_084 {
+     width: var(--wd_reduced_global_84);
+     height: var(--ht_reduced_global_84);
+     margin-left: var(--mar_84);
+     margin-top: var(--mar_84);
+     border-radius: var(--borderRadius_reduced_X_84) / var(--borderRadius_reduced_Y_84);
+}
+ .ps_085:active .actual_square_085 {
+     width: var(--wd_reduced_global_85);
+     height: var(--ht_reduced_global_85);
+     margin-left: var(--mar_85);
+     margin-top: var(--mar_85);
+     border-radius: var(--borderRadius_reduced_X_85) / var(--borderRadius_reduced_Y_85);
+}
+ .ps_086:active .actual_square_086 {
+     width: var(--wd_reduced_global_86);
+     height: var(--ht_reduced_global_86);
+     margin-left: var(--mar_86);
+     margin-top: var(--mar_86);
+     border-radius: var(--borderRadius_reduced_X_86) / var(--borderRadius_reduced_Y_86);
+}
+ .ps_087:active .actual_square_087 {
+     width: var(--wd_reduced_global_87);
+     height: var(--ht_reduced_global_87);
+     margin-left: var(--mar_87);
+     margin-top: var(--mar_87);
+     border-radius: var(--borderRadius_reduced_X_87) / var(--borderRadius_reduced_Y_87);
+}
+ .ps_088:active .actual_square_088 {
+     width: var(--wd_reduced_global_88);
+     height: var(--ht_reduced_global_88);
+     margin-left: var(--mar_88);
+     margin-top: var(--mar_88);
+     border-radius: var(--borderRadius_reduced_X_88) / var(--borderRadius_reduced_Y_88);
+}
+ .ps_089:active .actual_square_089 {
+     width: var(--wd_reduced_global_89);
+     height: var(--ht_reduced_global_89);
+     margin-left: var(--mar_89);
+     margin-top: var(--mar_89);
+     border-radius: var(--borderRadius_reduced_X_89) / var(--borderRadius_reduced_Y_89);
+}
+ .ps_090:active .actual_square_090 {
+     width: var(--wd_reduced_global_90);
+     height: var(--ht_reduced_global_90);
+     margin-left: var(--mar_90);
+     margin-top: var(--mar_90);
+     border-radius: var(--borderRadius_reduced_X_90) / var(--borderRadius_reduced_Y_90);
+}
+ .ps_091:active .actual_square_091 {
+     width: var(--wd_reduced_global_91);
+     height: var(--ht_reduced_global_91);
+     margin-left: var(--mar_91);
+     margin-top: var(--mar_91);
+     border-radius: var(--borderRadius_reduced_X_91) / var(--borderRadius_reduced_Y_91);
+}
+ .ps_092:active .actual_square_092 {
+     width: var(--wd_reduced_global_92);
+     height: var(--ht_reduced_global_92);
+     margin-left: var(--mar_92);
+     margin-top: var(--mar_92);
+     border-radius: var(--borderRadius_reduced_X_92) / var(--borderRadius_reduced_Y_92);
+}
+ .ps_093:active .actual_square_093 {
+     width: var(--wd_reduced_global_93);
+     height: var(--ht_reduced_global_93);
+     margin-left: var(--mar_93);
+     margin-top: var(--mar_93);
+     border-radius: var(--borderRadius_reduced_X_93) / var(--borderRadius_reduced_Y_93);
+}
+ .ps_094:active .actual_square_094 {
+     width: var(--wd_reduced_global_94);
+     height: var(--ht_reduced_global_94);
+     margin-left: var(--mar_94);
+     margin-top: var(--mar_94);
+     border-radius: var(--borderRadius_reduced_X_94) / var(--borderRadius_reduced_Y_94);
+}
+ .ps_095:active .actual_square_095 {
+     width: var(--wd_reduced_global_95);
+     height: var(--ht_reduced_global_95);
+     margin-left: var(--mar_95);
+     margin-top: var(--mar_95);
+     border-radius: var(--borderRadius_reduced_X_95) / var(--borderRadius_reduced_Y_95);
+}
+ .ps_096:active .actual_square_096 {
+     width: var(--wd_reduced_global_96);
+     height: var(--ht_reduced_global_96);
+     margin-left: var(--mar_96);
+     margin-top: var(--mar_96);
+     border-radius: var(--borderRadius_reduced_X_96) / var(--borderRadius_reduced_Y_96);
+}
+ .ps_097:active .actual_square_097 {
+     width: var(--wd_reduced_global_97);
+     height: var(--ht_reduced_global_97);
+     margin-left: var(--mar_97);
+     margin-top: var(--mar_97);
+     border-radius: var(--borderRadius_reduced_X_97) / var(--borderRadius_reduced_Y_97);
+}
+ .ps_098:active .actual_square_098 {
+     width: var(--wd_reduced_global_98);
+     height: var(--ht_reduced_global_98);
+     margin-left: var(--mar_98);
+     margin-top: var(--mar_98);
+     border-radius: var(--borderRadius_reduced_X_98) / var(--borderRadius_reduced_Y_98);
+}
+ .ps_099:active .actual_square_099 {
+     width: var(--wd_reduced_global_99);
+     height: var(--ht_reduced_global_99);
+     margin-left: var(--mar_99);
+     margin-top: var(--mar_99);
+     border-radius: var(--borderRadius_reduced_X_99) / var(--borderRadius_reduced_Y_99);
+}
+ .ps_100:active .actual_square_100 {
+     width: var(--wd_reduced_global_100);
+     height: var(--ht_reduced_global_100);
+     margin-left: var(--mar_100);
+     margin-top: var(--mar_100);
+     border-radius: var(--borderRadius_reduced_X_100) / var(--borderRadius_reduced_Y_100);
+}
 
 /* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH CLICK  RIGHT HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */
-.ps_right_1:active .actual_square_right_1{
-    width: 10%;
-    height: 10%;
-    margin-left: 25%;
-    margin-top: 25%;
-    border-radius: 25%;
-}
-
+.ps_right_1:active .actual_square_right_1,
 .ps_right_2:active .actual_square_right_2,
 .ps_right_3:active .actual_square_right_3,
 .ps_right_4:active .actual_square_right_4,
@@ -3392,8 +3062,8 @@
 .ps_right_98:active .actual_square_right_98,
 .ps_right_99:active .actual_square_right_99,
 .ps_right_100:active .actual_square_right_100 {
-    width: 10%;
-    height: 10%;
+    width: 50%;
+    height: 50%;
     margin-left: 25%;
     margin-top: 25%;
     border-radius: 25%;
