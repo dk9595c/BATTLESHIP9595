@@ -216,14 +216,46 @@ function remove_controls()
        document.getElementById(str1).addEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
     }
 //document.getElementById("right_greybox").innerHTML = dom_string;
-//game_started();
+game_started();
 } //end of remove_controls()
 
 
 function game_started()
 {
-    console.log("here");
     
+    for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
+      
+      let str3 = "pseudo_square_right_"+i+"";
+      document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
+      document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
+      document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
+      document.getElementById(str3).addEventListener("touchstart", function(){square_handler(this, event)}, {passive: true});
+      document.getElementById(str3).addEventListener("mousedown", function(){square_handler(this, event)}, {passive: true});
+    }
+    
+    
+    let i=0, j=0;
+    const myInterval = setInterval(function()
+     {  i+=1; ++j;
+        if(i/a >= 1)
+          {clearInterval(myInterval);
+           
+                 
+              
+          }
+          
+       
+     }, 1);
+}
+
+function square_handler(a)
+{
+    
+    let s_no = a.id.slice(20,);
+   // console.log(s_no);
+    
+    document.getElementById("actual_sq_right_"+s_no).style.opacity = 1;
+    document.getElementById("pseudo_square_right_"+s_no).removeEventListener("mouseout", hover_square_opacity_0, {passive: true});
     
 }
 
