@@ -198,7 +198,7 @@ function remove_controls()
     
     var dom_string="";
     let ul = document.getElementById("right_greybox");
-    let il = document.getElementById("left_greybox");
+    
     
     for(let loop_var = 1; loop_var <= 100; loop_var++)
     {
@@ -216,8 +216,16 @@ function remove_controls()
        document.getElementById(str1).addEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
     }
 //document.getElementById("right_greybox").innerHTML = dom_string;
-}
+//game_started();
+} //end of remove_controls()
 
+
+function game_started()
+{
+    console.log("here");
+    
+    
+}
 
 
 function submit_ships() {
@@ -282,7 +290,7 @@ function key_up_handler(event) {
 
 function hover_square_opacity_1(a) {
     let str = a.toElement.id;
-    let sq_no = 200;
+    let sq_no = 200; 
     //if(str[0] == 'a' || str[0] == 'p')
 
     if (str[0] == 'a') {
@@ -290,7 +298,7 @@ function hover_square_opacity_1(a) {
     } else if (str[0] == 'p') {
         sq_no = str.slice(14, );
     }
-    //console.log("actual_sq_"+sq_no);
+    //console.log(str);
     if(submit_flag == 0)
     {
         if (occupied_squares[sq_no] == 0)
