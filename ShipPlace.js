@@ -198,6 +198,28 @@ function remove_controls()
        // console.log(1-i/a+","+j);
        
      }, 1);
+    
+    var dom_string="";
+    let ul = document.getElementById("right_greybox");
+    let il = document.getElementById("left_greybox");
+    
+    //console.log(il.innerHTML);
+    for(let loop_var = 1; loop_var <= 100; loop_var++)
+    {
+        dom_string="<div class=\"ps_right_"+loop_var+"\" id=\"pseudo_square_right_"+loop_var+"\" style = \"width: 10%; height: 10%; position: absolute; display: inline; z-index: 2; opacity : 1;\"><div class=\"actual_square_right_"+loop_var+"\" id=\"actual_sq_right_"+loop_var+"\" style =\" position: absolute; display: inline; z-index: 1; background-color: rgb(94,94,94); width: 75%; height: 75%; border-radius: 16.6666667%; margin-left: 12.5%; margin-top: 12.5%; opacity: 0; box-sizing: border-box; transition: width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s;\"></div></div>"
+       // console.log(dom_string);
+        ul.innerHTML+= dom_string;
+        //ul.appendChild(dom_string);
+    }
+    for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
+       let str1 = "pseudo_square_right_"+i+"";
+       document.getElementById(str1).addEventListener("touchcancel", function(){button_in_handler(this, event)}, {passive: true});
+       document.getElementById(str1).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
+       document.getElementById(str1).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
+       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
+       document.getElementById(str1).addEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
+    }
+//document.getElementById("right_greybox").innerHTML = dom_string;
 }
 
 
@@ -224,7 +246,18 @@ function submit_ships() {
     document.getElementById("grey_submt_img").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
     document.getElementById("grey_submt_img").removeEventListener("mouseover", submit_active_1, {passive: true});
     document.getElementById("grey_submt_img").removeEventListener("mousedown", submit_ships, {passive: true});
+        
+        for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
+           let str1 = "pseudo_square_"+i+"";
+           document.getElementById(str1).removeEventListener("touchcancel", function(){button_in_handler(this, event)}, {passive: true});
+           document.getElementById(str1).removeEventListener("mouseover", hover_square_opacity_1, {passive: true});
+           document.getElementById(str1).removeEventListener("mouseout", hover_square_opacity_0, {passive: true});
+           document.getElementById(str1).removeEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
+           document.getElementById(str1).removeEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
+        }
     remove_controls();
+        
+        
     } //end of if
 } // end of submit_ships()
 
@@ -262,8 +295,18 @@ function hover_square_opacity_1(a) {
         sq_no = str.slice(14, );
     }
     //console.log("actual_sq_"+sq_no);
-    if (occupied_squares[sq_no] == 0)
+    if(submit_flag == 0)
+    {
+        if (occupied_squares[sq_no] == 0)
+            document.getElementById("actual_sq_" + sq_no).style.opacity = "1";
+    }
+    
+    else if(submit_flag == 1)
+    {
+        //console.log(sq_no);
         document.getElementById("actual_sq_" + sq_no).style.opacity = "1";
+        
+    }
 }
 
 function hover_square_opacity_0(a) {
@@ -277,8 +320,18 @@ function hover_square_opacity_0(a) {
         sq_no = str.slice(14, );
     }
     //console.log("actual_sq_"+sq_no);
-    if (occupied_squares[sq_no] == 0)
+    if(submit_flag == 0)
+    {
+        if (occupied_squares[sq_no] == 0)
+            document.getElementById("actual_sq_" + sq_no).style.opacity = "0";
+    }
+    
+    else if(submit_flag == 1)
+    {
+        //console.log(sq_no);
         document.getElementById("actual_sq_" + sq_no).style.opacity = "0";
+        
+    }
 }
 
 function erase_ships_1() {
