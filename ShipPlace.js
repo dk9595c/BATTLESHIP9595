@@ -228,7 +228,7 @@ function game_started()
       let str3 = "pseudo_square_right_"+i+"";
       document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
       document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
-      document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
+     // document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
       document.getElementById(str3).addEventListener("touchstart", function(){square_handler(this, event)}, {passive: true});
       document.getElementById(str3).addEventListener("mousedown", function(){square_handler(this, event)}, {passive: true});
     }
@@ -257,7 +257,42 @@ function square_handler(a)
     document.getElementById("actual_sq_right_"+s_no).style.opacity = 1;
     document.getElementById("pseudo_square_right_"+s_no).removeEventListener("mouseout", hover_square_opacity_0, {passive: true});
     
-}
+    const box = document.getElementById("actual_sq_right_"+s_no);
+    
+
+    // Blinking animation function
+    
+    let heartbeatInterval;
+    startHeartbeat();
+    function startHeartbeat() {
+      let beatPhase = 0;
+     // clearInterval(heartbeatInterval); // Clear any existing interval
+      
+      heartbeatInterval = setInterval(() => {
+        // Heartbeat pattern: quick pulse, pause, quick pulse, longer pause
+        if (beatPhase === 0) {
+          box.style.opacity = '0.4'; // First dip
+          beatPhase = 1;
+        } else if (beatPhase === 1) {
+          box.style.opacity = '1'; // First recovery
+          beatPhase = 2;
+        } else if (beatPhase === 2) {
+          box.style.opacity = '0.4'; // Second dip
+          beatPhase = 3;
+        } else {
+          box.style.opacity = '1'; // Final recovery
+          beatPhase = 0;
+        }
+      }, 500); // Adjust timing for heartbeat rhythm
+    }
+
+   
+
+    // Add smooth transition in your CSS
+    box.style.transition = 'opacity 0.2s cubic-bezier(0.990, 0.040, 0.815, 0.420)';
+    
+
+} //end of square_handler()
 
 
 function submit_ships() {
