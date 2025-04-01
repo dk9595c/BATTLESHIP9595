@@ -214,7 +214,7 @@ function submit_ships() {
             document.getElementById("actual_sq_" + targ_sq).style.backgroundColor = "rgba(94,94,94,0)";
             document.getElementById("actual_sq_" + targ_sq).style.border = "1px solid rgb(221, 223, 225)";
         }
-    } //end of if
+   
     document.getElementById("submt").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
     document.getElementById("submt").removeEventListener("mouseover", submit_active_1, {passive: true});
     document.getElementById("submt").removeEventListener("mousedown", submit_ships, {passive: true});
@@ -225,6 +225,7 @@ function submit_ships() {
     document.getElementById("grey_submt_img").removeEventListener("mouseover", submit_active_1, {passive: true});
     document.getElementById("grey_submt_img").removeEventListener("mousedown", submit_ships, {passive: true});
     remove_controls();
+    } //end of if
 } // end of submit_ships()
 
 function key_down_handler(event) {
