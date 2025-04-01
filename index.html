@@ -96,7 +96,6 @@
          margin-left : calc(100vw - 41px);
          position: absolute;
          }
-          
          .flex-container > div {
          padding: 7.5px 0px 20px 0px;
          vertical-align: top;
@@ -110,7 +109,6 @@
          width:18%;
          height:18%;
          }
-         
          .aircraft_carrier{
          z-index:2;
          width: 58.1537089%;
@@ -289,24 +287,24 @@
          height:5.42420028%;
          z-index:2;
          }
-          .light_submit_txt{
-          display:none;
-          position:absolute;
-          margin-left:74.365743%;
-          margin-top:61.6828929%;
-          width:12.1864557%;
-          height:5.42420028%;
-          z-index:2;
-          }
-          .grey_submit_txt{
-          display:none;
-          position:absolute;
-          margin-left:74.365743%;
-          margin-top:61.6828929%;
-          width:12.1864557%;
-          height:5.42420028%;
-          z-index:2;
-          }
+         .light_submit_txt{
+         display:none;
+         position:absolute;
+         margin-left:74.365743%;
+         margin-top:61.6828929%;
+         width:12.1864557%;
+         height:5.42420028%;
+         z-index:2;
+         }
+         .grey_submit_txt{
+         display:none;
+         position:absolute;
+         margin-left:74.365743%;
+         margin-top:61.6828929%;
+         width:12.1864557%;
+         height:5.42420028%;
+         z-index:2;
+         }
          .all_ships_placed{
          z-index:4;
          width: 61.5430355%;
@@ -607,33 +605,31 @@
          position: absolute;
          transition: opacity 0.5s;
          }
-          .greybox_right_cover{
-          width:110%;
-          height:110%;
-          position: absolute;
-          margin-left: 0%;
-          margin-top: 0%;
-          background-color: rgb(49, 49, 52);
-          opacity: 0.7;
-          font-size: 0px;
-          z-index:2;
-          display:none;
-          transition: opacity 0.5s;
-          }
-          .your_turn_text{
-          width: 65.9248957%;
-          height: 18.2197497%;
-          margin-left: 17.1070932%;
-          margin-top: 40.8901252%;
-          font-size: 0px;
-          opacity: 1;
-          z-index:2;
-          display:none;
-          position: absolute;
-          transition: opacity 0.5s;
-          }
-          
-          
+         .greybox_right_cover{
+         width:110%;
+         height:110%;
+         position: absolute;
+         margin-left: 0%;
+         margin-top: 0%;
+         background-color: rgb(49, 49, 52);
+         opacity: 0.7;
+         font-size: 0px;
+         z-index:2;
+         display:none;
+         transition: opacity 0.5s;
+         }
+         .your_turn_text{
+         width: 65.9248957%;
+         height: 18.2197497%;
+         margin-left: 17.1070932%;
+         margin-top: 40.8901252%;
+         font-size: 0px;
+         opacity: 1;
+         z-index:2;
+         display:none;
+         position: absolute;
+         transition: opacity 0.5s;
+         }
          .greybox_right {
          padding-bottom: min((100vh - 130px), 41.65vw);
          padding-right: min((100vh - 130px), 41.65vw);
@@ -703,7 +699,6 @@
          margin-left : calc(100vw - 32px);
          position: absolute;
          }
-         
          .pseudo_span {
          display: none;
          font-size: 20px;
@@ -756,14 +751,14 @@
          width: 100%;
          height: 50%;
          display: block;
-         background-color: red;
+         background-color: rgb(32, 33, 36);
          position: relative;
          }
          .left_side {
          width: 100%;
          height: 50%;
          display: block;
-         background-color: darkblue;
+         background-color: rgb(32, 33, 36);
          position: relative;
          }
          .greybox_left {
@@ -839,7 +834,6 @@
          }
       </style>
       <link rel="stylesheet" href="Pseudo_square.css" />
-      
       <link rel="icon" href="favicon_6.png" type="image/x-icon">
    </head>
    <body style="background-color: rgb(32, 33, 36);" onmouseup="place_here_text_hide()" onload="full_var_set()" onresize="full_var_set()" onkeydown="key_down_handler(event)" onkeyup="key_up_handler(event)">
@@ -856,7 +850,8 @@
          <div class="content">
             <div class="left_side">
                <div class="greybox_left" id="left_greybox">
-               </div> <!-- end of greybox_left -->
+               </div>
+               <!-- end of greybox_left -->
             </div>
             <div class="right_side">
                <div class="greybox_right" id="right_greybox">
@@ -925,19 +920,16 @@
       <!-- end of master_flexbox -->
    </body>
    <script>
-       
-   
-       
-       let dom_string_1 = "<div class=\"greybox_left_cover\" id=\"greybo_lef_cov\"></div><img class=\"place_here_text\" src=\"Place_here_text.svg\" id=\"plac_here_txt\" alt=\"plac_here_txt\"><div class=\"vertical_line1\"></div><div class=\"vertical_line2\"></div><div class=\"vertical_line3\"></div><div class=\"vertical_line4\"></div><div class=\"vertical_line5\"></div><div class=\"vertical_line6\"></div><div class=\"vertical_line7\"></div><div class=\"vertical_line8\"></div><div class=\"vertical_line9\"></div><div class=\"horizontal_line1\"></div><div class=\"horizontal_line2\"></div><div class=\"horizontal_line3\"></div><div class=\"horizontal_line4\"></div><div class=\"horizontal_line5\"></div><div class=\"horizontal_line6\"></div><div class=\"horizontal_line7\"></div><div class=\"horizontal_line8\"></div><div class=\"horizontal_line9\"></div>";
-       let il = document.getElementById("left_greybox");
-       for(let loop_varX = 1; loop_varX <= 100; loop_varX++)
-       {
-           dom_string_1+="<div class=\"ps_"+loop_varX+"\" id=\"pseudo_square_"+loop_varX+"\" style = \"width: 10%; height: 10%; position: absolute; display: inline; z-index: 2; opacity : 1;\"><div class=\"actual_square_"+loop_varX+"\" id=\"actual_sq_"+loop_varX+"\"></div></div>"
-       }
-       il.innerHTML+= dom_string_1;
-       
-       
-    
+      let dom_string_1 = "<div class=\"greybox_left_cover\" id=\"greybo_lef_cov\"></div><img class=\"place_here_text\" src=\"Place_here_text.svg\" id=\"plac_here_txt\" alt=\"plac_here_txt\"><div class=\"vertical_line1\"></div><div class=\"vertical_line2\"></div><div class=\"vertical_line3\"></div><div class=\"vertical_line4\"></div><div class=\"vertical_line5\"></div><div class=\"vertical_line6\"></div><div class=\"vertical_line7\"></div><div class=\"vertical_line8\"></div><div class=\"vertical_line9\"></div><div class=\"horizontal_line1\"></div><div class=\"horizontal_line2\"></div><div class=\"horizontal_line3\"></div><div class=\"horizontal_line4\"></div><div class=\"horizontal_line5\"></div><div class=\"horizontal_line6\"></div><div class=\"horizontal_line7\"></div><div class=\"horizontal_line8\"></div><div class=\"horizontal_line9\"></div>";
+      let il = document.getElementById("left_greybox");
+      for(let loop_varX = 1; loop_varX <= 100; loop_varX++)
+      {
+          dom_string_1+="<div class=\"ps_"+loop_varX+"\" id=\"pseudo_square_"+loop_varX+"\" style = \"width: 10%; height: 10%; position: absolute; display: inline; z-index: 2; opacity : 1;\"><div class=\"actual_square_"+loop_varX+"\" id=\"actual_sq_"+loop_varX+"\"></div></div>"
+      }
+      il.innerHTML+= dom_string_1;
+      
+      
+      
       document.getElementById("ship_samp").addEventListener("touchstart", place_here_text_show_touch, {passive: true});
       document.getElementById("ship_samp").addEventListener("touchend", place_here_text_hide_touch, {passive: true});
       document.getElementById("ship_samp").addEventListener("mousedown", place_here_text_show, {passive: true});
@@ -1002,67 +994,67 @@
       document.getElementById("rotate_txt").addEventListener("mousedown", rotate_ship, {passive: true});
       
       for (let i = 61; i <= 100; i++) {
-         let str1 = "actual_sq_"+i+"";
-         document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
+        let str1 = "actual_sq_"+i+"";
+        document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
       }
       
       for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
-         let str1 = "pseudo_square_"+i+"";
-         document.getElementById(str1).addEventListener("touchcancel", function(){button_in_handler(this, event)}, {passive: true});
-         document.getElementById(str1).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
-         document.getElementById(str1).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
-         document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-         document.getElementById(str1).addEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
+        let str1 = "pseudo_square_"+i+"";
+        document.getElementById(str1).addEventListener("touchcancel", function(){button_in_handler(this, event)}, {passive: true});
+        document.getElementById(str1).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
+        document.getElementById(str1).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
+        document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
+        document.getElementById(str1).addEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
       }
       
       for (let i = 1; i <= 9; i++) {
-         let str1 = "right_vert_line_"+i+"";
-         let str2 = "right_horiz_line_"+i+"";
-         
-         document.getElementById(str1).style.display = "none";
-         document.getElementById(str2).style.display = "none";
-       
+        let str1 = "right_vert_line_"+i+"";
+        let str2 = "right_horiz_line_"+i+"";
+        
+        document.getElementById(str1).style.display = "none";
+        document.getElementById(str2).style.display = "none";
+      
       }
       
       document.addEventListener("visibilitychange", () => {
-          
-              document.getElementById("rotate_opt_wra").style.opacity = "0";
-          
-          
-              document.getElementById("era_all_img").style.display = "inline";
-              document.getElementById("era_all_grey_img").style.display = "none";
-              document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
-          
          
-                  
-                  document.getElementById("greybo_lef_cov").style.display = "none";
-                  document.getElementById("plac_here_txt").style.display  = "none";
+             document.getElementById("rotate_opt_wra").style.opacity = "0";
+         
+         
+             document.getElementById("era_all_img").style.display = "inline";
+             document.getElementById("era_all_grey_img").style.display = "none";
+             document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
+         
+        
                  
-                  document.getElementById("greybo_lef_cov").style.zIndex = "2";
-                  document.getElementById("plac_here_txt").style.zIndex  = "2"; 
-              
-              
-         if (document.hidden && (!window.screenTop && !window.screenY)) {
-             f_screen = 0;
-             document.getElementById("full_scr").style.display = "inline";
-             document.getElementById("exit_full_scr").style.display = "none";
-             document.documentElement.style.setProperty('--fullScreenVar', "160px");
-             if (document.exitFullscreen && (!window.screenTop && !window.screenY)) {
-                 document.exitFullscreen();
-             } else if (document.webkitExitFullscreen) {
-                 /* Safari */
-                 document.webkitExitFullscreen();
-             } else if (document.msExitFullscreen) {
-                 /* IE11 */
-                 document.msExitFullscreen();
-             }
-            // tab is changed
-         }
+                 document.getElementById("greybo_lef_cov").style.display = "none";
+                 document.getElementById("plac_here_txt").style.display  = "none";
+                
+                 document.getElementById("greybo_lef_cov").style.zIndex = "2";
+                 document.getElementById("plac_here_txt").style.zIndex  = "2";
+             
+             
+        if (document.hidden && (!window.screenTop && !window.screenY)) {
+            f_screen = 0;
+            document.getElementById("full_scr").style.display = "inline";
+            document.getElementById("exit_full_scr").style.display = "none";
+            document.documentElement.style.setProperty('--fullScreenVar', "160px");
+            if (document.exitFullscreen && (!window.screenTop && !window.screenY)) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                /* IE11 */
+                document.msExitFullscreen();
+            }
+           // tab is changed
+        }
       }, {passive: true});
       
       
       /* function toggleZoomScreen() {
-        document.body.style.zoom = "100%";
+       document.body.style.zoom = "100%";
       }
       
       var w = window.innerWidth;
