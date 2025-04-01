@@ -930,68 +930,7 @@
       
       
       
-      document.getElementById("ship_samp").addEventListener("touchstart", place_here_text_show_touch, {passive: true});
-      document.getElementById("ship_samp").addEventListener("touchend", place_here_text_hide_touch, {passive: true});
-      document.getElementById("ship_samp").addEventListener("mousedown", place_here_text_show, {passive: true});
-      document.getElementById("ship_samp").addEventListener("mouseup", place_here_text_hide, {passive: true});
-      
-      
-      document.getElementById("era_all").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
-      document.getElementById("era_all").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
-      document.getElementById("era_all").addEventListener("mouseover", erase_active_1, {passive: true});
-      document.getElementById("era_all").addEventListener("mouseout", erase_active_0, {passive: true});
-      document.getElementById("era_all").addEventListener("mousedown", erase_ships, {passive: true});
-      
-      
-      document.getElementById("era_all_img").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
-      document.getElementById("era_all_img").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
-      document.getElementById("era_all_img").addEventListener("mouseover", erase_active_1, {passive: true});
-      document.getElementById("era_all_img").addEventListener("mouseout", erase_active_0, {passive: true});
-      document.getElementById("era_all_img").addEventListener("mousedown", erase_ships, {passive: true});
-      
-      document.getElementById("era_all_grey_img").addEventListener("touchstart", erase_active_bytouch_1, {passive: true});
-      document.getElementById("era_all_grey_img").addEventListener("touchend", erase_active_bytouch_0, {passive: true});
-      document.getElementById("era_all_grey_img").addEventListener("mouseover", erase_active_1, {passive: true});
-      document.getElementById("era_all_grey_img").addEventListener("mouseout", erase_active_0, {passive: true});
-      document.getElementById("era_all_grey_img").addEventListener("mousedown", erase_ships, {passive: true});
-      
-      document.getElementById("submt").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-      document.getElementById("submt").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
-      document.getElementById("submt").addEventListener("mouseover", submit_active_1, {passive: true});
-      document.getElementById("submt").addEventListener("mouseout", submit_active_0, {passive: true});
-      document.getElementById("submt").addEventListener("mousedown", submit_ships, {passive: true});
-      
-      document.getElementById("light_submt_img").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-      document.getElementById("light_submt_img").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
-      document.getElementById("light_submt_img").addEventListener("mouseover", submit_active_1, {passive: true});
-      document.getElementById("light_submt_img").addEventListener("mouseout", submit_active_0, {passive: true});
-      document.getElementById("light_submt_img").addEventListener("mousedown", submit_ships, {passive: true});
-      
-      document.getElementById("grey_submt_img").addEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-      document.getElementById("grey_submt_img").addEventListener("touchend", submit_active_bytouch_0, {passive: true});
-      document.getElementById("grey_submt_img").addEventListener("mouseover", submit_active_1, {passive: true});
-      document.getElementById("grey_submt_img").addEventListener("mouseout", submit_active_0, {passive: true});
-      document.getElementById("grey_submt_img").addEventListener("mousedown", submit_ships, {passive: true});
-      
-      
-      
-      document.getElementById("rotate_opt_wra").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
-      document.getElementById("rotate_opt_wra").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
-      document.getElementById("rotate_opt_wra").addEventListener("mouseover", rotate_opacity_1, {passive: true});
-      document.getElementById("rotate_opt_wra").addEventListener("mouseout", rotate_opacity_0, {passive: true});
-      document.getElementById("rotate_opt_wra").addEventListener("mousedown", rotate_ship, {passive: true});
-      
-      document.getElementById("rotate_opt").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
-      document.getElementById("rotate_opt").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
-      document.getElementById("rotate_opt").addEventListener("mouseover", rotate_opacity_1, {passive: true});
-      document.getElementById("rotate_opt").addEventListener("mouseout", rotate_opacity_0, {passive: true});
-      document.getElementById("rotate_opt").addEventListener("mousedown", rotate_ship, {passive: true});
-      
-      document.getElementById("rotate_txt").addEventListener("touchstart", rotate_opacity_bytouch_1, {passive: true});
-      document.getElementById("rotate_txt").addEventListener("touchend", rotate_opacity_bytouch_0, {passive: true});
-      document.getElementById("rotate_txt").addEventListener("mouseover", rotate_opacity_1, {passive: true});
-      document.getElementById("rotate_txt").addEventListener("mouseout", rotate_opacity_0, {passive: true});
-      document.getElementById("rotate_txt").addEventListener("mousedown", rotate_ship, {passive: true});
+      function a(b,c){const d=document.getElementById(b);d&&Object.entries(c).forEach(([e,f])=>d.addEventListener(e,f,{passive:!0}))}const e={ship_samp:{touchstart:place_here_text_show_touch,touchend:place_here_text_hide_touch,mousedown:place_here_text_show,mouseup:place_here_text_hide},era_all:{touchstart:erase_active_bytouch_1,touchend:erase_active_bytouch_0,mouseover:erase_active_1,mouseout:erase_active_0,mousedown:erase_ships},era_all_img:{touchstart:erase_active_bytouch_1,touchend:erase_active_bytouch_0,mouseover:erase_active_1,mouseout:erase_active_0,mousedown:erase_ships},era_all_grey_img:{touchstart:erase_active_bytouch_1,touchend:erase_active_bytouch_0,mouseover:erase_active_1,mouseout:erase_active_0,mousedown:erase_ships},submt:{touchstart:submit_active_bytouch_1,touchend:submit_active_bytouch_0,mouseover:submit_active_1,mouseout:submit_active_0,mousedown:submit_ships},light_submt_img:{touchstart:submit_active_bytouch_1,touchend:submit_active_bytouch_0,mouseover:submit_active_1,mouseout:submit_active_0,mousedown:submit_ships},grey_submt_img:{touchstart:submit_active_bytouch_1,touchend:submit_active_bytouch_0,mouseover:submit_active_1,mouseout:submit_active_0,mousedown:submit_ships},rotate_opt_wra:{touchstart:rotate_opacity_bytouch_1,touchend:rotate_opacity_bytouch_0,mouseover:rotate_opacity_1,mouseout:rotate_opacity_0,mousedown:rotate_ship},rotate_opt:{touchstart:rotate_opacity_bytouch_1,touchend:rotate_opacity_bytouch_0,mouseover:rotate_opacity_1,mouseout:rotate_opacity_0,mousedown:rotate_ship},rotate_txt:{touchstart:rotate_opacity_bytouch_1,touchend:rotate_opacity_bytouch_0,mouseover:rotate_opacity_1,mouseout:rotate_opacity_0,mousedown:rotate_ship}};Object.entries(e).forEach(([b,c])=>a(b,c));
       
       for (let i = 61; i <= 100; i++) {
         let str1 = "actual_sq_"+i+"";
