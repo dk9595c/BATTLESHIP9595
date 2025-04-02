@@ -775,7 +775,11 @@ function rotate_ship() {
     //    if (!window.screenTop && !window.screenY) {
     //        console.log('Browser is in fullscreen');
     //    }
-
+    for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
+        if (occupied_squares[i] == 0) {
+            document.getElementById("actual_sq_" + i).style.backgroundColor = "rgb(94,94,94)";
+        }
+    } //end of loop
     active_ship = active_ship * -1;
     tempRot += 90;
     document.getElementById("sml_shp").style.rotate = tempRot + "deg";
