@@ -22,6 +22,42 @@
          max-width: 100%;
          max-height: 100%;
          }
+          [class^="ps_"], [class*=" ps_"] {
+              width: 10%;
+              height: 10%;
+              position: absolute;
+              display: inline;
+              z-index: 2;
+              opacity: 1;
+          }
+          
+          /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH psuedo_squares HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+          .ps_2, .ps_12, .ps_22, .ps_32, .ps_42, .ps_52, .ps_62, .ps_72, .ps_82, .ps_92 { margin-left: 10%; }
+          .ps_3, .ps_13, .ps_23, .ps_33, .ps_43, .ps_53, .ps_63, .ps_73, .ps_83, .ps_93 { margin-left: 20%; }
+          .ps_4, .ps_14, .ps_24, .ps_34, .ps_44, .ps_54, .ps_64, .ps_74, .ps_84, .ps_94 { margin-left: 30%; }
+          .ps_5, .ps_15, .ps_25, .ps_35, .ps_45, .ps_55, .ps_65, .ps_75, .ps_85, .ps_95 { margin-left: 40%; }
+          .ps_6, .ps_16, .ps_26, .ps_36, .ps_46, .ps_56, .ps_66, .ps_76, .ps_86, .ps_96 { margin-left: 50%; }
+          .ps_7, .ps_17, .ps_27, .ps_37, .ps_47, .ps_57, .ps_67, .ps_77, .ps_87, .ps_97 { margin-left: 60%; }
+          .ps_8, .ps_18, .ps_28, .ps_38, .ps_48, .ps_58, .ps_68, .ps_78, .ps_88, .ps_98 { margin-left: 70%; }
+          .ps_9, .ps_19, .ps_29, .ps_39, .ps_49, .ps_59, .ps_69, .ps_79, .ps_89, .ps_99 { margin-left: 80%; }
+          .ps_10, .ps_20, .ps_30, .ps_40, .ps_50, .ps_60, .ps_70, .ps_80, .ps_90, .ps_100 { margin-left: 90%; }
+
+          .ps_1, .ps_2, .ps_3, .ps_4, .ps_5, .ps_6, .ps_7, .ps_8, .ps_9, .ps_10 { margin-top: 0; }
+          .ps_11, .ps_12, .ps_13, .ps_14, .ps_15, .ps_16, .ps_17, .ps_18, .ps_19, .ps_20 { margin-top: 10%; }
+          .ps_21, .ps_22, .ps_23, .ps_24, .ps_25, .ps_26, .ps_27, .ps_28, .ps_29, .ps_30 { margin-top: 20%; }
+          .ps_31, .ps_32, .ps_33, .ps_34, .ps_35, .ps_36, .ps_37, .ps_38, .ps_39, .ps_40 { margin-top: 30%; }
+          .ps_41, .ps_42, .ps_43, .ps_44, .ps_45, .ps_46, .ps_47, .ps_48, .ps_49, .ps_50 { margin-top: 40%; }
+          .ps_51, .ps_52, .ps_53, .ps_54, .ps_55, .ps_56, .ps_57, .ps_58, .ps_59, .ps_60 { margin-top: 50%; }
+          .ps_61, .ps_62, .ps_63, .ps_64, .ps_65, .ps_66, .ps_67, .ps_68, .ps_69, .ps_70 { margin-top: 60%; }
+          .ps_71, .ps_72, .ps_73, .ps_74, .ps_75, .ps_76, .ps_77, .ps_78, .ps_79, .ps_80 { margin-top: 70%; }
+          .ps_81, .ps_82, .ps_83, .ps_84, .ps_85, .ps_86, .ps_87, .ps_88, .ps_89, .ps_90 { margin-top: 80%; }
+          .ps_91, .ps_92, .ps_93, .ps_94, .ps_95, .ps_96, .ps_97, .ps_98, .ps_99, .ps_100 { margin-top: 90%; }
+
+          .ps_1 { border-radius: 16.66667% 0 0 0; }
+          .ps_10 { border-radius: 0 16.66667% 0 0; }
+          .ps_91 { border-radius: 0 0 0 16.66667%; }
+          .ps_100 { border-radius: 0 0 16.66667% 0; }
+
          .master_flexbox {
          display: flex;
          flex-flow: column;
