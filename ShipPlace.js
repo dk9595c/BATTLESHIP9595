@@ -840,7 +840,7 @@ function rotate_ship() {
 
 
 //--------------------------------------------------------   boundary_overflow()    ----------------------------------------------------------------
-function boundary_overflow() {
+function boundary_overflow() { 
 
     for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
         if (occupied_squares[i] == 0) {
