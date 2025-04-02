@@ -917,39 +917,38 @@
      --borderRadius_reduced_X_100 : 16.6666667%;
      --borderRadius_reduced_Y_100 : 2.6315794737%;
 }
- .ps_1,.ps_2,.ps_3,.ps_4,.ps_5,.ps_6,.ps_7,.ps_8,.ps_9,.ps_10,.ps_11,.ps_12,.ps_13,.ps_14,.ps_15,.ps_16,.ps_17,.ps_18,.ps_19,.ps_20,.ps_21,.ps_22,.ps_23,.ps_24,.ps_25,.ps_26,.ps_27,.ps_28,.ps_29,.ps_30,.ps_31,.ps_32,.ps_33,.ps_34,.ps_35,.ps_36,.ps_37,.ps_38,.ps_39,.ps_40,.ps_41,.ps_42,.ps_43,.ps_44,.ps_45,.ps_46,.ps_47,.ps_48,.ps_49,.ps_50,.ps_51,.ps_52,.ps_53,.ps_54,.ps_55,.ps_56,.ps_57,.ps_58,.ps_59,.ps_60,.ps_61,.ps_62,.ps_63,.ps_64,.ps_65,.ps_66,.ps_67,.ps_68,.ps_69,.ps_70,.ps_71,.ps_72,.ps_73,.ps_74,.ps_75,.ps_76,.ps_77,.ps_78,.ps_79,.ps_80,.ps_81,.ps_82,.ps_83,.ps_84,.ps_85,.ps_86,.ps_87,.ps_88,.ps_89,.ps_90,.ps_91,.ps_92,.ps_93,.ps_94,.ps_95,.ps_96,.ps_97,.ps_98,.ps_99,.ps_100{
-     width: 10%;
-     height: 10%;
-     position: absolute;
-     display: inline;
-     z-index: 2;
-     opacity : 1;
+
+
+[class^="actual_square_"], [class*=" actual_square_"] {
+    position: absolute;
+    display: inline;
+    z-index: 1;
+    background-color: #5e5e5e;
+    margin: 12.5% 0 0 12.5%;
+    opacity: var(--Opac_0);
+    box-sizing: border-box;
+    transition:
+        width 0.1s ease,
+        height 0.1s ease,
+        margin 0.1s ease,
+        background-color 0.3s ease;
+    will-change: transform;
 }
- .actual_square_1, .actual_square_2, .actual_square_3, .actual_square_4, .actual_square_5, .actual_square_6, .actual_square_7, .actual_square_8, .actual_square_9, .actual_square_10, .actual_square_11, .actual_square_12, .actual_square_13, .actual_square_14, .actual_square_15, .actual_square_16, .actual_square_17, .actual_square_18, .actual_square_19, .actual_square_20, .actual_square_21, .actual_square_22, .actual_square_23, .actual_square_24, .actual_square_25, .actual_square_26, .actual_square_27, .actual_square_28, .actual_square_29, .actual_square_30, .actual_square_31, .actual_square_32, .actual_square_33, .actual_square_34, .actual_square_35, .actual_square_36, .actual_square_37, .actual_square_38, .actual_square_39, .actual_square_40, .actual_square_41, .actual_square_42, .actual_square_43, .actual_square_44, .actual_square_45, .actual_square_46, .actual_square_47, .actual_square_48, .actual_square_49, .actual_square_50, .actual_square_51, .actual_square_52, .actual_square_53, .actual_square_54, .actual_square_55, .actual_square_56, .actual_square_57, .actual_square_58, .actual_square_59, .actual_square_60, .actual_square_61, .actual_square_62, .actual_square_63, .actual_square_64, .actual_square_65, .actual_square_66, .actual_square_67, .actual_square_68, .actual_square_69, .actual_square_70, .actual_square_71, .actual_square_72, .actual_square_73, .actual_square_74, .actual_square_75, .actual_square_76, .actual_square_77, .actual_square_78, .actual_square_79, .actual_square_80, .actual_square_81, .actual_square_82, .actual_square_83, .actual_square_84, .actual_square_85, .actual_square_86, .actual_square_87, .actual_square_88, .actual_square_89, .actual_square_90, .actual_square_91, .actual_square_92, .actual_square_93, .actual_square_94, .actual_square_95, .actual_square_96, .actual_square_97, .actual_square_98, .actual_square_99, .actual_square_100 {
-     position: absolute;
-     display: inline;
-     z-index: 1;
-     background-color: rgb(94,94,94);
-     margin-left: 12.5%;
-     margin-top: 12.5%;
-     opacity: var(--Opac_0);
-     box-sizing: border-box;
-     transition: width 0.1s ease, height 0.1s ease, margin-left 0.1s ease, margin-top 0.1s ease, background-color 0.3s ease;
+
+[class^="actual_square_right_"] {
+    position: absolute;
+    display: inline;
+    z-index: 1;
+    background-color: #5e5e5e;
+    width: 75%;
+    height: 75%;
+    border-radius: 16.6666667%;
+    margin: 12.5% 0 0 12.5%;
+    opacity: 0;
+    box-sizing: border-box;
+    transition: width 0.1s ease, height 0.1s ease, margin-left 0.1s ease, margin-top 0.1s ease, background-color 0.3s ease, opacity 0.1s ease;
 }
- .actual_square_right_1,.actual_square_right_2,.actual_square_right_3,.actual_square_right_4,.actual_square_right_5,.actual_square_right_6,.actual_square_right_7,.actual_square_right_8,.actual_square_right_9,.actual_square_right_10,.actual_square_right_11,.actual_square_right_12,.actual_square_right_13,.actual_square_right_14,.actual_square_right_15,.actual_square_right_16,.actual_square_right_17,.actual_square_right_18,.actual_square_right_19,.actual_square_right_20,.actual_square_right_21,.actual_square_right_22,.actual_square_right_23,.actual_square_right_24,.actual_square_right_25,.actual_square_right_26,.actual_square_right_27,.actual_square_right_28,.actual_square_right_29,.actual_square_right_30,.actual_square_right_31,.actual_square_right_32,.actual_square_right_33,.actual_square_right_34,.actual_square_right_35,.actual_square_right_36,.actual_square_right_37,.actual_square_right_38,.actual_square_right_39,.actual_square_right_40,.actual_square_right_41,.actual_square_right_42,.actual_square_right_43,.actual_square_right_44,.actual_square_right_45,.actual_square_right_46,.actual_square_right_47,.actual_square_right_48,.actual_square_right_49,.actual_square_right_50,.actual_square_right_51,.actual_square_right_52,.actual_square_right_53,.actual_square_right_54,.actual_square_right_55,.actual_square_right_56,.actual_square_right_57,.actual_square_right_58,.actual_square_right_59,.actual_square_right_60,.actual_square_right_61,.actual_square_right_62,.actual_square_right_63,.actual_square_right_64,.actual_square_right_65,.actual_square_right_66,.actual_square_right_67,.actual_square_right_68,.actual_square_right_69,.actual_square_right_70,.actual_square_right_71,.actual_square_right_72,.actual_square_right_73,.actual_square_right_74,.actual_square_right_75,.actual_square_right_76,.actual_square_right_77,.actual_square_right_78,.actual_square_right_79,.actual_square_right_80,.actual_square_right_81,.actual_square_right_82,.actual_square_right_83,.actual_square_right_84,.actual_square_right_85,.actual_square_right_86,.actual_square_right_87,.actual_square_right_88,.actual_square_right_89,.actual_square_right_90,.actual_square_right_91,.actual_square_right_92,.actual_square_right_93,.actual_square_right_94,.actual_square_right_95,.actual_square_right_96,.actual_square_right_97,.actual_square_right_98,.actual_square_right_99,.actual_square_right_100{
-     position: absolute;
-     display: inline;
-     z-index: 1;
-     background-color: rgb(94,94,94);
-     width: 75%;
-     height: 75%;
-     border-radius: 16.6666667%;
-     margin-left: 12.5%;
-     margin-top: 12.5%;
-     opacity: 0;
-     box-sizing: border-box;
-     transition: width 0.1s ease, height 0.1s ease, margin-left 0.1s ease, margin-top 0.1s ease, background-color 0.3s ease, opacity 0.1s ease;
-}
+
  .actual_square_1{
     width:var(--wd_global_1);
     height:var(--ht_global_1);
@@ -1450,401 +1449,11 @@
     height:var(--ht_global_100);
     border-radius:var(--borderRadius_G_X_100)/var(--borderRadius_G_Y_100)
 }
-/*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH psuedo_squares HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
- .ps_1{
-    border-radius:16.66667% 0 0 0;
-    margin-top:0
-}
-.ps_2{
-    margin-left:10%;
-    margin-top:0
-}
-.ps_3{
-    margin-left:20%;
-    margin-top:0
-}
-.ps_4{
-    margin-left:30%;
-    margin-top:0
-}
-.ps_5{
-    margin-left:40%;
-    margin-top:0
-}
-.ps_6{
-    margin-left:50%;
-    margin-top:0
-}
-.ps_7{
-    margin-left:60%;
-    margin-top:0
-}
-.ps_8{
-    margin-left:70%;
-    margin-top:0
-}
-.ps_9{
-    margin-left:80%;
-    margin-top:0
-}
-.ps_10{
-    border-radius:0 16.66667% 0 0;
-    margin-left:90%;
-    margin-top:0
-}
-.ps_11{
-    margin-top:10%
-}
-.ps_12{
-    margin-left:10%;
-    margin-top:10%
-}
-.ps_13{
-    margin-left:20%;
-    margin-top:10%
-}
-.ps_14{
-    margin-left:30%;
-    margin-top:10%
-}
-.ps_15{
-    margin-left:40%;
-    margin-top:10%
-}
-.ps_16{
-    margin-left:50%;
-    margin-top:10%
-}
-.ps_17{
-    margin-left:60%;
-    margin-top:10%
-}
-.ps_18{
-    margin-left:70%;
-    margin-top:10%
-}
-.ps_19{
-    margin-left:80%;
-    margin-top:10%
-}
-.ps_20{
-    margin-left:90%;
-    margin-top:10%
-}
-.ps_21{
-    margin-top:20%
-}
-.ps_22{
-    margin-left:10%;
-    margin-top:20%
-}
-.ps_23{
-    margin-left:20%;
-    margin-top:20%
-}
-.ps_24{
-    margin-left:30%;
-    margin-top:20%
-}
-.ps_25{
-    margin-left:40%;
-    margin-top:20%
-}
-.ps_26{
-    margin-left:50%;
-    margin-top:20%
-}
-.ps_27{
-    margin-left:60%;
-    margin-top:20%
-}
-.ps_28{
-    margin-left:70%;
-    margin-top:20%
-}
-.ps_29{
-    margin-left:80%;
-    margin-top:20%
-}
-.ps_30{
-    margin-left:90%;
-    margin-top:20%
-}
-.ps_31{
-    margin-top:30%
-}
-.ps_32{
-    margin-left:10%;
-    margin-top:30%
-}
-.ps_33{
-    margin-left:20%;
-    margin-top:30%
-}
-.ps_34{
-    margin-left:30%;
-    margin-top:30%
-}
-.ps_35{
-    margin-left:40%;
-    margin-top:30%
-}
-.ps_36{
-    margin-left:50%;
-    margin-top:30%
-}
-.ps_37{
-    margin-left:60%;
-    margin-top:30%
-}
-.ps_38{
-    margin-left:70%;
-    margin-top:30%
-}
-.ps_39{
-    margin-left:80%;
-    margin-top:30%
-}
-.ps_40{
-    margin-left:90%;
-    margin-top:30%
-}
-.ps_41{
-    margin-top:40%
-}
-.ps_42{
-    margin-left:10%;
-    margin-top:40%
-}
-.ps_43{
-    margin-left:20%;
-    margin-top:40%
-}
-.ps_44{
-    margin-left:30%;
-    margin-top:40%
-}
-.ps_45{
-    margin-left:40%;
-    margin-top:40%
-}
-.ps_46{
-    margin-left:50%;
-    margin-top:40%
-}
-.ps_47{
-    margin-left:60%;
-    margin-top:40%
-}
-.ps_48{
-    margin-left:70%;
-    margin-top:40%
-}
-.ps_49{
-    margin-left:80%;
-    margin-top:40%
-}
-.ps_50{
-    margin-left:90%;
-    margin-top:40%
-}
-.ps_51{
-    margin-top:50%
-}
-.ps_52{
-    margin-left:10%;
-    margin-top:50%
-}
-.ps_53{
-    margin-left:20%;
-    margin-top:50%
-}
-.ps_54{
-    margin-left:30%;
-    margin-top:50%
-}
-.ps_55{
-    margin-left:40%;
-    margin-top:50%
-}
-.ps_56{
-    margin-left:50%;
-    margin-top:50%
-}
-.ps_57{
-    margin-left:60%;
-    margin-top:50%
-}
-.ps_58{
-    margin-left:70%;
-    margin-top:50%
-}
-.ps_59{
-    margin-left:80%;
-    margin-top:50%
-}
-.ps_60{
-    margin-left:90%;
-    margin-top:50%
-}
-.ps_61{
-    margin-top:60%
-}
-.ps_62{
-    margin-left:10%;
-    margin-top:60%
-}
-.ps_63{
-    margin-left:20%;
-    margin-top:60%
-}
-.ps_64{
-    margin-left:30%;
-    margin-top:60%
-}
-.ps_65{
-    margin-left:40%;
-    margin-top:60%
-}
-.ps_66{
-    margin-left:50%;
-    margin-top:60%
-}
-.ps_67{
-    margin-left:60%;
-    margin-top:60%
-}
-.ps_68{
-    margin-left:70%;
-    margin-top:60%
-}
-.ps_69{
-    margin-left:80%;
-    margin-top:60%
-}
-.ps_70{
-    margin-left:90%;
-    margin-top:60%
-}
-.ps_71{
-    margin-top:70%
-}
-.ps_72{
-    margin-left:10%;
-    margin-top:70%
-}
-.ps_73{
-    margin-left:20%;
-    margin-top:70%
-}
-.ps_74{
-    margin-left:30%;
-    margin-top:70%
-}
-.ps_75{
-    margin-left:40%;
-    margin-top:70%
-}
-.ps_76{
-    margin-left:50%;
-    margin-top:70%
-}
-.ps_77{
-    margin-left:60%;
-    margin-top:70%
-}
-.ps_78{
-    margin-left:70%;
-    margin-top:70%
-}
-.ps_79{
-    margin-left:80%;
-    margin-top:70%
-}
-.ps_80{
-    margin-left:90%;
-    margin-top:70%
-}
-.ps_81{
-    margin-top:80%
-}
-.ps_82{
-    margin-left:10%;
-    margin-top:80%
-}
-.ps_83{
-    margin-left:20%;
-    margin-top:80%
-}
-.ps_84{
-    margin-left:30%;
-    margin-top:80%
-}
-.ps_85{
-    margin-left:40%;
-    margin-top:80%
-}
-.ps_86{
-    margin-left:50%;
-    margin-top:80%
-}
-.ps_87{
-    margin-left:60%;
-    margin-top:80%
-}
-.ps_88{
-    margin-left:70%;
-    margin-top:80%
-}
-.ps_89{
-    margin-left:80%;
-    margin-top:80%
-}
-.ps_90{
-    margin-left:90%;
-    margin-top:80%
-}
-.ps_91{
-    border-radius:0 0 0 16.66667%;
-    margin-top:90%
-}
-.ps_92{
-    margin-left:10%;
-    margin-top:90%
-}
-.ps_93{
-    margin-left:20%;
-    margin-top:90%
-}
-.ps_94{
-    margin-left:30%;
-    margin-top:90%
-}
-.ps_95{
-    margin-left:40%;
-    margin-top:90%
-}
-.ps_96{
-    margin-left:50%;
-    margin-top:90%
-}
-.ps_97{
-    margin-left:60%;
-    margin-top:90%
-}
-.ps_98{
-    margin-left:70%;
-    margin-top:90%
-}
-.ps_99{
-    margin-left:80%;
-    margin-top:90%
-}
-.ps_100{
-    border-radius:0 0 16.66667% 0;
-    margin-left:90%;
-    margin-top:90%
-}
+
+
+
+
+
 /*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH psuedo_squares_right HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
 /* Base styles for all ps_right elements */
  [class^="ps_right_"] {
