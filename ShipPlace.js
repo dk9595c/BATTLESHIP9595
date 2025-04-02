@@ -45,6 +45,7 @@ function rotate_opacity_bytouch_1() {
         // rotate_caller_touch();
         rotate_flag = 1;
         document.getElementById("rotate_opt_wra").style.opacity = "1";
+        rotate_ship();
     }
 }
 
