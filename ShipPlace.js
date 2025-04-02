@@ -859,8 +859,11 @@ function boundary_overflow() {
                 let full_width = active_ship * 100 - 25;
                 document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
                 blocked_squares[i] = 1;
+//              document.documentElement.style.getPropertyValue("--borderRadius_G_X_"+i)
                 document.documentElement.style.setProperty('--wd_reduced_global_' + i, full_width + "%");
                 document.documentElement.style.setProperty('--ht_reduced_global_' + i, "75%");
+                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_X_"+i));
+                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_Y_"+i));
                 document.documentElement.style.setProperty('--mar_' + i, "12.5%");
             } //end of if
 
@@ -876,6 +879,8 @@ function boundary_overflow() {
                 blocked_squares[i] = 1;
                 document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
                 document.documentElement.style.setProperty('--ht_reduced_global_' + i, full_height + "%");
+                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_X_"+i));
+                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_Y_"+i));
                 document.documentElement.style.setProperty('--mar_' + i, "12.5%");
             } //end of if
         }
