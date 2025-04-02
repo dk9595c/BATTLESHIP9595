@@ -63,6 +63,12 @@ function rotate_opacity_bytouch_0() {
     }
 }
 
+function rotate_by_click()
+{
+    if (rotate_flag==0 && submit_flag == 0 && all_ships_placed_var == 0) {
+        rotate_ship();
+    }
+}
 
 
 function erase_active_bytouch_1() {
@@ -840,7 +846,7 @@ function rotate_ship() {
 
 
 //--------------------------------------------------------   boundary_overflow()    ----------------------------------------------------------------
-function boundary_overflow() { 
+function boundary_overflow() {
 
     for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
         if (occupied_squares[i] == 0) {
