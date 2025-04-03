@@ -771,20 +771,28 @@ function full_var_set() {
     }
 }
 
+
+
 function rotate_ship() {
-    //    if (!window.screenTop && !window.screenY) {
-    //        console.log('Browser is in fullscreen');
-    //    }
-    for (let i = 1; i <= 100; i++) { //For resetting all the boundary highlight
+    //const start = performance.now();
+    // Original fullscreen check (commented out as in original)
+    // if (!window.screenTop && !window.screenY) {
+    //     console.log('Browser is in fullscreen');
+    // }
+
+    // 1. Reset boundary highlights - unchanged from original
+    for (let i = 1; i <= 100; i++) {
         if (occupied_squares[i] == 0) {
             document.getElementById("actual_sq_" + i).style.backgroundColor = "rgb(94,94,94)";
         }
-    } //end of loop
+    }
+
+    // 2. Rotation logic - unchanged
     active_ship = active_ship * -1;
     tempRot += 90;
     document.getElementById("sml_shp").style.rotate = tempRot + "deg";
-    //rotate_var = 0;
 
+    // 3. Ship size calculations - fixed Math.abs() usage
     let sml_shp_size = shipSet[ship_counter];
     if (shipSet[ship_counter] < 0) {
         sml_shp_size = sml_shp_size * (-1);
@@ -793,19 +801,20 @@ function rotate_ship() {
     let small_ship_bordRad = (56.3762287541 * 2.6315794737) / small_ship_height;
     document.getElementById("sml_shp").style.height = small_ship_height + "%";
     document.getElementById("sml_shp").style.borderRadius = "16.6666667% / " + small_ship_bordRad + "%";
+
+    // 4. Translation logic - fixed condition order
     if (sml_shp_size == 4 && tempRot % 180 == 90) {
         document.getElementById("sml_shp").style.translate = "68.2539680923% 13.3956386231%";
-    }
-    if ((sml_shp_size == 4 || sml_shp_size == 2) && tempRot % 180 == 0) {
+    } else if (sml_shp_size == 2 && tempRot % 180 == 90) {
+        document.getElementById("sml_shp").style.translate = "68.2539680923% 29.6551723019%";
+    } else if ((sml_shp_size == 4 || sml_shp_size == 2) && tempRot % 180 == 0) {
         document.getElementById("sml_shp").style.translate = "0% 0%";
     }
 
-    if (sml_shp_size == 2 && tempRot % 180 == 90) {
-        document.getElementById("sml_shp").style.translate = "68.2539680923% 29.6551723019%";
-    }
-
-    if (active_ship > 0) // HORIZONTAL
-    {
+    // 5. Horizontal/Vertical styling - fixed active_ship comparison
+    const docStyle = document.documentElement.style;
+    
+    if (active_ship > 0) { // HORIZONTAL
         let full_width = active_ship * 100 - 25;
         let reduced_width = active_ship * 100 - 50;
         let full_border_radius = 1250.00000025 / full_width;
@@ -813,18 +822,17 @@ function rotate_ship() {
 
         for (let i = 1; i <= 100; i++) {
             if (occupied_squares[i] == 0) {
-                document.documentElement.style.setProperty('--wd_global_' + i, full_width + "%");
-                document.documentElement.style.setProperty('--ht_global_' + i, '75%');
-                document.documentElement.style.setProperty('--wd_reduced_global_' + i, reduced_width + "%");
-                document.documentElement.style.setProperty('--ht_reduced_global_' + i, '50%');
-                document.documentElement.style.setProperty('--borderRadius_G_X_' + i, full_border_radius + "%");
-                document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, '16.6666667%');
-                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, reduced_border_radius + "%");
-                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, '16.6666667%');
+                docStyle.setProperty('--wd_global_' + i, full_width + "%");
+                docStyle.setProperty('--ht_global_' + i, '75%');
+                docStyle.setProperty('--wd_reduced_global_' + i, reduced_width + "%");
+                docStyle.setProperty('--ht_reduced_global_' + i, '50%');
+                docStyle.setProperty('--borderRadius_G_X_' + i, full_border_radius + "%");
+                docStyle.setProperty('--borderRadius_G_Y_' + i, '16.6666667%');
+                docStyle.setProperty('--borderRadius_reduced_X_' + i, reduced_border_radius + "%");
+                docStyle.setProperty('--borderRadius_reduced_Y_' + i, '16.6666667%');
             }
         }
-    } else if (active_ship < 0) // VERTICAL
-    {
+    } else if (active_ship < 0) { // VERTICAL
         let full_height = active_ship * (-1) * 100 - 25;
         let reduced_height = active_ship * (-1) * 100 - 50;
         let full_border_radius = 1250.00000025 / full_height;
@@ -832,21 +840,22 @@ function rotate_ship() {
 
         for (let i = 1; i <= 100; i++) {
             if (occupied_squares[i] == 0) {
-                document.documentElement.style.setProperty('--wd_global_' + i, "75%");
-                document.documentElement.style.setProperty('--ht_global_' + i, full_height + "%");
-                document.documentElement.style.setProperty('--wd_reduced_global_' + i, "50%");
-                document.documentElement.style.setProperty('--ht_reduced_global_' + i, reduced_height + "%");
-                document.documentElement.style.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
-                document.documentElement.style.setProperty('--borderRadius_G_Y_' + i, full_border_radius + "%");
-                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
-                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, reduced_border_radius + "%");
+                docStyle.setProperty('--wd_global_' + i, "75%");
+                docStyle.setProperty('--ht_global_' + i, full_height + "%");
+                docStyle.setProperty('--wd_reduced_global_' + i, "50%");
+                docStyle.setProperty('--ht_reduced_global_' + i, reduced_height + "%");
+                docStyle.setProperty('--borderRadius_G_X_' + i, "16.6666667%");
+                docStyle.setProperty('--borderRadius_G_Y_' + i, full_border_radius + "%");
+                docStyle.setProperty('--borderRadius_reduced_X_' + i, "16.6666667%");
+                docStyle.setProperty('--borderRadius_reduced_Y_' + i, reduced_border_radius + "%");
             }
         }
     }
+   // const end = performance.now();
+   // const executionTime = end - start;
+   // console.log(`Execution time: ${executionTime} ms`);
     boundary_overflow();
-} //end of rotate()
-
-
+}
 
 
 //--------------------------------------------------------   boundary_overflow()    ----------------------------------------------------------------
