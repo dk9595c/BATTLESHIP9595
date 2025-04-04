@@ -236,7 +236,7 @@ function game_started()
       //document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
      // document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
      // document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
-      document.getElementById(str3).addEventListener("touchstart", function(){square_handler(this, event)}, {passive: true});
+     // document.getElementById(str3).addEventListener("touchstart", function(){square_handler(this, event)}, {passive: true});
       document.getElementById(str3).addEventListener("click", function(){square_handler(this, event)}, {passive: true});
     }
     
@@ -318,7 +318,7 @@ function square_handler(a) {
             } else {
                 // Normal heartbeat animation
                 if (heartbeatPhase < 100) {
-                    box.style.opacity = (1 - (heartbeatPhase / 100)).toFixed(4);
+                    box.style.opacity = (1.2 - (heartbeatPhase / 100)).toFixed(4);
                 } else {
                     box.style.opacity = (((heartbeatPhase - 100) / 100) * 1.43).toFixed(4);
                 }
