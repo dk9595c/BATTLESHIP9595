@@ -237,7 +237,7 @@ function game_started()
       //document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
      // document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
      // document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
-      document.getElementById(str3).addEventListener("touchcancel", function(){avoid_conflict(this, event)}, {passive: true});
+      document.getElementById(str3).addEventListener("touchstart", function(){avoid_conflict(this, event)}, {passive: true});
       document.getElementById(str3).addEventListener("click", function(){avoid_conflict(this, event)}, {passive: true});
     }
     
