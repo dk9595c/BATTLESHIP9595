@@ -268,7 +268,7 @@ function square_handler(a) {
     let animationStartTime = null;
     let heartbeatPhase = 0;
     let totalIterations = 0;
-    const maxIterations = 180;
+    const maxIterations = 120;
 
     function startNormalAnimation(timestamp) {
         if (!animationStartTime) animationStartTime = timestamp;
@@ -285,7 +285,7 @@ function square_handler(a) {
         let lastTimestamp = null;
         
         // Ensure the square is fully visible before starting the heartbeat animation
-        box.style.opacity = '1';
+        box.style.opacity = '0.9';
 
         // Add a 100ms delay before starting the heartbeat animation
         setTimeout(() => {
