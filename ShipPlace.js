@@ -18,6 +18,7 @@ var place_text_flag = 0;
 var all_ships_placed_var = 0;
 var submit_flag = 0; // Becomes 1 when all ships are submitted, otherwise stays 0
 var sub_flag = 0; // just to take care of appearance of submit button
+var conflict_flag = 0; //To avoid touch conflict for clicking/touching actual_sq_right_XX
 
 
 for (let i = 0; i < 101; i++) {
@@ -236,26 +237,24 @@ function game_started()
       //document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
      // document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
      // document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
-     // document.getElementById(str3).addEventListener("touchstart", function(){square_handler(this, event)}, {passive: true});
-      document.getElementById(str3).addEventListener("click", function(){square_handler(this, event)}, {passive: true});
+      document.getElementById(str3).addEventListener("touchstart", function(){avoid_conflict(this, event)}, {passive: true});
+      document.getElementById(str3).addEventListener("click", function(){avoid_conflict(this, event)}, {passive: true});
     }
     
-    
-//    let i=0, j=0;
-//    const myInterval = setInterval(function()
-//     {  i+=1; ++j;
-//        if(i/a >= 1)
-//          {clearInterval(myInterval);
-//           
-//                 
-//              
-//          }
-//          
-//       
-//     }, 1);
+ 
 } // game_started
 
+function avoid_conflict(x)
+{
+    if(conflict_flag == 0)
+    {   conflict_flag = 1;
+        square_handler(x);
+    }
+    
+}
+
 function square_handler(a) {
+    conflict_flag = 0;
     const s_no = a.id.slice(20);
     const box = document.getElementById(`actual_sq_right_${s_no}`);
     const pseudoSquare = document.getElementById(`pseudo_square_right_${s_no}`);
