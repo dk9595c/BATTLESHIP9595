@@ -259,16 +259,17 @@ function square_handler(a) {
     const s_no = a.id.slice(20);
     const box = document.getElementById(`actual_sq_right_${s_no}`);
     const pseudoSquare = document.getElementById(`pseudo_square_right_${s_no}`);
-    
-    // Clean up previous event listeners more efficiently
+
+    // Clean up event listeners
     pseudoSquare.removeEventListener("mouseout", hover_square_opacity_0, { passive: true });
     pseudoSquare.removeEventListener("mouseover", hover_square_opacity_1, { passive: true });
 
-    // Use requestAnimationFrame for smoother animations
     let animationStartTime = null;
     let heartbeatPhase = 0;
     let totalIterations = 0;
     const maxIterations = 120;
+    const lastBlinkStart = maxIterations - 20;
+    let lastBlinkExecuted = false;
 
     function startNormalAnimation(timestamp) {
         if (!animationStartTime) animationStartTime = timestamp;
@@ -283,44 +284,66 @@ function square_handler(a) {
 
     function startHeartbeatAnimation() {
         let lastTimestamp = null;
-        
-        // Ensure the square is fully visible before starting the heartbeat animation
-        box.style.opacity = '0.9';
+        box.style.opacity = '1';
 
-        // Add a 100ms delay before starting the heartbeat animation
-        setTimeout(() => {
-            function heartbeat(timestamp) {
-                if (!lastTimestamp) lastTimestamp = timestamp;
-                const deltaTime = timestamp - lastTimestamp;
-                lastTimestamp = timestamp;
+        function heartbeat(timestamp) {
+            if (!lastTimestamp) lastTimestamp = timestamp;
+            const deltaTime = timestamp - lastTimestamp;
+            lastTimestamp = timestamp;
 
-                // Update heartbeat phase (0-200)
-                heartbeatPhase = (heartbeatPhase + deltaTime * 0.2) % 200;
+            heartbeatPhase = (heartbeatPhase + deltaTime * 0.2) % 200;
 
-                if (totalIterations < maxIterations) {
-                    if (heartbeatPhase < 100) {
-                        // First half of heartbeat: fade out
-                        box.style.opacity = (1 - heartbeatPhase / 100).toFixed(4);
-                    } else {
-                        // Second half of heartbeat: fade in
-                        box.style.opacity = ((heartbeatPhase - 100) / 70).toFixed(4);
-                    }
+            if (totalIterations >= lastBlinkStart) {
+                if (!lastBlinkExecuted) {
+                    lastBlinkExecuted = true;
 
-                    totalIterations++;
-                    requestAnimationFrame(heartbeat);
-                } else {
-                    // Animation complete
+                    // Change color and expand
+                    box.style.backgroundColor = 'rgb(204,7,30)';
                     box.style.opacity = '1';
+                    box.style.transform = 'scale(3)';
+                    box.style.transition = 'transform 150ms ease-out, background-color 150ms linear';
+
+                    setTimeout(() => {
+                        box.style.transform = 'scale(1)';
+
+                        setTimeout(() => {
+                            // Ensure final state is stable
+                            box.style.transition = 'none';
+                            box.style.opacity = '1';
+                        }, 150);
+                    }, 100);
+
+                    return; // Stop normal blinking
+                }
+            } else {
+                // Normal heartbeat animation
+                if (heartbeatPhase < 100) {
+                    box.style.opacity = (1 - (heartbeatPhase / 100)).toFixed(4);
+                } else {
+                    box.style.opacity = (((heartbeatPhase - 100) / 100) * 1.43).toFixed(4);
                 }
             }
 
-            requestAnimationFrame(heartbeat);
-        }, 100); // Increased delay to 100ms
+            totalIterations++;
+
+            if (totalIterations < maxIterations) {
+                requestAnimationFrame(heartbeat);
+            } else {
+                // Final state: No flicker, stable opacity, and new color
+                box.style.opacity = '1';
+                box.style.transform = 'scale(1)';
+                box.style.transition = 'none';
+                box.style.backgroundColor = 'rgb(204,7,30)'; // Keep new color permanently
+            }
+        }
+
+        requestAnimationFrame(heartbeat);
     }
 
-    // Start the animation sequence
     requestAnimationFrame(startNormalAnimation);
-}
+} //end of square_handler()
+
+
 
 
 
