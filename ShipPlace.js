@@ -233,73 +233,97 @@ function game_started()
     for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
       
       let str3 = "pseudo_square_right_"+i+"";
-      document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
-      document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
+      //document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
+     // document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
      // document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
       document.getElementById(str3).addEventListener("touchstart", function(){square_handler(this, event)}, {passive: true});
-      document.getElementById(str3).addEventListener("mousedown", function(){square_handler(this, event)}, {passive: true});
+      document.getElementById(str3).addEventListener("click", function(){square_handler(this, event)}, {passive: true});
     }
     
     
-    let i=0, j=0;
-    const myInterval = setInterval(function()
-     {  i+=1; ++j;
-        if(i/a >= 1)
-          {clearInterval(myInterval);
-           
-                 
-              
-          }
-          
-       
-     }, 1);
+//    let i=0, j=0;
+//    const myInterval = setInterval(function()
+//     {  i+=1; ++j;
+//        if(i/a >= 1)
+//          {clearInterval(myInterval);
+//           
+//                 
+//              
+//          }
+//          
+//       
+//     }, 1);
+} // game_started
+
+function square_handler(a) {
+    const s_no = a.id.slice(20);
+    const box = document.getElementById(`actual_sq_right_${s_no}`);
+    const pseudoSquare = document.getElementById(`pseudo_square_right_${s_no}`);
+    
+    // Clean up previous event listeners more efficiently
+    pseudoSquare.removeEventListener("mouseout", hover_square_opacity_0, { passive: true });
+    pseudoSquare.removeEventListener("mouseover", hover_square_opacity_1, { passive: true });
+
+    // Use requestAnimationFrame for smoother animations
+    let animationStartTime = null;
+    let heartbeatPhase = 0;
+    let totalIterations = 0;
+    const maxIterations = 180;
+
+    function startNormalAnimation(timestamp) {
+        if (!animationStartTime) animationStartTime = timestamp;
+        const elapsed = timestamp - animationStartTime;
+
+        if (elapsed < 100) {
+            requestAnimationFrame(startNormalAnimation);
+        } else {
+            startHeartbeatAnimation();
+        }
+    }
+
+    function startHeartbeatAnimation() {
+        let lastTimestamp = null;
+        
+        // Ensure the square is fully visible before starting the heartbeat animation
+        box.style.opacity = '1';
+
+        // Add a 100ms delay before starting the heartbeat animation
+        setTimeout(() => {
+            function heartbeat(timestamp) {
+                if (!lastTimestamp) lastTimestamp = timestamp;
+                const deltaTime = timestamp - lastTimestamp;
+                lastTimestamp = timestamp;
+
+                // Update heartbeat phase (0-200)
+                heartbeatPhase = (heartbeatPhase + deltaTime * 0.2) % 200;
+
+                if (totalIterations < maxIterations) {
+                    if (heartbeatPhase < 100) {
+                        // First half of heartbeat: fade out
+                        box.style.opacity = (1 - heartbeatPhase / 100).toFixed(4);
+                    } else {
+                        // Second half of heartbeat: fade in
+                        box.style.opacity = ((heartbeatPhase - 100) / 70).toFixed(4);
+                    }
+
+                    totalIterations++;
+                    requestAnimationFrame(heartbeat);
+                } else {
+                    // Animation complete
+                    box.style.opacity = '1';
+                }
+            }
+
+            requestAnimationFrame(heartbeat);
+        }, 100); // Increased delay to 100ms
+    }
+
+    // Start the animation sequence
+    requestAnimationFrame(startNormalAnimation);
 }
 
-function square_handler(a)
-{
-    
-    let s_no = a.id.slice(20,);
-   // console.log(s_no);
-    
-    document.getElementById("actual_sq_right_"+s_no).style.opacity = 1;
-    document.getElementById("pseudo_square_right_"+s_no).removeEventListener("mouseout", hover_square_opacity_0, {passive: true});
-    
-    const box = document.getElementById("actual_sq_right_"+s_no);
-    
 
-    // Blinking animation function
-    
-    let heartbeatInterval;
-    startHeartbeat();
-    function startHeartbeat() {
-      let beatPhase = 0;
-     // clearInterval(heartbeatInterval); // Clear any existing interval
-      
-      heartbeatInterval = setInterval(() => {
-        // Heartbeat pattern: quick pulse, pause, quick pulse, longer pause
-        if (beatPhase === 0) {
-          box.style.opacity = '0.4'; // First dip
-          beatPhase = 1;
-        } else if (beatPhase === 1) {
-          box.style.opacity = '1'; // First recovery
-          beatPhase = 2;
-        } else if (beatPhase === 2) {
-          box.style.opacity = '0.4'; // Second dip
-          beatPhase = 3;
-        } else {
-          box.style.opacity = '1'; // Final recovery
-          beatPhase = 0;
-        }
-      }, 500); // Adjust timing for heartbeat rhythm
-    }
 
-   
-
-    // Add smooth transition in your CSS
-    box.style.transition = 'opacity 0.2s cubic-bezier(0.990, 0.040, 0.815, 0.420)';
-    
-
-} //end of square_handler()
 
 
 function submit_ships() {
