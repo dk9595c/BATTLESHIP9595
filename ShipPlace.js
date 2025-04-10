@@ -64,9 +64,8 @@ function rotate_opacity_bytouch_0() {
     }
 }
 
-function rotate_by_click()
-{
-    if (rotate_flag==0 && submit_flag == 0 && all_ships_placed_var == 0) {
+function rotate_by_click() {
+    if (rotate_flag == 0 && submit_flag == 0 && all_ships_placed_var == 0) {
         rotate_ship();
     }
 }
@@ -106,13 +105,13 @@ function erase_active_0() {
 
 
 function submit_active_bytouch_1() {
-        
+
     if (submit_flag == 0 && all_ships_placed_var == 1) {
         sub_flag = 1;
         document.getElementById("submt_img_path").setAttribute("fill", "#313134");
         document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
         submit_ships();
-      
+
     }
 }
 
@@ -121,148 +120,174 @@ function submit_active_bytouch_0() {
         sub_flag = 1;
         document.getElementById("submt_img_path").setAttribute("fill", "#9a9da8");
         document.getElementById("submt").style.backgroundColor = "rgb(49,49,52)";
-        
+
     }
 }
 
 function submit_active_1() {
     if (submit_flag == 0 && sub_flag == 0 && all_ships_placed_var == 1) {
-        
+
         document.getElementById("submt_img_path").setAttribute("fill", "#313134");
         document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
-        
+
     }
 }
 
 function submit_active_0() {
     if (sub_flag == 0 && all_ships_placed_var == 1) {
-        
+
         document.getElementById("submt_img_path").setAttribute("fill", "#9a9da8");
         document.getElementById("submt").style.backgroundColor = "rgb(49,49,52)";
     }
 }
 
 
-function remove_controls()
-{   let i=1, a = 1, j=0;
-    for(let j=1; j<=9; j++)
-     {
-         document.getElementById("right_vert_line_"+j).style.display = "inline";
-         document.getElementById("right_vert_line_"+j).style.backgroundColor = "rgb(123, 128, 131)";
-         document.getElementById("right_horiz_line_"+j).style.display = "inline";
-         document.getElementById("right_horiz_line_"+j).style.backgroundColor = "rgb(123, 128, 131)";
-         
+function remove_controls() {
+    let i = 1,
+        a = 1,
+        j = 0;
+    for (let j = 1; j <= 9; j++) {
+        document.getElementById("right_vert_line_" + j).style.display = "inline";
+        document.getElementById("right_vert_line_" + j).style.backgroundColor = "rgb(123, 128, 131)";
+        document.getElementById("right_horiz_line_" + j).style.display = "inline";
+        document.getElementById("right_horiz_line_" + j).style.backgroundColor = "rgb(123, 128, 131)";
+
         // document.getElementById("left_greybox").style.opacity = "0.4";
-         
-     }
-    const myInterval = setInterval(function()
-     {  i+=1; ++j;
-        if(i/a >= 1)
-          {clearInterval(myInterval);
-           
-                  document.getElementById("rotate_opt_wra").style.display = "none";
-                  document.getElementById("demo").style.display = "none";
-                  document.getElementById("ship_samp").style.display = "none";
-                  document.getElementById("era_all").style.display = "none";
-                  document.getElementById("era_all_img").style.display = "none";
-                  document.getElementById("submt").style.display = "none";
-                  document.getElementById("submt_img").style.opacity = "0";
-                  
-                  document.getElementById("rotate_opt").style.display = "none";
-                  document.getElementById("rotate_txt").style.display = "none";
-              
-              
-              
-              }
-          
-        
-        document.getElementById("demo").style.opacity             = 1-i/a;
-        document.getElementById("ship_samp").style.opacity        = 1-i/a;
-        document.getElementById("era_all").style.opacity          = 1-i/a;
-        document.getElementById("era_all_img").style.opacity      = 1-i/a;
-        document.getElementById("submt").style.opacity            = 1-i/a;
-        document.getElementById("submt_img").style.opacity        = 1-i/a;
-        document.getElementById("rotate_opt").style.opacity       = 1-i/a;
-        document.getElementById("rotate_txt").style.opacity       = 1-i/a;
-       
-     }, 1);
-    
-    var dom_string="";
+
+    }
+    const myInterval = setInterval(function() {
+        i += 1;
+        ++j;
+        if (i / a >= 1) {
+            clearInterval(myInterval);
+
+            document.getElementById("rotate_opt_wra").style.display = "none";
+            document.getElementById("demo").style.display = "none";
+            document.getElementById("ship_samp").style.display = "none";
+            document.getElementById("era_all").style.display = "none";
+            document.getElementById("era_all_img").style.display = "none";
+            document.getElementById("submt").style.display = "none";
+            document.getElementById("submt_img").style.opacity = "0";
+
+            document.getElementById("rotate_opt").style.display = "none";
+            document.getElementById("rotate_txt").style.display = "none";
+
+
+
+        }
+
+
+        document.getElementById("demo").style.opacity = 1 - i / a;
+        document.getElementById("ship_samp").style.opacity = 1 - i / a;
+        document.getElementById("era_all").style.opacity = 1 - i / a;
+        document.getElementById("era_all_img").style.opacity = 1 - i / a;
+        document.getElementById("submt").style.opacity = 1 - i / a;
+        document.getElementById("submt_img").style.opacity = 1 - i / a;
+        document.getElementById("rotate_opt").style.opacity = 1 - i / a;
+        document.getElementById("rotate_txt").style.opacity = 1 - i / a;
+
+    }, 1);
+
+    var dom_string = "";
     let ul = document.getElementById("right_greybox");
-    
-    
-    for(let loop_var = 1; loop_var <= 100; loop_var++)
-    {
-        dom_string+="<div class=\"ps_right_"+loop_var+"\" id=\"pseudo_square_right_"+loop_var+"\" style = \"width: 10%; height: 10%; position: absolute; display: inline; z-index: 2; opacity : 1;\"><div class=\"actual_square_right_"+loop_var+"\" id=\"actual_sq_right_"+loop_var+"\"></div></div>"
-       // console.log(dom_string);
+
+
+    for (let loop_var = 1; loop_var <= 100; loop_var++) {
+        dom_string += "<div class=\"ps_right_" + loop_var + "\" id=\"pseudo_square_right_" + loop_var + "\" style = \"width: 10%; height: 10%; position: absolute; display: inline; z-index: 2; opacity : 1;\"><div class=\"actual_square_right_" + loop_var + "\" id=\"actual_sq_right_" + loop_var + "\"></div></div>"
+        // console.log(dom_string);
     }
     //console.log(dom_string);
-    ul.innerHTML+= dom_string;
-    for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
-       let str1 = "pseudo_square_right_"+i+"";
-       document.getElementById(str1).addEventListener("touchcancel", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
-       document.getElementById(str1).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
-       document.getElementById(str1).addEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-       document.getElementById(str1).addEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
+    ul.innerHTML += dom_string;
+    for (let i = 1; i <= 100; i++) { // adding various events to the pseudo squares
+        let str1 = "pseudo_square_right_" + i + "";
+        document.getElementById(str1).addEventListener("touchcancel", function() {
+            button_in_handler(this, event)
+        }, {
+            passive: true
+        });
+        document.getElementById(str1).addEventListener("mouseover", hover_square_opacity_1, {
+            passive: true
+        });
+        document.getElementById(str1).addEventListener("mouseout", hover_square_opacity_0, {
+            passive: true
+        });
+        document.getElementById(str1).addEventListener("touchstart", function() {
+            button_in_handler(this, event)
+        }, {
+            passive: true
+        });
+        document.getElementById(str1).addEventListener("mousedown", function() {
+            button_in_handler(this, event)
+        }, {
+            passive: true
+        });
     }
-//document.getElementById("right_greybox").innerHTML = dom_string;
-game_started();
+    //document.getElementById("right_greybox").innerHTML = dom_string;
+    game_started();
 } //end of remove_controls()
 
 
-function game_started()
-{
-    
-    for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
-      
-      let str3 = "pseudo_square_right_"+i+"";
-      //document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
-     // document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
-     // document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
-     // document.getElementById(str3).addEventListener("touchstart", function(){avoid_conflict(this, event)}, {passive: true});
-      document.getElementById(str3).addEventListener("click", function(){avoid_conflict(this, event)}, {passive: true});
+function game_started() {
+
+    for (let i = 1; i <= 100; i++) { // adding various events to the pseudo squares
+
+        let str3 = "pseudo_square_right_" + i + "";
+        //document.getElementById(str3).addEventListener("touchcancel", function(){square_handler(this, event)}, {passive: true});
+        // document.getElementById(str3).addEventListener("mouseover", hover_square_opacity_1, {passive: true});
+        // document.getElementById(str3).addEventListener("mouseout", hover_square_opacity_0, {passive: true});
+        // document.getElementById(str3).addEventListener("touchstart", function(){avoid_conflict(this, event)}, {passive: true});
+        document.getElementById(str3).addEventListener("click", function() {
+            avoid_conflict(this, event)
+        }, {
+            passive: true
+        });
     }
-    
- 
+
+
 } // game_started
 
-function avoid_conflict(x)
-{
-    if(conflict_flag == 0)
-    {   conflict_flag = 1;
+function avoid_conflict(x) {
+    if (conflict_flag == 0) {
+        conflict_flag = 1;
         square_handler(x);
     }
-    
+
 }
 
 function square_handler(a) {
     let response_color = "#a6a6a6";
-    
-    
+
+
     conflict_flag = 0;
     const s_no = a.id.slice(20);
     const box = document.getElementById(`actual_sq_right_${s_no}`);
     const pseudoSquare = document.getElementById(`pseudo_square_right_${s_no}`);
 
     function getBinary() {
-        
-        
-        
+
+
+
         fetch(`http://localhost:3000?target=${s_no}`)
             .then(response => response.text())
             .then(result => {
                 //resultDiv.textContent = `Square ${target}: ${result}`;
-               // resultDiv.className = result.toLowerCase();
+                // resultDiv.className = result.toLowerCase();
                 console.log(result);
-                if(result == "HIT") {response_color = "#cc071e";}
-                else if(result == "MISS") {response_color = "#a6a6a6";}
+                if (result == "HIT") {
+                    response_color = "#cc071e";
+                } else if (result == "MISS") {
+                    response_color = "#a6a6a6";
+                }
             });
     }
     getBinary();
     // Clean up event listeners
-    pseudoSquare.removeEventListener("mouseout", hover_square_opacity_0, { passive: true });
-    pseudoSquare.removeEventListener("mouseover", hover_square_opacity_1, { passive: true });
+    pseudoSquare.removeEventListener("mouseout", hover_square_opacity_0, {
+        passive: true
+    });
+    pseudoSquare.removeEventListener("mouseover", hover_square_opacity_1, {
+        passive: true
+    });
 
     let animationStartTime = null;
     let heartbeatPhase = 0;
@@ -346,9 +371,6 @@ function square_handler(a) {
 
 
 
-
-
-
 function submit_ships() {
     if (all_ships_placed_var == 1 && submit_flag == 0) {
         submit_flag = 1;
@@ -361,25 +383,53 @@ function submit_ships() {
             document.getElementById("actual_sq_" + targ_sq).style.backgroundColor = "rgba(94,94,94,0)";
             document.getElementById("actual_sq_" + targ_sq).style.border = "1px solid rgb(221, 223, 225)";
         }
-   
-    document.getElementById("submt").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-    document.getElementById("submt").removeEventListener("mouseover", submit_active_1, {passive: true});
-    document.getElementById("submt").removeEventListener("mousedown", submit_ships, {passive: true});
-    document.getElementById("submt_img_path").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-    document.getElementById("submt_img_path").removeEventListener("mouseover", submit_active_1, {passive: true});
-    document.getElementById("submt_img_path").removeEventListener("mousedown", submit_ships, {passive: true});
-        
-        for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
-           let str1 = "pseudo_square_"+i+"";
-           document.getElementById(str1).removeEventListener("touchcancel", function(){button_in_handler(this, event)}, {passive: true});
-           document.getElementById(str1).removeEventListener("mouseover", hover_square_opacity_1, {passive: true});
-           document.getElementById(str1).removeEventListener("mouseout", hover_square_opacity_0, {passive: true});
-           document.getElementById(str1).removeEventListener("touchstart", function(){button_in_handler(this, event)}, {passive: true});
-           document.getElementById(str1).removeEventListener("mousedown", function(){button_in_handler(this, event)}, {passive: true});
+
+        document.getElementById("submt").removeEventListener("touchstart", submit_active_bytouch_1, {
+            passive: true
+        });
+        document.getElementById("submt").removeEventListener("mouseover", submit_active_1, {
+            passive: true
+        });
+        document.getElementById("submt").removeEventListener("mousedown", submit_ships, {
+            passive: true
+        });
+        document.getElementById("submt_img_path").removeEventListener("touchstart", submit_active_bytouch_1, {
+            passive: true
+        });
+        document.getElementById("submt_img_path").removeEventListener("mouseover", submit_active_1, {
+            passive: true
+        });
+        document.getElementById("submt_img_path").removeEventListener("mousedown", submit_ships, {
+            passive: true
+        });
+
+        for (let i = 1; i <= 100; i++) { // adding various events to the pseudo squares
+            let str1 = "pseudo_square_" + i + "";
+            document.getElementById(str1).removeEventListener("touchcancel", function() {
+                button_in_handler(this, event)
+            }, {
+                passive: true
+            });
+            document.getElementById(str1).removeEventListener("mouseover", hover_square_opacity_1, {
+                passive: true
+            });
+            document.getElementById(str1).removeEventListener("mouseout", hover_square_opacity_0, {
+                passive: true
+            });
+            document.getElementById(str1).removeEventListener("touchstart", function() {
+                button_in_handler(this, event)
+            }, {
+                passive: true
+            });
+            document.getElementById(str1).removeEventListener("mousedown", function() {
+                button_in_handler(this, event)
+            }, {
+                passive: true
+            });
         }
-    remove_controls();
-        
-        
+        remove_controls();
+
+
     } //end of if
 } // end of submit_ships()
 
@@ -390,8 +440,7 @@ function key_down_handler(event) {
     } else if (event.key == "x" || event.key == "X") {
         erase_active_1();
         erase_ships();
-    }
-    else if (event.key == "f" || event.key == "F") {
+    } else if (event.key == "f" || event.key == "F") {
         full_sc();
     }
 
@@ -408,7 +457,7 @@ function key_up_handler(event) {
 
 function hover_square_opacity_1(a) {
     let str = a.toElement.id;
-    let sq_no = 200; 
+    let sq_no = 200;
     //if(str[0] == 'a' || str[0] == 'p')
 
     if (str[0] == 'a') {
@@ -417,17 +466,13 @@ function hover_square_opacity_1(a) {
         sq_no = str.slice(14, );
     }
     //console.log(str);
-    if(submit_flag == 0)
-    {
+    if (submit_flag == 0) {
         if (occupied_squares[sq_no] == 0)
             document.getElementById("actual_sq_" + sq_no).style.opacity = "1";
-    }
-    
-    else if(submit_flag == 1)
-    {
+    } else if (submit_flag == 1) {
         //console.log(sq_no);
         document.getElementById("actual_sq_" + sq_no).style.opacity = "1";
-        
+
     }
 }
 
@@ -442,17 +487,13 @@ function hover_square_opacity_0(a) {
         sq_no = str.slice(14, );
     }
     //console.log("actual_sq_"+sq_no);
-    if(submit_flag == 0)
-    {
+    if (submit_flag == 0) {
         if (occupied_squares[sq_no] == 0)
             document.getElementById("actual_sq_" + sq_no).style.opacity = "0";
-    }
-    
-    else if(submit_flag == 1)
-    {
+    } else if (submit_flag == 1) {
         //console.log(sq_no);
         document.getElementById("actual_sq_" + sq_no).style.opacity = "0";
-        
+
     }
 }
 
@@ -511,9 +552,11 @@ function place_here_text_hide() { //console.log('in here');
 
 function erase_ships() {
     if (submit_flag == 0) {
-        
+
         for (let i = 0; i < 5; i++) {
-            if(ship_position[i] == 0) {break;}
+            if (ship_position[i] == 0) {
+                break;
+            }
             document.getElementById("actual_sq_" + Math.abs(ship_position[i])).style.transition = "width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0.3s";
         }
         all_ships_placed_var = 0;
@@ -666,7 +709,9 @@ function button_in_handler(a, event) {
         } else if (ship_counter == 4) {
             all_ships_placed_var = 1;
             for (let i = 0; i < 5; i++) {
-                if(ship_position[i] == 0) {break;}
+                if (ship_position[i] == 0) {
+                    break;
+                }
                 document.getElementById("actual_sq_" + Math.abs(ship_position[i])).style.transition = "width 0.1s, height 0.1s, margin-left 0.1s, margin-top 0.1s, background-color 0s";
             }
             document.getElementById("pat_bo").style.display = "none";
@@ -851,7 +896,7 @@ function rotate_ship() {
 
     // 5. Horizontal/Vertical styling - fixed active_ship comparison
     const docStyle = document.documentElement.style;
-    
+
     if (active_ship > 0) { // HORIZONTAL
         let full_width = active_ship * 100 - 25;
         let reduced_width = active_ship * 100 - 50;
@@ -889,9 +934,9 @@ function rotate_ship() {
             }
         }
     }
-   // const end = performance.now();
-   // const executionTime = end - start;
-   // console.log(`Execution time: ${executionTime} ms`);
+    // const end = performance.now();
+    // const executionTime = end - start;
+    // console.log(`Execution time: ${executionTime} ms`);
     boundary_overflow();
 }
 
@@ -917,11 +962,11 @@ function boundary_overflow() {
                 let full_width = active_ship * 100 - 25;
                 document.getElementById(str1).style.backgroundColor = "rgb(204,7,30)";
                 blocked_squares[i] = 1;
-//              document.documentElement.style.getPropertyValue("--borderRadius_G_X_"+i)
+                //              document.documentElement.style.getPropertyValue("--borderRadius_G_X_"+i)
                 document.documentElement.style.setProperty('--wd_reduced_global_' + i, full_width + "%");
                 document.documentElement.style.setProperty('--ht_reduced_global_' + i, "75%");
-                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_X_"+i));
-                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_Y_"+i));
+                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_X_" + i));
+                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_Y_" + i));
                 document.documentElement.style.setProperty('--mar_' + i, "12.5%");
             } //end of if
 
@@ -937,8 +982,8 @@ function boundary_overflow() {
                 blocked_squares[i] = 1;
                 document.documentElement.style.setProperty('--wd_reduced_global_' + i, "75%");
                 document.documentElement.style.setProperty('--ht_reduced_global_' + i, full_height + "%");
-                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_X_"+i));
-                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_Y_"+i));
+                document.documentElement.style.setProperty('--borderRadius_reduced_X_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_X_" + i));
+                document.documentElement.style.setProperty('--borderRadius_reduced_Y_' + i, document.documentElement.style.getPropertyValue("--borderRadius_G_Y_" + i));
                 document.documentElement.style.setProperty('--mar_' + i, "12.5%");
             } //end of if
         }
@@ -1023,7 +1068,7 @@ function compute_vertical_disabled_squares() {
             }
             for (let i = 0; i < act_ship; i++) {
                 if ((shipPos - 10 * i) <= 0) break;
-                disabled_squares_vertical[shipPos - 10 * i] = 1;
+                disabled_squares_vertical[shipPos - 10 * i] = 1; 
             } //end of loop
 
         } //end of if(ship_size < 0 )
