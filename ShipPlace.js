@@ -75,8 +75,7 @@ function rotate_by_click()
 function erase_active_bytouch_1() {
     if (submit_flag == 0) {
         erase_flag = 1;
-        document.getElementById("era_all_img").style.display = "none";
-        document.getElementById("era_all_grey_img").style.display = "inline";
+        document.getElementById("era_all_img_path").setAttribute("fill", "#dddfe1");
         document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
         erase_ships();
     }
@@ -85,24 +84,21 @@ function erase_active_bytouch_1() {
 function erase_active_bytouch_0() {
     if (submit_flag == 0) {
         erase_flag = 1;
-        document.getElementById("era_all_img").style.display = "inline";
-        document.getElementById("era_all_grey_img").style.display = "none";
+        document.getElementById("era_all_img_path").setAttribute("fill", "#cc071e");
         document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
     }
 }
 
 function erase_active_1() {
     if (erase_flag == 0 && submit_flag == 0) {
-        document.getElementById("era_all_img").style.display = "none";
-        document.getElementById("era_all_grey_img").style.display = "inline";
+        document.getElementById("era_all_img_path").setAttribute("fill", "#dddfe1");
         document.getElementById("era_all").style.backgroundColor = "rgb(204,7,30)";
     }
 }
 
 function erase_active_0() {
     if (erase_flag == 0 && submit_flag == 0) {
-        document.getElementById("era_all_img").style.display = "inline";
-        document.getElementById("era_all_grey_img").style.display = "none";
+        document.getElementById("era_all_img_path").setAttribute("fill", "#cc071e");
         document.getElementById("era_all").style.backgroundColor = "rgb(49, 49, 52)";
     }
 }
@@ -113,8 +109,7 @@ function submit_active_bytouch_1() {
         
     if (submit_flag == 0 && all_ships_placed_var == 1) {
         sub_flag = 1;
-        document.getElementById("light_submt_img").style.display = "none";
-        document.getElementById("grey_submt_img").style.display = "inline";
+        document.getElementById("submt_img_path").setAttribute("fill", "#313134");
         document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
         submit_ships();
       
@@ -124,8 +119,7 @@ function submit_active_bytouch_1() {
 function submit_active_bytouch_0() {
     if (all_ships_placed_var == 1) {
         sub_flag = 1;
-        document.getElementById("light_submt_img").style.display = "inline";
-        document.getElementById("grey_submt_img").style.display = "none";
+        document.getElementById("submt_img_path").setAttribute("fill", "#9a9da8");
         document.getElementById("submt").style.backgroundColor = "rgb(49,49,52)";
         
     }
@@ -134,8 +128,7 @@ function submit_active_bytouch_0() {
 function submit_active_1() {
     if (submit_flag == 0 && sub_flag == 0 && all_ships_placed_var == 1) {
         
-        document.getElementById("light_submt_img").style.display = "none";
-        document.getElementById("grey_submt_img").style.display = "inline";
+        document.getElementById("submt_img_path").setAttribute("fill", "#313134");
         document.getElementById("submt").style.backgroundColor = "rgb(123,128,131)";
         
     }
@@ -144,8 +137,7 @@ function submit_active_1() {
 function submit_active_0() {
     if (sub_flag == 0 && all_ships_placed_var == 1) {
         
-        document.getElementById("light_submt_img").style.display = "inline";
-        document.getElementById("grey_submt_img").style.display = "none";
+        document.getElementById("submt_img_path").setAttribute("fill", "#9a9da8");
         document.getElementById("submt").style.backgroundColor = "rgb(49,49,52)";
     }
 }
@@ -173,12 +165,8 @@ function remove_controls()
                   document.getElementById("ship_samp").style.display = "none";
                   document.getElementById("era_all").style.display = "none";
                   document.getElementById("era_all_img").style.display = "none";
-                  document.getElementById("era_all_grey_img").style.display = "none";
-                  
                   document.getElementById("submt").style.display = "none";
-                  document.getElementById("submt_img").style.display = "none";
-                  document.getElementById("light_submt_img").style.display = "none";
-                  document.getElementById("grey_submt_img").style.display = "none";
+                  document.getElementById("submt_img").style.opacity = "0";
                   
                   document.getElementById("rotate_opt").style.display = "none";
                   document.getElementById("rotate_txt").style.display = "none";
@@ -192,13 +180,8 @@ function remove_controls()
         document.getElementById("ship_samp").style.opacity        = 1-i/a;
         document.getElementById("era_all").style.opacity          = 1-i/a;
         document.getElementById("era_all_img").style.opacity      = 1-i/a;
-        document.getElementById("era_all_grey_img").style.opacity = 1-i/a;
-        
         document.getElementById("submt").style.opacity            = 1-i/a;
         document.getElementById("submt_img").style.opacity        = 1-i/a;
-        document.getElementById("light_submt_img").style.opacity  = 1-i/a;
-        document.getElementById("grey_submt_img").style.opacity   = 1-i/a;
-        
         document.getElementById("rotate_opt").style.opacity       = 1-i/a;
         document.getElementById("rotate_txt").style.opacity       = 1-i/a;
        
@@ -254,11 +237,29 @@ function avoid_conflict(x)
 }
 
 function square_handler(a) {
+    let response_color = "#a6a6a6";
+    
+    
     conflict_flag = 0;
     const s_no = a.id.slice(20);
     const box = document.getElementById(`actual_sq_right_${s_no}`);
     const pseudoSquare = document.getElementById(`pseudo_square_right_${s_no}`);
 
+    function getBinary() {
+        
+        
+        
+        fetch(`http://localhost:3000?target=${s_no}`)
+            .then(response => response.text())
+            .then(result => {
+                //resultDiv.textContent = `Square ${target}: ${result}`;
+               // resultDiv.className = result.toLowerCase();
+                console.log(result);
+                if(result == "HIT") {response_color = "#cc071e";}
+                else if(result == "MISS") {response_color = "#a6a6a6";}
+            });
+    }
+    getBinary();
     // Clean up event listeners
     pseudoSquare.removeEventListener("mouseout", hover_square_opacity_0, { passive: true });
     pseudoSquare.removeEventListener("mouseover", hover_square_opacity_1, { passive: true });
@@ -297,7 +298,7 @@ function square_handler(a) {
                     lastBlinkExecuted = true;
 
                     // Change color and expand
-                    box.style.backgroundColor = 'rgb(204,7,30)';
+                    box.style.backgroundColor = response_color;
                     box.style.opacity = '1';
                     box.style.transform = 'scale(3)';
                     box.style.transition = 'transform 150ms ease-out, background-color 150ms linear';
@@ -364,12 +365,9 @@ function submit_ships() {
     document.getElementById("submt").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
     document.getElementById("submt").removeEventListener("mouseover", submit_active_1, {passive: true});
     document.getElementById("submt").removeEventListener("mousedown", submit_ships, {passive: true});
-    document.getElementById("light_submt_img").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-    document.getElementById("light_submt_img").removeEventListener("mouseover", submit_active_1, {passive: true});
-    document.getElementById("light_submt_img").removeEventListener("mousedown", submit_ships, {passive: true});
-    document.getElementById("grey_submt_img").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
-    document.getElementById("grey_submt_img").removeEventListener("mouseover", submit_active_1, {passive: true});
-    document.getElementById("grey_submt_img").removeEventListener("mousedown", submit_ships, {passive: true});
+    document.getElementById("submt_img_path").removeEventListener("touchstart", submit_active_bytouch_1, {passive: true});
+    document.getElementById("submt_img_path").removeEventListener("mouseover", submit_active_1, {passive: true});
+    document.getElementById("submt_img_path").removeEventListener("mousedown", submit_ships, {passive: true});
         
         for (let i = 1; i <= 100; i++) {  // adding various events to the pseudo squares
            let str1 = "pseudo_square_"+i+"";
@@ -589,8 +587,7 @@ function erase_ships() {
         document.getElementById("sml_shp").style.display = "inline";
 
         document.getElementById("submt").style.border = "1px solid rgb(66, 66, 66)";
-        document.getElementById("submt_img").style.display = "inline";
-        document.getElementById("light_submt_img").style.display = "none";
+        document.getElementById("submt_img_path").setAttribute("fill", "#424242");
 
         boundary_overflow();
 
@@ -682,12 +679,7 @@ function button_in_handler(a, event) {
             }
             document.getElementById("chk_mar").style.display = "inline";
             document.getElementById("submt").style.border = "0.7px solid rgb(123, 128, 131)";
-            document.getElementById("submt_img").style.display = "none";
-            document.getElementById("light_submt_img").style.display = "inline";
-
-
-
-
+            document.getElementById("submt_img_path").setAttribute("fill", "#9a9da8");
         }
 
 
