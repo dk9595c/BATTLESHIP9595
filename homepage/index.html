@@ -499,8 +499,7 @@
    </div>
    <div class="carousel">
      <div style="color: var(--text-secondary); padding: 1rem;">
-        Loading Arena Bots... <br>
-        <span style="font-size: 0.8rem; opacity: 0.7;">(The server may take ~50 seconds to wake up)</span>
+        Loading online players... <br>
      </div>
    </div>
    </section>
@@ -1658,58 +1657,57 @@
                       }
                   // --- END OF AVATAR FUNCTIONS ---
       
-                  // --- NEW FUNCTION: FETCH SERVER BOTS ---
-                  async function loadOnlinePlayers() {
-                      
-                      const SERVER_URL = "https://battleship-server-r5pa.onrender.com";
+      // --- NEW FUNCTION: FETCH SERVER PLAYERS ---
+                        async function loadOnlinePlayers() {
+                            
+                            const SERVER_URL = "https://battleship-server-r5pa.onrender.com";
 
-                      try {
-                          const response = await fetch(`${SERVER_URL}/?action=getLobbyData`);
-                          
-                          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                          
-                          const bots = await response.json();
+                            try {
+                                const response = await fetch(`${SERVER_URL}/?action=getLobbyData`);
+                                
+                                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                                
+                                const onlinePlayers = await response.json();
 
-                          // Look for the specific ID we added to the first shelf
-                          const multiplayerShelf = document.getElementById('online-players-shelf');
-                          
-                          if (multiplayerShelf) {
-                              const carousel = multiplayerShelf.querySelector('.carousel');
-                              carousel.innerHTML = ''; // Clear loading text
+                                // Look for the specific ID we added to the first shelf
+                                const multiplayerShelf = document.getElementById('online-players-shelf');
+                                
+                                if (multiplayerShelf) {
+                                    const carousel = multiplayerShelf.querySelector('.carousel');
+                                    carousel.innerHTML = ''; // Clear loading text
 
-                              bots.forEach(bot => {
-                                  const card = document.createElement('div');
-                                  card.className = 'card';
-                                  
-                                  card.innerHTML = `
-                                      <div class="card-image" style="display:flex; align-items:center; justify-content:center; background-color: transparent; overflow: hidden;">
-                                          ${bot.svg}
-                                          <div class="live-badge">LIVE</div>
-                                      </div>
-                                      <div class="card-content">
-                                          <h3 class="card-title">${bot.username}</h3>
-                                          <p class="card-subtitle">${bot.rank} • ${bot.country}</p>
-                                      </div>
-                                  `;
-                                  carousel.appendChild(card);
-                              });
-                          }
-                      } catch (error) {
-                          console.error("Lobby failed to load. Ensure your Render backend is live:", error);
-                          
-                          const multiplayerShelf = document.getElementById('online-players-shelf');
-                          if (multiplayerShelf) {
-                              const carousel = multiplayerShelf.querySelector('.carousel');
-                              // Display a friendly fallback error right on the page if the server isn't waking up
-                              carousel.innerHTML = `
-                                  <div style="color: var(--accent-red); padding: 1rem;">
-                                      Failed to reach the server. It might be asleep. Please refresh the page in a moment to try again.
-                                  </div>
-                              `;
-                          }
-                      }
-                  }
-                  // --- END NEW FUNCTION ---
+                                    onlinePlayers.forEach(player => {
+                                        const card = document.createElement('div');
+                                        card.className = 'card';
+                                        
+                                        card.innerHTML = `
+                                            <div class="card-image" style="display:flex; align-items:center; justify-content:center; background-color: transparent; overflow: hidden;">
+                                                ${player.svg}
+                                            </div>
+                                            <div class="card-content">
+                                                <h3 class="card-title">${player.username}</h3>
+                                                <p class="card-subtitle">${player.rank} • ${player.country}</p>
+                                            </div>
+                                        `;
+                                        carousel.appendChild(card);
+                                    });
+                                }
+                            } catch (error) {
+                                console.error("Lobby failed to load. Ensure your Render backend is live:", error);
+                                
+                                const multiplayerShelf = document.getElementById('online-players-shelf');
+                                if (multiplayerShelf) {
+                                    const carousel = multiplayerShelf.querySelector('.carousel');
+                                    // Display a friendly fallback error right on the page if the server isn't waking up
+                                    carousel.innerHTML = `
+                                        <div style="color: var(--accent-red); padding: 1rem;">
+                                            Failed to reach the server. It might be asleep. Please refresh the page in a moment to try again.
+                                        </div>
+                                    `;
+                                }
+                            }
+                        }
+                        // --- END NEW FUNCTION ---
 
                   // --- MAIN SCRIPT, RUNS AFTER PAGE LOADS ---
                   document.addEventListener('DOMContentLoaded', () => {
