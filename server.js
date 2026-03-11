@@ -7,10 +7,6 @@ const GAME_TIMEOUT_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 // This Map will store all active game sessions
 const activeGames = new Map();
 
-// =================================================
-// === 1. FAKE ONLINE PLAYERS & AVATAR GENERATOR ===
-// =================================================
-
 const prefixes = ["Admiral", "Captain", "Ghost", "Iron", "Deep", "Salty", "Cold"];
 const roots = ["Hunter", "Wolf", "Gazer", "Dog", "Skipper", "Kraken", "Viper"];
 const countries = ["USA", "CAN", "UK", "IND", "GER", "JPN", "AUS", "FRA"];
