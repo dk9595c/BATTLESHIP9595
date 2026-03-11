@@ -4,7 +4,6 @@ const { randomUUID } = require('crypto');
 
 const GAME_TIMEOUT_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-// This Map will store all active game sessions
 const activeGames = new Map();
 
 const prefixes = ["Admiral", "Captain", "Ghost", "Iron", "Deep", "Salty", "Cold"];
@@ -22,11 +21,7 @@ for (let i = 0; i < 1000; i++) {
         wins: Math.floor(Math.random() * 150)
     });
 }
-
-/**
- * Generates a Safari-compatible SVG snapshot of a game board to be used as an avatar.
- * Adapted from the client-side design in Homepage.html
- */
+    //--------------
 function generateServerSideSVG(gameState) {
     const gridSize = 10;
     const cellSize = 100 / gridSize;
