@@ -1896,6 +1896,16 @@ const server = http.createServer((req, res) => {
     const { query } = url.parse(req.url, true);
 
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    // >>> END OF HEADER LINES <<<
+
+    // >>> ADD THIS PREFLIGHT FIX BLOCK HERE <<<
+    if (req.method === 'OPTIONS') {
+        res.writeHead(204);
+        return res.end();
+    }
+    res.setHeader('Access-Control-Allow-Origin', '*');
 
     if (req.method === 'HEAD' && req.url === '/') {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
