@@ -3461,39 +3461,38 @@
       x.innerHTML = w + " x " + h;
       */
     // --- FINALIZED LOADING OVERLAY LOGIC ---
-    window.addEventListener('load', () => {
-        const overlay = document.getElementById('loading-screen-overlay');
-        const sliderFill = document.getElementById('thin-loading-slider-fill');
-        
-        // Duration decided randomly between 1.5s (1500ms) and 2.0s (2000ms)
-        const duration = Math.random() * (2000 - 1500) + 1500;
-        let startTime = null;
-
-        function animateSlider(timestamp) {
-            if (!startTime) startTime = timestamp;
-            const elapsed = timestamp - startTime;
+        (function() {
+            const overlay = document.getElementById('loading-screen-overlay');
+            const sliderFill = document.getElementById('thin-loading-slider-fill');
             
-            // Calculate progress ratio (0.0 to 1.0)
-            const progress = Math.min(elapsed / duration, 1);
-            sliderFill.style.width = (progress * 100) + '%';
+            // Duration decided randomly between 1.5s (1500ms) and 2.0s (2000ms)
+            const duration = Math.random() * (2000 - 1500) + 1500;
+            let startTime = null;
 
-            if (progress < 1) {
-                // This keeps the loop going UNTIL it hits 100%
-                requestAnimationFrame(animateSlider);
-            } else {
-                // Once complete, wait a tiny bit, then fade out
-                setTimeout(() => {
-                    // Make sure these are UNCOMMENTED so the screen disappears
-                    overlay.style.transition = 'opacity 0.4s ease, visibility 0.4s ease';
-                    overlay.style.opacity = '0';
-                    overlay.style.visibility = 'hidden';
-                }, 100);
+            function animateSlider(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                
+                // Calculate progress ratio (0.0 to 1.0)
+                const progress = Math.min(elapsed / duration, 1);
+                sliderFill.style.width = (progress * 100) + '%';
+
+                if (progress < 1) {
+                    // This keeps the loop going UNTIL it hits 100%
+                    requestAnimationFrame(animateSlider);
+                } else {
+                    // Once complete, wait a tiny bit, then fade out
+                    setTimeout(() => {
+                        overlay.style.transition = 'opacity 0.4s ease, visibility 0.4s ease';
+                        overlay.style.opacity = '0';
+                        overlay.style.visibility = 'hidden';
+                    }, 100);
+                }
             }
-        }
 
-        // THE MISSING KEY: This line kicks off the animation loop!
-        requestAnimationFrame(animateSlider);
-    });
+            // This line kicks off the animation loop immediately without waiting for the video!
+            requestAnimationFrame(animateSlider);
+        })();
 </script>
 
 </html>
