@@ -1679,6 +1679,7 @@
                                     onlinePlayers.forEach(player => {
                                         const card = document.createElement('div');
                                         card.className = 'card';
+                                        card.onclick = () => window.location.href = 'Gameplay.html';
                                         
                                         card.innerHTML = `
                                             <div class="card-image" style="display:flex; align-items:center; justify-content:center; background-color: transparent; overflow: hidden;">
