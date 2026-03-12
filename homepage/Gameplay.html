@@ -3478,10 +3478,12 @@
             sliderFill.style.width = (progress * 100) + '%';
 
             if (progress < 1) {
+                // This keeps the loop going UNTIL it hits 100%
                 requestAnimationFrame(animateSlider);
             } else {
                 // Once complete, wait a tiny bit, then fade out
                 setTimeout(() => {
+                    // Make sure these are UNCOMMENTED so the screen disappears
                     overlay.style.transition = 'opacity 0.4s ease, visibility 0.4s ease';
                     overlay.style.opacity = '0';
                     overlay.style.visibility = 'hidden';
@@ -3489,7 +3491,7 @@
             }
         }
 
-        // Start the animation loop
+        // THE MISSING KEY: This line kicks off the animation loop!
         requestAnimationFrame(animateSlider);
     });
 </script>
