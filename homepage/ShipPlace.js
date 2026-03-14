@@ -339,7 +339,7 @@ function checkServerHit(squareNumber) {
                 if (ship.hits === ship.size) { //
                     ship.isSunk = true; //
                     // --- CONSOLE LOG FOR AI SINK ---
-                    console.log(`CLIENT: The AI SUNK your ship! Size: ${ship.size}, Position: ${start}`); //
+                    console.log(`CLIENT: The opponent SUNK your ship! Size: ${ship.size}, Position: ${start}`); //
                     
                     // --- ADD THIS WIN-CHECK BLOCK ---
                     aiSunkCount++;
@@ -457,7 +457,7 @@ function square_handler(a) {
                 const sunkInfo = status.split('_'); //
                 const sunkShipSize = sunkInfo[1];
                 const sunkShipPos = sunkInfo[2];
-                console.log(`CLIENT: You SUNK the AI's ship! Size: ${sunkShipSize}, Position: ${sunkShipPos}`); //
+                console.log(`CLIENT: You SUNK the opponent's ship! Size: ${sunkShipSize}, Position: ${sunkShipPos}`); //
             } else {
                 response_color = "#a6a6a6"; //
             }
