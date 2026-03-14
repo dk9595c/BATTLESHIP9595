@@ -1,4 +1,7 @@
-let currentGameId = null; //
+// This checks if it's already there before trying to define it
+if (typeof window.currentGameId === 'undefined') {
+    window.currentGameId = null;
+}
 const shipSet = [-5, -4, -3, -3, -2]; //
 var ship_counter = 0; //
 var active_ship = shipSet[ship_counter]; //

@@ -11,6 +11,27 @@
     <meta http-equiv="Expires" content="Wed, 01 Jan 2030 12:00:00 GMT">
     <!--<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet"> -->
     <title>BattleShip</title>
+    <script>
+            // Intercept standard Fetch requests
+            const originalFetch = window.fetch;
+            window.fetch = async function() {
+                let args = arguments;
+                if (typeof args[0] === 'string' && args[0].includes('action=newGame')) {
+                    args[0] = args[0] + '&aiType=human';
+                }
+                return originalFetch.apply(this, args);
+            };
+
+            // Intercept legacy XMLHttpRequest requests (just in case ShipPlace.js uses older AJAX)
+            const originalOpen = XMLHttpRequest.prototype.open;
+            XMLHttpRequest.prototype.open = function(method, url) {
+                if (typeof url === 'string' && url.includes('action=newGame')) {
+                    url += '&aiType=human';
+                }
+                originalOpen.apply(this, arguments);
+            };
+        </script>
+        <script src="ShipPlace.js"></script>
     <script src="ShipPlace.js"></script>
     <style>
         .modal-overlay {
