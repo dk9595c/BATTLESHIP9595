@@ -9,7 +9,7 @@
     <meta name="keywords" content="Battleship, online Battleship, Battleship game, AI Battleship, multiplayer Battleship, strategy game, naval battle, sink ships, board game, war game, BattleshipArena, play Battleship online, classic Battleship, smart AI, real-time multiplayer">
     <meta http-equiv="Cache-Control" content="max-age=36000, must-revalidate">
     <meta http-equiv="Expires" content="Wed, 01 Jan 2030 12:00:00 GMT">
-    <!--<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
     <title>BattleShip</title>
     <script>
             // Intercept standard Fetch requests
@@ -51,7 +51,7 @@
                 padding: 30px;
                 border-radius: 10px;
                 text-align: center;
-                font-family: Arial, Helvetica, sans-serif;
+                font-family: 'Poppins', sans-serif;
                 
               }
               .modal-content h2 {
@@ -60,19 +60,29 @@
                 color: #e8eaec;
               }
         .modal-content button {
-                        background-color: #505050;
-                        color: white;
-                        border: none;
-                        padding: 12px 24px;
-                        font-size: 16px;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        margin-top: 20px;
-                        font-weight: bold;
-                    }
-              .modal-content button:hover {
-                background-color: rgb(91, 137,238);
-              }
+            background-color: rgb(49, 49, 52);
+            color: #9a9da8;
+            border: 0.7px solid rgb(123, 128, 131);
+            padding: 10px 28px;
+            
+            /* Font styles matching "Game sponsored by" */
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 500; /* Changed from bold to 500 */
+            text-transform: none; /* Removes the ALL CAPS */
+            letter-spacing: normal; /* Removes the wide spacing */
+            
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            /*transition: background-color 0.05s ease, color 0.05s ease;*/
+        }
+
+        .modal-content button:hover {
+            background-color: rgb(123, 128, 131); /* Highlight background from JS */
+            color: #313134; /* Highlight text color from JS */
+            border-color: rgb(123, 128, 131);
+        }
     </style>
     <style>
         :root {
@@ -2864,18 +2874,21 @@
          display:none;
          transition: opacity 0.5s;
          }
-         .your_turn_text{
-         width: 65.9248957%;
-         height: 18.2197497%;
-         margin-left: 17.1070932%;
-         margin-top: 40.8901252%;
-         font-size: 0px;
-         opacity: 1;
-         z-index:2;
-         display:none;
-         position: absolute;
-         transition: opacity 0.5s;
-         }
+        .your_turn_text {
+            width: 65.9248957%;
+            height: 18.2197497%;
+            margin-left: 17.1070932%;
+            margin-top: 40.8901252%;
+            font-size: 0px; /* If the text inside has its own class, add the font-family there too */
+            opacity: 1;
+            z-index: 2;
+            display: none;
+            position: absolute;
+            transition: opacity 0.5s;
+            font-family: 'Poppins', sans-serif; /* Add this line */
+            color: #dddfe1; /* Optional: ensures the color matches if it wasn't inherited */
+        }
+        
          .greybox_right {
          padding-bottom: min((100vh - 130px), 41.65vw);
          padding-right: min((100vh - 130px), 41.65vw);
@@ -3465,9 +3478,9 @@
         }
       }, {passive: true});
        
-       // --- ADD THIS NEW LINE ---
-             document.getElementById('continueButton').addEventListener('click', () => { location.reload(); });
-             // --- END OF NEW LINE ---
+       document.getElementById('continueButton').addEventListener('click', () => {
+           window.location.href = 'Homepage.html';
+       });
       
       
       /* function toggleZoomScreen() {
